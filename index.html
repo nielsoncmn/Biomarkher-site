@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BiomarkHER · Health clarity, calibrated for midlife and beyond</title>
+<meta name="description" content="BiomarkHER helps women understand how changing estrogen affects their heart, bones, brain, metabolism and other body systems, through midlife and beyond.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A2649; --ink:#2E3554; --muted:#4A5170; --faint:#8A8FA3;
+  --teal:#008189; --teal-bright:#00A5AC; --teal-soft:#E9F6F6;
+  --rose:#E0699A; --rose-soft:#FCEFF5; --lav:#A488C6; --grey:#B9BDCB;
+  --surface:#F5F6F8; --line:#EEF0F4;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:var(--navy);font-family:'Inter Tight',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--teal)}
+.wrap{max-width:1248px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;color:var(--teal);text-transform:uppercase}
+.wordmark{font-family:'Tenor Sans',sans-serif;letter-spacing:.14em}
+.wordmark .c{color:var(--teal)}
+h1,h2,h3{margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(30px,4vw,44px);line-height:1.1;font-weight:700}
+p{margin:0}
+.lead{font-size:18px;line-height:1.6;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:14px;font-size:16px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-light{background:#F2F3F6;color:var(--navy)}
+.credit{position:absolute;font-size:11px;font-weight:500;color:#fff;background:rgba(26,38,73,.45);border-radius:999px;padding:3px 9px}
+
+.preview-bar{background:#FBF0D6;color:#6B4A00;font-size:13px;font-weight:500;text-align:center;padding:8px 16px}
+
+header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
+header .wrap{height:76px;display:flex;align-items:center;gap:36px}
+header img{height:36px;width:auto}
+header nav{flex:1;display:flex;gap:28px;font-size:15px;font-weight:500}
+header nav a{color:var(--navy);text-decoration:none}
+header .btn{min-height:44px;padding:0 20px;font-size:15px}
+
+.hero{position:relative;min-height:640px;overflow:hidden;display:flex;align-items:center}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.88) 58%,#fff 75%)}
+.hero .wrap{position:relative;z-index:1;width:100%;display:flex;justify-content:flex-end}
+.hero-copy{width:520px;display:flex;flex-direction:column;gap:22px;padding:80px 0}
+.hero h1{font-size:clamp(38px,5vw,58px);line-height:1.04;font-weight:700;letter-spacing:-.025em}
+.hero p{font-size:19px;line-height:1.5;color:var(--muted)}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.hero .credit{left:24px;bottom:20px;z-index:1}
+
+section{padding:100px 0}
+.intro{max-width:760px;display:flex;flex-direction:column;gap:14px;margin-bottom:48px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px}
+.card .ico{width:52px;height:52px;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center}
+.card .ico img{width:34px;height:34px}
+.card .tag{font-size:13px;font-weight:600;letter-spacing:.12em;color:var(--muted)}
+.card h3{font-size:24px;line-height:1.2;font-weight:700}
+.card p{font-size:16.5px;line-height:1.55;color:var(--muted)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.split .text{display:flex;flex-direction:column;gap:20px}
+.photo{position:relative;height:600px;border-radius:28px;overflow:hidden}
+.photo>img{width:100%;height:100%;object-fit:cover}
+.photo .credit{left:18px;top:18px}
+.float{position:absolute;background:#fff;border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:10px;box-shadow:0 14px 36px rgba(26,38,73,.18)}
+.small{font-size:11px;color:var(--faint)}
+
+.chart{position:relative;display:flex;flex-direction:column;gap:9px;padding-top:16px}
+.chart .row{display:grid;grid-template-columns:84px minmax(0,1fr);align-items:center}
+.chart .row span:first-child{font-size:12.5px;font-weight:600}
+.track{position:relative;height:9px;border-radius:5px;background:#EEF0F4}
+.track i{position:absolute;top:0;bottom:0;border-radius:5px;background:var(--teal-bright)}
+.track i.open{background:#CFEBEC}
+.chart .fp-label{position:absolute;top:0;left:calc(84px + (100% - 84px)*.375);transform:translateX(-50%);font-size:11px;color:var(--muted);white-space:nowrap}
+.chart .fp-line{position:absolute;top:16px;bottom:-3px;left:calc(84px + (100% - 84px)*.375);width:1px;background:var(--grey)}
+
+.result-head{display:flex;align-items:center;gap:10px}
+.result-head img{width:28px;height:28px}
+.result-head b{flex:1;font-size:17px}
+.badge{font-size:12px;font-weight:600;color:#6B4A00;background:#FBF0D6;border-radius:999px;padding:3px 10px}
+.result p{font-size:14px;line-height:1.45;color:var(--ink)}
+
+.evidence{background:var(--navy);color:#fff}
+.evidence .eyebrow{color:#7FD3D6}
+.evidence .lead{color:#C9CEDD}
+.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.pillars div{border-top:2px solid var(--teal-bright);padding-top:20px;display:flex;flex-direction:column;gap:8px}
+.pillars div.honest{border-color:var(--lav)}
+.pillars b{font-size:20px}
+.pillars span{font-size:15.5px;line-height:1.55;color:#C9CEDD}
+
+.ring-art{position:relative;height:520px;border-radius:28px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center}
+.ring{position:relative;width:340px;height:340px}
+.ring .o{position:absolute;inset:40px;border-radius:50%;border:5px solid #E7D9EF}
+.ring .you{position:absolute;left:50%;top:50%;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Tenor Sans',sans-serif;font-size:19px;letter-spacing:.06em;border:5px solid #fff;box-shadow:0 6px 16px rgba(26,38,73,.25)}
+.ring .p{position:absolute;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:600}
+.ring .p em{position:absolute;top:76px;left:50%;transform:translateX(-50%);font-style:normal;font-family:'Tenor Sans',sans-serif;font-size:13px;background:#fff;border-radius:999px;padding:2px 10px;white-space:nowrap}
+.legend{display:flex;gap:22px;flex-wrap:wrap;padding-top:6px}
+.legend span{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.legend i{width:14px;height:14px;border-radius:50%;border:3px solid}
+
+.waitlist{background:var(--teal-soft);border-radius:28px;padding:64px;display:flex;align-items:center;gap:48px}
+.waitlist .text{flex:1;display:flex;flex-direction:column;gap:12px}
+.waitlist h2{font-size:clamp(28px,3.4vw,38px)}
+.waitlist form{display:flex;gap:10px;flex-wrap:wrap}
+.waitlist input{width:320px;max-width:100%;min-height:54px;border-radius:14px;border:1px solid #CFD3DC;padding:0 18px;font-size:16px;font-family:inherit}
+.waitlist .msg{width:100%;font-size:14px;color:var(--muted);min-height:20px}
+
+footer{border-top:1px solid var(--line);padding:44px 0 52px}
+footer .top{display:flex;align-items:center;gap:32px;margin-bottom:18px}
+footer .top img{height:30px;width:auto}
+footer .top span{flex:1}
+footer .top a{font-size:14px;color:var(--muted);text-decoration:none}
+footer p{font-size:13px;line-height:1.6;color:var(--faint)}
+
+@media (max-width:900px){
+  header nav{display:none}
+  header .wrap{justify-content:space-between}
+  .hero{min-height:auto;flex-direction:column;align-items:stretch}
+  .hero>img{position:relative;height:380px}
+  .hero::after{display:none}
+  .hero .wrap{justify-content:flex-start}
+  .hero-copy{width:100%;padding:32px 0 48px}
+  .hero .credit{top:340px;bottom:auto;left:16px}
+  section{padding:64px 0}
+  .cards,.pillars{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr;gap:32px}
+  .split .photo{order:-1}
+  .photo{height:440px}
+  .float{left:16px!important;right:16px!important;width:auto!important;bottom:16px!important}
+  .ring-art{height:420px}
+  .ring{transform:scale(.85)}
+  .waitlist{flex-direction:column;align-items:stretch;padding:36px 24px;gap:24px}
+  .waitlist input{width:100%}
+  .waitlist .btn{width:100%}
+  footer .top{flex-wrap:wrap;gap:16px 24px}
+  footer .top span{flex-basis:100%;height:0}
+}
+</style>
+</head>
+<body>
+
+<div class="preview-bar">Preview site. BiomarkHER is not yet available, and wording is in draft.</div>
+
+<header>
+  <div class="wrap">
+    <img src="images/logo.png" alt="BiomarkHER">
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#clock">The Estrogen Clock</a>
+      <a href="#circle">HerCircle</a>
+      <a href="#evidence">Our evidence</a>
+    </nav>
+    <a class="btn btn-dark" href="#waitlist">Join the waitlist</a>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <img src="images/hero.jpg" alt="A smiling woman in her fifties on a beach">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Women’s health management and intelligence</span>
+        <h1>Health clarity, calibrated for midlife and beyond.</h1>
+        <p>BiomarkHER helps women understand how changing estrogen affects their heart, bones, brain, metabolism and other body systems, through midlife and beyond.</p>
+        <div class="actions">
+          <a class="btn btn-dark" href="#waitlist">Join the waitlist</a>
+          <a class="btn btn-light" href="#how">See how it works</a>
+        </div>
+      </div>
+    </div>
+    <span class="credit">Stock photo. Posed by model.</span>
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="intro">
+        <span class="eyebrow">One platform</span>
+        <h2>Your health and your family’s, in one place, explained by evidence.</h2>
+      </div>
+      <div class="cards">
+        <div class="card" style="background:var(--surface)">
+          <span class="ico"><img src="images/icon-clinical.svg" alt=""></span>
+          <span class="tag">THE HUB</span>
+          <h3>Everything in one place</h3>
+          <p>Your labs, records, medicines, supplements and family history, together for the first time, with a cited summary for every doctor’s visit.</p>
+        </div>
+        <div class="card" style="background:var(--teal-soft)">
+          <span class="ico"><img src="images/icon-heart.svg" alt=""></span>
+          <span class="tag" style="color:#006C72">THE INTELLIGENCE</span>
+          <h3>Read on your timeline</h3>
+          <p>The Estrogen Clock reads your results system by system, against the years since your final period. Medication, supplement and movement intelligence show what each one is really doing.</p>
+        </div>
+        <div class="card" style="background:var(--rose-soft)">
+          <span class="ico"><img src="images/icon-family.svg" alt=""></span>
+          <span class="tag wordmark" style="font-size:14px">HER<span class="c">CIRCLE</span></span>
+          <h3>For the people you care for</h3>
+          <p>Manage your mother’s appointments and medicines and your daughter’s results alongside your own, and choose exactly what each person sees.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clock" style="padding-top:0">
+    <div class="wrap split">
+      <div class="photo">
+        <img src="images/clock.jpg" alt="A smiling woman on a road bike" style="object-position:50% 30%">
+        <span class="credit">Stock photo. Posed by model.</span>
+        <div class="float" style="left:24px;right:24px;bottom:24px">
+          <b style="font-size:14px">When each system changes</b>
+          <div class="chart">
+            <span class="fp-label">Final period</span>
+            <div class="row"><span>Heart</span><span class="track"><i style="left:18.75%;width:25%"></i></span></div>
+            <div class="row"><span>Metabolic</span><span class="track"><i class="open" style="left:25%;right:0"></i></span></div>
+            <div class="row"><span>Muscle</span><span class="track"><i style="left:25%;width:25%"></i></span></div>
+            <div class="row"><span>Bone</span><span class="track"><i style="left:31.25%;width:18.75%"></i></span></div>
+            <span class="fp-line"></span>
+          </div>
+          <span class="small">Illustration with sample data</span>
+        </div>
+      </div>
+      <div class="text">
+        <span class="eyebrow">The Estrogen Clock</span>
+        <h2>Your biology now, read against the years since your final period.</h2>
+        <p class="lead">Two women can both be 50 and be in completely different places. One is still having periods. The other had her last one five years ago. Her heart, bones and metabolism change on that second clock, not on her birthday.</p>
+        <p class="lead">BiomarkHER shows where you are on each system, so you know what’s coming and what is worth doing now, while it can still make a difference.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap split">
+      <div class="text">
+        <span class="eyebrow">Your system scores</span>
+        <h2>Every result comes with the reason behind it.</h2>
+        <p class="lead">Each part of your body gets its own score, never one number for all of you. Open any score and see which result moved it, and what estrogen loss has to do with it.</p>
+        <p class="lead">Taking a statin, HRT or a supplement? See what each one is doing to your results over time, and hear plainly when the research in women shows nothing.</p>
+      </div>
+      <div class="photo">
+        <img src="images/scores.jpg" alt="A woman with grey hair lifting a barbell" style="object-position:40% 40%">
+        <span class="credit">Stock photo. Posed by model.</span>
+        <div class="float result" style="right:24px;bottom:24px;width:360px">
+          <div class="result-head"><img src="images/icon-heart.svg" alt=""><b>Heart</b><span class="badge">Suboptimal</span></div>
+          <p><b style="font-weight:600">Why:</b> your LDL cholesterol is 148 mg/dL (At-Risk is 130–159).</p>
+          <p><b style="font-weight:600;color:var(--teal)">On your clock:</b> LDL often rises in the years around the final period, as the liver clears it less efficiently once estrogen falls.</p>
+          <span class="small">Sample data</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="evidence" class="evidence">
+    <div class="wrap">
+      <div class="intro">
+        <span class="eyebrow">Our evidence</span>
+        <h2>Answers built on research in women like you.</h2>
+        <p class="lead">Not the open internet, and not studies done only in men.</p>
+      </div>
+      <div class="pillars">
+        <div><b>Found</b><span>Research in women in midlife and beyond.</span></div>
+        <div><b>Checked</b><span>Every summary checked against the study itself.</span></div>
+        <div><b>Signed</b><span>By our Chief Medical Advisor before you see it.</span></div>
+        <div class="honest"><b>Honest</b><span>When the research isn’t there, we say so. And nothing to sell you: what you buy never changes what you’re told.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="circle">
+    <div class="wrap split">
+      <div class="ring-art" aria-hidden="true">
+        <div class="ring">
+          <div class="o"></div>
+          <div class="you">You</div>
+          <div class="p" style="left:50%;top:40px;box-shadow:0 0 0 4px #fff,0 0 0 9px var(--lav)">M<em>Mom</em></div>
+          <div class="p" style="left:290px;top:220px;box-shadow:0 0 0 4px #fff,0 0 0 9px var(--rose)">K<em>Sister</em></div>
+          <div class="p" style="left:50px;top:220px;box-shadow:0 0 0 4px #fff,0 0 0 9px var(--grey)">E<em>Daughter</em></div>
+        </div>
+      </div>
+      <div class="text">
+        <span class="wordmark" style="font-size:16px">HER<span class="c">CIRCLE</span></span>
+        <h2 style="letter-spacing:.005em">FOR YOU, FOR MOM, FOR YOUR FAMILY</h2>
+        <p class="lead">Bring up to six people into one place. Help manage your mother’s health, record her doctor’s visits with everyone’s agreement, and choose exactly what each person can see.</p>
+        <div class="legend">
+          <span><i style="border-color:var(--rose)"></i>Sees everything</span>
+          <span><i style="border-color:var(--lav)"></i>Sees what you choose</span>
+          <span><i style="border-color:var(--grey)"></i>Sees an overview</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="waitlist" style="padding-top:0">
+    <div class="wrap">
+      <div class="waitlist">
+        <div class="text">
+          <h2>Be among the first to try BiomarkHER.</h2>
+          <p class="lead" style="font-size:17px">We’ll let you know when early access opens.</p>
+        </div>
+        <form id="wl">
+          <label for="email" style="position:absolute;left:-9999px">Email</label>
+          <input id="email" type="email" placeholder="Your email" required>
+          <button class="btn btn-dark" type="submit">Join the waitlist</button>
+          <span class="msg" id="wlmsg" role="status"></span>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <img src="images/logo.png" alt="BiomarkHER">
+      <span></span>
+      <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a>
+    </div>
+    <p>BiomarkHER explains your results; it does not diagnose or replace your clinician. People shown are models in stock photos. Results shown are sample data. © BiomarkHER.</p>
+  </div>
+</footer>
+
+<script>
+// Preview only: sign-up is not connected yet. Replace with a form service (e.g. Formspree or Tally) before launch.
+document.getElementById('wl').addEventListener('submit', function (e) {
+  e.preventDefault();
+  document.getElementById('wlmsg').textContent = 'Thank you. Sign-up opens soon; this preview does not save emails yet.';
+});
+</script>
+</body>
+</html>
