@@ -44,7 +44,7 @@ header nav a{color:var(--navy);text-decoration:none}
 header .btn{min-height:44px;padding:0 20px;font-size:15px}
 
 .hero{position:relative;min-height:640px;overflow:hidden;display:flex;align-items:center}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 40%}
+.hero>.hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 40%}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.88) 58%,#fff 75%)}
 .hero .wrap{position:relative;z-index:1;width:100%;display:flex;justify-content:flex-end}
 .hero-copy{width:520px;display:flex;flex-direction:column;gap:22px;padding:80px 0}
@@ -123,7 +123,7 @@ footer p{font-size:13px;line-height:1.6;color:var(--faint)}
   header nav{display:none}
   header .wrap{justify-content:space-between}
   .hero{min-height:auto;flex-direction:column;align-items:stretch}
-  .hero>img{position:relative;height:380px}
+  .hero>.hero-media{position:relative;height:380px}
   .hero::after{display:none}
   .hero .wrap{justify-content:flex-start}
   .hero-copy{width:100%;padding:32px 0 48px}
@@ -174,7 +174,7 @@ section[id]{scroll-margin-top:100px}
 .mobile-nav{display:none}
 @media(max-width:1050px){header .wrap{gap:18px}header nav{gap:15px;font-size:13px}header img{max-width:180px;height:auto}.feature-layout{gap:28px}}
 @media(max-width:900px){.mobile-nav{display:block;margin-left:auto}.mobile-nav summary{cursor:pointer;font-size:14px;padding:10px}.mobile-nav[open] .mobile-links{position:absolute;top:76px;left:0;right:0;background:white;border-bottom:1px solid var(--line);padding:20px;display:grid;gap:18px}.mobile-links a{text-decoration:none;color:var(--navy)}.feature-layout{grid-template-columns:1fr}.feature-section{padding:58px 0}.ribbon,.roadmap-grid{grid-template-columns:1fr 1fr}.roadmap-card:first-child{grid-column:span 2}}
-@media(max-width:560px){header img{max-width:125px}header .wrap{padding:0 14px;gap:6px}header .btn{font-size:12px;padding:0 10px;min-height:40px}.ribbon,.roadmap-grid{grid-template-columns:1fr}.roadmap-card:first-child{grid-column:auto}.mock{padding:20px 16px}.feature-head h2{font-size:32px}.mini{padding:14px}.mock-top{flex-wrap:wrap}.hero>img{height:300px}.hero .credit{top:262px}.hero h1{font-size:38px}}
+@media(max-width:560px){header img{max-width:125px}header .wrap{padding:0 14px;gap:6px}header .btn{font-size:12px;padding:0 10px;min-height:40px}.ribbon,.roadmap-grid{grid-template-columns:1fr}.roadmap-card:first-child{grid-column:auto}.mock{padding:20px 16px}.feature-head h2{font-size:32px}.mini{padding:14px}.mock-top{flex-wrap:wrap}.hero>.hero-media{height:300px}.hero .credit{top:262px}.hero h1{font-size:38px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 /* Typography matched to owner-selected template-v1_2026-11-01. */
@@ -185,7 +185,7 @@ button,input,select{font-family:'Figtree',system-ui,sans-serif}
 header img{width:212px;height:auto;max-width:none;flex-shrink:0}
 header .wrap{gap:28px}header nav{gap:22px;justify-content:center}
 header nav a,.mobile-links a{text-transform:uppercase;font-size:12px;letter-spacing:.065em;font-weight:600;white-space:nowrap}
-.hero>img{transform:none;object-position:30% 40%}
+.hero>.hero-media{transform:none;object-position:30% 40%}
 .platform-overview{padding:65px 0 76px}.overview-heading{text-align:center;margin-bottom:32px}.overview-heading h2{margin-top:12px}
 .pillar-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid #E4E8EC;border-radius:24px;overflow:hidden;box-shadow:0 16px 45px #1a264908}
 .pillar-card{display:flex;flex-direction:column;min-width:0;padding:25px 23px 23px;color:var(--navy);text-decoration:none;border-right:1px solid #E4E8EC;transition:background .2s}
@@ -197,11 +197,15 @@ header nav a,.mobile-links a{text-transform:uppercase;font-size:12px;letter-spac
 .pillar-card h3{font-size:24px;line-height:1.2;margin:0 0 12px}.pillar-card p{font-size:15px;line-height:1.6;color:var(--muted);margin-bottom:24px}.pillar-link{margin-top:auto;display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:600;color:var(--teal)}
 #care{scroll-margin-top:100px}
 @media(max-width:1100px){header .wrap{gap:18px}header nav{gap:14px}header img{width:195px}.pillar-card{padding:22px 17px}.pillar-label{font-size:11px}}
-@media(max-width:900px){header img{width:195px}.pillar-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.pillar-card:nth-child(2){border-right:0}.pillar-card:nth-child(-n+2){border-bottom:1px solid #E4E8EC}.hero>img{object-position:50% 40%}}
+@media(max-width:900px){header img{width:195px}.pillar-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.pillar-card:nth-child(2){border-right:0}.pillar-card:nth-child(-n+2){border-bottom:1px solid #E4E8EC}.hero>.hero-media{object-position:50% 40%}}
 @media(max-width:560px){header .wrap{gap:6px}header img{width:145px;max-width:145px}.pillar-strip{grid-template-columns:1fr}.pillar-card{border-right:0;border-bottom:1px solid #E4E8EC;padding:24px}.pillar-card:last-child{border-bottom:0}.pillar-art{margin:12px auto}.platform-overview{padding:44px 0}.pillar-label{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.pillar-card{transition:none}}
 
-@media(min-width:901px){.hero>img{width:55%;right:auto;object-position:45% 40%;transform:none}.hero .wrap{justify-content:flex-end}.hero-copy{width:45%;max-width:520px}.hero::after{background:linear-gradient(90deg,transparent 43%,rgba(255,255,255,.7) 51%,#fff 55%)}}
+@media(min-width:901px){.hero>.hero-media{width:55%;right:auto;object-position:45% 40%;transform:none}.hero .wrap{justify-content:flex-end}.hero-copy{width:45%;max-width:520px}.hero::after{background:linear-gradient(90deg,transparent 43%,rgba(255,255,255,.7) 51%,#fff 55%)}}
+
+/* Tighter portrait crop within the existing hero frame. */
+.hero>.hero-media{overflow:hidden}
+.hero-media>img{width:100%;height:100%;object-fit:cover;object-position:inherit;transform:scale(1.22);transform-origin:45% 40%}
 </style>
 </head>
 <body>
@@ -220,7 +224,7 @@ header nav a,.mobile-links a{text-transform:uppercase;font-size:12px;letter-spac
 
 <main id="main">
   <div class="hero">
-    <img src="images/hero.jpg" alt="A smiling woman in her fifties on a beach">
+    <div class="hero-media"><img src="images/hero.jpg" alt="A smiling woman in her fifties on a beach"></div>
     <div class="wrap">
       <div class="hero-copy">
         <span class="eyebrow">Women’s health management and intelligence</span>
