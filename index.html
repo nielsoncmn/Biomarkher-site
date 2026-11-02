@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BiomarkHER · Health clarity, calibrated for midlife and beyond</title>
-<meta name="description" content="BiomarkHER helps women understand how changing estrogen affects their heart, bones, brain, metabolism and other body systems, through midlife and beyond.">
+<meta name="description" content="Connect your hormonal past, present and future to your whole-body health—with your records, system insights and the people you care for in one place.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500,100;9..144,600,100;9..144,700,100&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#1A2649; --ink:#2E3554; --muted:#4A5170; --faint:#8A8FA3;
@@ -18,12 +18,12 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#FFFFFF;color:var(--navy);font-family:'Inter Tight',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:#FFFFFF;color:var(--navy);font-family:'Figtree',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:var(--teal)}
 .wrap{max-width:1248px;margin:0 auto;padding:0 24px}
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;color:var(--teal);text-transform:uppercase}
-.wordmark{font-family:'Tenor Sans',sans-serif;letter-spacing:.14em}
+.wordmark{font-family:'Figtree',system-ui,sans-serif;letter-spacing:.14em}
 .wordmark .c{color:var(--teal)}
 h1,h2,h3{margin:0;letter-spacing:-.02em}
 h2{font-size:clamp(30px,4vw,44px);line-height:1.1;font-weight:700}
@@ -98,9 +98,9 @@ section{padding:100px 0}
 .ring-art{position:relative;height:520px;border-radius:28px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center}
 .ring{position:relative;width:340px;height:340px}
 .ring .o{position:absolute;inset:40px;border-radius:50%;border:5px solid #E7D9EF}
-.ring .you{position:absolute;left:50%;top:50%;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Tenor Sans',sans-serif;font-size:19px;letter-spacing:.06em;border:5px solid #fff;box-shadow:0 6px 16px rgba(26,38,73,.25)}
+.ring .you{position:absolute;left:50%;top:50%;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Figtree',system-ui,sans-serif;font-size:19px;letter-spacing:.06em;border:5px solid #fff;box-shadow:0 6px 16px rgba(26,38,73,.25)}
 .ring .p{position:absolute;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:600}
-.ring .p em{position:absolute;top:76px;left:50%;transform:translateX(-50%);font-style:normal;font-family:'Tenor Sans',sans-serif;font-size:13px;background:#fff;border-radius:999px;padding:2px 10px;white-space:nowrap}
+.ring .p em{position:absolute;top:76px;left:50%;transform:translateX(-50%);font-style:normal;font-family:'Figtree',system-ui,sans-serif;font-size:13px;background:#fff;border-radius:999px;padding:2px 10px;white-space:nowrap}
 .legend{display:flex;gap:22px;flex-wrap:wrap;padding-top:6px}
 .legend span{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
 .legend i{width:14px;height:14px;border-radius:50%;border:3px solid}
@@ -142,11 +142,50 @@ footer p{font-size:13px;line-height:1.6;color:var(--faint)}
   footer .top{flex-wrap:wrap;gap:16px 24px}
   footer .top span{flex-basis:100%;height:0}
 }
+
+/* Feature storytelling */
+section[id]{scroll-margin-top:100px}
+.skip-link{position:fixed;top:-80px;left:12px;z-index:100;background:white;padding:14px}.skip-link:focus{top:10px}
+:focus-visible{outline:3px solid var(--teal);outline-offset:5px}
+.feature-section{padding:88px 0}.feature-section.soft{background:#F5F8FA}
+.feature-head{max-width:740px;margin-bottom:40px}.feature-head h2{margin:12px 0 18px}
+.feature-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:54px;align-items:center}
+.feature-copy h3{font-size:30px;line-height:1.18;margin:14px 0}.feature-copy>p{font-size:18px;line-height:1.65;color:var(--muted)}
+.feature-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:20px}.feature-list li{display:grid;grid-template-columns:38px 1fr;gap:13px}
+.feature-list b{display:block;font-size:17px;margin-bottom:5px}.feature-list p{font-size:15px;line-height:1.6;color:var(--muted)}
+.fi{display:inline-flex;width:36px;height:36px;align-items:center;justify-content:center;background:var(--teal-soft);color:var(--teal);border-radius:10px;font-size:18px}
+.mock{background:#fff;border:1px solid #E1E6EC;border-radius:24px;padding:26px;box-shadow:0 22px 60px #1a264910;min-width:0}
+.mock-top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:17px;margin-bottom:22px}
+.demo-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#59617A}.mock h3{font-size:23px;margin:8px 0}.mock p{font-size:14px;line-height:1.6;color:var(--muted)}
+.mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}.mini{border-radius:14px;background:var(--surface);padding:18px}.mini strong{display:block;margin:10px 0 4px;font-size:17px}
+.mini.teal{background:var(--teal-soft)}.mini.rose{background:var(--rose-soft)}.mini small{color:var(--muted);line-height:1.5;display:block}
+.record{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line)}.record>div{flex:1}.record b{font-size:14px;display:block}.record small{font-size:12px;color:var(--muted)}
+.chip{display:inline-block;border-radius:20px;padding:6px 10px;background:var(--teal-soft);color:#006970;font-size:11px;font-weight:600}
+.note{padding:16px;border-radius:12px;background:#F5F2FA;margin-top:16px;font-size:13px;line-height:1.6;color:var(--ink)}
+.ribbon{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:38px}.ribbon article{padding:24px;border:1px solid #E1E6EC;border-radius:18px;background:#fff}.ribbon h3{font-size:18px;margin:14px 0 9px}.ribbon p{font-size:15px;line-height:1.6;color:var(--muted)}
+.system-bars{display:grid;gap:17px;margin:25px 0}.system-row{display:grid;grid-template-columns:90px 1fr;align-items:center;font-size:13px;gap:12px}.system-track{height:14px;background:#EDF1F4;border-radius:10px;overflow:hidden}.system-track i{display:block;height:100%;background:var(--teal);border-radius:10px}
+.connection{border:1px solid #D6E8E8;border-radius:16px;padding:18px;background:var(--teal-soft);display:flex;gap:14px;align-items:center}.connection b{font-size:14px}.connection p{font-size:13px;margin-top:5px}
+.trend-svg{width:100%;height:auto;display:block;margin:20px 0}.insight-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.insight-tabs button{font:inherit;font-size:13px;border:1px solid #CBD5DD;border-radius:30px;padding:10px 14px;background:white;color:var(--navy);cursor:pointer}.insight-tabs button[aria-pressed=true]{background:var(--navy);color:white;border-color:var(--navy)}
+.answer{padding:20px;background:var(--teal-soft);border-radius:16px;min-height:170px}.answer h4{font-size:18px;margin:0 0 10px}.answer p{font-size:14px;line-height:1.7}
+.person{display:flex;gap:12px;align-items:center;margin:18px 0}.avatar{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--rose-soft);border-radius:50%;font-weight:600}.person div{flex:1}.person b{font-size:14px}.person small{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+.sharing{display:grid;gap:10px;background:#FAF7FB;border-radius:14px;padding:18px}.sharing label{font-size:13px;font-weight:600}.sharing select{width:100%;font:inherit;font-size:14px;color:var(--navy);padding:12px;border:1px solid #D6CADC;background:#fff;border-radius:8px}.sharing p{min-height:45px}
+.roadmap{background:#F7F4FB}.roadmap-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.roadmap-card{padding:26px;background:white;border-radius:20px;border:1px solid #E9E3EF}.roadmap-card h3{font-size:20px;margin:18px 0 12px}.roadmap-card p{font-size:15px;line-height:1.6;color:var(--muted)}.roadmap-card .fi{background:#F2ECFA;color:#76569B}.roadmap-card:first-child{grid-column:span 2}
+.audio-art{height:48px;display:flex;align-items:center;gap:5px;margin:18px 0}.audio-art i{width:5px;background:#A488C6;border-radius:4px}
+.mobile-nav{display:none}
+@media(max-width:1050px){header .wrap{gap:18px}header nav{gap:15px;font-size:13px}header img{max-width:180px;height:auto}.feature-layout{gap:28px}}
+@media(max-width:900px){.mobile-nav{display:block;margin-left:auto}.mobile-nav summary{cursor:pointer;font-size:14px;padding:10px}.mobile-nav[open] .mobile-links{position:absolute;top:76px;left:0;right:0;background:white;border-bottom:1px solid var(--line);padding:20px;display:grid;gap:18px}.mobile-links a{text-decoration:none;color:var(--navy)}.feature-layout{grid-template-columns:1fr}.feature-section{padding:58px 0}.ribbon,.roadmap-grid{grid-template-columns:1fr 1fr}.roadmap-card:first-child{grid-column:span 2}}
+@media(max-width:560px){header img{max-width:125px}header .wrap{padding:0 14px;gap:6px}header .btn{font-size:12px;padding:0 10px;min-height:40px}.ribbon,.roadmap-grid{grid-template-columns:1fr}.roadmap-card:first-child{grid-column:auto}.mock{padding:20px 16px}.feature-head h2{font-size:32px}.mini{padding:14px}.mock-top{flex-wrap:wrap}.hero>img{height:300px}.hero .credit{top:262px}.hero h1{font-size:38px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Typography matched to owner-selected template-v1_2026-11-01. */
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-variation-settings:'SOFT' 100;font-style:normal;font-weight:600}
+button,input,select{font-family:'Figtree',system-ui,sans-serif}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<div class="preview-bar">Preview site. BiomarkHER is not yet available, and wording is in draft.</div>
+<div class="preview-bar">Product preview · BiomarkHER is in development. Screens show illustrative concepts, not live health tools.</div>
 
 <header>
   <div class="wrap">
@@ -156,19 +195,21 @@ footer p{font-size:13px;line-height:1.6;color:var(--faint)}
       <a href="#clock">The Estrogen Clock</a>
       <a href="#circle">HerCircle</a>
       <a href="#evidence">Our evidence</a>
+      <a href="#next">Coming next</a>
     </nav>
+<details class="mobile-nav"><summary>Menu</summary><div class="mobile-links"><a href="#how">The hub</a><a href="#clock">The intelligence</a><a href="#insights">Your insights</a><a href="#circle">HerCircle</a><a href="#evidence">Our evidence</a><a href="#next">Coming next</a></div></details>
     <a class="btn btn-dark" href="#waitlist">Join the waitlist</a>
   </div>
 </header>
 
-<main>
+<main id="main">
   <div class="hero">
     <img src="images/hero.jpg" alt="A smiling woman in her fifties on a beach">
     <div class="wrap">
       <div class="hero-copy">
         <span class="eyebrow">Women’s health management and intelligence</span>
         <h1>Health clarity, calibrated for midlife and beyond.</h1>
-        <p>BiomarkHER helps women understand how changing estrogen affects their heart, bones, brain, metabolism and other body systems, through midlife and beyond.</p>
+        <p>Connect your hormonal past, present and future to your whole-body health—with your records, system insights and the people you care for in one place.</p>
         <div class="actions">
           <a class="btn btn-dark" href="#waitlist">Join the waitlist</a>
           <a class="btn btn-light" href="#how">See how it works</a>
@@ -178,124 +219,93 @@ footer p{font-size:13px;line-height:1.6;color:var(--faint)}
     <span class="credit">Stock photo. Posed by model.</span>
   </div>
 
-  <section id="how">
-    <div class="wrap">
-      <div class="intro">
-        <span class="eyebrow">One platform</span>
-        <h2>Your health and your family’s, in one place, explained by evidence.</h2>
-      </div>
-      <div class="cards">
-        <div class="card" style="background:var(--surface)">
-          <span class="ico"><img src="images/icon-clinical.svg" alt=""></span>
-          <span class="tag">THE HUB</span>
-          <h3>Everything in one place</h3>
-          <p>Your labs, records, medicines, supplements and family history, together for the first time, with a cited summary for every doctor’s visit.</p>
-        </div>
-        <div class="card" style="background:var(--teal-soft)">
-          <span class="ico"><img src="images/icon-heart.svg" alt=""></span>
-          <span class="tag" style="color:#006C72">THE INTELLIGENCE</span>
-          <h3>Read on your timeline</h3>
-          <p>The Estrogen Clock reads your results system by system, against the years since your final period. Medication, supplement and movement intelligence show what each one is really doing.</p>
-        </div>
-        <div class="card" style="background:var(--rose-soft)">
-          <span class="ico"><img src="images/icon-family.svg" alt=""></span>
-          <span class="tag wordmark" style="font-size:14px">HER<span class="c">CIRCLE</span></span>
-          <h3>For the people you care for</h3>
-          <p>Manage your mother’s appointments and medicines and your daughter’s results alongside your own, and choose exactly what each person sees.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="clock" style="padding-top:0">
-    <div class="wrap split">
-      <div class="photo">
-        <img src="images/clock.jpg" alt="A smiling woman on a road bike" style="object-position:50% 30%">
-        <span class="credit">Stock photo. Posed by model.</span>
-        <div class="float" style="left:24px;right:24px;bottom:24px">
-          <b style="font-size:14px">When each system changes</b>
-          <div class="chart">
-            <span class="fp-label">Final period</span>
-            <div class="row"><span>Heart</span><span class="track"><i style="left:18.75%;width:25%"></i></span></div>
-            <div class="row"><span>Metabolic</span><span class="track"><i class="open" style="left:25%;right:0"></i></span></div>
-            <div class="row"><span>Muscle</span><span class="track"><i style="left:25%;width:25%"></i></span></div>
-            <div class="row"><span>Bone</span><span class="track"><i style="left:31.25%;width:18.75%"></i></span></div>
-            <span class="fp-line"></span>
-          </div>
-          <span class="small">Illustration with sample data</span>
-        </div>
-      </div>
-      <div class="text">
-        <span class="eyebrow">The Estrogen Clock</span>
-        <h2>Your biology now, read against the years since your final period.</h2>
-        <p class="lead">Two women can both be 50 and be in completely different places. One is still having periods. The other had her last one five years ago. Her heart, bones and metabolism change on that second clock, not on her birthday.</p>
-        <p class="lead">BiomarkHER shows where you are on each system, so you know what’s coming and what is worth doing now, while it can still make a difference.</p>
-      </div>
-    </div>
-  </section>
+<section id="how" class="feature-section soft"><div class="wrap">
+ <div class="feature-head"><span class="eyebrow">01 / The hub</span><h2>A whole health history.<br>Finally, a whole picture.</h2><p class="lead">Your records, your daily life, and the story behind your results—together, over time.</p></div>
+ <div class="feature-layout"><div class="feature-copy"><h3>Less hunting for records.<br>More understanding you.</h3><p>Start with what you already have. Build a health record that grows with you.</p><ul class="feature-list">
+ <li><span class="fi" aria-hidden="true">↥</span><div><b>Lab results, without the retyping</b><p>Upload a report or a photo. Review the values before saving, or enter a result yourself.</p></div></li>
+ <li><span class="fi" aria-hidden="true">▤</span><div><b>Records and imaging</b><p>Keep reports, scans and screening history organized on one timeline.</p></div></li>
+ <li><span class="fi" aria-hidden="true">◷</span><div><b>Your wearable, in context</b><p>See sleep, heart rate and activity alongside your lab results.</p></div></li>
+ <li><span class="fi" aria-hidden="true">⌁</span><div><b>Your life story</b><p>Connect your reproductive history, family history and life events to your health record.</p></div></li>
+ </ul></div>
+ <div class="mock"><div class="mock-top"><b>Your health hub</b><span class="demo-label">Illustrative preview</span></div><p>YOUR RECORD, CONNECTED</p><h3>Welcome to your whole picture.</h3>
+ <div class="mini-grid"><div class="mini teal"><span class="fi" aria-hidden="true">▤</span><strong>Labs &amp; records</strong><small>Reports · Imaging · Screening</small></div><div class="mini rose"><span class="fi" aria-hidden="true">◷</span><strong>Daily signals</strong><small>Sleep · Heart rate · Activity</small></div></div>
+ <div class="record"><span class="fi" aria-hidden="true">↥</span><div><b>Lab report added</b><small>Review extracted values</small></div><span class="chip">Confirm first</span></div>
+ <div class="record"><span class="fi" aria-hidden="true">⌁</span><div><b>Your story, over time</b><small>Reproductive history + life events</small></div></div>
+ <div class="record"><span class="fi" aria-hidden="true">♡</span><div><b>Family history</b><small>Context for the questions you ask</small></div></div>
+ <div class="note"><b>Ready for your next visit.</b><br>A clear summary, with sources and the findings worth discussing.</div></div></div>
+ <div class="ribbon">
+ <article><span class="fi" aria-hidden="true">⌘</span><h3>Medicines & supplements</h3><p>Keep what you take and when you started alongside your results and life events.</p></article>
+ <article><span class="fi" aria-hidden="true">▤</span><h3>A summary for your doctor</h3><p>Bring a cited PDF summary to your next appointment.</p></article>
+ <article><span class="fi" aria-hidden="true">◴</span><h3>Retests at the right time</h3><p>Reminders help you track when a change may be ready to review in your results.</p></article>
+ </div></div></section>
+<section id="clock" class="feature-section"><div class="wrap">
+<div class="feature-head"><span class="eyebrow">02 / The intelligence</span><h2>Your body doesn’t run<br>on just one timeline.</h2><p class="lead">Explore how changing estrogen exposure may influence—and may have influenced—different systems throughout your life.</p></div>
+<div class="feature-layout"><div class="mock"><div class="mock-top"><b>The Estrogen Clock</b><span class="demo-label">Concept illustration</span></div><h3>One you. Thirteen system scores.</h3><p>A separate view for each system, with the context behind it. Selected systems shown below.</p>
+<div class="system-bars">
+<div class="system-row"><b>Heart</b><div class="system-track"><i style="width:68%"></i></div></div>
+<div class="system-row"><b>Bone</b><div class="system-track"><i style="width:45%;background:#A488C6"></i></div></div>
+<div class="system-row"><b>Metabolic</b><div class="system-track"><i style="width:79%"></i></div></div>
+<div class="system-row"><b>Brain</b><div class="system-track"><i style="width:57%;background:#E0699A"></i></div></div>
+<div class="system-row"><b>Muscle</b><div class="system-track"><i style="width:61%;background:#A488C6"></i></div></div>
+</div><p class="demo-label">Illustrative bars only · No clinical values</p>
+<div class="connection" style="margin-top:24px"><span class="fi" aria-hidden="true">↔</span><div><b>See the connections</b><p>Explore which systems are changing together and the evidence that may connect them.</p></div></div></div>
+<div class="feature-copy"><h3>Make sense of your results<br>in the context of your life.</h3><p>The Estrogen Clock brings reproductive stage and time since your final period into the picture. Still having periods? Your stage matters, too.</p>
+<ul class="feature-list">
+<li><span class="fi" aria-hidden="true">◷</span><div><b>The Estrogen Clock</b><p>Understand your results against your own hormonal timeline.</p></div></li><li><span class="fi" aria-hidden="true">▥</span><div><b>Thirteen system scores</b><p>Heart, bone, metabolic, brain and more. Each on its own scale, with no single score or “biological age” for all of you.</p></div></li><li><span class="fi" aria-hidden="true">↔</span><div><b>Connections</b><p>Look beyond individual numbers to understand patterns across systems.</p></div></li>
+</ul></div></div></div></section>
 
-  <section style="padding-top:0">
-    <div class="wrap split">
-      <div class="text">
-        <span class="eyebrow">Your system scores</span>
-        <h2>Every result comes with the reason behind it.</h2>
-        <p class="lead">Each part of your body gets its own score, never one number for all of you. Open any score and see which result moved it, and what estrogen loss has to do with it.</p>
-        <p class="lead">Taking a statin, HRT or a supplement? See what each one is doing to your results over time, and hear plainly when the research in women shows nothing.</p>
-      </div>
-      <div class="photo">
-        <img src="images/scores.jpg" alt="A woman with grey hair lifting a barbell" style="object-position:40% 40%">
-        <span class="credit">Stock photo. Posed by model.</span>
-        <div class="float result" style="right:24px;bottom:24px;width:360px">
-          <div class="result-head"><img src="images/icon-heart.svg" alt=""><b>Heart</b><span class="badge">Suboptimal</span></div>
-          <p><b style="font-weight:600">Why:</b> your LDL cholesterol is 148 mg/dL (At-Risk is 130–159).</p>
-          <p><b style="font-weight:600;color:var(--teal)">On your clock:</b> LDL often rises in the years around the final period, as the liver clears it less efficiently once estrogen falls.</p>
-          <span class="small">Sample data</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="evidence" class="evidence">
+<section class="feature-section soft" id="insights"><div class="wrap">
+<div class="feature-head"><span class="eyebrow">From information to understanding</span><h2>What changed?<br>What could be behind it?</h2><p class="lead">Bring medicines, supplements, nutrition and movement into the same conversation as your results.</p></div>
+<div class="feature-layout"><div class="feature-copy"><h3>Follow the changes.<br>Understand the possibilities.</h3><p>Explore trends over time, with research to help explain what may be contributing—and honest limits on what the data can tell you.</p><ul class="feature-list">
+<li><span class="fi" aria-hidden="true">⌘</span><div><b>Medication intelligence</b><p>Explore changes alongside a statin, HRT or GLP-1 across your body systems.</p></div></li>
+<li><span class="fi" aria-hidden="true">✧</span><div><b>Supplement intelligence</b><p>Understand what research in midlife women does—and does not—support.</p></div></li>
+<li><span class="fi" aria-hidden="true">◒</span><div><b>Food intelligence</b><p>Follow measured nutrients and markers, such as vitamin D and the omega-3 index, over time.</p></div></li>
+<li><span class="fi" aria-hidden="true">↗</span><div><b>Movement intelligence</b><p>Put activity and strength in the context of your muscles, bones and stage of life.</p></div></li>
+</ul></div>
+<div class="mock"><div class="mock-top"><b>Your results, over time</b><span class="demo-label">Interactive concept</span></div><h3>Every change has context.</h3>
+<svg class="trend-svg" viewBox="0 0 440 180" role="img" aria-label="Illustrative trend line with a marker showing when a change was recorded. No clinical data."><path d="M20 35H420M20 85H420M20 135H420" stroke="#E8EDF1" fill="none"/><path d="M20 70C65 60 85 90 125 78S190 100 220 94S285 130 330 115S385 125 420 132" stroke="#008189" stroke-width="4" fill="none"/><path d="M220 20V145" stroke="#A488C6" stroke-dasharray="5 5"/><circle cx="220" cy="94" r="6" fill="#A488C6"/><text x="20" y="170" font-size="12" fill="#4A5170">Earlier</text><text x="177" y="15" font-size="12" fill="#76569B">Change recorded</text><text x="380" y="170" font-size="12" fill="#4A5170">Now</text></svg>
+<p class="demo-label">Illustrative trend · Not a treatment outcome</p>
+<div class="insight-tabs" role="group" aria-label="Explore intelligence features"><button type="button" data-insight="medication" aria-pressed="true">Medicines</button><button type="button" data-insight="supplements" aria-pressed="false">Supplements</button><button type="button" data-insight="food" aria-pressed="false">Food</button><button type="button" data-insight="movement" aria-pressed="false">Movement</button></div>
+<div class="answer" aria-live="polite"><h4 id="insight-title">A medicine is part of the story.</h4><p id="insight-copy">Place a medication’s start date alongside your results. Explore what changed and what research may explain, without assuming the medicine caused every change.</p></div></div></div>
+<div class="ribbon">
+<article><span class="fi" aria-hidden="true">↗</span><h3>Ask anything</h3><p>Plain-language answers grounded in reviewed content and research in women, with “See the research.” The intelligence never prescribes.</p></article>
+<article><span class="fi" aria-hidden="true">▤</span><h3>Education on every result</h3><p>Open a result to understand what it is, why it matters on your timeline and what the research says.</p></article>
+<article><span class="fi" aria-hidden="true">◇</span><h3>Honest notes</h3><p>When evidence is missing or a popular claim is not supported, see that limitation clearly.</p></article>
+</div></div></section>  <section id="evidence" class="evidence">
     <div class="wrap">
       <div class="intro">
         <span class="eyebrow">Our evidence</span>
-        <h2>Answers built on research in women like you.</h2>
+        <h2>Our standard: research in women like you.</h2>
         <p class="lead">Not the open internet, and not studies done only in men.</p>
       </div>
       <div class="pillars">
         <div><b>Found</b><span>Research in women in midlife and beyond.</span></div>
-        <div><b>Checked</b><span>Every summary checked against the study itself.</span></div>
-        <div><b>Signed</b><span>By our Chief Medical Advisor before you see it.</span></div>
+        <div><b>Checked</b><span>Our review standard: check each summary against the study itself.</span></div>
+        <div><b>Signed</b><span>Planned medical review before health content reaches you.</span></div>
         <div class="honest"><b>Honest</b><span>When the research isn’t there, we say so. And nothing to sell you: what you buy never changes what you’re told.</span></div>
       </div>
     </div>
   </section>
 
-  <section id="circle">
-    <div class="wrap split">
-      <div class="ring-art" aria-hidden="true">
-        <div class="ring">
-          <div class="o"></div>
-          <div class="you">You</div>
-          <div class="p" style="left:50%;top:40px;box-shadow:0 0 0 4px #fff,0 0 0 9px var(--lav)">M<em>Mom</em></div>
-          <div class="p" style="left:290px;top:220px;box-shadow:0 0 0 4px #fff,0 0 0 9px var(--rose)">K<em>Sister</em></div>
-          <div class="p" style="left:50px;top:220px;box-shadow:0 0 0 4px #fff,0 0 0 9px var(--grey)">E<em>Daughter</em></div>
-        </div>
-      </div>
-      <div class="text">
-        <span class="wordmark" style="font-size:16px">HER<span class="c">CIRCLE</span></span>
-        <h2 style="letter-spacing:.005em">FOR YOU, FOR MOM, FOR YOUR FAMILY</h2>
-        <p class="lead">Bring up to six people into one place. Help manage your mother’s health, record her doctor’s visits with everyone’s agreement, and choose exactly what each person can see.</p>
-        <div class="legend">
-          <span><i style="border-color:var(--rose)"></i>Sees everything</span>
-          <span><i style="border-color:var(--lav)"></i>Sees what you choose</span>
-          <span><i style="border-color:var(--grey)"></i>Sees an overview</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="waitlist" style="padding-top:0">
+<section id="circle" class="feature-section"><div class="wrap">
+<div class="feature-head"><span class="eyebrow">03 / HerCircle</span><h2>Care for your people.<br>Keep control of your privacy.</h2><p class="lead">Your health and your family’s, connected on your terms.</p></div>
+<div class="feature-layout"><div class="mock" style="background:#FFFBFD"><div class="mock-top"><b>HerCircle</b><span class="demo-label">Try the sharing preview</span></div>
+<div class="person"><span class="avatar" style="background:var(--navy);color:white">Y</span><div><b>You</b><small>Your circle, your choices</small></div><span class="chip">Owner</span></div>
+<div class="person"><span class="avatar">M</span><div><b>Mom</b><small>Help with the health details she shares</small></div></div>
+<div class="sharing"><label for="sharing-level">What Mom can see from your record</label><select id="sharing-level"><option value="overview">An overview</option><option value="selected" selected>Only what you choose</option><option value="all">Everything shareable</option></select><p id="sharing-description" aria-live="polite">You select the results and updates Mom can see.</p></div>
+<div class="person"><span class="avatar">S</span><div><b>Sister</b><small>Alerts: serious updates only</small></div></div>
+<div class="person"><span class="avatar">D</span><div><b>Daughter</b><small>Alerts: off</small></div></div>
+<div class="note"><b>Some things always stay private.</b><br>Reproductive and vaginal microbiome results are excluded from sharing settings.</div>
+<p class="demo-label" style="margin-top:16px">Demo only · No records or settings are saved</p></div>
+<div class="feature-copy"><h3>Support, without<br>giving everything away.</h3><ul class="feature-list">
+<li><span class="fi" aria-hidden="true">♡</span><div><b>Up to six people, free</b><p>Bring your mother, sister, daughter or partner. You pay; the people you invite join free.</p></div></li>
+<li><span class="fi" aria-hidden="true">◉</span><div><b>Three sharing levels</b><p>Share an overview, selected information or everything shareable. Change it at any time.</p></div></li>
+<li><span class="fi" aria-hidden="true">◴</span><div><b>Alerts you choose</b><p>For each person, choose no alerts, serious updates only or all alerts.</p></div></li>
+<li><span class="fi" aria-hidden="true">♡</span><div><b>Act for your mother</b><p>Help manage her labs, medicines and visits, using only what she agrees to share.</p></div></li>
+<li><span class="fi" aria-hidden="true">◇</span><div><b>Private by design</b><p>Sensitive reproductive and vaginal microbiome results are never shared through these settings.</p></div></li>
+</ul></div></div></div></section><section id="next" class="feature-section roadmap"><div class="wrap"><div class="feature-head"><span class="eyebrow" style="color:#76569B">Coming next · Timing to be confirmed</span><h2>The next chapter of your care.</h2><p class="lead">Planned additions—not available in this preview.</p></div><div class="roadmap-grid"><article class="roadmap-card"><span class="fi" aria-hidden="true">◉</span><h3>Record a doctor’s visit</h3><div class="audio-art" aria-hidden="true"><i style="height:10px"></i><i style="height:18px"></i><i style="height:32px"></i><i style="height:24px"></i><i style="height:42px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:36px"></i><i style="height:46px"></i><i style="height:30px"></i><i style="height:16px"></i><i style="height:24px"></i><i style="height:38px"></i><i style="height:18px"></i><i style="height:10px"></i><i style="height:28px"></i><i style="height:42px"></i><i style="height:30px"></i><i style="height:16px"></i><i style="height:8px"></i></div><p>With everyone’s agreement, record a visit and review a plain-language summary. Planned after legal review.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">♡</span><h3>Care that understands your timeline</h3><p>A vetted clinical partner to help you act on what you see.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">⌑</span><h3>Order missing tests</h3><p>Explore tests that could fill a gap, and order through a partner if you choose. The intelligence never prescribes.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">✧</span><h3>Pelvic floor health</h3><p>A dedicated area built with the same evidence standards.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">◇</span><h3>Clinical trials, only if you say yes</h3><p>A study sees only a yes or no to its criteria. Contact details are shared only after your agreement.</p></article></div></div></section>  <section id="waitlist" style="padding-top:0">
     <div class="wrap">
       <div class="waitlist">
         <div class="text">
@@ -330,6 +340,24 @@ document.getElementById('wl').addEventListener('submit', function (e) {
   e.preventDefault();
   document.getElementById('wlmsg').textContent = 'Thank you. Sign-up opens soon; this preview does not save emails yet.';
 });
+
+const insightContent = {
+ medication: ['A medicine is part of the story.', 'Place a medication’s start date alongside your results. Explore what changed and what research may explain, without assuming the medicine caused every change.'],
+ supplements: ['Know what the evidence supports.', 'Explore research in midlife women for a supplement, including uncertainty and situations where the evidence does not show a benefit.'],
+ food: ['Nutrition you can follow over time.', 'Bring measured nutrients and markers, such as vitamin D and the omega-3 index, into your results history.'],
+ movement: ['Movement, in your life stage.', 'Connect activity and strength to the needs of your muscles and bones, with context for where you are on your timeline.']
+};
+document.querySelectorAll('[data-insight]').forEach(button => button.addEventListener('click', () => {
+ document.querySelectorAll('[data-insight]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+ const [title, copy] = insightContent[button.dataset.insight];
+ document.getElementById('insight-title').textContent = title;
+ document.getElementById('insight-copy').textContent = copy;
+}));
+const sharingCopy = {overview:'Mom sees a high-level overview, without your individual result details.',selected:'You select the results and updates Mom can see.',all:'Mom sees everything eligible for sharing. Reproductive and vaginal microbiome results remain private.'};
+document.getElementById('sharing-level').addEventListener('change', event => {document.getElementById('sharing-description').textContent = sharingCopy[event.target.value];});
+document.querySelectorAll('.mobile-links a').forEach(link => link.addEventListener('click', () => document.querySelector('.mobile-nav').removeAttribute('open')));
+
 </script>
 </body>
 </html>
+
