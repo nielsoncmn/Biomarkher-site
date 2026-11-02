@@ -180,6 +180,28 @@ section[id]{scroll-margin-top:100px}
 /* Typography matched to owner-selected template-v1_2026-11-01. */
 h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-variation-settings:'SOFT' 100;font-style:normal;font-weight:600}
 button,input,select{font-family:'Figtree',system-ui,sans-serif}
+
+/* Four-pillar homepage overview and first-section refinements. */
+header img{width:212px;height:auto;max-width:none;flex-shrink:0}
+header .wrap{gap:28px}header nav{gap:22px;justify-content:center}
+header nav a,.mobile-links a{text-transform:uppercase;font-size:12px;letter-spacing:.065em;font-weight:600;white-space:nowrap}
+.hero>img{transform:scaleX(-1);object-position:70% 40%}
+.platform-overview{padding:65px 0 76px}.overview-heading{text-align:center;margin-bottom:32px}.overview-heading h2{margin-top:12px}
+.pillar-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid #E4E8EC;border-radius:24px;overflow:hidden;box-shadow:0 16px 45px #1a264908}
+.pillar-card{display:flex;flex-direction:column;min-width:0;padding:25px 23px 23px;color:var(--navy);text-decoration:none;border-right:1px solid #E4E8EC;transition:background .2s}
+.pillar-card:last-child{border-right:0}.pillar-hub{background:#F7F9FB}.pillar-intelligence{background:#EDF8F7}.pillar-care{background:#F7F3FB}.pillar-circle{background:#FFF3F7}
+.pillar-card:hover{background:white}.pillar-card:focus-visible{outline-offset:-5px}
+.pillar-top{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:34px;flex-wrap:wrap}
+.pillar-label{font-size:12px;font-weight:700;letter-spacing:.06em}.pillar-number{font-size:12px;color:#68708A}.soon-pill{font-size:9px;font-weight:700;letter-spacing:.04em;border-radius:20px;padding:5px 7px;background:#EAE2F4;color:#694B8C}
+.pillar-art{width:144px;height:108px;margin:20px auto;color:var(--teal)}.pillar-care .pillar-art{color:#8462A3}.pillar-circle .pillar-art{color:#BE5A86}
+.pillar-card h3{font-size:24px;line-height:1.2;margin:0 0 12px}.pillar-card p{font-size:15px;line-height:1.6;color:var(--muted);margin-bottom:24px}.pillar-link{margin-top:auto;display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:600;color:var(--teal)}
+#care{scroll-margin-top:100px}
+@media(max-width:1100px){header .wrap{gap:18px}header nav{gap:14px}header img{width:195px}.pillar-card{padding:22px 17px}.pillar-label{font-size:11px}}
+@media(max-width:900px){header img{width:195px}.pillar-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.pillar-card:nth-child(2){border-right:0}.pillar-card:nth-child(-n+2){border-bottom:1px solid #E4E8EC}.hero>img{object-position:50% 40%}}
+@media(max-width:560px){header .wrap{gap:6px}header img{width:145px;max-width:145px}.pillar-strip{grid-template-columns:1fr}.pillar-card{border-right:0;border-bottom:1px solid #E4E8EC;padding:24px}.pillar-card:last-child{border-bottom:0}.pillar-art{margin:12px auto}.platform-overview{padding:44px 0}.pillar-label{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.pillar-card{transition:none}}
+
+@media(min-width:901px){.hero .wrap{justify-content:flex-start}.hero::after{background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.95) 32%,rgba(255,255,255,.15) 57%,transparent 75%)}}
 </style>
 </head>
 <body>
@@ -190,14 +212,8 @@ button,input,select{font-family:'Figtree',system-ui,sans-serif}
 <header>
   <div class="wrap">
     <img src="images/logo.png" alt="BiomarkHER">
-    <nav>
-      <a href="#how">How it works</a>
-      <a href="#clock">The Estrogen Clock</a>
-      <a href="#circle">HerCircle</a>
-      <a href="#evidence">Our evidence</a>
-      <a href="#next">Coming next</a>
-    </nav>
-<details class="mobile-nav"><summary>Menu</summary><div class="mobile-links"><a href="#how">The hub</a><a href="#clock">The intelligence</a><a href="#insights">Your insights</a><a href="#circle">HerCircle</a><a href="#evidence">Our evidence</a><a href="#next">Coming next</a></div></details>
+    <nav aria-label="Main navigation"><a href="#how">THE HUB</a><a href="#clock">THE INTELLIGENCE</a><a href="#care">THE CARE</a><a href="#circle">THE CIRCLE</a></nav>
+<details class="mobile-nav"><summary>Menu</summary><div class="mobile-links"><a href="#how">THE HUB</a><a href="#clock">THE INTELLIGENCE</a><a href="#care">THE CARE</a><a href="#circle">THE CIRCLE</a></div></details>
     <a class="btn btn-dark" href="#waitlist">Join the waitlist</a>
   </div>
 </header>
@@ -220,7 +236,7 @@ button,input,select{font-family:'Figtree',system-ui,sans-serif}
   </div>
 
 
-<section id="how" class="feature-section soft"><div class="wrap">
+<section class="platform-overview" id="platform" aria-labelledby="platform-heading"><div class="wrap"><div class="overview-heading"><span class="eyebrow">THE BIOMARKHER EXPERIENCE</span><h2 id="platform-heading">Your health. Connected.</h2></div><div class="pillar-strip"><a class="pillar-card pillar-hub" href="#how"><div class="pillar-top"><span class="pillar-label">THE HUB</span><span class="pillar-number">01</span></div><svg class="pillar-art" viewBox="0 0 144 108" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="24" y="16" width="96" height="72" rx="12" fill="white"/><rect x="35" y="29" width="28" height="23" rx="5" fill="#DAEFEF"/><path d="M73 33h33M73 43h24M35 64h71M35 75h49"/></svg><h3>Your health, together.</h3><p>Labs, records, wearables and your life story—all in one place.</p><span class="pillar-link">Explore the hub <span aria-hidden="true">↗</span></span></a><a class="pillar-card pillar-intelligence" href="#clock"><div class="pillar-top"><span class="pillar-label">THE INTELLIGENCE</span><span class="pillar-number">02</span></div><svg class="pillar-art" viewBox="0 0 144 108" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="72" cy="52" r="37" fill="white"/><path d="M72 25v27l19 12M28 88h90"/><circle cx="72" cy="52" r="4" fill="currentColor"/><path d="M27 76l21-15 19 9 20-29 28-13" stroke="#A488C6"/></svg><h3>Your results, explained.</h3><p>Your Estrogen Clock and body systems bring the bigger picture into focus.</p><span class="pillar-link">Explore the intelligence <span aria-hidden="true">↗</span></span></a><a class="pillar-card pillar-care" href="#care"><div class="pillar-top"><span class="pillar-label">THE CARE</span><span class="soon-pill">COMING SOON</span></div><svg class="pillar-art" viewBox="0 0 144 108" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="35" y="15" width="74" height="76" rx="14" fill="white"/><path d="M62 27h20M72 45v26M59 58h26"/><circle cx="109" cy="79" r="15" fill="#F2ECFA"/><path d="M102 79h14M109 72v14"/></svg><h3>Your next step in care.</h3><p>Planned clinician connections, testing and support informed by your timeline.</p><span class="pillar-link">Explore the care <span aria-hidden="true">↗</span></span></a><a class="pillar-card pillar-circle" href="#circle"><div class="pillar-top"><span class="pillar-label">THE CIRCLE</span><span class="pillar-number">04</span></div><svg class="pillar-art" viewBox="0 0 144 108" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="72" cy="53" r="33" stroke="#E7CBD9"/><path d="M72 53L35 28M72 53l38-25M72 53v38" stroke="#E7CBD9"/><circle cx="72" cy="53" r="18" fill="white"/><circle cx="35" cy="28" r="13" fill="white"/><circle cx="110" cy="28" r="13" fill="white"/><circle cx="72" cy="90" r="13" fill="white"/></svg><h3>Your people, connected.</h3><p>Care for the people you love, with control over what you share.</p><span class="pillar-link">Explore the circle <span aria-hidden="true">↗</span></span></a></div></div></section><section id="how" class="feature-section soft"><div class="wrap">
  <div class="feature-head"><span class="eyebrow">01 / The hub</span><h2>A whole health history.<br>Finally, a whole picture.</h2><p class="lead">Your records, your daily life, and the story behind your results—together, over time.</p></div>
  <div class="feature-layout"><div class="feature-copy"><h3>Less hunting for records.<br>More understanding you.</h3><p>Start with what you already have. Build a health record that grows with you.</p><ul class="feature-list">
  <li><span class="fi" aria-hidden="true">↥</span><div><b>Lab results, without the retyping</b><p>Upload a report or a photo. Review the values before saving, or enter a result yourself.</p></div></li>
@@ -238,8 +254,7 @@ button,input,select{font-family:'Figtree',system-ui,sans-serif}
  <article><span class="fi" aria-hidden="true">⌘</span><h3>Medicines & supplements</h3><p>Keep what you take and when you started alongside your results and life events.</p></article>
  <article><span class="fi" aria-hidden="true">▤</span><h3>A summary for your doctor</h3><p>Bring a cited PDF summary to your next appointment.</p></article>
  <article><span class="fi" aria-hidden="true">◴</span><h3>Retests at the right time</h3><p>Reminders help you track when a change may be ready to review in your results.</p></article>
- </div></div></section>
-<section id="clock" class="feature-section"><div class="wrap">
+ </div></div></section><section id="clock" class="feature-section"><div class="wrap">
 <div class="feature-head"><span class="eyebrow">02 / The intelligence</span><h2>Your body doesn’t run<br>on just one timeline.</h2><p class="lead">Explore how changing estrogen exposure may influence—and may have influenced—different systems throughout your life.</p></div>
 <div class="feature-layout"><div class="mock"><div class="mock-top"><b>The Estrogen Clock</b><span class="demo-label">Concept illustration</span></div><h3>One you. Thirteen system scores.</h3><p>A separate view for each system, with the context behind it. Selected systems shown below.</p>
 <div class="system-bars">
@@ -253,9 +268,7 @@ button,input,select{font-family:'Figtree',system-ui,sans-serif}
 <div class="feature-copy"><h3>Make sense of your results<br>in the context of your life.</h3><p>The Estrogen Clock brings reproductive stage and time since your final period into the picture. Still having periods? Your stage matters, too.</p>
 <ul class="feature-list">
 <li><span class="fi" aria-hidden="true">◷</span><div><b>The Estrogen Clock</b><p>Understand your results against your own hormonal timeline.</p></div></li><li><span class="fi" aria-hidden="true">▥</span><div><b>Thirteen system scores</b><p>Heart, bone, metabolic, brain and more. Each on its own scale, with no single score or “biological age” for all of you.</p></div></li><li><span class="fi" aria-hidden="true">↔</span><div><b>Connections</b><p>Look beyond individual numbers to understand patterns across systems.</p></div></li>
-</ul></div></div></div></section>
-
-<section class="feature-section soft" id="insights"><div class="wrap">
+</ul></div></div></div></section><section class="feature-section soft" id="insights"><div class="wrap">
 <div class="feature-head"><span class="eyebrow">From information to understanding</span><h2>What changed?<br>What could be behind it?</h2><p class="lead">Bring medicines, supplements, nutrition and movement into the same conversation as your results.</p></div>
 <div class="feature-layout"><div class="feature-copy"><h3>Follow the changes.<br>Understand the possibilities.</h3><p>Explore trends over time, with research to help explain what may be contributing—and honest limits on what the data can tell you.</p><ul class="feature-list">
 <li><span class="fi" aria-hidden="true">⌘</span><div><b>Medication intelligence</b><p>Explore changes alongside a statin, HRT or GLP-1 across your body systems.</p></div></li>
@@ -272,7 +285,7 @@ button,input,select{font-family:'Figtree',system-ui,sans-serif}
 <article><span class="fi" aria-hidden="true">↗</span><h3>Ask anything</h3><p>Plain-language answers grounded in reviewed content and research in women, with “See the research.” The intelligence never prescribes.</p></article>
 <article><span class="fi" aria-hidden="true">▤</span><h3>Education on every result</h3><p>Open a result to understand what it is, why it matters on your timeline and what the research says.</p></article>
 <article><span class="fi" aria-hidden="true">◇</span><h3>Honest notes</h3><p>When evidence is missing or a popular claim is not supported, see that limitation clearly.</p></article>
-</div></div></section>  <section id="evidence" class="evidence">
+</div></div></section><section id="evidence" class="evidence">
     <div class="wrap">
       <div class="intro">
         <span class="eyebrow">Our evidence</span>
@@ -286,11 +299,8 @@ button,input,select{font-family:'Figtree',system-ui,sans-serif}
         <div class="honest"><b>Honest</b><span>When the research isn’t there, we say so. And nothing to sell you: what you buy never changes what you’re told.</span></div>
       </div>
     </div>
-  </section>
-
-
-<section id="circle" class="feature-section"><div class="wrap">
-<div class="feature-head"><span class="eyebrow">03 / HerCircle</span><h2>Care for your people.<br>Keep control of your privacy.</h2><p class="lead">Your health and your family’s, connected on your terms.</p></div>
+  </section><section id="care" class="feature-section roadmap"><div class="wrap"><div class="feature-head"><span class="eyebrow" style="color:#76569B">03 / THE CARE · COMING SOON</span><h2>The next chapter of your care.</h2><p class="lead">Connected care to help you take the next step. Coming soon; timing to be confirmed.</p></div><div class="roadmap-grid"><article class="roadmap-card"><span class="fi" aria-hidden="true">◉</span><h3>Record a doctor’s visit</h3><div class="audio-art" aria-hidden="true"><i style="height:10px"></i><i style="height:18px"></i><i style="height:32px"></i><i style="height:24px"></i><i style="height:42px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:36px"></i><i style="height:46px"></i><i style="height:30px"></i><i style="height:16px"></i><i style="height:24px"></i><i style="height:38px"></i><i style="height:18px"></i><i style="height:10px"></i><i style="height:28px"></i><i style="height:42px"></i><i style="height:30px"></i><i style="height:16px"></i><i style="height:8px"></i></div><p>With everyone’s agreement, record a visit and review a plain-language summary. Planned after legal review.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">♡</span><h3>Care that understands your timeline</h3><p>A vetted clinical partner to help you act on what you see.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">⌑</span><h3>Order missing tests</h3><p>Explore tests that could fill a gap, and order through a partner if you choose. The intelligence never prescribes.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">✧</span><h3>Pelvic floor health</h3><p>A dedicated area built with the same evidence standards.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">◇</span><h3>Clinical trials, only if you say yes</h3><p>A study sees only a yes or no to its criteria. Contact details are shared only after your agreement.</p></article></div></div></section><section id="circle" class="feature-section"><div class="wrap">
+<div class="feature-head"><span class="eyebrow">04 / THE CIRCLE</span><h2>Care for your people.<br>Keep control of your privacy.</h2><p class="lead">Your health and your family’s, connected on your terms.</p></div>
 <div class="feature-layout"><div class="mock" style="background:#FFFBFD"><div class="mock-top"><b>HerCircle</b><span class="demo-label">Try the sharing preview</span></div>
 <div class="person"><span class="avatar" style="background:var(--navy);color:white">Y</span><div><b>You</b><small>Your circle, your choices</small></div><span class="chip">Owner</span></div>
 <div class="person"><span class="avatar">M</span><div><b>Mom</b><small>Help with the health details she shares</small></div></div>
@@ -305,7 +315,7 @@ button,input,select{font-family:'Figtree',system-ui,sans-serif}
 <li><span class="fi" aria-hidden="true">◴</span><div><b>Alerts you choose</b><p>For each person, choose no alerts, serious updates only or all alerts.</p></div></li>
 <li><span class="fi" aria-hidden="true">♡</span><div><b>Act for your mother</b><p>Help manage her labs, medicines and visits, using only what she agrees to share.</p></div></li>
 <li><span class="fi" aria-hidden="true">◇</span><div><b>Private by design</b><p>Sensitive reproductive and vaginal microbiome results are never shared through these settings.</p></div></li>
-</ul></div></div></div></section><section id="next" class="feature-section roadmap"><div class="wrap"><div class="feature-head"><span class="eyebrow" style="color:#76569B">Coming next · Timing to be confirmed</span><h2>The next chapter of your care.</h2><p class="lead">Planned additions—not available in this preview.</p></div><div class="roadmap-grid"><article class="roadmap-card"><span class="fi" aria-hidden="true">◉</span><h3>Record a doctor’s visit</h3><div class="audio-art" aria-hidden="true"><i style="height:10px"></i><i style="height:18px"></i><i style="height:32px"></i><i style="height:24px"></i><i style="height:42px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:36px"></i><i style="height:46px"></i><i style="height:30px"></i><i style="height:16px"></i><i style="height:24px"></i><i style="height:38px"></i><i style="height:18px"></i><i style="height:10px"></i><i style="height:28px"></i><i style="height:42px"></i><i style="height:30px"></i><i style="height:16px"></i><i style="height:8px"></i></div><p>With everyone’s agreement, record a visit and review a plain-language summary. Planned after legal review.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">♡</span><h3>Care that understands your timeline</h3><p>A vetted clinical partner to help you act on what you see.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">⌑</span><h3>Order missing tests</h3><p>Explore tests that could fill a gap, and order through a partner if you choose. The intelligence never prescribes.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">✧</span><h3>Pelvic floor health</h3><p>A dedicated area built with the same evidence standards.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">◇</span><h3>Clinical trials, only if you say yes</h3><p>A study sees only a yes or no to its criteria. Contact details are shared only after your agreement.</p></article></div></div></section>  <section id="waitlist" style="padding-top:0">
+</ul></div></div></div></section>  <section id="waitlist" style="padding-top:0">
     <div class="wrap">
       <div class="waitlist">
         <div class="text">
@@ -360,4 +370,5 @@ document.querySelectorAll('.mobile-links a').forEach(link => link.addEventListen
 </script>
 </body>
 </html>
+
 
