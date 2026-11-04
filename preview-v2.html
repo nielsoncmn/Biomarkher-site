@@ -283,6 +283,25 @@ footer{border-top:1px solid #DFE3DC}
 @media(max-width:1050px) and (min-width:901px){.hero .wrap{padding-top:55px}}
 @media(max-width:900px){.hero .wrap{padding-top:20px}}
 @media(max-width:560px){.hero .wrap{padding-top:18px}}
+</style><style>
+/* Let the photograph and navigation share one continuous hero. */
+header{background:transparent;margin-bottom:-106px}
+header .wrap{max-width:1440px}
+header nav{flex:0 1 auto;margin-left:auto;justify-content:flex-end}
+.hero{min-height:906px}
+.hero .wrap{padding-top:166px}
+.hero>.hero-media{top:0;height:906px;
+-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 34%),linear-gradient(to bottom,#000 0%,#000 84%,transparent 100%);
+mask-image:linear-gradient(to right,transparent 0%,#000 34%),linear-gradient(to bottom,#000 0%,#000 84%,transparent 100%)}
+@media(min-width:1600px){.hero{min-height:1006px}.hero>.hero-media{height:1006px}.hero .wrap{padding-top:191px}}
+@media(max-width:1050px) and (min-width:901px){.hero{min-height:846px}.hero>.hero-media{height:846px}.hero .wrap{padding-top:161px}}
+@media(max-width:900px){
+header{margin-bottom:-85px;background:transparent}
+.hero{min-height:0;background:linear-gradient(130deg,var(--page-canvas) 35%,#e5f3f4 100%)}
+.hero .wrap{padding-top:110px}
+.hero>.hero-media{top:auto;height:auto}
+}
+@media(max-width:560px){.hero .wrap{padding-top:103px}}
 </style></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
