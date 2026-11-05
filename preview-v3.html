@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>BiomarkHER · Design preview · Version three</title>
+<meta content="Connect your hormonal past, present and future to your whole-body health—with your records, system insights and the people you care for in one place." name="description"/>
+<meta content="noindex, nofollow" name="robots"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400,100;9..144,500,100;9..144,600,100;9..144,700,100&amp;family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#1A2649; --ink:#2E3554; --muted:#4A5170; --faint:#8A8FA3;
+  --teal:#008189; --teal-bright:#00A5AC; --teal-soft:#E9F6F6;
+  --rose:#E0699A; --rose-soft:#FCEFF5; --lav:#A488C6; --grey:#B9BDCB;
+  --surface:#F5F6F8; --line:#EEF0F4;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:var(--navy);font-family:'Figtree',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--teal)}
+.wrap{max-width:1248px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;color:var(--teal);text-transform:uppercase}
+.wordmark{font-family:'Figtree',system-ui,sans-serif;letter-spacing:.14em}
+.wordmark .c{color:var(--teal)}
+h1,h2,h3{margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(30px,4vw,44px);line-height:1.1;font-weight:700}
+p{margin:0}
+.lead{font-size:18px;line-height:1.6;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:14px;font-size:16px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-light{background:#F2F3F6;color:var(--navy)}
+.credit{position:absolute;font-size:11px;font-weight:500;color:#fff;background:rgba(26,38,73,.45);border-radius:999px;padding:3px 9px}
+
+.preview-bar{background:#FBF0D6;color:#6B4A00;font-size:13px;font-weight:500;text-align:center;padding:8px 16px}
+
+header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
+header .wrap{height:76px;display:flex;align-items:center;gap:36px}
+header img{height:36px;width:auto}
+header nav{flex:1;display:flex;gap:28px;font-size:15px;font-weight:500}
+header nav a{color:var(--navy);text-decoration:none}
+header .btn{min-height:44px;padding:0 20px;font-size:15px}
+
+.hero{position:relative;min-height:640px;overflow:hidden;display:flex;align-items:center}
+.hero>.hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.88) 58%,#fff 75%)}
+.hero .wrap{position:relative;z-index:1;width:100%;display:flex;justify-content:flex-end}
+.hero-copy{width:520px;display:flex;flex-direction:column;gap:22px;padding:80px 0}
+.hero h1{font-size:clamp(38px,5vw,58px);line-height:1.04;font-weight:700;letter-spacing:-.025em}
+.hero p{font-size:19px;line-height:1.5;color:var(--muted)}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
+.hero .credit{left:24px;bottom:20px;z-index:1}
+
+section{padding:100px 0}
+.intro{max-width:760px;display:flex;flex-direction:column;gap:14px;margin-bottom:48px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px}
+.card .ico{width:52px;height:52px;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center}
+.card .ico img{width:34px;height:34px}
+.card .tag{font-size:13px;font-weight:600;letter-spacing:.12em;color:var(--muted)}
+.card h3{font-size:24px;line-height:1.2;font-weight:700}
+.card p{font-size:16.5px;line-height:1.55;color:var(--muted)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.split .text{display:flex;flex-direction:column;gap:20px}
+.photo{position:relative;height:600px;border-radius:28px;overflow:hidden}
+.photo>img{width:100%;height:100%;object-fit:cover}
+.photo .credit{left:18px;top:18px}
+.float{position:absolute;background:#fff;border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:10px;box-shadow:0 14px 36px rgba(26,38,73,.18)}
+.small{font-size:11px;color:var(--faint)}
+
+.chart{position:relative;display:flex;flex-direction:column;gap:9px;padding-top:16px}
+.chart .row{display:grid;grid-template-columns:84px minmax(0,1fr);align-items:center}
+.chart .row span:first-child{font-size:12.5px;font-weight:600}
+.track{position:relative;height:9px;border-radius:5px;background:#EEF0F4}
+.track i{position:absolute;top:0;bottom:0;border-radius:5px;background:var(--teal-bright)}
+.track i.open{background:#CFEBEC}
+.chart .fp-label{position:absolute;top:0;left:calc(84px + (100% - 84px)*.375);transform:translateX(-50%);font-size:11px;color:var(--muted);white-space:nowrap}
+.chart .fp-line{position:absolute;top:16px;bottom:-3px;left:calc(84px + (100% - 84px)*.375);width:1px;background:var(--grey)}
+
+.result-head{display:flex;align-items:center;gap:10px}
+.result-head img{width:28px;height:28px}
+.result-head b{flex:1;font-size:17px}
+.badge{font-size:12px;font-weight:600;color:#6B4A00;background:#FBF0D6;border-radius:999px;padding:3px 10px}
+.result p{font-size:14px;line-height:1.45;color:var(--ink)}
+
+.evidence{background:var(--navy);color:#fff}
+.evidence .eyebrow{color:#7FD3D6}
+.evidence .lead{color:#C9CEDD}
+.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.pillars div{border-top:2px solid var(--teal-bright);padding-top:20px;display:flex;flex-direction:column;gap:8px}
+.pillars div.honest{border-color:var(--lav)}
+.pillars b{font-size:20px}
+.pillars span{font-size:15.5px;line-height:1.55;color:#C9CEDD}
+
+.ring-art{position:relative;height:520px;border-radius:28px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center}
+.ring{position:relative;width:340px;height:340px}
+.ring .o{position:absolute;inset:40px;border-radius:50%;border:5px solid #E7D9EF}
+.ring .you{position:absolute;left:50%;top:50%;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Figtree',system-ui,sans-serif;font-size:19px;letter-spacing:.06em;border:5px solid #fff;box-shadow:0 6px 16px rgba(26,38,73,.25)}
+.ring .p{position:absolute;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:600}
+.ring .p em{position:absolute;top:76px;left:50%;transform:translateX(-50%);font-style:normal;font-family:'Figtree',system-ui,sans-serif;font-size:13px;background:#fff;border-radius:999px;padding:2px 10px;white-space:nowrap}
+.legend{display:flex;gap:22px;flex-wrap:wrap;padding-top:6px}
+.legend span{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.legend i{width:14px;height:14px;border-radius:50%;border:3px solid}
+
+.waitlist{background:var(--teal-soft);border-radius:28px;padding:64px;display:flex;align-items:center;gap:48px}
+.waitlist .text{flex:1;display:flex;flex-direction:column;gap:12px}
+.waitlist h2{font-size:clamp(28px,3.4vw,38px)}
+.waitlist form{display:flex;gap:10px;flex-wrap:wrap}
+.waitlist input{width:320px;max-width:100%;min-height:54px;border-radius:14px;border:1px solid #CFD3DC;padding:0 18px;font-size:16px;font-family:inherit}
+.waitlist .msg{width:100%;font-size:14px;color:var(--muted);min-height:20px}
+
+footer{border-top:1px solid var(--line);padding:44px 0 52px}
+footer .top{display:flex;align-items:center;gap:32px;margin-bottom:18px}
+footer .top img{height:30px;width:auto}
+footer .top span{flex:1}
+footer .top a{font-size:14px;color:var(--muted);text-decoration:none}
+footer p{font-size:13px;line-height:1.6;color:var(--faint)}
+
+@media (max-width:900px){
+  header nav{display:none}
+  header .wrap{justify-content:space-between}
+  .hero{min-height:auto;flex-direction:column;align-items:stretch}
+  .hero>.hero-media{position:relative;height:380px}
+  .hero::after{display:none}
+  .hero .wrap{justify-content:flex-start}
+  .hero-copy{width:100%;padding:32px 0 48px}
+  .hero .credit{top:340px;bottom:auto;left:16px}
+  section{padding:64px 0}
+  .cards,.pillars{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr;gap:32px}
+  .split .photo{order:-1}
+  .photo{height:440px}
+  .float{left:16px!important;right:16px!important;width:auto!important;bottom:16px!important}
+  .ring-art{height:420px}
+  .ring{transform:scale(.85)}
+  .waitlist{flex-direction:column;align-items:stretch;padding:36px 24px;gap:24px}
+  .waitlist input{width:100%}
+  .waitlist .btn{width:100%}
+  footer .top{flex-wrap:wrap;gap:16px 24px}
+  footer .top span{flex-basis:100%;height:0}
+}
+
+/* Feature storytelling */
+section[id]{scroll-margin-top:100px}
+.skip-link{position:fixed;top:-80px;left:12px;z-index:100;background:white;padding:14px}.skip-link:focus{top:10px}
+:focus-visible{outline:3px solid var(--teal);outline-offset:5px}
+.feature-section{padding:88px 0}.feature-section.soft{background:#F5F8FA}
+.feature-head{max-width:740px;margin-bottom:40px}.feature-head h2{margin:12px 0 18px}
+.feature-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:54px;align-items:center}
+.feature-copy h3{font-size:30px;line-height:1.18;margin:14px 0}.feature-copy>p{font-size:18px;line-height:1.65;color:var(--muted)}
+.feature-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:20px}.feature-list li{display:grid;grid-template-columns:38px 1fr;gap:13px}
+.feature-list b{display:block;font-size:17px;margin-bottom:5px}.feature-list p{font-size:15px;line-height:1.6;color:var(--muted)}
+.fi{display:inline-flex;width:36px;height:36px;align-items:center;justify-content:center;background:var(--teal-soft);color:var(--teal);border-radius:10px;font-size:18px}
+.mock{background:#fff;border:1px solid #E1E6EC;border-radius:24px;padding:26px;box-shadow:0 22px 60px #1a264910;min-width:0}
+.mock-top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:17px;margin-bottom:22px}
+.demo-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#59617A}.mock h3{font-size:23px;margin:8px 0}.mock p{font-size:14px;line-height:1.6;color:var(--muted)}
+.mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}.mini{border-radius:14px;background:var(--surface);padding:18px}.mini strong{display:block;margin:10px 0 4px;font-size:17px}
+.mini.teal{background:var(--teal-soft)}.mini.rose{background:var(--rose-soft)}.mini small{color:var(--muted);line-height:1.5;display:block}
+.record{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line)}.record>div{flex:1}.record b{font-size:14px;display:block}.record small{font-size:12px;color:var(--muted)}
+.chip{display:inline-block;border-radius:20px;padding:6px 10px;background:var(--teal-soft);color:#006970;font-size:11px;font-weight:600}
+.note{padding:16px;border-radius:12px;background:#F5F2FA;margin-top:16px;font-size:13px;line-height:1.6;color:var(--ink)}
+.ribbon{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:38px}.ribbon article{padding:24px;border:1px solid #E1E6EC;border-radius:18px;background:#fff}.ribbon h3{font-size:18px;margin:14px 0 9px}.ribbon p{font-size:15px;line-height:1.6;color:var(--muted)}
+.system-bars{display:grid;gap:17px;margin:25px 0}.system-row{display:grid;grid-template-columns:90px 1fr;align-items:center;font-size:13px;gap:12px}.system-track{height:14px;background:#EDF1F4;border-radius:10px;overflow:hidden}.system-track i{display:block;height:100%;background:var(--teal);border-radius:10px}
+.connection{border:1px solid #D6E8E8;border-radius:16px;padding:18px;background:var(--teal-soft);display:flex;gap:14px;align-items:center}.connection b{font-size:14px}.connection p{font-size:13px;margin-top:5px}
+.trend-svg{width:100%;height:auto;display:block;margin:20px 0}.insight-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.insight-tabs button{font:inherit;font-size:13px;border:1px solid #CBD5DD;border-radius:30px;padding:10px 14px;background:white;color:var(--navy);cursor:pointer}.insight-tabs button[aria-pressed=true]{background:var(--navy);color:white;border-color:var(--navy)}
+.answer{padding:20px;background:var(--teal-soft);border-radius:16px;min-height:170px}.answer h4{font-size:18px;margin:0 0 10px}.answer p{font-size:14px;line-height:1.7}
+.person{display:flex;gap:12px;align-items:center;margin:18px 0}.avatar{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--rose-soft);border-radius:50%;font-weight:600}.person div{flex:1}.person b{font-size:14px}.person small{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+.sharing{display:grid;gap:10px;background:#FAF7FB;border-radius:14px;padding:18px}.sharing label{font-size:13px;font-weight:600}.sharing select{width:100%;font:inherit;font-size:14px;color:var(--navy);padding:12px;border:1px solid #D6CADC;background:#fff;border-radius:8px}.sharing p{min-height:45px}
+.roadmap{background:#F7F4FB}.roadmap-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.roadmap-card{padding:26px;background:white;border-radius:20px;border:1px solid #E9E3EF}.roadmap-card h3{font-size:20px;margin:18px 0 12px}.roadmap-card p{font-size:15px;line-height:1.6;color:var(--muted)}.roadmap-card .fi{background:#F2ECFA;color:#76569B}.roadmap-card:first-child{grid-column:span 2}
+.audio-art{height:48px;display:flex;align-items:center;gap:5px;margin:18px 0}.audio-art i{width:5px;background:#A488C6;border-radius:4px}
+.mobile-nav{display:none}
+@media(max-width:1050px){header .wrap{gap:18px}header nav{gap:15px;font-size:13px}header img{max-width:180px;height:auto}.feature-layout{gap:28px}}
+@media(max-width:900px){.mobile-nav{display:block;margin-left:auto}.mobile-nav summary{cursor:pointer;font-size:14px;padding:10px}.mobile-nav[open] .mobile-links{position:absolute;top:76px;left:0;right:0;background:white;border-bottom:1px solid var(--line);padding:20px;display:grid;gap:18px}.mobile-links a{text-decoration:none;color:var(--navy)}.feature-layout{grid-template-columns:1fr}.feature-section{padding:58px 0}.ribbon,.roadmap-grid{grid-template-columns:1fr 1fr}.roadmap-card:first-child{grid-column:span 2}}
+@media(max-width:560px){header img{max-width:125px}header .wrap{padding:0 14px;gap:6px}header .btn{font-size:12px;padding:0 10px;min-height:40px}.ribbon,.roadmap-grid{grid-template-columns:1fr}.roadmap-card:first-child{grid-column:auto}.mock{padding:20px 16px}.feature-head h2{font-size:32px}.mini{padding:14px}.mock-top{flex-wrap:wrap}.hero>.hero-media{height:300px}.hero .credit{top:262px}.hero h1{font-size:38px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Typography matched to owner-selected template-v1_2026-11-01. */
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-variation-settings:'SOFT' 100;font-style:normal;font-weight:600}
+button,input,select{font-family:'Figtree',system-ui,sans-serif}
+
+/* Four-pillar homepage overview and first-section refinements. */
+header img{width:212px;height:auto;max-width:none;flex-shrink:0}
+header .wrap{gap:28px}header nav{gap:22px;justify-content:center}
+header nav a,.mobile-links a{text-transform:uppercase;font-size:12px;letter-spacing:.065em;font-weight:600;white-space:nowrap}
+.hero>.hero-media{transform:none;object-position:30% 40%}
+.platform-overview{padding:65px 0 76px}.overview-heading{text-align:center;margin-bottom:32px}.overview-heading h2{margin-top:12px}
+.pillar-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid #E4E8EC;border-radius:24px;overflow:hidden;box-shadow:0 16px 45px #1a264908}
+.pillar-card{display:flex;flex-direction:column;min-width:0;padding:25px 23px 23px;color:var(--navy);text-decoration:none;border-right:1px solid #E4E8EC;transition:background .2s}
+.pillar-card:last-child{border-right:0}.pillar-hub{background:#F7F9FB}.pillar-intelligence{background:#EDF8F7}.pillar-care{background:#F7F3FB}.pillar-circle{background:#FFF3F7}
+.pillar-card:hover{background:white}.pillar-card:focus-visible{outline-offset:-5px}
+.pillar-top{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:34px;flex-wrap:wrap}
+.pillar-label{font-size:12px;font-weight:700;letter-spacing:.06em}.pillar-number{font-size:12px;color:#68708A}.soon-pill{font-size:9px;font-weight:700;letter-spacing:.04em;border-radius:20px;padding:5px 7px;background:#EAE2F4;color:#694B8C}
+.pillar-art{width:144px;height:108px;margin:20px auto;color:var(--teal)}.pillar-care .pillar-art{color:#8462A3}.pillar-circle .pillar-art{color:#BE5A86}
+.pillar-card h3{font-size:24px;line-height:1.2;margin:0 0 12px}.pillar-card p{font-size:15px;line-height:1.6;color:var(--muted);margin-bottom:24px}.pillar-link{margin-top:auto;display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:600;color:var(--teal)}
+#care{scroll-margin-top:100px}
+@media(max-width:1100px){header .wrap{gap:18px}header nav{gap:14px}header img{width:195px}.pillar-card{padding:22px 17px}.pillar-label{font-size:11px}}
+@media(max-width:900px){header img{width:195px}.pillar-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.pillar-card:nth-child(2){border-right:0}.pillar-card:nth-child(-n+2){border-bottom:1px solid #E4E8EC}.hero>.hero-media{object-position:50% 40%}}
+@media(max-width:560px){header .wrap{gap:6px}header img{width:145px;max-width:145px}.pillar-strip{grid-template-columns:1fr}.pillar-card{border-right:0;border-bottom:1px solid #E4E8EC;padding:24px}.pillar-card:last-child{border-bottom:0}.pillar-art{margin:12px auto}.platform-overview{padding:44px 0}.pillar-label{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.pillar-card{transition:none}}
+
+@media(min-width:901px){.hero>.hero-media{width:55%;right:auto;object-position:45% 40%;transform:none}.hero .wrap{justify-content:flex-end}.hero-copy{width:45%;max-width:520px}.hero::after{background:linear-gradient(90deg,transparent 43%,rgba(255,255,255,.7) 51%,#fff 55%)}}
+
+/* Tighter portrait crop within the existing hero frame. */
+.hero>.hero-media{overflow:hidden}
+.hero-media>img{width:100%;height:100%;object-fit:cover;object-position:inherit;transform:translateX(-7%) scale(1.22);transform-origin:45% 40%}
+
+/* Preserve the complete supplied health-clock artwork and readable labels. */
+.hero{min-height:0;display:flex;align-items:center;background:#fff}
+.hero>.hero-media{position:relative;inset:auto;width:58%;height:auto;flex:0 0 58%;overflow:hidden;transform:none}
+.hero-media>img{display:block;width:100%;height:auto;object-fit:contain;transform:none}
+.hero::after{display:none}
+.hero .wrap{width:42%;max-width:none;padding:44px 32px;justify-content:flex-start}
+.hero-copy{width:100%;max-width:520px;padding:0}
+.hero h1{font-size:clamp(34px,3.6vw,54px)}
+.hero .credit{top:auto;bottom:12px;left:12px;max-width:52%}
+@media(max-width:900px){.hero{flex-direction:column}.hero>.hero-media{width:100%;flex:auto;height:auto}.hero .wrap{width:100%;padding:32px 24px 48px}.hero-copy{max-width:none}.hero .credit{position:static;align-self:flex-start;margin:0 24px 16px;max-width:none}.hero h1{font-size:clamp(34px,6vw,48px)}}
+</style>
+<style>
+/* Version two: editorial, image-led design. Original homepage remains separate. */
+:root{--navy:#223D43;--ink:#30494F;--muted:#637176;--teal:#267D83;--line:#DFE6E4}
+body{background:#FAFAF7}h1,h2,h3{font-weight:500}a,button,summary{touch-action:manipulation}a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #9375B0;outline-offset:5px}.wrap{max-width:1320px;padding:0 48px}.preview-bar{background:#7E6A9B;color:white;font-size:11px;letter-spacing:.12em;padding:11px 20px}.preview-bar a{color:white;margin-left:24px;letter-spacing:0;text-underline-offset:3px}header{position:relative;background:#FAFAF7;border:0}header .wrap{height:106px;gap:32px}header img{width:225px;height:auto;max-width:none}header nav{justify-content:center;gap:24px;font-size:11px;letter-spacing:.09em}header .btn{font-size:13px;border-radius:8px}.btn{border-radius:8px;font-size:14px}.btn-dark{background:#28474D}.btn-light{background:transparent;border:1px solid #BCCBCB}.eyebrow{font-size:11px;letter-spacing:.16em;color:#846A9E}.hero{position:relative;max-width:1600px;margin:auto;display:grid;grid-template-columns:43% 57%;align-items:center;background:#FAFAF7;min-height:650px;padding:30px 0 70px}.hero .wrap{grid-column:1;grid-row:1;width:100%;padding:30px 20px 30px 48px}.hero-copy{max-width:550px;gap:25px}.hero h1{font-size:clamp(43px,4.6vw,72px);line-height:1.04;letter-spacing:-.045em;font-weight:500}.hero p{font-size:17px;max-width:430px;line-height:1.65}.hero>.hero-media{grid-column:2;grid-row:1;position:relative;width:100%;height:auto;overflow:visible}.hero-media>img{width:100%;height:auto;transform:none;object-fit:contain;border-radius:120px 0 0 18px}.hero .actions{gap:10px}.platform-overview{padding:48px 0 65px;background:#F0F2EE;border-top:1px solid #e1e7e1}.overview-heading{display:block;text-align:center;margin-bottom:36px}.overview-heading .eyebrow{display:none}.overview-heading h2{font-size:30px}.pillar-strip{border:0;border-radius:0;background:transparent;box-shadow:none}.pillar-card{padding:18px 24px;background:transparent!important;border-color:#d9dfdb;display:flex;flex-direction:column}.pillar-top{order:1}.pillar-art{width:65px;height:55px;margin:15px 0;order:0}.pillar-card h3{font-family:Figtree,sans-serif;font-size:18px;margin:15px 0 8px;order:2}.pillar-card p{font-size:14px;order:3}.pillar-link{order:4;font-size:12px;margin-top:20px}.pillar-number{display:none}.pillar-label{font-size:11px}.soon-pill{font-size:9px}.feature-section{padding:110px 0;background:#FAFAF7}.feature-section.soft{background:#FAFAF7}.feature-layout{gap:80px;grid-template-columns:1fr 1fr;align-items:center}.feature-head{margin:0 0 22px;max-width:none}.feature-head .eyebrow{display:block;margin-bottom:20px}.feature-head h2{font-size:clamp(34px,3.6vw,50px);line-height:1.12;letter-spacing:-.035em}.feature-head .lead{margin-top:24px;font-size:17px}.feature-copy>p{font-size:17px;line-height:1.7}.mock{border:1px solid #DCE5DF;border-radius:22px;background:white;padding:32px;box-shadow:0 22px 60px #2c535312;position:relative}.mock h3{font-size:27px}.mock-top{font-size:12px}.mock>p{line-height:1.6;margin:14px 0}.mock .demo-label{font-size:10px}.mini-grid{margin-top:24px}.feature-details{margin-top:25px;border-top:1px solid #dbe2dc;padding-top:20px}.feature-details summary,.more-features summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--teal)}.feature-details .feature-list{margin-top:25px}.more-features{margin-top:40px;padding:22px 0;border-top:1px solid #dbe2dc}.ribbon{margin-top:30px}.clock-visual{width:100%;height:auto;margin-top:8px}.clock-key{display:flex;gap:8px;flex-wrap:wrap}.clock-key span{font-size:10px;background:#F1F3EF;border-radius:30px;padding:8px 10px}#clock{background:#EDF3EF}#clock .mock{background:#fff}#insights .mock{background:#F2EDF7}.care-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.care-art{height:370px;position:relative;display:grid;place-items:center;background:#EEE9F3;border-radius:24px;overflow:hidden}.care-orbit{height:280px;width:280px;border:1px solid #c8b8d9;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center;box-shadow:0 0 0 35px #e5deed,0 0 0 36px #d7cbe2}.care-orbit>span:first-child{font-size:10px;letter-spacing:.15em}.care-orbit strong{font-family:Fraunces,serif;font-size:28px;font-weight:500}.care-tag{position:absolute;background:#fff;padding:13px 18px;border-radius:8px;font-size:12px;box-shadow:0 8px 24px #6a577117}.tag-one{top:40px;left:20px}.tag-two{right:16px;top:170px}.tag-three{bottom:28px;left:40px}#care{background:#F7F5FA}.roadmap-grid{margin-top:25px}#circle .mock{background:#fff!important}.evidence{background:#294B50;color:white;padding:80px 0}.evidence .lead,.evidence .eyebrow{color:#D6E7E5}.evidence h2{font-size:40px}.evidence .pillars{margin-top:40px}.evidence .pillars>div{background:transparent;border-color:#547277;color:#fff}.evidence .pillars span{color:#DBE5E5}#waitlist{padding:100px 0!important}.waitlist{background:#EEE9F3;border-radius:20px;padding:55px;display:block;text-align:center}.waitlist .text{max-width:750px;margin:auto}.waitlist h2{font-size:45px}.waitlist form{justify-content:center;margin-top:28px}.waitlist .lead{margin-top:20px}footer{background:#F0F2EE}footer .top img{width:200px}footer .top a[href="#"]{display:none}
+@media(min-width:1500px){.hero .wrap{padding-left:100px}}
+@media(max-width:1050px){header nav{gap:12px}header .wrap{gap:18px}header img{width:190px}.feature-layout,.care-layout{gap:35px}.wrap{padding:0 28px}.hero .wrap{padding-left:28px}.hero h1{font-size:48px}.hero{min-height:540px}.hero-media>img{border-radius:75px 0 0 15px}.pillar-card{padding:15px}.pillar-top{flex-wrap:wrap;gap:8px}}
+@media(max-width:900px){header nav{display:none}header .wrap{height:85px}.hero{display:flex;flex-direction:column;padding:30px 0 50px;gap:28px;min-height:0}.hero .wrap{order:0;padding:15px 28px;width:100%}.hero>.hero-media{order:1;width:100%;padding:0 28px}.hero-media>img{border-radius:20px}.hero-copy{max-width:650px}.hero h1{font-size:56px}.hero p{max-width:550px}.feature-layout,.care-layout{grid-template-columns:1fr;gap:35px}.feature-copy{order:0}.mock{order:1}.feature-section{padding:70px 0}.feature-head h2{font-size:40px}.pillar-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.mobile-nav[open] .mobile-links{top:85px}.waitlist{padding:35px 24px}}
+@media(max-width:560px){.wrap{padding:0 22px}.preview-bar{font-size:9px;letter-spacing:.06em}.preview-bar a{margin-left:10px}header .wrap{padding:0 18px;gap:10px}header img{width:160px;max-width:none}header .btn{font-size:11px;padding:0 10px}.mobile-nav summary{font-size:12px;padding:5px}.hero h1{font-size:45px}.hero .eyebrow{font-size:9px}.hero>.hero-media{padding:0 18px}.hero .wrap{padding:10px 22px}.hero .actions .btn{padding:0 15px;font-size:13px}.pillar-card{padding:16px 12px}.pillar-label{font-size:10px}.pillar-card h3{font-size:16px}.pillar-card p{font-size:13px}.overview-heading h2{font-size:26px}.mock{padding:24px 18px}.feature-head h2{font-size:35px}.clock-key{gap:4px}.clock-key span{font-size:9px;padding:7px}.care-art{height:340px}.care-orbit{width:240px;height:240px}.care-tag{font-size:10px;padding:10px}.waitlist h2{font-size:34px}.waitlist form{flex-direction:column}.waitlist input{width:100%}.evidence h2{font-size:34px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style><style>
+/* Continuous canvas and oversized, unframed hero. */
+:root{--page-canvas:#F7F6F2}
+body,header,.hero,.platform-overview,.feature-section,.feature-section.soft,#clock,#care,#insights,#circle,.evidence,#waitlist,footer{background:var(--page-canvas)}
+header{z-index:3}
+.hero{display:block;max-width:none;min-height:800px;padding:0;isolation:isolate;overflow:hidden}
+.hero>.hero-media{position:absolute;inset:-40px 0 auto auto;width:82%;height:840px;padding:0;z-index:-1;overflow:hidden;
+-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 34%),linear-gradient(to bottom,transparent 0%,#000 12%,#000 82%,transparent 100%);
+-webkit-mask-composite:source-in;
+mask-image:linear-gradient(to right,transparent 0%,#000 34%),linear-gradient(to bottom,transparent 0%,#000 12%,#000 82%,transparent 100%);mask-composite:intersect}
+.hero-media>img{width:100%;height:100%;object-fit:cover;object-position:60% center;border-radius:0;transform:none}
+.hero .wrap{width:100%;max-width:1440px;margin:auto;padding:115px 48px 120px}
+.hero-copy{max-width:470px;width:40%;gap:27px}
+.hero h1{font-size:clamp(48px,4.9vw,76px);line-height:1.05;letter-spacing:-.04em}
+.hero-copy>p{max-width:370px;font-size:17px}
+.hero .eyebrow{max-width:340px;line-height:1.7}
+.platform-overview{border:0;padding:50px 0 80px}
+.pillar-strip,.pillar-card{border:0!important;box-shadow:none}
+.pillar-card{padding:18px 30px}
+.overview-heading{margin-bottom:28px}
+.feature-section{padding:95px 0}
+.mock{box-shadow:none;border:0;background:#fffB}
+#clock .mock,#insights .mock,#circle .mock{background:#fffB!important}
+.care-art{background:transparent;overflow:visible}
+.care-orbit{background:transparent;box-shadow:0 0 0 35px #EAE5EF55,0 0 0 36px #D7CBE288}
+.evidence{color:var(--navy)}
+.evidence .lead,.evidence .pillars span{color:var(--muted)}
+.evidence .eyebrow{color:#846A9E}
+.evidence .pillars>div{color:var(--navy);border-color:#DADFDA;background:transparent}
+.waitlist{background:transparent;border-radius:0;padding:40px 0}
+footer{border-top:1px solid #DFE3DC}
+@media(min-width:1600px){.hero{min-height:900px}.hero>.hero-media{height:940px;width:80%}.hero .wrap{padding-top:150px}.hero-copy{max-width:500px}}
+@media(max-width:1050px) and (min-width:901px){.hero{min-height:740px}.hero>.hero-media{height:780px;width:85%}.hero .wrap{padding:100px 28px}.hero-copy{width:42%}.hero h1{font-size:51px}}
+@media(max-width:900px){.hero{display:flex;flex-direction:column;min-height:0;padding:0;gap:0}.hero .wrap{padding:40px 28px 15px;max-width:none;order:0}.hero-copy{width:100%;max-width:600px}.hero h1{font-size:56px}.hero-copy>p{max-width:500px}.hero>.hero-media{position:relative;inset:auto;width:100%;height:auto;z-index:0;order:1;margin-top:0;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 82%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 82%,transparent 100%)}.hero-media>img{height:auto;width:100%;object-fit:contain;border-radius:0}.platform-overview{padding:20px 0 50px}.feature-section{padding:65px 0}}
+@media(max-width:560px){.hero .wrap{padding:35px 22px 10px}.hero h1{font-size:46px}.hero-copy{gap:24px}.hero-copy>p{font-size:16px}.hero>.hero-media{width:100%;margin-top:8px}.pillar-card{padding:16px 12px}.care-art{overflow:hidden}.preview-bar{background:var(--page-canvas);color:var(--muted);border-bottom:1px solid #e5e5df}.preview-bar a{color:var(--muted)}}
+</style><style>
+.hero h1{font-size:clamp(26px,3.1vw,42px);font-weight:400;line-height:1.2;letter-spacing:-.025em}
+.hero h1 span{display:block;white-space:nowrap}
+@media(max-width:900px){.hero h1{font-size:clamp(24px,6.8vw,42px);font-weight:400}}
+</style><style>
+/* Restore headline presence while retaining three unbroken lines. */
+.hero-copy{max-width:530px;width:44%}
+.hero h1{font-size:clamp(28px,3.5vw,48px);font-weight:500;line-height:1.16}
+@media(max-width:1050px) and (min-width:901px){.hero-copy{width:48%}.hero h1{font-size:clamp(28px,3.5vw,37px)}}
+@media(max-width:900px){.hero-copy{width:100%;max-width:650px}.hero h1{font-size:clamp(24px,7.4vw,48px);font-weight:500}}
+</style><style>
+.hero-copy>.eyebrow{max-width:100%;font-size:10px;letter-spacing:.1em;white-space:nowrap}
+@media(max-width:900px){.hero-copy>.eyebrow{white-space:normal}}
+</style><style>
+/* Bring hero copy closer to navigation. */
+.hero .wrap{padding-top:60px}
+@media(min-width:1600px){.hero .wrap{padding-top:85px}}
+@media(max-width:1050px) and (min-width:901px){.hero .wrap{padding-top:55px}}
+@media(max-width:900px){.hero .wrap{padding-top:20px}}
+@media(max-width:560px){.hero .wrap{padding-top:18px}}
+</style><style>
+/* Let the photograph and navigation share one continuous hero. */
+header{background:transparent;margin-bottom:-106px}
+header .wrap{max-width:1440px}
+header nav{flex:0 1 auto;margin-left:auto;justify-content:flex-end}
+.hero{min-height:906px}
+.hero .wrap{padding-top:166px}
+.hero>.hero-media{top:0;height:906px;
+-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 34%),linear-gradient(to bottom,#000 0%,#000 84%,transparent 100%);
+mask-image:linear-gradient(to right,transparent 0%,#000 34%),linear-gradient(to bottom,#000 0%,#000 84%,transparent 100%)}
+@media(min-width:1600px){.hero{min-height:1006px}.hero>.hero-media{height:1006px}.hero .wrap{padding-top:191px}}
+@media(max-width:1050px) and (min-width:901px){.hero{min-height:846px}.hero>.hero-media{height:846px}.hero .wrap{padding-top:161px}}
+@media(max-width:900px){
+header{margin-bottom:-85px;background:transparent}
+.hero{min-height:0;background:linear-gradient(130deg,var(--page-canvas) 35%,#e5f3f4 100%)}
+.hero .wrap{padding-top:110px}
+.hero>.hero-media{top:auto;height:auto}
+}
+@media(max-width:560px){.hero .wrap{padding-top:103px}}
+</style><style>
+/* Larger uppercase hero headline, with deliberate lines. */
+.hero h1{text-transform:uppercase;font-size:clamp(34px,3.9vw,54px);letter-spacing:-.035em;line-height:1.14}
+@media(max-width:900px){.hero h1{font-size:clamp(26px,8vw,54px)}}
+</style><style>
+/* Align the hero copy with the portrait and use the site's clean sans serif. */
+.hero .wrap{padding-top:260px}
+.hero h1{font-family:'Figtree',system-ui,sans-serif;font-weight:500;letter-spacing:-.035em;line-height:1.12}
+@media(min-width:1600px){.hero .wrap{padding-top:295px}}
+@media(max-width:1050px) and (min-width:901px){.hero .wrap{padding-top:235px}}
+@media(max-width:900px){.hero .wrap{padding-top:110px}}
+@media(max-width:560px){.hero .wrap{padding-top:103px}}
+</style><style>
+.hero h1{text-transform:none;font-size:clamp(30px,3.3vw,46px);line-height:1.16}
+.hero h1 span:last-child{margin-top:.28em}
+@media(max-width:900px){.hero h1{font-size:clamp(24px,7.2vw,46px)}}
+</style></head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="preview-bar">DESIGN PREVIEW · VERSION THREE <a href="preview-v2.html">View saved version two ↗</a></div>
+<header>
+<div class="wrap">
+<img alt="BiomarkHER" src="images/logo.png"/>
+<nav aria-label="Main navigation"><a href="#how">THE HUB</a><a href="#clock">THE INTELLIGENCE</a><a href="#care">THE CARE</a><a href="#circle">THE CIRCLE</a></nav>
+<details class="mobile-nav"><summary>Menu</summary><div class="mobile-links"><a href="#how">THE HUB</a><a href="#clock">THE INTELLIGENCE</a><a href="#care">THE CARE</a><a href="#circle">THE CIRCLE</a></div></details>
+<a class="btn btn-dark" href="#waitlist">Join the waitlist</a>
+</div>
+</header>
+<main id="main">
+<div class="hero">
+<div class="hero-media"><img alt="Woman in blue on a beach with an illustrative health clock labeled Bone Health, Brain Health, Heart Health, Metabolic Health, and Gut Health" fetchpriority="high" height="1365" src="images/hero-bright-clock.webp" width="2048"/></div>
+<div class="wrap">
+<div class="hero-copy">
+
+<h1><span>Health intelligence</span><span>that understands you.</span><span>Care that sees you.</span></h1>
+<p>BioMarkHer reads your health through the lens of your hormonal timeline—connecting changes in bone, heart, gut, and metabolic health with where you are in the menopause transition and beyond.</p>
+<div class="actions">
+<a class="btn btn-dark" href="#waitlist">Join the waitlist</a>
+<a class="btn btn-light" href="#how">See how it works</a>
+</div>
+</div>
+</div>
+
+</div>
+<section aria-labelledby="platform-heading" class="platform-overview" id="platform"><div class="wrap"><div class="overview-heading"><span class="eyebrow">THE BIOMARKHER EXPERIENCE</span><h2 id="platform-heading">Your health. Intelligently connected®</h2></div><div class="pillar-strip"><a class="pillar-card pillar-hub" href="#how"><div class="pillar-top"><span class="pillar-label">THE HUB</span><span class="pillar-number">01</span></div><svg aria-hidden="true" class="pillar-art" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 144 108"><rect fill="white" height="72" rx="12" width="96" x="24" y="16"></rect><rect fill="#DAEFEF" height="23" rx="5" width="28" x="35" y="29"></rect><path d="M73 33h33M73 43h24M35 64h71M35 75h49"></path></svg><h3>Your health, together.</h3><p>Labs, records, wearables and your life story—all in one place.</p><span class="pillar-link">Explore the hub <span aria-hidden="true">↗</span></span></a><a class="pillar-card pillar-intelligence" href="#clock"><div class="pillar-top"><span class="pillar-label">THE INTELLIGENCE</span><span class="pillar-number">02</span></div><svg aria-hidden="true" class="pillar-art" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 144 108"><circle cx="72" cy="52" fill="white" r="37"></circle><path d="M72 25v27l19 12M28 88h90"></path><circle cx="72" cy="52" fill="currentColor" r="4"></circle><path d="M27 76l21-15 19 9 20-29 28-13" stroke="#A488C6"></path></svg><h3>Your results, explained.</h3><p>Your Estrogen Clock and body systems bring the bigger picture into focus.</p><span class="pillar-link">Explore the intelligence <span aria-hidden="true">↗</span></span></a><a class="pillar-card pillar-care" href="#care"><div class="pillar-top"><span class="pillar-label">THE CARE</span><span class="soon-pill">COMING SOON</span></div><svg aria-hidden="true" class="pillar-art" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 144 108"><rect fill="white" height="76" rx="14" width="74" x="35" y="15"></rect><path d="M62 27h20M72 45v26M59 58h26"></path><circle cx="109" cy="79" fill="#F2ECFA" r="15"></circle><path d="M102 79h14M109 72v14"></path></svg><h3>Your next step in care.</h3><p>Planned clinician connections, testing and support informed by your timeline.</p><span class="pillar-link">Explore the care <span aria-hidden="true">↗</span></span></a><a class="pillar-card pillar-circle" href="#circle"><div class="pillar-top"><span class="pillar-label">THE CIRCLE</span><span class="pillar-number">04</span></div><svg aria-hidden="true" class="pillar-art" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 144 108"><circle cx="72" cy="53" r="33" stroke="#E7CBD9"></circle><path d="M72 53L35 28M72 53l38-25M72 53v38" stroke="#E7CBD9"></path><circle cx="72" cy="53" fill="white" r="18"></circle><circle cx="35" cy="28" fill="white" r="13"></circle><circle cx="110" cy="28" fill="white" r="13"></circle><circle cx="72" cy="90" fill="white" r="13"></circle></svg><h3>Your people, connected.</h3><p>Care for the people you love, with control over what you share.</p><span class="pillar-link">Explore the circle <span aria-hidden="true">↗</span></span></a></div></div></section><section class="feature-section soft" id="how"><div class="wrap">
+
+<div class="feature-layout"><div class="feature-copy"><div class="feature-head"><span class="eyebrow">01 / The hub</span><h2>All your health.<br/>One place to begin.</h2></div><p>Start with what you already have. Build a health record that grows with you.</p><details class="feature-details"><summary>Explore everything in your hub</summary><ul class="feature-list">
+<li><span aria-hidden="true" class="fi">↥</span><div><b>Lab Results</b><p>Upload results via pdf OR Connect to your Provider</p></div></li>
+<li><span aria-hidden="true" class="fi">▤</span><div><b>Records and imaging</b><p>Keep reports, scans and screening history organized on one timeline.</p></div></li>
+<li><span aria-hidden="true" class="fi">◷</span><div><b>Your wearable data, in context.</b><p>See sleep, heart rate and activity alongside your lab results.</p></div></li>
+<li><span aria-hidden="true" class="fi">⌁</span><div><b>Your life story</b><p>Connect your reproductive history, family history and life events to your health record.</p></div></li>
+</ul></details></div>
+<div class="mock"><div class="mock-top"><b>Your health hub</b><span class="demo-label">Illustrative preview</span></div><p>YOUR RECORD, CONNECTED</p><h3>Welcome to your whole picture.</h3>
+<div class="mini-grid"><div class="mini teal"><span aria-hidden="true" class="fi">▤</span><strong>Labs &amp; records</strong><small>Reports · Imaging · Screening</small></div><div class="mini rose"><span aria-hidden="true" class="fi">◷</span><strong>Daily signals</strong><small>Sleep · Heart rate · Activity</small></div></div>
+<div class="record"><span aria-hidden="true" class="fi">↥</span><div><b>Lab report added</b><small>Review extracted values</small></div><span class="chip">Confirm first</span></div>
+<div class="record"><span aria-hidden="true" class="fi">⌁</span><div><b>Your story, over time</b><small>Reproductive history + life events</small></div></div>
+<div class="record"><span aria-hidden="true" class="fi">♡</span><div><b>Family history</b><small>Context for the questions you ask</small></div></div>
+<div class="note"><b>Ready for your next visit.</b><br/>A clear summary, with sources and the findings worth discussing.</div></div></div>
+<details class="more-features"><summary>More ways to make your health easier</summary><div class="ribbon">
+<article><span aria-hidden="true" class="fi">⌘</span><h3>Medicines &amp; supplements</h3><p>Keep what you take and when you started alongside your results and life events.</p></article>
+<article><span aria-hidden="true" class="fi">▤</span><h3>A summary for your doctor</h3><p>Bring a cited PDF summary to your next appointment.</p></article>
+<article><span aria-hidden="true" class="fi">◴</span><h3>Retests at the right time</h3><p>Reminders help you track when a change may be ready to review in your results.</p></article>
+</div></details></div></section><section class="feature-section" id="clock"><div class="wrap">
+
+<div class="feature-layout"><div class="mock"><div class="mock-top"><b>THE ESTROGEN CLOCK</b><span class="demo-label">Concept preview</span></div><h3>Your body has more than one timeline.</h3><p>Reproductive stage. Changing estrogen exposure. Thirteen body systems.</p><svg aria-label="Conceptual hormonal timeline showing bone, heart, brain and metabolic systems on separate paths. No clinical scores." class="clock-visual" role="img" viewbox="0 0 540 350"><defs><lineargradient id="clockfade"><stop stop-color="#D6EEEE"></stop><stop offset="1" stop-color="#E8DEF2"></stop></lineargradient></defs><rect fill="url(#clockfade)" height="255" opacity=".6" rx="20" width="360" x="140" y="45"></rect><path d="M310 40V305" stroke="#9477B0" stroke-dasharray="4 6"></path><g fill="#284751" font-family="Figtree,sans-serif" font-size="15"><text x="15" y="104">Bone</text><text x="15" y="161">Heart</text><text x="15" y="218">Brain</text><text x="15" y="275">Metabolic</text><text font-size="12" x="140" y="332">Your hormonal history</text><text font-size="12" x="383" y="332">Your next chapter</text></g><g fill="none" stroke-linecap="round" stroke-width="3"><path d="M140 98C220 98 230 85 280 95S390 118 490 85" stroke="#9273AD"></path><path d="M140 155C230 155 250 175 310 155S420 141 490 163" stroke="#29868A"></path><path d="M140 212C210 190 270 205 310 211S410 230 490 205" stroke="#C97396"></path><path d="M140 269C210 280 250 248 310 262S400 275 490 250" stroke="#698A93"></path></g><g fill="#fff" stroke-width="3"><circle cx="310" cy="101" r="7" stroke="#9273AD"></circle><circle cx="310" cy="155" r="7" stroke="#29868A"></circle><circle cx="310" cy="211" r="7" stroke="#C97396"></circle><circle cx="310" cy="262" r="7" stroke="#698A93"></circle></g></svg><div class="clock-key"><span>13 systems</span><span>Your own context</span><span>No single biological age</span></div><p class="demo-label">Illustrative paths only. Not clinical values or predicted outcomes.</p></div>
+<div class="feature-copy"><div class="feature-head"><span class="eyebrow">02 / The intelligence</span><h2>Understand what’s changing.<br/>And why.</h2><p class="lead">See how your biomarkers change over time—and where estrogen deprivation may help explain why.</p></div><p>The Estrogen Clock brings reproductive stage and time since your final period into the picture. Still having periods? Your stage matters, too.</p>
+<details class="feature-details"><summary>Explore the intelligence</summary><ul class="feature-list">
+<li><span aria-hidden="true" class="fi">◷</span><div><b>The Estrogen Clock</b><p>Understand your results against your own hormonal timeline.</p></div></li><li><span aria-hidden="true" class="fi">▥</span><div><b>Thirteen system scores</b><p>Heart, bone, metabolic, brain and more. Each on its own scale, with no single score or “biological age” for all of you.</p></div></li><li><span aria-hidden="true" class="fi">↔</span><div><b>Connections</b><p>Look beyond individual numbers to understand patterns across systems.</p></div></li>
+</ul></details></div></div></div></section><section class="feature-section soft" id="insights"><div class="wrap">
+
+<div class="feature-layout"><div class="feature-copy"><div class="feature-head"><span class="eyebrow">From information to understanding</span><h2>Every change<br/>has context.</h2><p class="lead">Bring medicines, supplements, nutrition and movement into the same conversation as your results.</p></div><p>Explore trends over time, with research to help explain what may be contributing—and honest limits on what the data can tell you.</p><details class="feature-details"><summary>Medicines, supplements, food &amp; movement</summary><ul class="feature-list">
+<li><span aria-hidden="true" class="fi">⌘</span><div><b>Medication intelligence</b><p>Explore changes alongside a statin, HRT or GLP-1 across your body systems.</p></div></li>
+<li><span aria-hidden="true" class="fi">✧</span><div><b>Supplement intelligence</b><p>Understand what research in midlife women does—and does not—support.</p></div></li>
+<li><span aria-hidden="true" class="fi">◒</span><div><b>Food intelligence</b><p>Follow measured nutrients and markers, such as vitamin D and the omega-3 index, over time.</p></div></li>
+<li><span aria-hidden="true" class="fi">↗</span><div><b>Movement intelligence</b><p>Put activity and strength in the context of your muscles, bones and stage of life.</p></div></li>
+</ul></details></div>
+<div class="mock"><div class="mock-top"><b>Your results, over time</b><span class="demo-label">Interactive concept</span></div><h3>Every change has context.</h3>
+<svg aria-label="Illustrative trend line with a marker showing when a change was recorded. No clinical data." class="trend-svg" role="img" viewbox="0 0 440 180"><path d="M20 35H420M20 85H420M20 135H420" fill="none" stroke="#E8EDF1"></path><path d="M20 70C65 60 85 90 125 78S190 100 220 94S285 130 330 115S385 125 420 132" fill="none" stroke="#008189" stroke-width="4"></path><path d="M220 20V145" stroke="#A488C6" stroke-dasharray="5 5"></path><circle cx="220" cy="94" fill="#A488C6" r="6"></circle><text fill="#4A5170" font-size="12" x="20" y="170">Earlier</text><text fill="#76569B" font-size="12" x="177" y="15">Change recorded</text><text fill="#4A5170" font-size="12" x="380" y="170">Now</text></svg>
+<p class="demo-label">Illustrative trend · Not a treatment outcome</p>
+<div aria-label="Explore intelligence features" class="insight-tabs" role="group"><button aria-pressed="true" data-insight="medication" type="button">Medicines</button><button aria-pressed="false" data-insight="supplements" type="button">Supplements</button><button aria-pressed="false" data-insight="food" type="button">Food</button><button aria-pressed="false" data-insight="movement" type="button">Movement</button></div>
+<div aria-live="polite" class="answer"><h4 id="insight-title">A medicine is part of the story.</h4><p id="insight-copy">Place a medication’s start date alongside your results. Explore what changed and what research may explain, without assuming the medicine caused every change.</p></div></div></div>
+<details class="more-features"><summary>More ways to make your health easier</summary><div class="ribbon">
+<article><span aria-hidden="true" class="fi">↗</span><h3>Ask anything</h3><p>Plain-language answers grounded in reviewed content and research in women, with “See the research.” The intelligence never prescribes.</p></article>
+<article><span aria-hidden="true" class="fi">▤</span><h3>Education on every result</h3><p>Open a result to understand what it is, why it matters on your timeline and what the research says.</p></article>
+<article><span aria-hidden="true" class="fi">◇</span><h3>Honest notes</h3><p>When evidence is missing or a popular claim is not supported, see that limitation clearly.</p></article>
+</div></details></div></section><section class="feature-section roadmap" id="care"><div class="wrap"><div class="care-layout"><div class="feature-head"><span class="eyebrow" style="color:#76569B">03 / THE CARE · COMING SOON</span><h2>The next chapter of your care.</h2><p class="lead">Connected care to help you take the next step. Coming soon; timing to be confirmed.</p></div><div class="care-art"><div class="care-orbit"><span>YOUR TIMELINE</span><strong>Care that sees<br/>the whole you.</strong><span class="soon-pill">COMING SOON</span></div><div class="care-tag tag-one">Your visit, summarized</div><div class="care-tag tag-two">Connected clinicians</div><div class="care-tag tag-three">Testing that fills the gaps</div></div></div><details class="more-features"><summary>See what’s on the way</summary><div class="roadmap-grid"><article class="roadmap-card"><span aria-hidden="true" class="fi">◉</span><h3>Record a doctor’s visit</h3><div aria-hidden="true" class="audio-art"><i style="height:10px"></i><i style="height:18px"></i><i style="height:32px"></i><i style="height:24px"></i><i style="height:42px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:36px"></i><i style="height:46px"></i><i style="height:30px"></i><i style="height:16px"></i><i style="height:24px"></i><i style="height:38px"></i><i style="height:18px"></i><i style="height:10px"></i><i style="height:28px"></i><i style="height:42px"></i><i style="height:30px"></i><i style="height:16px"></i><i style="height:8px"></i></div><p>With everyone’s agreement, record a visit and review a plain-language summary. Planned after legal review.</p></article><article class="roadmap-card"><span aria-hidden="true" class="fi">♡</span><h3>Care that understands your timeline</h3><p>A vetted clinical partner to help you act on what you see.</p></article><article class="roadmap-card"><span aria-hidden="true" class="fi">⌑</span><h3>Order missing tests</h3><p>Explore tests that could fill a gap, and order through a partner if you choose. The intelligence never prescribes.</p></article><article class="roadmap-card"><span aria-hidden="true" class="fi">✧</span><h3>Pelvic floor health</h3><p>A dedicated area built with the same evidence standards.</p></article><article class="roadmap-card"><span aria-hidden="true" class="fi">◇</span><h3>Clinical trials, only if you say yes</h3><p>A study sees only a yes or no to its criteria. Contact details are shared only after your agreement.</p></article></div></details></div></section><section class="feature-section" id="circle"><div class="wrap">
+
+<div class="feature-layout"><div class="mock" style="background:#FFFBFD"><div class="mock-top"><b>HerCircle</b><span class="demo-label">Try the sharing preview</span></div>
+<div class="person"><span class="avatar" style="background:var(--navy);color:white">Y</span><div><b>You</b><small>Your circle, your choices</small></div><span class="chip">Owner</span></div>
+<div class="person"><span class="avatar">M</span><div><b>Mom</b><small>Help with the health details she shares</small></div></div>
+<div class="sharing"><label for="sharing-level">What Mom can see from your record</label><select id="sharing-level"><option value="overview">An overview</option><option selected="" value="selected">Only what you choose</option><option value="all">Everything shareable</option></select><p aria-live="polite" id="sharing-description">You select the results and updates Mom can see.</p></div>
+<div class="person"><span class="avatar">S</span><div><b>Sister</b><small>Alerts: serious updates only</small></div></div>
+<div class="person"><span class="avatar">D</span><div><b>Daughter</b><small>Alerts: off</small></div></div>
+<div class="note"><b>Some things always stay private.</b><br/>Reproductive and vaginal microbiome results are excluded from sharing settings.</div>
+<p class="demo-label" style="margin-top:16px">Demo only · No records or settings are saved</p></div>
+<div class="feature-copy"><div class="feature-head"><span class="eyebrow">04 / THE CIRCLE</span><h2>Your people.<br/>Closer to your care.</h2><p class="lead">Your health and your family’s, connected on your terms.</p></div><details class="feature-details"><summary>Explore sharing and privacy</summary><ul class="feature-list">
+<li><span aria-hidden="true" class="fi">♡</span><div><b>Up to six people, free</b><p>Bring your mother, sister, daughter or partner. You pay; the people you invite join free.</p></div></li>
+<li><span aria-hidden="true" class="fi">◉</span><div><b>Three sharing levels</b><p>Share an overview, selected information or everything shareable. Change it at any time.</p></div></li>
+<li><span aria-hidden="true" class="fi">◴</span><div><b>Alerts you choose</b><p>For each person, choose no alerts, serious updates only or all alerts.</p></div></li>
+<li><span aria-hidden="true" class="fi">♡</span><div><b>Act for your mother</b><p>Help manage her labs, medicines and visits, using only what she agrees to share.</p></div></li>
+<li><span aria-hidden="true" class="fi">◇</span><div><b>Private by design</b><p>Sensitive reproductive and vaginal microbiome results are never shared through these settings.</p></div></li>
+</ul></details></div></div></div></section><section class="evidence" id="evidence">
+<div class="wrap">
+<div class="intro">
+<span class="eyebrow">Our evidence</span>
+<h2>Our standard: research in women like you.</h2>
+<p class="lead">Not the open internet, and not studies done only in men.</p>
+</div>
+<div class="pillars">
+<div><b>Found</b><span>Research in women in midlife and beyond.</span></div>
+<div><b>Checked</b><span>Our review standard: check each summary against the study itself.</span></div>
+<div><b>Signed</b><span>Planned medical review before health content reaches you.</span></div>
+<div class="honest"><b>Honest</b><span>When the research isn’t there, we say so. And nothing to sell you: what you buy never changes what you’re told.</span></div>
+</div>
+</div>
+</section> <section id="waitlist" style="padding-top:0">
+<div class="wrap">
+<div class="waitlist">
+<div class="text">
+<h2>Your next chapter starts with understanding.</h2>
+<p class="lead" style="font-size:17px">BioMarkHER is in development. Explore the early-access experience.</p>
+</div>
+<form id="wl">
+<label for="email" style="position:absolute;left:-9999px">Email</label>
+<input id="email" placeholder="Your email (demo only)" required="" type="email"/>
+<button class="btn btn-dark" type="submit">Preview sign-up</button>
+<span class="msg" id="wlmsg" role="status"></span>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="top">
+<img alt="BiomarkHER" src="images/logo.png"/>
+<span></span>
+<a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a>
+</div>
+<p>BiomarkHER explains your results; it does not diagnose or replace your clinician. People shown are models in stock photos. Results shown are sample data. © BiomarkHER.</p>
+</div>
+</footer>
+<script>
+// Preview only: sign-up is not connected yet. Replace with a form service (e.g. Formspree or Tally) before launch.
+document.getElementById('wl').addEventListener('submit', function (e) {
+  e.preventDefault();
+  document.getElementById('wlmsg').textContent = 'Thank you. Sign-up opens soon; this preview does not save emails yet.';
+});
+
+const insightContent = {
+ medication: ['A medicine is part of the story.', 'Place a medication’s start date alongside your results. Explore what changed and what research may explain, without assuming the medicine caused every change.'],
+ supplements: ['Know what the evidence supports.', 'Explore research in midlife women for a supplement, including uncertainty and situations where the evidence does not show a benefit.'],
+ food: ['Nutrition you can follow over time.', 'Bring measured nutrients and markers, such as vitamin D and the omega-3 index, into your results history.'],
+ movement: ['Movement, in your life stage.', 'Connect activity and strength to the needs of your muscles and bones, with context for where you are on your timeline.']
+};
+document.querySelectorAll('[data-insight]').forEach(button => button.addEventListener('click', () => {
+ document.querySelectorAll('[data-insight]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+ const [title, copy] = insightContent[button.dataset.insight];
+ document.getElementById('insight-title').textContent = title;
+ document.getElementById('insight-copy').textContent = copy;
+}));
+const sharingCopy = {overview:'Mom sees a high-level overview, without your individual result details.',selected:'You select the results and updates Mom can see.',all:'Mom sees everything eligible for sharing. Reproductive and vaginal microbiome results remain private.'};
+document.getElementById('sharing-level').addEventListener('change', event => {document.getElementById('sharing-description').textContent = sharingCopy[event.target.value];});
+document.querySelectorAll('.mobile-links a').forEach(link => link.addEventListener('click', () => document.querySelector('.mobile-nav').removeAttribute('open')));
+
+</script>
+</body>
+</html>
