@@ -81,8 +81,8 @@ section{padding-block:96px}
 .banner strong{letter-spacing:.1em;font-weight:600;margin-right:6px}
 header{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:rgba(250,250,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:30;background:var(--bg)}
-.nav{display:flex;align-items:center;gap:28px;height:76px}
-.nav .logo img{width:190px;height:auto}
+.nav{display:flex;align-items:center;gap:28px;height:88px}
+.nav .logo img{width:auto;height:66px}
 .nav nav{display:flex;gap:26px;margin-left:auto;font-size:13px;font-weight:600;letter-spacing:.02em}
 .nav nav a{color:var(--ink);text-decoration:none}
 .nav nav a:hover{color:var(--teal)}
@@ -90,10 +90,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .menu{display:none;margin-left:auto}
 .menu summary{list-style:none;cursor:pointer;font-weight:600;font-size:14px;padding:10px 4px}
 .menu summary::-webkit-details-marker{display:none}
-.menu div{position:absolute;left:0;right:0;top:76px;background:var(--bg);border-bottom:1px solid var(--line);display:grid;padding:8px max(16px, env(safe-area-inset-left, 0px)) 16px}
+.menu div{position:absolute;left:0;right:0;top:88px;background:var(--bg);border-bottom:1px solid var(--line);display:grid;padding:8px max(16px, env(safe-area-inset-left, 0px)) 16px}
 .menu div a{padding:12px 0;color:var(--ink);text-decoration:none;font-weight:600;border-top:1px solid var(--line)}
 @media (max-width:1060px){.nav nav{display:none}.menu{display:block}}
-@media (max-width:520px){.nav .logo img{width:150px}.nav{gap:14px}.nav .btn{padding:0 14px;font-size:13px}}
+@media (max-width:520px){.nav .logo img{height:50px}.nav{gap:14px}.nav .btn{padding:0 14px;font-size:13px}}
 
 /* hero */
 .hero{padding-block:56px 72px}
@@ -256,7 +256,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .waitlist .msg{font-size:14px;color:var(--teal);font-weight:600;min-height:20px}
 footer{border-top:1px solid var(--line);padding-block:36px 44px;font-size:13px;color:var(--muted)}
 footer .wrap{display:grid;gap:14px}
-footer img{width:170px;height:auto}
+footer img{width:320px;max-width:100%;height:auto}
 footer nav{display:flex;gap:18px}
 footer nav a{color:var(--muted)}
 .draft-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--plum);background:var(--plum-soft);padding:2px 8px;border-radius:999px;vertical-align:middle}
@@ -270,7 +270,7 @@ footer nav a{color:var(--muted)}
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#top" aria-label="BiomarkHER home"><img src="images/logo.png" alt="BiomarkHER" width="800" height="152"></a>
+    <a class="logo" href="#top" aria-label="BiomarkHER home"><img src="images/logo-wordmark.png" alt="BiomarkHER" width="663" height="207"></a>
     <nav aria-label="Main">
       <a href="#hub">The Hub</a>
       <a href="#intelligence">Menopause Aware Intelligence</a>
@@ -603,7 +603,7 @@ footer nav a{color:var(--muted)}
 
 <footer>
   <div class="wrap">
-    <img src="images/logo.png" alt="BiomarkHER" width="800" height="152">
+    <img src="images/logo-lockup.png" alt="BiomarkHER. Health Clarity Calibrated for Midlife and Beyond" width="1006" height="323">
     <nav aria-label="Footer"><a href="#top">Privacy</a><a href="#top">Terms</a><a href="#top">Contact</a></nav>
     <p>BiomarkHER explains your results; it does not diagnose or replace your clinician. People shown are models in stock photos. Results shown are sample data. <span class="draft-tag">DRAFT WORDING</span> © BiomarkHER.</p>
   </div>
