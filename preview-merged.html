@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BiomarkHER Merged Preview</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..600,100&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: the live page's calm editorial frame (serif heads, sentence case, light grounds)
+   carrying version five's product screens; one dark band for the intelligence.
+   Single deliberate light look: every colour set explicitly. */
+:root{
+  color-scheme: light;
+  --bg:#FAFAF7;        /* page ground */
+  --soft:#F0F3F0;      /* quiet alternate band */
+  --card:#FFFFFF;
+  --ink:#1A2649;       /* brand navy */
+  --muted:#545C74;
+  --line:#DCE2DD;
+  --teal:#0E7C7B;      /* primary accent */
+  --teal-soft:#E4F1EF;
+  --plum:#7E6A9B;      /* care / evidence */
+  --plum-soft:#F1ECF6;
+  --rose:#B9507A;      /* HerCircle */
+  --rose-soft:#FBEFF4;
+  --night:#141B3A;     /* the one dark band */
+  --night-card:#1F2850;
+  --night-line:#323C69;
+  --night-ink:#EEF1F8;
+  --night-muted:#B4BCD4;
+  --cyan:#7FE0E3;
+  --amber:#B7791F;
+  --amber-soft:#FCF1DC;
+  --serif:'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans:'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --r:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--plum);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--serif);font-variation-settings:'SOFT' 100;font-weight:500;letter-spacing:-.02em;line-height:1.12;margin:0;text-wrap:balance}
+h3{font-family:var(--sans);font-weight:600;letter-spacing:-.005em;font-size:18px;line-height:1.3}
+p{margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(24px, env(safe-area-inset-left, 0px));padding-right:max(24px, env(safe-area-inset-right, 0px))}
+@media (max-width:600px){.wrap{padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.lead{font-size:18px;color:var(--muted);max-width:60ch}
+.sample{font-size:11px;letter-spacing:.06em;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border-radius:12px;font:600 15px/1 var(--sans);text-decoration:none;border:0;cursor:pointer}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#26356A}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink)}
+section{padding-block:96px}
+@media (max-width:800px){section{padding-block:64px}}
+.section-head{display:grid;gap:16px;margin-bottom:48px;max-width:760px}
+.section-head h2{font-size:clamp(32px,4.2vw,50px)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split>*{min-width:0}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:40px}}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.tiles.three{grid-template-columns:repeat(3,1fr)}
+.tiles.five{grid-template-columns:repeat(5,1fr)}
+@media (max-width:1000px){.tiles,.tiles.five{grid-template-columns:repeat(2,1fr)}.tiles.three{grid-template-columns:1fr}}
+@media (max-width:560px){.tiles,.tiles.five{grid-template-columns:1fr}}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:8px;align-content:start}
+.tile p{font-size:15px;color:var(--muted)}
+.ico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--teal-soft);color:var(--teal);margin-bottom:6px}
+.ico svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* banner + header */
+.banner{background:var(--plum);color:#fff;font-size:12.5px;text-align:center;padding:9px 16px;letter-spacing:.02em}
+.banner strong{letter-spacing:.1em;font-weight:600;margin-right:6px}
+header{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:rgba(250,250,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:30;background:var(--bg)}
+.nav{display:flex;align-items:center;gap:28px;height:76px}
+.nav .logo img{width:190px;height:auto}
+.nav nav{display:flex;gap:26px;margin-left:auto;font-size:13px;font-weight:600;letter-spacing:.02em}
+.nav nav a{color:var(--ink);text-decoration:none}
+.nav nav a:hover{color:var(--teal)}
+.nav .btn{min-height:42px;font-size:14px;padding:0 18px}
+.menu{display:none;margin-left:auto}
+.menu summary{list-style:none;cursor:pointer;font-weight:600;font-size:14px;padding:10px 4px}
+.menu summary::-webkit-details-marker{display:none}
+.menu div{position:absolute;left:0;right:0;top:76px;background:var(--bg);border-bottom:1px solid var(--line);display:grid;padding:8px max(16px, env(safe-area-inset-left, 0px)) 16px}
+.menu div a{padding:12px 0;color:var(--ink);text-decoration:none;font-weight:600;border-top:1px solid var(--line)}
+@media (max-width:1060px){.nav nav{display:none}.menu{display:block}}
+@media (max-width:520px){.nav .logo img{width:150px}.nav{gap:14px}.nav .btn{padding:0 14px;font-size:13px}}
+
+/* hero */
+.hero{padding-block:56px 72px}
+.hero .split{grid-template-columns:5fr 6fr;gap:56px}
+.hero-copy{display:grid;gap:22px}
+.hero h1{font-size:clamp(38px,4.4vw,58px);line-height:1.04;letter-spacing:-.03em}
+.hero .audience{font-size:19px;font-weight:600;color:var(--ink)}
+.hero .lead{font-size:17.5px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.hero-media{position:relative;border-radius:140px 22px 22px 22px;overflow:hidden;aspect-ratio:3/2;background:var(--soft)}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:62% center}
+.photo-note{position:absolute;left:14px;bottom:14px;background:rgba(26,38,73,.72);color:#fff;font-size:11px;padding:4px 10px;border-radius:999px}
+@media (max-width:900px){.hero .split{grid-template-columns:1fr}.hero-media{border-radius:80px 18px 18px 18px}}
+
+/* overview */
+.overview{background:var(--soft);padding-block:72px}
+.overview h2{font-size:clamp(28px,3vw,38px);text-align:center;margin-bottom:40px}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--card)}
+.pillar{padding:28px 26px 26px;display:grid;gap:10px;align-content:start;text-decoration:none;color:var(--ink);border-right:1px solid var(--line);transition:background .2s}
+.pillar:last-child{border-right:0}
+.pillar:hover{background:var(--bg)}
+.pillar .top{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.pillar .num{color:var(--muted);font-weight:500;letter-spacing:.04em}
+.pillar .art{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;margin:10px 0 6px}
+.pillar .art svg{width:40px;height:40px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.pillar h3{font-family:var(--serif);font-weight:500;font-size:22px}
+.pillar p{font-size:14.5px;color:var(--muted)}
+.pillar .go{font-size:13px;font-weight:600;color:var(--teal);margin-top:8px}
+.p-hub .art{background:var(--teal-soft);color:var(--teal)}
+.p-int .art{background:#E6ECF6;color:#2A4A8A}
+.p-circ .art{background:var(--rose-soft);color:var(--rose)}
+.p-care .art{background:var(--plum-soft);color:var(--plum)}
+.soon{font-size:10px;font-weight:700;letter-spacing:.08em;background:var(--plum-soft);color:var(--plum);padding:3px 9px;border-radius:999px}
+@media (max-width:1000px){.pillars{grid-template-columns:repeat(2,1fr)}.pillar:nth-child(2){border-right:0}.pillar:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:560px){.pillars{grid-template-columns:1fr}.pillar{border-right:0;border-bottom:1px solid var(--line)}.pillar:last-child{border-bottom:0}}
+
+/* hub */
+.photo-stack{position:relative;padding:0 0 40px 0}
+.photo-stack .ph{border-radius:22px;overflow:hidden;aspect-ratio:5/4;max-width:460px;margin-left:auto;position:relative}
+.photo-stack .ph img{width:100%;height:100%;object-fit:cover}
+.float{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 44px rgba(26,38,73,.12);padding:18px 20px;font-size:14px}
+.lab{left:0;top:36px;width:min(300px,62%)}
+.lab .row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+.lab .row:first-of-type{border-top:0}
+.lab .ok{color:var(--teal);font-weight:700}
+.lab .q{color:var(--amber);font-weight:700}
+.lab .hd{display:flex;justify-content:space-between;align-items:center;font-weight:600;margin-bottom:6px}
+.chip{font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--teal-soft);color:var(--teal)}
+.fam{right:8px;bottom:0;width:min(250px,56%)}
+.fam .hd{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.fam .who{display:flex;gap:10px;align-items:center;padding:4px 0}
+.av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;background:var(--plum-soft);color:var(--plum);flex:none}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.pills span{font-size:13px;font-weight:600;background:var(--teal-soft);color:var(--teal);padding:6px 12px;border-radius:999px}
+@media (max-width:560px){.lab{position:relative;top:auto;width:100%;margin-bottom:16px}.photo-stack .ph{max-width:none}.fam{position:relative;right:auto;width:100%;margin-top:16px}.photo-stack{padding:0}}
+
+/* intelligence (the one dark band) */
+.intel{background:radial-gradient(1200px 500px at 15% 0%,#2C2D5E 0%,transparent 60%),radial-gradient(900px 500px at 100% 100%,#0F4A57 0%,transparent 60%),var(--night);color:var(--night-ink)}
+.intel .eyebrow{color:var(--cyan)}
+.intel .lead{color:var(--night-muted)}
+.intel .section-head{margin-inline:auto;text-align:center;justify-items:center}
+.motto{border-left:3px solid var(--cyan);padding-left:16px;font-size:19px;font-family:var(--serif);color:var(--night-ink)}
+.board{display:grid;grid-template-columns:7fr 5fr;gap:18px}
+.board3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+@media (max-width:960px){.board,.board3{grid-template-columns:1fr}}
+.panel{background:var(--night-card);border:1px solid var(--night-line);border-radius:22px;padding:28px;min-width:0}
+.panel h3{color:var(--night-ink);font-size:19px;margin-bottom:6px}
+.panel>p{color:var(--night-muted);font-size:15px}
+.panel .sample{color:var(--night-muted);margin-top:14px;display:block}
+.stage{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 18px}
+.stage div{background:#273163;border-radius:12px;padding:10px 14px;font-size:12.5px;color:var(--night-muted)}
+.stage b{display:block;font-size:20px;color:var(--cyan);font-weight:600;font-variant-numeric:tabular-nums}
+.tl{width:100%;height:auto;display:block}
+.tl text{font-family:var(--sans)}
+.syschips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+.syschips span{background:#273163;border-radius:10px;padding:9px 10px;font-size:13px;font-weight:600;display:flex;gap:8px;align-items:center;min-width:0}
+.syschips i{width:8px;height:8px;border-radius:50%;background:var(--cyan);flex:none}
+.syschips i.w{background:#E5A04A}
+@media (max-width:420px){.syschips{grid-template-columns:repeat(2,1fr)}}
+.score{display:flex;gap:18px;align-items:center;margin:16px 0}
+.score svg{width:120px;height:72px;flex:none}
+.score .n{font-size:40px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+.score small{color:var(--night-muted);display:block;font-size:13px}
+.why{font-size:14.5px;color:var(--night-muted)}
+.why b{color:var(--night-ink)}
+.why em{font-style:normal;color:var(--cyan);font-weight:600}
+.bubble{border-radius:16px;padding:12px 16px;font-size:14px;margin-top:12px;max-width:92%}
+.bubble.me{background:#0E9AA0;color:#fff;margin-left:auto;width:fit-content}
+.bubble.ai{background:#2B3566;color:var(--night-ink)}
+.link-chip{display:inline-block;margin-top:12px;font-size:13px;font-weight:600;color:var(--cyan);border:1px solid #3B4A80;border-radius:999px;padding:5px 12px}
+
+/* context */
+.ctx-media{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;max-height:620px}
+.ctx-media img{width:100%;height:100%;object-fit:cover;object-position:45% center}
+.chart-card{position:absolute;left:18px;right:18px;bottom:18px;background:var(--card);border-radius:16px;padding:16px 18px;box-shadow:0 16px 40px rgba(26,38,73,.18)}
+.chart-card .hd{display:flex;justify-content:space-between;font-size:14px;font-weight:600}
+.chart-card svg{width:100%;height:auto;display:block;margin-top:6px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 18px}
+.tabs button{font:600 14.5px/1 var(--sans);padding:11px 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.tabpanel{background:var(--teal-soft);border-radius:18px;padding:24px 26px;display:grid;gap:8px}
+.tabpanel h3{font-family:var(--serif);font-weight:500;font-size:22px}
+.tabpanel p{color:var(--muted)}
+.quote{margin-top:14px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px;color:var(--ink)}
+
+/* circle */
+.circle{background:linear-gradient(180deg,var(--rose-soft),var(--bg))}
+.circle .eyebrow{color:var(--rose)}
+.orbit{position:relative;aspect-ratio:1;max-width:440px;margin:0 auto;width:100%}
+.orbit .ring{position:absolute;inset:12%;border:2px solid #EBD3DE;border-radius:50%}
+.orbit .ring2{position:absolute;inset:0;border:1px dashed #E7CBD8;border-radius:50%}
+.orbit .you{position:absolute;left:50%;top:50%;width:27%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;letter-spacing:.06em;border:6px solid var(--card);box-shadow:0 14px 30px rgba(26,38,73,.25)}
+.orbit .p{position:absolute;width:21%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:var(--card);display:grid;place-items:center;font-weight:700;font-size:20px;border:4px solid}
+.orbit .p em{position:absolute;top:100%;margin-top:6px;font-style:normal;font-size:12px;font-weight:600;background:var(--card);border-radius:999px;padding:2px 10px;box-shadow:0 2px 8px rgba(26,38,73,.1);white-space:nowrap}
+.seg{display:inline-flex;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px;gap:4px;margin-top:20px}
+.seg button{font:600 14px/1 var(--sans);border:0;border-radius:10px;padding:11px 14px;background:transparent;color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.people{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:6px 18px}
+.person{display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line);font-size:14.5px}
+.person:first-child{border-top:0}
+.person .av{width:34px;height:34px}
+.person small{display:block;color:var(--muted);font-size:13px}
+.person .tag{margin-left:auto;font-size:12px;font-weight:600;color:var(--rose);background:var(--rose-soft);padding:4px 10px;border-radius:999px;white-space:nowrap}
+.private{margin-top:14px;font-size:14px;background:var(--plum-soft);border-radius:12px;padding:12px 16px}
+.circle .ico{background:var(--rose-soft);color:var(--rose)}
+
+/* care */
+.care{background:var(--plum-soft)}
+.care .eyebrow{color:var(--plum)}
+.pdf{background:var(--card);border-radius:20px;padding:26px;box-shadow:0 24px 60px rgba(80,60,120,.14);transform:rotate(-1.5deg);max-width:470px;margin-left:auto}
+.pdf .hd{display:flex;gap:12px;align-items:center}
+.pdf .badge{font-size:11px;font-weight:700;background:var(--plum-soft);color:var(--plum);border-radius:8px;padding:6px 8px}
+.pdf .bar{height:8px;border-radius:4px;background:#E9ECF1;margin-top:10px}
+.pdf .row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:1px solid var(--line);font-size:14.5px}
+.miss{font-size:11.5px;font-weight:700;background:var(--amber-soft);color:var(--amber);padding:3px 9px;border-radius:999px}
+.care .ico{background:var(--plum-soft);color:var(--plum)}
+.care .coming{font-size:11px;font-weight:700;color:var(--plum);letter-spacing:.06em}
+
+/* evidence */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;margin-top:8px}
+.steps::before{content:"";position:absolute;left:34px;right:12%;top:33px;height:2px;background:linear-gradient(90deg,var(--teal),var(--plum))}
+.step{position:relative;display:grid;gap:8px;align-content:start}
+.step .n{width:68px;height:68px;border-radius:50%;background:var(--bg);border:2px solid var(--teal);display:grid;place-items:center;font:500 26px/1 var(--serif);margin-bottom:10px}
+.step:last-child .n{border-color:var(--plum)}
+.step h3{font-family:var(--serif);font-weight:500;font-size:24px}
+.step p{color:var(--muted);font-size:15px}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}.steps::before{display:none}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+.honest{margin-top:48px;background:var(--night);color:var(--night-ink);border-radius:22px;padding:30px 34px;display:flex;gap:22px;align-items:flex-start}
+.honest svg{width:40px;height:40px;flex:none;fill:none;stroke:#C9B3E6;stroke-width:1.8}
+.honest .eyebrow{color:#C9B3E6}
+.honest p{font-family:var(--serif);font-size:clamp(18px,2vw,23px);line-height:1.4;margin-top:6px}
+
+/* waitlist + footer */
+.waitlist{text-align:center}
+.waitlist .box{background:var(--teal-soft);border-radius:28px;padding:64px 24px;display:grid;justify-items:center;gap:16px}
+.waitlist h2{font-size:clamp(30px,4vw,46px)}
+.waitlist form{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:10px;width:100%}
+.waitlist input{width:320px;max-width:100%;min-height:50px;border-radius:12px;border:1px solid #C4CFCB;padding:0 16px;font:16px var(--sans);background:var(--card);color:var(--ink)}
+.waitlist .msg{font-size:14px;color:var(--teal);font-weight:600;min-height:20px}
+footer{border-top:1px solid var(--line);padding-block:36px 44px;font-size:13px;color:var(--muted)}
+footer .wrap{display:grid;gap:14px}
+footer img{width:170px;height:auto}
+footer nav{display:flex;gap:18px}
+footer nav a{color:var(--muted)}
+.draft-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--plum);background:var(--plum-soft);padding:2px 8px;border-radius:999px;vertical-align:middle}
+</style>
+</head>
+<body>
+<!-- MERGED PREVIEW (2026-11-20): structure and type from index.html; product screens from preview-v5.html.
+     Member wording is DRAFT until RG1. Names per the Positioning & Consumer Messaging Master (The Hub, Menopause Aware
+     Intelligence, HerCircle, The Care) and tagline per register row 271. All numbers on screens are sample data. -->
+<div class="banner"><strong>PREVIEW</strong> BiomarkHER is in development. Wording is draft. Screens show sample data, not live health tools.</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="BiomarkHER home"><img src="images/logo.png" alt="BiomarkHER" width="800" height="152"></a>
+    <nav aria-label="Main">
+      <a href="#hub">The Hub</a>
+      <a href="#intelligence">Menopause Aware Intelligence</a>
+      <a href="#circle">HerCircle</a>
+      <a href="#care">The Care</a>
+    </nav>
+    <details class="menu"><summary>Menu</summary><div>
+      <a href="#hub">The Hub</a><a href="#intelligence">Menopause Aware Intelligence</a><a href="#circle">HerCircle</a><a href="#care">The Care</a>
+    </div></details>
+    <a class="btn btn-dark" href="#waitlist">Join the waitlist</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap split">
+    <div class="hero-copy">
+      <span class="eyebrow">Women’s health management and intelligence</span>
+      <h1>Health Clarity Calibrated for Midlife and Beyond</h1>
+      <p class="audience">An all-in-one health platform for women in midlife and beyond.</p>
+      <p class="lead">BiomarkHER reads your health through the lens of your menopause timeline, connecting changes in bone, heart, gut and metabolic health with where you are in the menopause transition and beyond.</p>
+      <div class="actions">
+        <a class="btn btn-dark" href="#waitlist">Join the waitlist</a>
+        <a class="btn btn-ghost" href="#hub">See how it works</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="images/hero-bright-clock.webp" width="2048" height="1365" fetchpriority="high" alt="Woman laughing on a beach, with an illustrative ring labelled Bone, Brain, Heart, Metabolic and Gut Health">
+      <span class="photo-note">Illustrative graphic. Posed by model.</span>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="overview" aria-labelledby="ov-h">
+  <div class="wrap">
+    <h2 id="ov-h">Your health. Intelligently connected®</h2>
+    <div class="pillars">
+      <a class="pillar p-hub" href="#hub">
+        <div class="top">The Hub <span class="num">01</span></div>
+        <div class="art"><svg viewBox="0 0 96 96"><rect x="24" y="18" width="48" height="60" rx="8"/><path d="M39 18v-4h18v4M38 35h20M38 61h20M38 69h13"/><path d="M35 49h8l4-7 6 13 4-6h7"/></svg></div>
+        <h3>Your health, together.</h3>
+        <p>Labs, records, wearables and your life story, all in one place.</p>
+        <span class="go">Explore the Hub ↗</span>
+      </a>
+      <a class="pillar p-int" href="#intelligence">
+        <div class="top">The Intelligence <span class="num">02</span></div>
+        <div class="art"><svg viewBox="0 0 96 96"><circle cx="48" cy="48" r="29"/><path d="M48 28v20l13 8"/><path d="M21 70l19-11 17 5 18-28" stroke="#9A78BA"/></svg></div>
+        <h3>Your results, explained.</h3>
+        <p>Menopause Aware Intelligence and your body systems bring the bigger picture into focus.</p>
+        <span class="go">Explore the intelligence ↗</span>
+      </a>
+      <a class="pillar p-circ" href="#circle">
+        <div class="top">HerCircle <span class="num">03</span></div>
+        <div class="art"><svg viewBox="0 0 96 96"><circle cx="48" cy="39" r="9"/><circle cx="22" cy="29" r="6"/><circle cx="74" cy="29" r="6"/><path d="M32 70v-5a16 16 0 0 1 32 0v5H32ZM12 51v-3a10 10 0 0 1 20 0M64 48a10 10 0 0 1 20 0v3"/></svg></div>
+        <h3>Your people, connected.</h3>
+        <p>Care for the people you love, with control over what you share.</p>
+        <span class="go">Explore HerCircle ↗</span>
+      </a>
+      <a class="pillar p-care" href="#care">
+        <div class="top">The Care <span class="soon">COMING SOON</span></div>
+        <div class="art"><svg viewBox="0 0 96 96"><rect x="21" y="21" width="54" height="54" rx="14"/><path d="M43 33h10v10h10v10H53v10H43V53H33V43h10Z"/></svg></div>
+        <h3>Your next step in care.</h3>
+        <p>Planned clinician connections, testing and support informed by your timeline.</p>
+        <span class="go">Explore the Care ↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 01 HUB -->
+<section id="hub" aria-labelledby="hub-h">
+  <div class="wrap">
+    <div class="split">
+      <div class="section-head" style="margin:0">
+        <span class="eyebrow">01 · The Hub</span>
+        <h2 id="hub-h">All your health.<br>One place to begin.</h2>
+        <p class="lead">Start with what you already have. Build a health record that grows with you: every lab, every doctor, every device and your own story, tracked over time.</p>
+        <div class="pills"><span>Upload a PDF</span><span>Connect your provider</span><span>You confirm every value</span></div>
+      </div>
+      <div class="photo-stack">
+        <div class="ph"><img src="images/clock.jpg" width="1400" height="1120" alt="Smiling woman in a red cycling jacket on a road bike" loading="lazy"><span class="photo-note">Stock photo. Posed by model.</span></div>
+        <div class="float lab" aria-label="Sample lab report">
+          <div class="hd">Lab report added <span class="chip">Review</span></div>
+          <div class="row"><span>LDL cholesterol</span><span>148 mg/dL <span class="ok">✓</span></span></div>
+          <div class="row"><span>HDL cholesterol</span><span>58 mg/dL <span class="ok">✓</span></span></div>
+          <div class="row"><span>HbA1c</span><span>5.5 % <span class="q">?</span></span></div>
+          <span class="sample">SAMPLE DATA · CONFIRM VALUES</span>
+        </div>
+        <div class="float fam" aria-label="Sample family history">
+          <div class="hd">Family history</div>
+          <div class="who"><span class="av">M</span>Mom · osteoporosis</div>
+          <div class="who"><span class="av">D</span>Dad · heart disease</div>
+        </div>
+      </div>
+    </div>
+    <div class="tiles">
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></div><h3>Labs, records and imaging</h3><p>Upload results as a PDF or connect your provider. Reports, scans and screening history on one timeline.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><rect x="7" y="6" width="10" height="12" rx="3"/><path d="M9 6V3h6v3M9 18v3h6v-3M10 12h1l1-2 1 4 1-2h1"/></svg></div><h3>Your wearable, in context</h3><p>Sleep, heart rate and activity alongside your lab results.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 12h16M7 8v8M12 6v12M17 9v6"/></svg></div><h3>Your life story</h3><p>Reproductive history, family history, life events, medicines and supplements, connected to your record.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 14l2 2 4-4"/></svg></div><h3>A summary for your doctor</h3><p>A cited PDF to bring to your next appointment, with a nudge when a retest is due.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 INTELLIGENCE -->
+<section class="intel" id="intelligence" aria-labelledby="int-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">02 · Menopause Aware Intelligence</span>
+      <h2 id="int-h">Understand what’s changing.<br>And why.</h2>
+      <p class="lead">See how your biomarkers change over time, and where estrogen loss may help explain why. Still having periods? Your stage matters, too.</p>
+      <p class="motto">One menopause timeline, multiple connected systems.</p>
+    </div>
+
+    <div class="board">
+      <div class="panel">
+        <h3>Your menopause timeline</h3>
+        <p>Each system changes on its own schedule. See where you are on each one.</p>
+        <div class="stage"><div>Stage<b>Postmenopause</b></div><div>Since your final period<b>5 years</b></div></div>
+        <svg class="tl" viewBox="0 0 560 230" role="img" aria-label="Illustration: bars for seven body systems across a menopause timeline, with a marker five years after the final period">
+          <g font-size="12" fill="#B4BCD4"><text x="0" y="14">Before</text><text x="200" y="14" text-anchor="middle">Final period</text><text x="560" y="14" text-anchor="end">After</text></g>
+          <line x1="200" y1="22" x2="200" y2="226" stroke="#56609A" stroke-dasharray="3 4"/>
+          <g font-size="13" font-weight="600" fill="#EEF1F8">
+            <text x="0" y="44">Heart</text><text x="0" y="72">Bone</text><text x="0" y="100">Metabolic</text><text x="0" y="128">Brain</text><text x="0" y="156">Muscle</text><text x="0" y="184">Gut</text><text x="0" y="212">Lungs</text>
+          </g>
+          <g fill="#2B3566"><rect x="90" y="34" width="470" height="12" rx="6"/><rect x="90" y="62" width="470" height="12" rx="6"/><rect x="90" y="90" width="470" height="12" rx="6"/><rect x="90" y="118" width="470" height="12" rx="6"/><rect x="90" y="146" width="470" height="12" rx="6"/><rect x="90" y="174" width="470" height="12" rx="6"/><rect x="90" y="202" width="470" height="12" rx="6"/></g>
+          <g fill="#2FB7BC"><rect x="170" y="34" width="150" height="12" rx="6"/><rect x="150" y="62" width="200" height="12" rx="6"/><rect x="180" y="90" width="210" height="12" rx="6"/><rect x="140" y="146" width="230" height="12" rx="6"/><rect x="190" y="174" width="180" height="12" rx="6"/><rect x="120" y="202" width="300" height="12" rx="6"/></g>
+          <rect x="160" y="118" width="160" height="12" rx="6" fill="none" stroke="#C9B3E6" stroke-dasharray="4 3"/>
+          <line x1="300" y1="26" x2="300" y2="226" stroke="#EEF1F8" stroke-width="2.5"/>
+          <text x="306" y="226" font-size="11" fill="#7FE0E3">You</text>
+        </svg>
+        <span class="sample">Illustration with sample data. Bars show where change is concentrated for each system; a dashed bar marks a system still waiting on evidence.</span>
+      </div>
+      <div class="panel">
+        <h3>Thirteen system scores</h3>
+        <p>Each on its own scale. No single score, and no “biological age”, for all of you.</p>
+        <div class="syschips">
+          <span><i class="w"></i>Heart</span><span><i></i>Bone</span><span><i></i>Metabolic</span>
+          <span><i></i>Brain</span><span><i></i>Hormonal</span><span><i></i>Immune</span>
+          <span><i></i>Kidney</span><span><i></i>Lungs</span><span><i></i>Gut</span>
+          <span><i></i>Muscle</span><span><i></i>Eye</span><span><i></i>Inflammation</span>
+          <span><i></i>Vaginal microbiome</span>
+        </div>
+        <span class="sample">Sample data</span>
+      </div>
+    </div>
+
+    <div class="board3">
+      <div class="panel">
+        <h3>Every score has a reason</h3>
+        <div class="score">
+          <svg viewBox="0 0 120 72" aria-hidden="true"><path d="M12 64a48 48 0 0 1 96 0" fill="none" stroke="#2B3566" stroke-width="12" stroke-linecap="round"/><path d="M12 64a48 48 0 0 1 38-47" fill="none" stroke="#E5A04A" stroke-width="12" stroke-linecap="round"/><line x1="60" y1="64" x2="45" y2="26" stroke="#EEF1F8" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="64" r="5" fill="#EEF1F8"/></svg>
+          <div><small>Heart</small><span class="n">42</span><small>of 100</small></div>
+        </div>
+        <p class="why"><b>Why:</b> your LDL cholesterol is 148 mg/dL. <em>On your menopause timeline:</em> see what research in women at your stage says about it.</p>
+        <span class="sample">Sample data</span>
+      </div>
+      <div class="panel">
+        <h3>Connections</h3>
+        <p>Look beyond single numbers to the patterns across systems.</p>
+        <svg viewBox="0 0 260 150" style="width:100%;height:auto;margin-top:12px" role="img" aria-label="Illustration: Heart, Metabolic, Muscle and Bone linked">
+          <g stroke="rgba(127,224,227,.6)" stroke-width="2"><line x1="60" y1="40" x2="150" y2="75"/><line x1="150" y1="75" x2="215" y2="35"/><line x1="150" y1="75" x2="110" y2="125"/><line x1="60" y1="40" x2="110" y2="125" stroke-dasharray="4 5"/></g>
+          <g font-family="Figtree,sans-serif" font-size="12" font-weight="600" fill="#EEF1F8" text-anchor="middle"><circle cx="60" cy="40" r="26" fill="#1E2B57" stroke="#7FE0E3" stroke-width="2"/><text x="60" y="44">Heart</text><circle cx="150" cy="75" r="30" fill="#1E2B57" stroke="#7FE0E3" stroke-width="2"/><text x="150" y="79">Metabolic</text><circle cx="215" cy="35" r="24" fill="#1E2B57" stroke="#C9B3E6" stroke-width="2"/><text x="215" y="39">Muscle</text><circle cx="110" cy="125" r="22" fill="#1E2B57" stroke="#C9B3E6" stroke-width="2"/><text x="110" y="129">Bone</text></g>
+        </svg>
+      </div>
+      <div class="panel">
+        <h3>Ask anything</h3>
+        <p>Plain-language answers from reviewed content and research in women. It never prescribes.</p>
+        <div class="bubble me">Why is my LDL going up?</div>
+        <div class="bubble ai">Here’s what research in women at your stage says about LDL, and the studies it comes from. This is a good one to raise with your clinician.</div>
+        <span class="link-chip">See the research →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEXT -->
+<section id="context" aria-labelledby="ctx-h">
+  <div class="wrap">
+    <div class="split">
+      <div class="ctx-media">
+        <img src="images/scores.jpg" width="1400" height="1120" alt="Woman with grey hair lifting a barbell in a gym" loading="lazy">
+        <span class="photo-note" style="top:14px;bottom:auto">Stock photo. Posed by model.</span>
+        <div class="chart-card">
+          <div class="hd"><span>LDL cholesterol</span><span class="sample">SAMPLE DATA</span></div>
+          <svg viewBox="0 0 400 120" role="img" aria-label="Sample chart: LDL 162, then 131, then 118 mg/dL after a medicine start date">
+            <line x1="20" y1="104" x2="390" y2="104" stroke="#DCE2DD"/>
+            <line x1="160" y1="14" x2="160" y2="104" stroke="#7E6A9B" stroke-dasharray="3 4"/>
+            <text x="166" y="22" font-size="12" font-weight="600" fill="#7E6A9B" font-family="Figtree,sans-serif" id="ctxmark">Started a statin</text>
+            <path d="M24 40 C 90 38, 140 38, 165 44 S 230 82, 270 86 S 350 92, 384 94" fill="none" stroke="#0E7C7B" stroke-width="3"/>
+            <g font-size="12" fill="#545C74" font-family="Figtree,sans-serif"><text x="24" y="30">162</text><text x="262" y="76">131</text><text x="372" y="84">118</text></g>
+          </svg>
+        </div>
+      </div>
+      <div>
+        <div class="section-head" style="margin-bottom:0">
+          <span class="eyebrow">From information to understanding</span>
+          <h2 id="ctx-h">Every change has context.</h2>
+          <p class="lead">Bring medicines, supplements, food and movement into the same conversation as your results, with research to help explain what may be contributing, and honest limits on what the data can tell you.</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Context type">
+          <button role="tab" id="t-med" aria-selected="true" data-k="med">Medicines</button>
+          <button role="tab" id="t-sup" aria-selected="false" data-k="sup">Supplements</button>
+          <button role="tab" id="t-food" aria-selected="false" data-k="food">Food</button>
+          <button role="tab" id="t-move" aria-selected="false" data-k="move">Movement</button>
+        </div>
+        <div class="tabpanel" role="tabpanel" aria-live="polite">
+          <h3 id="tp-h">A medicine is part of the story.</h3>
+          <p id="tp-p">Place a medicine’s start date alongside your results. See how your results have moved since you started, without assuming the medicine caused every change.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tiles three">
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></div><h3>Education on every result</h3><p>Open a result to see what it is, why it matters on your timeline and what the research says.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Honest notes</h3><p>When evidence is missing or a popular claim isn’t supported, you see that clearly.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M5 5h14v10H9l-4 4z"/><path d="M9 9h6M9 12h4"/></svg></div><h3>See the research</h3><p>Every answer about your health shows where it came from: studies in women in midlife and beyond.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 HERCIRCLE -->
+<section class="circle" id="circle" aria-labelledby="circ-h">
+  <div class="wrap">
+    <div class="split">
+      <div class="orbit" aria-hidden="true">
+        <div class="ring2"></div><div class="ring"></div>
+        <div class="you">YOU</div>
+        <div class="p" style="left:50%;top:12%;border-color:#A58BC8">M<em>Mom</em></div>
+        <div class="p" style="left:84%;top:70%;border-color:#D46A93">S<em>Sister</em></div>
+        <div class="p" style="left:16%;top:70%;border-color:#B7BFCF">D<em>Daughter</em></div>
+      </div>
+      <div>
+        <div class="section-head" style="margin-bottom:0">
+          <span class="eyebrow">03 · HerCircle</span>
+          <h2 id="circ-h">Care for your people.<br>Keep control of your privacy.</h2>
+          <p class="lead">Your health and your family’s, connected on your terms. Choose what Mom can see:</p>
+        </div>
+        <div class="seg" role="group" aria-label="What Mom can see">
+          <button aria-pressed="false" data-s="0">An overview</button>
+          <button aria-pressed="true" data-s="1">What you choose</button>
+          <button aria-pressed="false" data-s="2">Everything shareable</button>
+        </div>
+        <div class="people">
+          <div class="person"><span class="av" style="background:#EFE8F7;color:#7E6A9B">M</span><div>Mom<small id="seg-t">You select the results and updates Mom can see.</small></div></div>
+          <div class="person"><span class="av" style="background:#FBEFF4;color:#B9507A">S</span><div>Sister<small>Alerts: serious updates only</small></div><span class="tag">Alerts on</span></div>
+          <div class="person"><span class="av" style="background:#EEF0F4;color:#545C74">D</span><div>Daughter<small>Alerts: off</small></div></div>
+        </div>
+        <p class="private"><b>Some things always stay private.</b> Reproductive and vaginal microbiome results are never shared through these settings.</p>
+        <p class="sample" style="margin-top:10px">DEMO ONLY · NOTHING IS SAVED</p>
+      </div>
+    </div>
+    <div class="tiles">
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19a6 6 0 0 1 12 0M15 19a4 4 0 0 1 6-3.5"/></svg></div><h3>Up to six people, free</h3><p>Bring your mother, sister, daughter or partner. You pay; the people you invite join free.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Three sharing levels</h3><p>An overview, what you choose, or everything shareable. Change it at any time.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg></div><h3>Alerts you choose</h3><p>For each person: no alerts, serious updates only, or all alerts.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></div><h3>Help your mother</h3><p>Help manage her labs, medicines and visits, using only what she agrees to share.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 CARE -->
+<section class="care" id="care" aria-labelledby="care-h">
+  <div class="wrap">
+    <div class="split">
+      <div class="section-head" style="margin:0">
+        <span class="eyebrow">04 · The Care · Coming soon</span>
+        <h2 id="care-h">The next chapter of your care.</h2>
+        <p class="lead">Take your doctor a clear summary of what’s changed, with the research behind it. Connected care to help you take the next step is coming; timing to be confirmed. BiomarkHER works with your doctor, never in place of one.</p>
+      </div>
+      <div class="pdf" aria-label="Sample doctor summary">
+        <div class="hd"><span class="badge">PDF</span><div><b>Your summary for your doctor</b><br><span class="sample">What’s changed, questions to ask, sources cited</span></div></div>
+        <div class="bar" style="width:92%"></div><div class="bar" style="width:76%"></div><div class="bar" style="width:84%;margin-bottom:12px"></div>
+        <div class="row">3 changes since your last visit <span>›</span></div>
+        <div class="row">2 questions to ask <span>›</span></div>
+        <div class="row">Bone density scan (DXA) <span class="miss">Missing</span></div>
+        <span class="sample">SAMPLE DATA</span>
+      </div>
+    </div>
+    <div class="tiles five">
+      <div class="tile"><span class="coming">COMING</span><h3>Record a doctor’s visit</h3><p>With everyone’s agreement, then a plain-language summary. Planned after legal review.</p></div>
+      <div class="tile"><span class="coming">COMING</span><h3>Care that understands your timeline</h3><p>A vetted clinical partner to help you act on what you see.</p></div>
+      <div class="tile"><span class="coming">COMING</span><h3>Order missing tests</h3><p>Tests that could fill a gap, through a partner if you choose.</p></div>
+      <div class="tile"><span class="coming">COMING</span><h3>Pelvic floor health</h3><p>A dedicated area built to the same evidence standards.</p></div>
+      <div class="tile"><span class="coming">COMING</span><h3>Clinical trials, only if you say yes</h3><p>Nothing is shared without your agreement.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE -->
+<section id="evidence" aria-labelledby="ev-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our evidence</span>
+      <h2 id="ev-h">Our standard: research in women like you.</h2>
+      <p class="lead">Not the open internet, and not studies done only in men.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><h3>Found</h3><p>Research in women in midlife and beyond.</p></div>
+      <div class="step"><span class="n">2</span><h3>Checked</h3><p>Every summary checked against the study itself.</p></div>
+      <div class="step"><span class="n">3</span><h3>Signed</h3><p>Medical review before health content reaches you.</p></div>
+      <div class="step"><span class="n">4</span><h3>Honest</h3><p>When the research isn’t there, we say so. And what you buy never changes what you’re told.</p></div>
+    </div>
+    <div class="honest">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      <div><span class="eyebrow">An honest answer</span><p>“There isn’t enough research on this in women in midlife and beyond to give you a reliable answer yet. This is a good one to raise with your clinician.”</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WAITLIST -->
+<section class="waitlist" id="waitlist" aria-labelledby="wl-h" style="padding-top:0">
+  <div class="wrap">
+    <div class="box">
+      <h2 id="wl-h">Be among the first to try BiomarkHER.</h2>
+      <p class="lead">BiomarkHER is in development. We’ll let you know when early access opens.</p>
+      <form id="wl-form" novalidate>
+        <label for="wl-email" style="position:absolute;left:-9999px">Email</label>
+        <input id="wl-email" type="email" placeholder="Your email (preview only)" autocomplete="email">
+        <button class="btn btn-dark" type="submit">Join the waitlist</button>
+      </form>
+      <p class="msg" id="wl-msg" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="images/logo.png" alt="BiomarkHER" width="800" height="152">
+    <nav aria-label="Footer"><a href="#top">Privacy</a><a href="#top">Terms</a><a href="#top">Contact</a></nav>
+    <p>BiomarkHER explains your results; it does not diagnose or replace your clinician. People shown are models in stock photos. Results shown are sample data. <span class="draft-tag">DRAFT WORDING</span> © BiomarkHER.</p>
+  </div>
+</footer>
+
+<script>
+const tabs={
+  med:['A medicine is part of the story.','Place a medicine’s start date alongside your results. See how your results have moved since you started, without assuming the medicine caused every change.','Started a statin'],
+  sup:['What the research in women supports.','Add the supplements you take and see what research in midlife women does, and does not, support.','Started vitamin D'],
+  food:['Food you can measure.','Follow measured nutrients and markers, such as vitamin D and the omega-3 index, over time.','Changed diet'],
+  move:['Movement in context.','Put activity and strength in the context of your muscles, bones and stage of life.','Started strength training']
+};
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',String(x===b)));
+  const t=tabs[b.dataset.k];
+  document.getElementById('tp-h').textContent=t[0];
+  document.getElementById('tp-p').textContent=t[1];
+  document.getElementById('ctxmark').textContent=t[2];
+}));
+const seg=['Mom sees an overview of your health.','You select the results and updates Mom can see.','Mom sees everything you can share. Private results stay private.'];
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  document.getElementById('seg-t').textContent=seg[+b.dataset.s];
+}));
+document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>a.closest('details').removeAttribute('open')));
+document.getElementById('wl-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  document.getElementById('wl-msg').textContent='Thanks. This is a preview, so nothing was saved.';
+});
+</script>
+</body>
+</html>
