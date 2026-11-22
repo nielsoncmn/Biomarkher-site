@@ -381,6 +381,13 @@ footer{background:var(--cream)}
 /* Large-image layout */
 .nav{height:112px}
 .nav .logo img{height:66px;width:auto}
+.nav .logo .wm{display:inline-grid;justify-items:stretch;gap:3px;text-decoration:none}
+.nav .logo .wm-t{font-family:'Tenor Sans','Figtree',sans-serif;font-weight:400;font-size:40px;line-height:1;letter-spacing:.01em;color:#001F4E;white-space:nowrap}
+.nav .logo .wm-t .her{color:#00979B}
+.nav .logo .wm-t sup{font-size:.32em;color:#00979B;vertical-align:top;position:relative;top:.1em;margin-left:1px}
+.nav .logo .wm img{width:0;min-width:100%;height:auto}
+@media (max-width:1060px){.nav .logo .wm-t{font-size:34px}}
+@media (max-width:600px){.nav .logo .wm-t{font-size:28px}}
 .menu div{top:112px}
 @media (max-width:1060px){.nav{height:96px}.nav .logo img{height:55px}.menu div{top:96px}}
 @media (max-width:600px){.nav{height:84px}.nav .logo img{height:45px}.nav>.btn{display:none}.menu div{top:84px}}
@@ -477,7 +484,7 @@ section{padding-block:120px}
 
 <header class="over">
   <div class="wrap nav">
-    <a class="logo" href="#top" aria-label="BiomarkHER home"><img src="images/logo-lockup-small-mark.png" alt="BiomarkHER" width="948" height="232"></a>
+    <a class="logo" href="#top" aria-label="BiomarkHER home"><span class="wm"><span class="wm-t">BioMark<span class="her">HER</span><sup>®</sup></span><img src="images/logo-divider.png" alt="" width="760" height="62"></span></a>
     <nav aria-label="Main">
       <a href="#hub">The Hub</a>
       <a href="#intelligence">The Intelligence</a>
