@@ -396,8 +396,8 @@ footer{background:var(--cream)}
    The photo is right-anchored at 78vw wide so her hair starts near the centre line and the ring labels stay on screen;
    the left of the hero continues the photo's own sky and sea (its left edge, enlarged and blurred). */
 .bighero{position:relative;overflow:hidden;background:#DCE9EE;height:max(44vw,540px);max-height:800px;padding-block:0;margin-top:-112px}
-.bighero .bg{position:absolute;inset:-40px;background:url("images/hero.jpg") 0% 35%/320% auto no-repeat;filter:blur(18px) saturate(1.05)}
-.bighero .img{position:absolute;bottom:-4vw;right:-4.7vw;width:78vw;aspect-ratio:1800/1125;max-width:none}
+.bighero .bg{position:absolute;inset:-40px;background:url("images/hero-bright-clock.webp") 0% 35%/320% auto no-repeat;filter:blur(18px) saturate(1.05)}
+.bighero .img{position:absolute;bottom:-4vw;right:-4.7vw;width:78vw;aspect-ratio:2048/1365;max-width:none}
 .bighero .img img{width:100%;height:100%;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%),linear-gradient(180deg,transparent 0%,#000 14%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,#000 22%),linear-gradient(180deg,transparent 0%,#000 14%);mask-composite:intersect}
 .bighero .fade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,250,238,.74) 0%,rgba(255,250,238,.58) 34%,rgba(255,250,238,0) 54%)}
 .bighero .wrap{position:relative;display:flex;align-items:flex-start;height:100%;padding-top:calc(112px + clamp(16px,2.4vw,40px));padding-bottom:24px}
@@ -516,8 +516,8 @@ section{padding-block:120px}
 <section class="bighero" aria-labelledby="hero-h">
   <div class="bg" aria-hidden="true"></div>
   <div class="img">
-    <img src="images/hero.jpg" width="1800" height="1125" fetchpriority="high" alt="Woman laughing on a beach">
-    <span class="photo-note">Stock photo. Posed by model.</span>
+    <img src="images/hero-bright-clock.webp" width="2048" height="1365" fetchpriority="high" alt="Woman laughing on a beach, with an illustrative ring labelled Bone, Brain, Heart, Metabolic and Gut Health">
+    <span class="photo-note">Illustrative graphic. Posed by model.</span>
   </div>
   <div class="fade" aria-hidden="true"></div>
   <div class="wrap">
