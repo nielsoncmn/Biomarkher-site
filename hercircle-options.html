@@ -497,20 +497,21 @@ section{padding-block:120px}
 </style>
 <style>
 /* HerCircle graphic options */
-.hcA{position:relative;aspect-ratio:1;max-width:460px;margin:0 auto;width:100%}
+.hcA{position:relative;aspect-ratio:1;max-width:460px;margin:0 auto 70px;width:100%}
 .hcA .lines{position:absolute;inset:0;width:100%;height:100%}
 .hcA::before{content:"";position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,rgba(242,121,178,.18),rgba(242,121,178,0) 68%)}
-.hcA .you{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);width:30%;aspect-ratio:1;border-radius:50%;background:linear-gradient(145deg,#B02673,#05206D);color:#fff;display:grid;place-content:center;text-align:center;box-shadow:0 18px 40px rgba(176,38,115,.35);border:6px solid #fff}
+.hcA .you{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:30%;aspect-ratio:1;border-radius:50%;background:linear-gradient(145deg,#B02673,#05206D);color:#fff;display:grid;place-content:center;text-align:center;box-shadow:0 18px 40px rgba(176,38,115,.35);border:6px solid #fff}
 .hcA .you span{font-family:var(--serif,Fraunces),serif;font-size:clamp(20px,2.2vw,28px);line-height:1}
 .hcA .you small{font-size:11px;opacity:.8;margin-top:4px;letter-spacing:.04em}
 .hcA .pc{position:absolute;transform:translate(-50%,-50%);background:#fff;border-radius:18px;padding:10px 14px 10px 10px;display:grid;grid-template-columns:auto auto;column-gap:10px;align-items:center;box-shadow:0 12px 30px rgba(5,32,109,.12);white-space:nowrap}
 .hcA .pc .av{grid-row:span 2}
 .hcA .pc b{font-size:15px;color:#05206D}
 .hcA .lv{display:inline-flex;gap:5px;align-items:center;font-size:12px;font-weight:600;border-radius:999px;padding:2px 9px;margin-top:3px;justify-self:start}
+.hcA .dt{grid-column:1/-1;display:grid;gap:3px;margin-top:8px;padding-top:8px;border-top:1px solid #F1F2F7;font-size:12px;color:#5A6280}.hcA .dt b{font-size:13px;color:#05206D;display:inline}
 .hcA .lv1{background:#FDEAF4;color:#B02673}.hcA .lv2{background:#FFF4D1;color:#7A5A00}.hcA .lv3{background:#E6F4FA;color:#003595}
 .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:16px;box-shadow:0 0 0 3px #fff}
 .av.sm{width:34px;height:34px;font-size:14px}
-.hcA .lockcard{position:absolute;left:50%;bottom:2%;transform:translateX(-50%);display:flex;gap:8px;align-items:flex-start;background:#05206D;color:#fff;border-radius:14px;padding:10px 14px;font-size:12px;line-height:1.35;max-width:78%;box-shadow:0 12px 28px rgba(5,32,109,.25)}
+.hcA .lockcard{position:absolute;left:50%;bottom:-14%;transform:translateX(-50%);display:flex;gap:8px;align-items:flex-start;background:#05206D;color:#fff;border-radius:14px;padding:10px 14px;font-size:12px;line-height:1.35;max-width:78%;box-shadow:0 12px 28px rgba(5,32,109,.25)}
 .hcA .lockcard svg{flex:none;margin-top:2px;color:#FFC709}
 .hcB{position:relative;max-width:480px;margin:0 auto;width:100%;padding:0 0 40px 0}
 .hcB .ph{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 50px rgba(5,32,109,.18)}
@@ -520,11 +521,14 @@ section{padding-block:120px}
 .hcB .fc1{left:-6%;bottom:0;width:66%;padding:14px 16px}
 .hcB .fh{display:flex;gap:10px;align-items:center;margin-bottom:8px}
 .hcB b{font-size:14px;color:#05206D;display:block}.hcB small{font-size:12px;color:#5A6280}
+.hcB b.v{display:inline;font-size:13px}
+.hcB .fc1{width:74%!important}
 .hcB ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .hcB li{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#05206D;border-top:1px solid #F1F2F7;padding-top:6px}
 .hcB i{font-style:normal;display:inline-flex;gap:4px;align-items:center;font-size:12px;font-weight:600;border-radius:999px;padding:2px 9px}
 .hcB i.on{background:#E3F6F1;color:#00795A}.hcB i.off{background:#F1F2F7;color:#05206D}
 .hcB .fc2{right:-5%;top:12%;display:flex;gap:10px;align-items:center;padding:10px 14px 10px 10px}
+.hcB .fc2 small.al{display:block;color:#B02673;font-weight:600;margin-top:2px}
 .hcB .fc2 small{display:inline-flex;gap:4px;align-items:center}
 .hcC{position:relative;max-width:440px;margin:0 auto;width:100%;display:grid;place-items:center;padding:10px 0}
 .hcC .glow{position:absolute;inset:6% 4%;border-radius:50%;background:radial-gradient(circle,rgba(242,121,178,.35),rgba(242,121,178,0) 65%);z-index:0}
@@ -536,7 +540,7 @@ section{padding-block:120px}
 .hcC .you2,.hcC .row{display:flex;gap:10px;align-items:center;background:#fff;border-radius:14px;padding:9px 10px;box-shadow:0 4px 12px rgba(5,32,109,.06)}
 .hcC .you2 .av{font-size:11px}
 .hcC b{display:block;font-size:13px;color:#05206D}.hcC small{font-size:11px;color:#5A6280}
-.hcC .row>div{flex:1}
+.hcC .row>div{flex:1}.hcC .d{display:block;font-size:11px;font-weight:600;color:#05206D;margin-top:3px;background:#F6F7FB;border-radius:6px;padding:2px 6px;width:fit-content}
 .hcC .av{width:34px;height:34px;font-size:13px}
 .hcC .tg{width:34px;height:20px;border-radius:999px;background:#D7DCEB;position:relative;flex:none}
 .hcC .tg::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:.2s}
@@ -544,7 +548,7 @@ section{padding-block:120px}
 .hcC .priv{display:flex;gap:8px;align-items:flex-start;font-size:11px;line-height:1.35;color:#05206D;background:#F1F2F7;border-radius:12px;padding:9px 10px}
 .hcC .priv svg{flex:none;margin-top:1px}
 .hcC .add{margin-top:auto;text-align:center;font-size:13px;font-weight:600;color:#B02673;border:1.5px dashed #F279B2;border-radius:12px;padding:9px}
-@media (max-width:700px){.hcB .fc1{left:0;width:78%}.hcB .fc2{right:0}}
+@media (max-width:700px){.hcB .fc1{left:0;width:86%!important}.hcB .fc2{right:0}.hcA{aspect-ratio:auto;display:grid;gap:12px;margin-bottom:0}.hcA .lines,.hcA::before{display:none}.hcA .you,.hcA .pc,.hcA .lockcard{position:static;transform:none;max-width:none}.hcA .you{width:110px;justify-self:center;order:-1}.hcA .pc{grid-template-columns:auto 1fr;justify-items:start}}
 </style>
 <style>.optlabel{background:#05206D;color:#fff;padding:18px 0;position:relative}.optlabel .wrap{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}.optlabel b{font-size:18px;color:#FFC709}.optlabel span{font-size:14px;opacity:.85}</style>
 </head>
@@ -567,14 +571,14 @@ section{padding-block:120px}
       <div class="hcA" aria-hidden="true">
   <svg class="lines" viewBox="0 0 440 440" preserveAspectRatio="none">
     <defs><linearGradient id="gA" x1="0" x2="1"><stop offset="0" stop-color="#F279B2"/><stop offset="1" stop-color="#B02673"/></linearGradient></defs>
-    <path d="M220 200 L 220 60" stroke="#B02673" stroke-width="3" fill="none"/>
+    <path d="M220 200 L 220 100" stroke="#B02673" stroke-width="3" fill="none"/>
     <path d="M220 200 C 290 210, 330 250, 352 285" stroke="#F279B2" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round" fill="none"/>
     <path d="M220 200 C 150 210, 110 250, 88 285" stroke="#C9CFE0" stroke-width="3" fill="none"/>
   </svg>
   <div class="you"><span>You</span><small>your results</small></div>
-  <div class="pc" style="left:50%;top:12%"><span class="av" style="background:linear-gradient(135deg,#FFC709,#FF9E1B)">M</span><b>Mom</b><span class="lv lv1"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>What you choose</span></div>
-  <div class="pc" style="left:78%;top:68%"><span class="av" style="background:linear-gradient(135deg,#F279B2,#B02673)">S</span><b>Sister</b><span class="lv lv2"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg>Serious alerts only</span></div>
-  <div class="pc" style="left:22%;top:68%"><span class="av" style="background:linear-gradient(135deg,#00A889,#0082C6)">D</span><b>Daughter</b><span class="lv lv3">Alerts off</span></div>
+  <div class="pc" style="left:50%;top:15%"><span class="av" style="background:linear-gradient(135deg,#FFC709,#FF9E1B)">M</span><b>Mom</b><span class="lv lv1"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>What you choose</span><span class="dt"><span>Bone T-score <b>−1.8</b></span><span>LDL <b>142</b> mg/dL</span></span></div>
+  <div class="pc" style="left:78%;top:72%"><span class="av" style="background:linear-gradient(135deg,#F279B2,#B02673)">S</span><b>Sister</b><span class="lv lv2"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg>Serious alerts only</span><span class="dt"><span>HbA1c <b>5.6</b>%</span><span>Ferritin <b>38</b> ng/mL</span></span></div>
+  <div class="pc" style="left:22%;top:72%"><span class="av" style="background:linear-gradient(135deg,#00A889,#0082C6)">D</span><b>Daughter</b><span class="lv lv3">Alerts off</span><span class="dt"><span>Vitamin D <b>28</b> ng/mL</span><span>TSH <b>2.1</b> mIU/L</span></span></div>
   <div class="lockcard"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span><b>Always private</b><br>Reproductive and vaginal microbiome results</span></div>
 </div>
       <div>
@@ -614,13 +618,13 @@ section{padding-block:120px}
   <div class="fc fc1">
     <div class="fh"><span class="av" style="background:linear-gradient(135deg,#FFC709,#FF9E1B)">M</span><div><b>Sharing with Mom</b><small>What you choose</small></div></div>
     <ul>
-      <li><span>Heart</span><i class="on"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Shared</i></li>
-      <li><span>Bone</span><i class="on"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Shared</i></li>
-      <li><span>Medicines</span><i class="on"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Shared</i></li>
+      <li><span>Heart · LDL <b class="v">142 mg/dL</b></span><i class="on"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Shared</i></li>
+      <li><span>Bone · T-score <b class="v">−1.8</b></span><i class="on"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Shared</i></li>
+      <li><span>Medicines · <b class="v">Statin, since March</b></span><i class="on"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Shared</i></li>
       <li><span>Reproductive</span><i class="off"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Private</i></li>
     </ul>
   </div>
-  <div class="fc fc2"><span class="av sm" style="background:linear-gradient(135deg,#F279B2,#B02673)">S</span><div><b>Sister</b><small><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg> Serious alerts only</small></div></div>
+  <div class="fc fc2"><span class="av sm" style="background:linear-gradient(135deg,#F279B2,#B02673)">S</span><div><b>Sister</b><small><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg> Serious alerts only</small><small class="al">New: HbA1c 5.6%</small></div></div>
 </div>
       <div>
         <div class="section-head" style="margin-bottom:0">
@@ -658,9 +662,9 @@ section{padding-block:120px}
   <div class="phone"><div class="scr">
     <div class="top"><span class="t">HerCircle</span><span class="cnt">3 of 6</span></div>
     <div class="you2"><span class="av" style="background:#05206D">You</span><div><b>Your circle</b><small>You decide what each person sees</small></div></div>
-    <div class="row"><span class="av" style="background:linear-gradient(135deg,#FFC709,#FF9E1B)">M</span><div><b>Mom</b><small>What you choose</small></div><span class="tg on"></span></div>
-    <div class="row"><span class="av" style="background:linear-gradient(135deg,#F279B2,#B02673)">S</span><div><b>Sister</b><small>Serious alerts only</small></div><span class="tg on"></span></div>
-    <div class="row"><span class="av" style="background:linear-gradient(135deg,#00A889,#0082C6)">D</span><div><b>Daughter</b><small>Alerts off</small></div><span class="tg"></span></div>
+    <div class="row"><span class="av" style="background:linear-gradient(135deg,#FFC709,#FF9E1B)">M</span><div><b>Mom</b><small>What you choose</small><span class="d">Bone T-score −1.8 · LDL 142</span></div><span class="tg on"></span></div>
+    <div class="row"><span class="av" style="background:linear-gradient(135deg,#F279B2,#B02673)">S</span><div><b>Sister</b><small>Serious alerts only</small><span class="d">HbA1c 5.6% · Ferritin 38</span></div><span class="tg on"></span></div>
+    <div class="row"><span class="av" style="background:linear-gradient(135deg,#00A889,#0082C6)">D</span><div><b>Daughter</b><small>Alerts off</small><span class="d">Vitamin D 28 · TSH 2.1</span></div><span class="tg"></span></div>
     <div class="priv"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Reproductive and vaginal microbiome results always stay private.</span></div>
     <div class="add">+ Invite someone</div>
   </div></div>
