@@ -555,12 +555,18 @@ section{padding-block:120px}
 .tabsD .av{width:26px;height:26px;font-size:11px;box-shadow:none}
 .ph2{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 4px 8px}
 .ph2 b{font-size:16px;color:#05206D}.ph2 small{font-size:11px;color:#5A6280}
-.grp{border-top:1px solid #EEF0F6;padding:8px 4px 6px}
-.grp h5{margin:0 0 4px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#B02673;display:flex;gap:6px;align-items:center}
-.rw{display:flex;justify-content:space-between;font-size:13px;color:#2E3550;padding:3px 0}
-.rw b{color:#05206D;font-weight:700}.rw i{font-style:normal;font-weight:500;color:#5A6280;font-size:11.5px}
-.grp.lockd{background:#F6F7FB;border-radius:12px;border-top:0;margin-top:6px;padding:8px 10px}
-.grp.lockd h5{color:#05206D}
+.pan{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pan .ph2{grid-column:1/-1}
+.grp{background:#fff;border:1px solid #EEF0F6;border-top:4px solid var(--sc,#05206D);border-radius:14px;padding:10px 12px 8px}
+.grp h5{margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:0;text-transform:none;color:#05206D;display:flex;gap:8px;align-items:center}
+.si{width:28px;height:28px;border-radius:9px;display:grid;place-items:center;color:var(--sc,#05206D);background:color-mix(in srgb,var(--sc,#05206D) 12%,white)}
+.rw{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:#2E3550;padding:3px 0;border-top:1px dashed #EEF0F6}
+.rw b{color:#05206D;font-weight:700;white-space:nowrap}.rw i{font-style:normal;font-weight:500;color:#5A6280;font-size:10.5px}
+.grp.lockd{grid-column:1/-1;background:#F6F7FB;border:0;border-radius:12px;padding:8px 12px}
+.grp.lockd h5{font-size:12px}
+.hcD{max-width:520px}
+@media (max-width:520px){.pan{grid-template-columns:1fr}}
+.pan[hidden]{display:none}
 @media (max-width:700px){.hcB .fc1{left:0;width:86%!important}.hcB .fc2{right:0}.hcA{aspect-ratio:auto;display:grid;gap:12px;margin-bottom:0}.hcA .lines,.hcA::before{display:none}.hcA .you,.hcA .pc,.hcA .lockcard{position:static;transform:none;max-width:none}.hcA .you{width:110px;justify-self:center;order:-1}.hcA .pc{grid-template-columns:auto 1fr;justify-items:start}}
 </style>
 <style>.optlabel{background:#05206D;color:#fff;padding:18px 0;position:relative}.optlabel .wrap{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}.optlabel b{font-size:18px;color:#FFC709}.optlabel span{font-size:14px;opacity:.85}</style>
@@ -589,49 +595,49 @@ section{padding-block:120px}
   </div>
   <div class="pan" data-p="m">
     <div class="ph2"><b>Mom’s shared panel</b><small>Drawn Oct 14 · shared with you</small></div>
-    <div class="grp"><h5>Heart</h5>
+    <div class="grp" style="--sc:#E0475B"><h5><span class="si"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>Heart</h5>
       <div class="rw"><span>LDL cholesterol</span><b>142 <i>mg/dL</i></b></div>
       <div class="rw"><span>HDL cholesterol</span><b>58 <i>mg/dL</i></b></div>
       <div class="rw"><span>Triglycerides</span><b>118 <i>mg/dL</i></b></div>
       <div class="rw"><span>ApoB</span><b>104 <i>mg/dL</i></b></div>
       <div class="rw"><span>Lp(a)</span><b>38 <i>nmol/L</i></b></div></div>
-    <div class="grp"><h5>Metabolic</h5>
+    <div class="grp" style="--sc:#00A889"><h5><span class="si"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span>Metabolic</h5>
       <div class="rw"><span>HbA1c</span><b>5.7 <i>%</i></b></div>
       <div class="rw"><span>Fasting glucose</span><b>98 <i>mg/dL</i></b></div></div>
-    <div class="grp"><h5>Bone</h5>
+    <div class="grp" style="--sc:#8A7BD8"><h5><span class="si"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4a2 2 0 0 0-2 3 2 2 0 0 0 1 3.5L13.5 18a2 2 0 0 0 3.5 1 2 2 0 0 0 3-2 2 2 0 0 0-1.5-3.5L11 6a2 2 0 0 0-1-3.5A2 2 0 0 0 7 4z"/></svg></span>Bone</h5>
       <div class="rw"><span>DEXA T-score, hip</span><b>−1.8</b></div>
       <div class="rw"><span>Vitamin D</span><b>31 <i>ng/mL</i></b></div></div>
-    <div class="grp"><h5>Thyroid</h5>
+    <div class="grp" style="--sc:#0082C6"><h5><span class="si"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v12M12 9c-2-3-7-3-7 2s3 7 7 4M12 9c2-3 7-3 7 2s-3 7-7 4"/></svg></span>Thyroid</h5>
       <div class="rw"><span>TSH</span><b>2.4 <i>mIU/L</i></b></div></div>
-    <div class="grp"><h5>Medicines</h5>
+    <div class="grp" style="--sc:#05206D"><h5><span class="si"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="6" rx="3" transform="rotate(-35 12 12)"/><path d="M10 8l4 8"/></svg></span>Medicines</h5>
       <div class="rw"><span>Statin</span><b>since March</b></div></div>
     <div class="grp lockd"><h5><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Not shared</h5><div class="rw"><span>Reproductive and vaginal microbiome</span><b>Private</b></div></div>
   </div>
   <div class="pan" data-p="s" hidden>
     <div class="ph2"><b>Sister’s shared panel</b><small>Drawn Sep 30 · shared with you</small></div>
-    <div class="grp"><h5>Metabolic</h5>
+    <div class="grp" style="--sc:#00A889"><h5><span class="si"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span>Metabolic</h5>
       <div class="rw"><span>HbA1c</span><b>5.6 <i>%</i></b></div>
       <div class="rw"><span>Fasting insulin</span><b>9 <i>µIU/mL</i></b></div></div>
-    <div class="grp"><h5>Iron</h5>
+    <div class="grp" style="--sc:#C0392B"><h5><span class="si"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 8v8M8 12h8"/></svg></span>Iron</h5>
       <div class="rw"><span>Ferritin</span><b>38 <i>ng/mL</i></b></div>
       <div class="rw"><span>Hemoglobin</span><b>12.9 <i>g/dL</i></b></div></div>
-    <div class="grp"><h5>Heart</h5>
+    <div class="grp" style="--sc:#E0475B"><h5><span class="si"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>Heart</h5>
       <div class="rw"><span>LDL cholesterol</span><b>118 <i>mg/dL</i></b></div>
       <div class="rw"><span>hs-CRP</span><b>1.2 <i>mg/L</i></b></div></div>
-    <div class="grp"><h5>Thyroid</h5>
+    <div class="grp" style="--sc:#0082C6"><h5><span class="si"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v12M12 9c-2-3-7-3-7 2s3 7 7 4M12 9c2-3 7-3 7 2s-3 7-7 4"/></svg></span>Thyroid</h5>
       <div class="rw"><span>TSH</span><b>1.9 <i>mIU/L</i></b></div></div>
     <div class="grp lockd"><h5><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Not shared</h5><div class="rw"><span>Reproductive and vaginal microbiome</span><b>Private</b></div></div>
   </div>
   <div class="pan" data-p="d" hidden>
     <div class="ph2"><b>Daughter’s shared panel</b><small>Drawn Aug 22 · shared with you</small></div>
-    <div class="grp"><h5>Nutrients</h5>
+    <div class="grp" style="--sc:#FF9E1B"><h5><span class="si"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c8 0 14-6 14-14C11 5 5 11 5 19zM5 19l7-7"/></svg></span>Nutrients</h5>
       <div class="rw"><span>Vitamin D</span><b>28 <i>ng/mL</i></b></div>
       <div class="rw"><span>Vitamin B12</span><b>512 <i>pg/mL</i></b></div>
       <div class="rw"><span>Ferritin</span><b>46 <i>ng/mL</i></b></div></div>
-    <div class="grp"><h5>Thyroid</h5>
+    <div class="grp" style="--sc:#0082C6"><h5><span class="si"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v12M12 9c-2-3-7-3-7 2s3 7 7 4M12 9c2-3 7-3 7 2s-3 7-7 4"/></svg></span>Thyroid</h5>
       <div class="rw"><span>TSH</span><b>2.1 <i>mIU/L</i></b></div>
       <div class="rw"><span>Free T4</span><b>1.2 <i>ng/dL</i></b></div></div>
-    <div class="grp"><h5>Heart</h5>
+    <div class="grp" style="--sc:#E0475B"><h5><span class="si"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>Heart</h5>
       <div class="rw"><span>LDL cholesterol</span><b>96 <i>mg/dL</i></b></div></div>
     <div class="grp lockd"><h5><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Not shared</h5><div class="rw"><span>Reproductive and vaginal microbiome</span><b>Private</b></div></div>
   </div>
