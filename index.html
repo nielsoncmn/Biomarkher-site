@@ -1,389 +1,882 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BiomarkHER · Health clarity, calibrated for midlife and beyond</title>
-<meta name="description" content="Connect your hormonal past, present and future to your whole-body health—with your records, system insights and the people you care for in one place.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BiomarkHER Vibrant Preview</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500,100;9..144,600,100;9..144,700,100&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..600,100&family=Figtree:wght@400;500;600;700&family=Tenor+Sans&display=swap">
 <style>
+/* Layout: the live page's calm editorial frame (serif heads, sentence case, light grounds)
+   carrying version five's product screens; one dark band for the intelligence.
+   Single deliberate light look: every colour set explicitly. */
 :root{
-  --navy:#1A2649; --ink:#2E3554; --muted:#4A5170; --faint:#8A8FA3;
-  --teal:#008189; --teal-bright:#00A5AC; --teal-soft:#E9F6F6;
-  --rose:#E0699A; --rose-soft:#FCEFF5; --lav:#A488C6; --grey:#B9BDCB;
-  --surface:#F5F6F8; --line:#EEF0F4;
+  color-scheme: light;
+  --bg:#FAFAF7;        /* page ground */
+  --soft:#F0F3F0;      /* quiet alternate band */
+  --card:#FFFFFF;
+  --ink:#1A2649;       /* brand navy */
+  --muted:#545C74;
+  --line:#DCE2DD;
+  --teal:#0E7C7B;      /* primary accent */
+  --teal-soft:#E4F1EF;
+  --plum:#7E6A9B;      /* care / evidence */
+  --plum-soft:#F1ECF6;
+  --rose:#B9507A;      /* HerCircle */
+  --rose-soft:#FBEFF4;
+  --night:#141B3A;     /* the one dark band */
+  --night-card:#1F2850;
+  --night-line:#323C69;
+  --night-ink:#EEF1F8;
+  --night-muted:#B4BCD4;
+  --cyan:#7FE0E3;
+  --amber:#B7791F;
+  --amber-soft:#FCF1DC;
+  --serif:'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans:'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --r:18px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#FFFFFF;color:var(--navy);font-family:'Figtree',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:var(--teal)}
-.wrap{max-width:1248px;margin:0 auto;padding:0 24px}
-.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;color:var(--teal);text-transform:uppercase}
-.wordmark{font-family:'Figtree',system-ui,sans-serif;letter-spacing:.14em}
-.wordmark .c{color:var(--teal)}
-h1,h2,h3{margin:0;letter-spacing:-.02em}
-h2{font-size:clamp(30px,4vw,44px);line-height:1.1;font-weight:700}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--plum);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--serif);font-variation-settings:'SOFT' 100;font-weight:500;letter-spacing:-.02em;line-height:1.12;margin:0;text-wrap:balance}
+h3{font-family:var(--sans);font-weight:600;letter-spacing:-.005em;font-size:18px;line-height:1.3}
 p{margin:0}
-.lead{font-size:18px;line-height:1.6;color:var(--muted)}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:14px;font-size:16px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
-.btn-dark{background:var(--navy);color:#fff}
-.btn-light{background:#F2F3F6;color:var(--navy)}
-.credit{position:absolute;font-size:11px;font-weight:500;color:#fff;background:rgba(26,38,73,.45);border-radius:999px;padding:3px 9px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(24px, env(safe-area-inset-left, 0px));padding-right:max(24px, env(safe-area-inset-right, 0px))}
+@media (max-width:600px){.wrap{padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.lead{font-size:18px;color:var(--muted);max-width:60ch}
+.sample{font-size:11px;letter-spacing:.06em;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border-radius:12px;font:600 15px/1 var(--sans);text-decoration:none;border:0;cursor:pointer}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#26356A}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink)}
+section{padding-block:96px}
+@media (max-width:800px){section{padding-block:64px}}
+.section-head{display:grid;gap:16px;margin-bottom:48px;max-width:760px}
+.section-head h2{font-size:clamp(32px,4.2vw,50px)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split>*{min-width:0}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:40px}}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.tiles.three{grid-template-columns:repeat(3,1fr)}
+.tiles.five{grid-template-columns:repeat(5,1fr)}
+@media (max-width:1000px){.tiles,.tiles.five{grid-template-columns:repeat(2,1fr)}.tiles.three{grid-template-columns:1fr}}
+@media (max-width:560px){.tiles,.tiles.five{grid-template-columns:1fr}}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:8px;align-content:start}
+.tile p{font-size:15px;color:var(--muted)}
+.ico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--teal-soft);color:var(--teal);margin-bottom:6px}
+.ico svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
-.preview-bar{background:#FBF0D6;color:#6B4A00;font-size:13px;font-weight:500;text-align:center;padding:8px 16px}
+/* banner + header */
+.banner{background:var(--plum);color:#fff;font-size:12.5px;text-align:center;padding:9px 16px;letter-spacing:.02em}
+.banner strong{letter-spacing:.1em;font-weight:600;margin-right:6px}
+header{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:rgba(250,250,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:30;background:var(--bg)}
+.nav{display:flex;align-items:center;gap:28px;height:88px}
+.nav .logo img{width:auto;height:66px}
+.nav nav{display:flex;gap:26px;margin-left:auto;font-size:13px;font-weight:600;letter-spacing:.02em}
+.nav nav a{color:var(--ink);text-decoration:none}
+.nav nav a:hover{color:var(--teal)}
+.nav .btn{min-height:42px;font-size:14px;padding:0 18px}
+.menu{display:none;margin-left:auto}
+.menu summary{list-style:none;cursor:pointer;font-weight:600;font-size:14px;padding:10px 4px}
+.menu summary::-webkit-details-marker{display:none}
+.menu div{position:absolute;left:0;right:0;top:88px;background:var(--bg);border-bottom:1px solid var(--line);display:grid;padding:8px max(16px, env(safe-area-inset-left, 0px)) 16px}
+.menu div a{padding:12px 0;color:var(--ink);text-decoration:none;font-weight:600;border-top:1px solid var(--line)}
+@media (max-width:1060px){.nav nav{display:none}.menu{display:block}}
+@media (max-width:520px){.nav .logo img{height:50px}.nav{gap:14px}.nav .btn{padding:0 14px;font-size:13px}}
 
-header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
-header .wrap{height:76px;display:flex;align-items:center;gap:36px}
-header img{height:36px;width:auto}
-header nav{flex:1;display:flex;gap:28px;font-size:15px;font-weight:500}
-header nav a{color:var(--navy);text-decoration:none}
-header .btn{min-height:44px;padding:0 20px;font-size:15px}
+/* hero */
+.hero{padding-block:56px 72px}
+.hero .split{grid-template-columns:5fr 6fr;gap:56px}
+.hero-copy{display:grid;gap:22px}
+.hero h1{font-size:clamp(38px,4.4vw,58px);line-height:1.04;letter-spacing:-.03em}
+.hero .audience{font-size:19px;font-weight:600;color:var(--ink)}
+.hero .lead{font-size:17.5px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.hero-media{position:relative;border-radius:140px 22px 22px 22px;overflow:hidden;aspect-ratio:3/2;background:var(--soft)}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:62% center}
+.photo-note{position:absolute;left:14px;bottom:14px;background:rgba(26,38,73,.72);color:#fff;font-size:11px;padding:4px 10px;border-radius:999px}
+@media (max-width:900px){.hero .split{grid-template-columns:1fr}.hero-media{border-radius:80px 18px 18px 18px}}
 
-.hero{position:relative;min-height:640px;overflow:hidden;display:flex;align-items:center}
-.hero>.hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 40%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.88) 58%,#fff 75%)}
-.hero .wrap{position:relative;z-index:1;width:100%;display:flex;justify-content:flex-end}
-.hero-copy{width:520px;display:flex;flex-direction:column;gap:22px;padding:80px 0}
-.hero h1{font-size:clamp(38px,5vw,58px);line-height:1.04;font-weight:700;letter-spacing:-.025em}
-.hero p{font-size:19px;line-height:1.5;color:var(--muted)}
-.hero .actions{display:flex;gap:12px;flex-wrap:wrap;padding-top:6px}
-.hero .credit{left:24px;bottom:20px;z-index:1}
+/* overview */
+.overview{background:var(--soft);padding-block:72px}
+.overview h2{font-size:clamp(28px,3vw,38px);text-align:center;margin-bottom:40px}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--card)}
+.pillar{padding:28px 26px 26px;display:grid;gap:10px;align-content:start;text-decoration:none;color:var(--ink);border-right:1px solid var(--line);transition:background .2s}
+.pillar:last-child{border-right:0}
+.pillar:hover{background:var(--bg)}
+.pillar .top{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.pillar .num{color:var(--muted);font-weight:500;letter-spacing:.04em}
+.pillar .art{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;margin:10px 0 6px}
+.pillar .art svg{width:40px;height:40px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.pillar h3{font-family:var(--serif);font-weight:500;font-size:22px}
+.pillar p{font-size:14.5px;color:var(--muted)}
+.pillar .go{font-size:13px;font-weight:600;color:var(--teal);margin-top:8px}
+.p-hub .art{background:var(--teal-soft);color:var(--teal)}
+.p-int .art{background:#E6ECF6;color:#2A4A8A}
+.p-circ .art{background:var(--rose-soft);color:var(--rose)}
+.p-care .art{background:var(--plum-soft);color:var(--plum)}
+.soon{font-size:10px;font-weight:700;letter-spacing:.08em;background:var(--plum-soft);color:var(--plum);padding:3px 9px;border-radius:999px}
+@media (max-width:1000px){.pillars{grid-template-columns:repeat(2,1fr)}.pillar:nth-child(2){border-right:0}.pillar:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:560px){.pillars{grid-template-columns:1fr}.pillar{border-right:0;border-bottom:1px solid var(--line)}.pillar:last-child{border-bottom:0}}
 
-section{padding:100px 0}
-.intro{max-width:760px;display:flex;flex-direction:column;gap:14px;margin-bottom:48px}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.card{border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px}
-.card .ico{width:52px;height:52px;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center}
-.card .ico img{width:34px;height:34px}
-.card .tag{font-size:13px;font-weight:600;letter-spacing:.12em;color:var(--muted)}
-.card h3{font-size:24px;line-height:1.2;font-weight:700}
-.card p{font-size:16.5px;line-height:1.55;color:var(--muted)}
+/* hub */
+.photo-stack{position:relative;padding:0 0 40px 0}
+.photo-stack .ph{border-radius:22px;overflow:hidden;aspect-ratio:5/4;max-width:460px;margin-left:auto;position:relative}
+.photo-stack .ph img{width:100%;height:100%;object-fit:cover}
+.float{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 44px rgba(26,38,73,.12);padding:18px 20px;font-size:14px}
+.lab{left:0;top:36px;width:min(300px,62%)}
+.lab .row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-variant-numeric:tabular-nums}
+.lab .row:first-of-type{border-top:0}
+.lab .ok{color:var(--teal);font-weight:700}
+.lab .q{color:var(--amber);font-weight:700}
+.lab .hd{display:flex;justify-content:space-between;align-items:center;font-weight:600;margin-bottom:6px}
+.chip{font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--teal-soft);color:var(--teal)}
+.fam{right:8px;bottom:0;width:min(250px,56%)}
+.fam .hd{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.fam .who{display:flex;gap:10px;align-items:center;padding:4px 0}
+.av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;background:var(--plum-soft);color:var(--plum);flex:none}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.pills span{font-size:13px;font-weight:600;background:var(--teal-soft);color:var(--teal);padding:6px 12px;border-radius:999px}
+@media (max-width:560px){.lab{position:relative;top:auto;width:100%;margin-bottom:16px}.photo-stack .ph{max-width:none}.fam{position:relative;right:auto;width:100%;margin-top:16px}.photo-stack{padding:0}}
 
-.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.split .text{display:flex;flex-direction:column;gap:20px}
-.photo{position:relative;height:600px;border-radius:28px;overflow:hidden}
-.photo>img{width:100%;height:100%;object-fit:cover}
-.photo .credit{left:18px;top:18px}
-.float{position:absolute;background:#fff;border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:10px;box-shadow:0 14px 36px rgba(26,38,73,.18)}
-.small{font-size:11px;color:var(--faint)}
+/* intelligence (the one dark band) */
+.intel{background:radial-gradient(1200px 500px at 15% 0%,#2C2D5E 0%,transparent 60%),radial-gradient(900px 500px at 100% 100%,#0F4A57 0%,transparent 60%),var(--night);color:var(--night-ink)}
+.intel .eyebrow{color:var(--cyan)}
+.intel .lead{color:var(--night-muted)}
+.intel .section-head{margin-inline:auto;text-align:center;justify-items:center}
+.motto{border-left:3px solid var(--cyan);padding-left:16px;font-size:19px;font-family:var(--serif);color:var(--night-ink)}
+.board{display:grid;grid-template-columns:7fr 5fr;gap:18px}
+.board3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+@media (max-width:960px){.board,.board3{grid-template-columns:1fr}}
+.panel{background:var(--night-card);border:1px solid var(--night-line);border-radius:22px;padding:28px;min-width:0}
+.panel h3{color:var(--night-ink);font-size:19px;margin-bottom:6px}
+.panel>p{color:var(--night-muted);font-size:15px}
+.panel .sample{color:var(--night-muted);margin-top:14px;display:block}
+.stage{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 18px}
+.stage div{background:#273163;border-radius:12px;padding:10px 14px;font-size:12.5px;color:var(--night-muted)}
+.stage b{display:block;font-size:20px;color:var(--cyan);font-weight:600;font-variant-numeric:tabular-nums}
+.tl{width:100%;height:auto;display:block}
+.tl text{font-family:var(--sans)}
+.syschips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+.syschips span{background:#273163;border-radius:10px;padding:9px 10px;font-size:13px;font-weight:600;display:flex;gap:8px;align-items:center;min-width:0}
+.syschips i{width:8px;height:8px;border-radius:50%;background:var(--cyan);flex:none}
+.syschips i.w{background:#E5A04A}
+@media (max-width:420px){.syschips{grid-template-columns:repeat(2,1fr)}}
+.score{display:flex;gap:18px;align-items:center;margin:16px 0}
+.score svg{width:120px;height:72px;flex:none}
+.score .n{font-size:40px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+.score small{color:var(--night-muted);display:block;font-size:13px}
+.why{font-size:14.5px;color:var(--night-muted)}
+.why b{color:var(--night-ink)}
+.why em{font-style:normal;color:var(--cyan);font-weight:600}
+.bubble{border-radius:16px;padding:12px 16px;font-size:14px;margin-top:12px;max-width:92%}
+.bubble.me{background:#0E9AA0;color:#fff;margin-left:auto;width:fit-content}
+.bubble.ai{background:#2B3566;color:var(--night-ink)}
+.link-chip{display:inline-block;margin-top:12px;font-size:13px;font-weight:600;color:var(--cyan);border:1px solid #3B4A80;border-radius:999px;padding:5px 12px}
 
-.chart{position:relative;display:flex;flex-direction:column;gap:9px;padding-top:16px}
-.chart .row{display:grid;grid-template-columns:84px minmax(0,1fr);align-items:center}
-.chart .row span:first-child{font-size:12.5px;font-weight:600}
-.track{position:relative;height:9px;border-radius:5px;background:#EEF0F4}
-.track i{position:absolute;top:0;bottom:0;border-radius:5px;background:var(--teal-bright)}
-.track i.open{background:#CFEBEC}
-.chart .fp-label{position:absolute;top:0;left:calc(84px + (100% - 84px)*.375);transform:translateX(-50%);font-size:11px;color:var(--muted);white-space:nowrap}
-.chart .fp-line{position:absolute;top:16px;bottom:-3px;left:calc(84px + (100% - 84px)*.375);width:1px;background:var(--grey)}
+/* context */
+.ctx-media{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;max-height:620px}
+.ctx-media img{width:100%;height:100%;object-fit:cover;object-position:45% center}
+.chart-card{position:absolute;left:18px;right:18px;bottom:18px;background:var(--card);border-radius:16px;padding:16px 18px;box-shadow:0 16px 40px rgba(26,38,73,.18)}
+.chart-card .hd{display:flex;justify-content:space-between;font-size:14px;font-weight:600}
+.chart-card svg{width:100%;height:auto;display:block;margin-top:6px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 18px}
+.tabs button{font:600 14.5px/1 var(--sans);padding:11px 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.tabpanel{background:var(--teal-soft);border-radius:18px;padding:24px 26px;display:grid;gap:8px}
+.tabpanel h3{font-family:var(--serif);font-weight:500;font-size:22px}
+.tabpanel p{color:var(--muted)}
+.quote{margin-top:14px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px;color:var(--ink)}
 
-.result-head{display:flex;align-items:center;gap:10px}
-.result-head img{width:28px;height:28px}
-.result-head b{flex:1;font-size:17px}
-.badge{font-size:12px;font-weight:600;color:#6B4A00;background:#FBF0D6;border-radius:999px;padding:3px 10px}
-.result p{font-size:14px;line-height:1.45;color:var(--ink)}
+/* circle */
+.circle{background:linear-gradient(180deg,var(--rose-soft),var(--bg))}
+.circle .eyebrow{color:var(--rose)}
+.orbit{position:relative;aspect-ratio:1;max-width:440px;margin:0 auto;width:100%}
+.orbit .ring{position:absolute;inset:12%;border:2px solid #EBD3DE;border-radius:50%}
+.orbit .ring2{position:absolute;inset:0;border:1px dashed #E7CBD8;border-radius:50%}
+.orbit .you{position:absolute;left:50%;top:50%;width:27%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;letter-spacing:.06em;border:6px solid var(--card);box-shadow:0 14px 30px rgba(26,38,73,.25)}
+.orbit .p{position:absolute;width:21%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:var(--card);display:grid;place-items:center;font-weight:700;font-size:20px;border:4px solid}
+.orbit .p em{position:absolute;top:100%;margin-top:6px;font-style:normal;font-size:12px;font-weight:600;background:var(--card);border-radius:999px;padding:2px 10px;box-shadow:0 2px 8px rgba(26,38,73,.1);white-space:nowrap}
+.seg{display:inline-flex;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px;gap:4px;margin-top:20px}
+.seg button{font:600 14px/1 var(--sans);border:0;border-radius:10px;padding:11px 14px;background:transparent;color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.people{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:6px 18px}
+.person{display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line);font-size:14.5px}
+.person:first-child{border-top:0}
+.person .av{width:34px;height:34px}
+.person small{display:block;color:var(--muted);font-size:13px}
+.person .tag{margin-left:auto;font-size:12px;font-weight:600;color:var(--rose);background:var(--rose-soft);padding:4px 10px;border-radius:999px;white-space:nowrap}
+.private{margin-top:14px;font-size:14px;background:var(--plum-soft);border-radius:12px;padding:12px 16px}
+.circle .ico{background:var(--rose-soft);color:var(--rose)}
 
-.evidence{background:var(--navy);color:#fff}
-.evidence .eyebrow{color:#7FD3D6}
-.evidence .lead{color:#C9CEDD}
-.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.pillars div{border-top:2px solid var(--teal-bright);padding-top:20px;display:flex;flex-direction:column;gap:8px}
-.pillars div.honest{border-color:var(--lav)}
-.pillars b{font-size:20px}
-.pillars span{font-size:15.5px;line-height:1.55;color:#C9CEDD}
+/* care */
+.care{background:var(--plum-soft)}
+.care .eyebrow{color:var(--plum)}
+.pdf{background:var(--card);border-radius:20px;padding:26px;box-shadow:0 24px 60px rgba(80,60,120,.14);transform:rotate(-1.5deg);max-width:470px;margin-left:auto}
+.pdf .hd{display:flex;gap:12px;align-items:center}
+.pdf .badge{font-size:11px;font-weight:700;background:var(--plum-soft);color:var(--plum);border-radius:8px;padding:6px 8px}
+.pdf .bar{height:8px;border-radius:4px;background:#E9ECF1;margin-top:10px}
+.pdf .row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:1px solid var(--line);font-size:14.5px}
+.miss{font-size:11.5px;font-weight:700;background:var(--amber-soft);color:var(--amber);padding:3px 9px;border-radius:999px}
+.care .ico{background:var(--plum-soft);color:var(--plum)}
+.care .coming{font-size:11px;font-weight:700;color:var(--plum);letter-spacing:.06em}
 
-.ring-art{position:relative;height:520px;border-radius:28px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center}
-.ring{position:relative;width:340px;height:340px}
-.ring .o{position:absolute;inset:40px;border-radius:50%;border:5px solid #E7D9EF}
-.ring .you{position:absolute;left:50%;top:50%;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Figtree',system-ui,sans-serif;font-size:19px;letter-spacing:.06em;border:5px solid #fff;box-shadow:0 6px 16px rgba(26,38,73,.25)}
-.ring .p{position:absolute;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;background:#fff;color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:600}
-.ring .p em{position:absolute;top:76px;left:50%;transform:translateX(-50%);font-style:normal;font-family:'Figtree',system-ui,sans-serif;font-size:13px;background:#fff;border-radius:999px;padding:2px 10px;white-space:nowrap}
-.legend{display:flex;gap:22px;flex-wrap:wrap;padding-top:6px}
-.legend span{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
-.legend i{width:14px;height:14px;border-radius:50%;border:3px solid}
+/* evidence */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;margin-top:8px}
+.steps::before{content:"";position:absolute;left:34px;right:12%;top:33px;height:2px;background:linear-gradient(90deg,var(--teal),var(--plum))}
+.step{position:relative;display:grid;gap:8px;align-content:start}
+.step .n{width:68px;height:68px;border-radius:50%;background:var(--bg);border:2px solid var(--teal);display:grid;place-items:center;font:500 26px/1 var(--serif);margin-bottom:10px}
+.step:last-child .n{border-color:var(--plum)}
+.step h3{font-family:var(--serif);font-weight:500;font-size:24px}
+.step p{color:var(--muted);font-size:15px}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}.steps::before{display:none}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+.honest{margin-top:48px;background:var(--night);color:var(--night-ink);border-radius:22px;padding:30px 34px;display:flex;gap:22px;align-items:flex-start}
+.honest svg{width:40px;height:40px;flex:none;fill:none;stroke:#C9B3E6;stroke-width:1.8}
+.honest .eyebrow{color:#C9B3E6}
+.honest p{font-family:var(--serif);font-size:clamp(18px,2vw,23px);line-height:1.4;margin-top:6px}
 
-.waitlist{background:var(--teal-soft);border-radius:28px;padding:64px;display:flex;align-items:center;gap:48px}
-.waitlist .text{flex:1;display:flex;flex-direction:column;gap:12px}
-.waitlist h2{font-size:clamp(28px,3.4vw,38px)}
-.waitlist form{display:flex;gap:10px;flex-wrap:wrap}
-.waitlist input{width:320px;max-width:100%;min-height:54px;border-radius:14px;border:1px solid #CFD3DC;padding:0 18px;font-size:16px;font-family:inherit}
-.waitlist .msg{width:100%;font-size:14px;color:var(--muted);min-height:20px}
-
-footer{border-top:1px solid var(--line);padding:44px 0 52px}
-footer .top{display:flex;align-items:center;gap:32px;margin-bottom:18px}
-footer .top img{height:30px;width:auto}
-footer .top span{flex:1}
-footer .top a{font-size:14px;color:var(--muted);text-decoration:none}
-footer p{font-size:13px;line-height:1.6;color:var(--faint)}
-
-@media (max-width:900px){
-  header nav{display:none}
-  header .wrap{justify-content:space-between}
-  .hero{min-height:auto;flex-direction:column;align-items:stretch}
-  .hero>.hero-media{position:relative;height:380px}
-  .hero::after{display:none}
-  .hero .wrap{justify-content:flex-start}
-  .hero-copy{width:100%;padding:32px 0 48px}
-  .hero .credit{top:340px;bottom:auto;left:16px}
-  section{padding:64px 0}
-  .cards,.pillars{grid-template-columns:1fr}
-  .split{grid-template-columns:1fr;gap:32px}
-  .split .photo{order:-1}
-  .photo{height:440px}
-  .float{left:16px!important;right:16px!important;width:auto!important;bottom:16px!important}
-  .ring-art{height:420px}
-  .ring{transform:scale(.85)}
-  .waitlist{flex-direction:column;align-items:stretch;padding:36px 24px;gap:24px}
-  .waitlist input{width:100%}
-  .waitlist .btn{width:100%}
-  footer .top{flex-wrap:wrap;gap:16px 24px}
-  footer .top span{flex-basis:100%;height:0}
-}
-
-/* Feature storytelling */
-section[id]{scroll-margin-top:100px}
-.skip-link{position:fixed;top:-80px;left:12px;z-index:100;background:white;padding:14px}.skip-link:focus{top:10px}
-:focus-visible{outline:3px solid var(--teal);outline-offset:5px}
-.feature-section{padding:88px 0}.feature-section.soft{background:#F5F8FA}
-.feature-head{max-width:740px;margin-bottom:40px}.feature-head h2{margin:12px 0 18px}
-.feature-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:54px;align-items:center}
-.feature-copy h3{font-size:30px;line-height:1.18;margin:14px 0}.feature-copy>p{font-size:18px;line-height:1.65;color:var(--muted)}
-.feature-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:20px}.feature-list li{display:grid;grid-template-columns:38px 1fr;gap:13px}
-.feature-list b{display:block;font-size:17px;margin-bottom:5px}.feature-list p{font-size:15px;line-height:1.6;color:var(--muted)}
-.fi{display:inline-flex;width:36px;height:36px;align-items:center;justify-content:center;background:var(--teal-soft);color:var(--teal);border-radius:10px;font-size:18px}
-.mock{background:#fff;border:1px solid #E1E6EC;border-radius:24px;padding:26px;box-shadow:0 22px 60px #1a264910;min-width:0}
-.mock-top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:17px;margin-bottom:22px}
-.demo-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#59617A}.mock h3{font-size:23px;margin:8px 0}.mock p{font-size:14px;line-height:1.6;color:var(--muted)}
-.mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}.mini{border-radius:14px;background:var(--surface);padding:18px}.mini strong{display:block;margin:10px 0 4px;font-size:17px}
-.mini.teal{background:var(--teal-soft)}.mini.rose{background:var(--rose-soft)}.mini small{color:var(--muted);line-height:1.5;display:block}
-.record{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line)}.record>div{flex:1}.record b{font-size:14px;display:block}.record small{font-size:12px;color:var(--muted)}
-.chip{display:inline-block;border-radius:20px;padding:6px 10px;background:var(--teal-soft);color:#006970;font-size:11px;font-weight:600}
-.note{padding:16px;border-radius:12px;background:#F5F2FA;margin-top:16px;font-size:13px;line-height:1.6;color:var(--ink)}
-.ribbon{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:38px}.ribbon article{padding:24px;border:1px solid #E1E6EC;border-radius:18px;background:#fff}.ribbon h3{font-size:18px;margin:14px 0 9px}.ribbon p{font-size:15px;line-height:1.6;color:var(--muted)}
-.system-bars{display:grid;gap:17px;margin:25px 0}.system-row{display:grid;grid-template-columns:90px 1fr;align-items:center;font-size:13px;gap:12px}.system-track{height:14px;background:#EDF1F4;border-radius:10px;overflow:hidden}.system-track i{display:block;height:100%;background:var(--teal);border-radius:10px}
-.connection{border:1px solid #D6E8E8;border-radius:16px;padding:18px;background:var(--teal-soft);display:flex;gap:14px;align-items:center}.connection b{font-size:14px}.connection p{font-size:13px;margin-top:5px}
-.trend-svg{width:100%;height:auto;display:block;margin:20px 0}.insight-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.insight-tabs button{font:inherit;font-size:13px;border:1px solid #CBD5DD;border-radius:30px;padding:10px 14px;background:white;color:var(--navy);cursor:pointer}.insight-tabs button[aria-pressed=true]{background:var(--navy);color:white;border-color:var(--navy)}
-.answer{padding:20px;background:var(--teal-soft);border-radius:16px;min-height:170px}.answer h4{font-size:18px;margin:0 0 10px}.answer p{font-size:14px;line-height:1.7}
-.person{display:flex;gap:12px;align-items:center;margin:18px 0}.avatar{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--rose-soft);border-radius:50%;font-weight:600}.person div{flex:1}.person b{font-size:14px}.person small{display:block;font-size:12px;color:var(--muted);margin-top:3px}
-.sharing{display:grid;gap:10px;background:#FAF7FB;border-radius:14px;padding:18px}.sharing label{font-size:13px;font-weight:600}.sharing select{width:100%;font:inherit;font-size:14px;color:var(--navy);padding:12px;border:1px solid #D6CADC;background:#fff;border-radius:8px}.sharing p{min-height:45px}
-.roadmap{background:#F7F4FB}.roadmap-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.roadmap-card{padding:26px;background:white;border-radius:20px;border:1px solid #E9E3EF}.roadmap-card h3{font-size:20px;margin:18px 0 12px}.roadmap-card p{font-size:15px;line-height:1.6;color:var(--muted)}.roadmap-card .fi{background:#F2ECFA;color:#76569B}.roadmap-card:first-child{grid-column:span 2}
-.audio-art{height:48px;display:flex;align-items:center;gap:5px;margin:18px 0}.audio-art i{width:5px;background:#A488C6;border-radius:4px}
-.mobile-nav{display:none}
-@media(max-width:1050px){header .wrap{gap:18px}header nav{gap:15px;font-size:13px}header img{max-width:180px;height:auto}.feature-layout{gap:28px}}
-@media(max-width:900px){.mobile-nav{display:block;margin-left:auto}.mobile-nav summary{cursor:pointer;font-size:14px;padding:10px}.mobile-nav[open] .mobile-links{position:absolute;top:76px;left:0;right:0;background:white;border-bottom:1px solid var(--line);padding:20px;display:grid;gap:18px}.mobile-links a{text-decoration:none;color:var(--navy)}.feature-layout{grid-template-columns:1fr}.feature-section{padding:58px 0}.ribbon,.roadmap-grid{grid-template-columns:1fr 1fr}.roadmap-card:first-child{grid-column:span 2}}
-@media(max-width:560px){header img{max-width:125px}header .wrap{padding:0 14px;gap:6px}header .btn{font-size:12px;padding:0 10px;min-height:40px}.ribbon,.roadmap-grid{grid-template-columns:1fr}.roadmap-card:first-child{grid-column:auto}.mock{padding:20px 16px}.feature-head h2{font-size:32px}.mini{padding:14px}.mock-top{flex-wrap:wrap}.hero>.hero-media{height:300px}.hero .credit{top:262px}.hero h1{font-size:38px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-/* Typography matched to owner-selected template-v1_2026-11-01. */
-h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-variation-settings:'SOFT' 100;font-style:normal;font-weight:600}
-button,input,select{font-family:'Figtree',system-ui,sans-serif}
-
-/* Four-pillar homepage overview and first-section refinements. */
-header img{width:212px;height:auto;max-width:none;flex-shrink:0}
-header .wrap{gap:28px}header nav{gap:22px;justify-content:center}
-header nav a,.mobile-links a{text-transform:uppercase;font-size:12px;letter-spacing:.065em;font-weight:600;white-space:nowrap}
-.hero>.hero-media{transform:none;object-position:30% 40%}
-.platform-overview{padding:65px 0 76px}.overview-heading{text-align:center;margin-bottom:32px}.overview-heading h2{margin-top:12px}
-.pillar-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid #E4E8EC;border-radius:24px;overflow:hidden;box-shadow:0 16px 45px #1a264908}
-.pillar-card{display:flex;flex-direction:column;min-width:0;padding:25px 23px 23px;color:var(--navy);text-decoration:none;border-right:1px solid #E4E8EC;transition:background .2s}
-.pillar-card:last-child{border-right:0}.pillar-hub{background:#F7F9FB}.pillar-intelligence{background:#EDF8F7}.pillar-care{background:#F7F3FB}.pillar-circle{background:#FFF3F7}
-.pillar-card:hover{background:white}.pillar-card:focus-visible{outline-offset:-5px}
-.pillar-top{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:34px;flex-wrap:wrap}
-.pillar-label{font-size:12px;font-weight:700;letter-spacing:.06em}.pillar-number{font-size:12px;color:#68708A}.soon-pill{font-size:9px;font-weight:700;letter-spacing:.04em;border-radius:20px;padding:5px 7px;background:#EAE2F4;color:#694B8C}
-.pillar-art{width:144px;height:108px;margin:20px auto;color:var(--teal)}.pillar-care .pillar-art{color:#8462A3}.pillar-circle .pillar-art{color:#BE5A86}
-.pillar-card h3{font-size:24px;line-height:1.2;margin:0 0 12px}.pillar-card p{font-size:15px;line-height:1.6;color:var(--muted);margin-bottom:24px}.pillar-link{margin-top:auto;display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:600;color:var(--teal)}
-#care{scroll-margin-top:100px}
-@media(max-width:1100px){header .wrap{gap:18px}header nav{gap:14px}header img{width:195px}.pillar-card{padding:22px 17px}.pillar-label{font-size:11px}}
-@media(max-width:900px){header img{width:195px}.pillar-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.pillar-card:nth-child(2){border-right:0}.pillar-card:nth-child(-n+2){border-bottom:1px solid #E4E8EC}.hero>.hero-media{object-position:50% 40%}}
-@media(max-width:560px){header .wrap{gap:6px}header img{width:145px;max-width:145px}.pillar-strip{grid-template-columns:1fr}.pillar-card{border-right:0;border-bottom:1px solid #E4E8EC;padding:24px}.pillar-card:last-child{border-bottom:0}.pillar-art{margin:12px auto}.platform-overview{padding:44px 0}.pillar-label{font-size:13px}}
-@media(prefers-reduced-motion:reduce){.pillar-card{transition:none}}
-
-@media(min-width:901px){.hero>.hero-media{width:55%;right:auto;object-position:45% 40%;transform:none}.hero .wrap{justify-content:flex-end}.hero-copy{width:45%;max-width:520px}.hero::after{background:linear-gradient(90deg,transparent 43%,rgba(255,255,255,.7) 51%,#fff 55%)}}
-
-/* Tighter portrait crop within the existing hero frame. */
-.hero>.hero-media{overflow:hidden}
-.hero-media>img{width:100%;height:100%;object-fit:cover;object-position:inherit;transform:translateX(-7%) scale(1.22);transform-origin:45% 40%}
-
-/* Preserve the complete supplied health-clock artwork and readable labels. */
-.hero{min-height:0;display:flex;align-items:center;background:#fff}
-.hero>.hero-media{position:relative;inset:auto;width:58%;height:auto;flex:0 0 58%;overflow:hidden;transform:none}
-.hero-media>img{display:block;width:100%;height:auto;object-fit:contain;transform:none}
-.hero::after{display:none}
-.hero .wrap{width:42%;max-width:none;padding:44px 32px;justify-content:flex-start}
-.hero-copy{width:100%;max-width:520px;padding:0}
-.hero h1{font-size:clamp(34px,3.6vw,54px)}
-.hero .credit{top:auto;bottom:12px;left:12px;max-width:52%}
-@media(max-width:900px){.hero{flex-direction:column}.hero>.hero-media{width:100%;flex:auto;height:auto}.hero .wrap{width:100%;padding:32px 24px 48px}.hero-copy{max-width:none}.hero .credit{position:static;align-self:flex-start;margin:0 24px 16px;max-width:none}.hero h1{font-size:clamp(34px,6vw,48px)}}
+/* waitlist + footer */
+.waitlist{text-align:center}
+.waitlist .box{background:var(--teal-soft);border-radius:28px;padding:64px 24px;display:grid;justify-items:center;gap:16px}
+.waitlist h2{font-size:clamp(30px,4vw,46px)}
+.waitlist form{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:10px;width:100%}
+.waitlist input{width:320px;max-width:100%;min-height:50px;border-radius:12px;border:1px solid #C4CFCB;padding:0 16px;font:16px var(--sans);background:var(--card);color:var(--ink)}
+.waitlist .msg{font-size:14px;color:var(--teal);font-weight:600;min-height:20px}
+footer{border-top:1px solid var(--line);padding-block:36px 44px;font-size:13px;color:var(--muted)}
+footer .wrap{display:grid;gap:14px}
+footer img{width:320px;max-width:100%;height:auto}
+footer nav{display:flex;gap:18px}
+footer nav a{color:var(--muted)}
+.draft-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--plum);background:var(--plum-soft);padding:2px 8px;border-radius:999px;vertical-align:middle}
 </style>
-</head>
+<style>
+/* Palette B "Rosewood" (Brand Guide cheat sheet v0.1, DRAFT).
+   Rosewood anchors hero and dark bands; cream page; shell panels; berry buttons on light,
+   petal buttons on rosewood; teal for icons and fills only; gold as text only on rosewood.
+   Section labels set in Tenor Sans. Product-screen results keep the app's own colours. */
+:root{
+  --flower-tile:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cg%20transform%3D%22translate%2850%2050%29%20scale%280.5%29%22%3E%3Cpath%20transform%3D%22rotate%280%29%22%20d%3D%22M0%20-3%20C%2015%20-12%2015%20-32%200%20-46%20C%20-15%20-32%20-15%20-12%200%20-3Z%22%20fill%3D%22%23F2A7B0%22%20fill-opacity%3D%220.55%22/%3E%3Cpath%20transform%3D%22rotate%2872%29%22%20d%3D%22M0%20-3%20C%2015%20-12%2015%20-32%200%20-46%20C%20-15%20-32%20-15%20-12%200%20-3Z%22%20fill%3D%22%23F2A7B0%22%20fill-opacity%3D%220.55%22/%3E%3Cpath%20transform%3D%22rotate%28144%29%22%20d%3D%22M0%20-3%20C%2015%20-12%2015%20-32%200%20-46%20C%20-15%20-32%20-15%20-12%200%20-3Z%22%20fill%3D%22%23F2A7B0%22%20fill-opacity%3D%220.55%22/%3E%3Cpath%20transform%3D%22rotate%28216%29%22%20d%3D%22M0%20-3%20C%2015%20-12%2015%20-32%200%20-46%20C%20-15%20-32%20-15%20-12%200%20-3Z%22%20fill%3D%22%23F2A7B0%22%20fill-opacity%3D%220.55%22/%3E%3Cpath%20transform%3D%22rotate%28288%29%22%20d%3D%22M0%20-3%20C%2015%20-12%2015%20-32%200%20-46%20C%20-15%20-32%20-15%20-12%200%20-3Z%22%20fill%3D%22%23F2A7B0%22%20fill-opacity%3D%220.55%22/%3E%3C/g%3E%3C/svg%3E");
+  --rosewood:#05206D; --rosewood-2:#102E80; --rosewood-line:#2A4697;
+  --navy:#1A2649; --berry:#B02673; --berry-deep:#B02673; --teal-b:#72CBCD;
+  --gold:#FFC709; --petal:#FFC709; --shell:#F1F4FB; --cream:#FFFFFF;
+  --bg:var(--cream); --soft:var(--shell); --card:#FFFFFF; --ink:var(--navy);
+  --muted:#4E5672; --line:#E2E6F0;
+  --teal:var(--berry-deep); --teal-soft:#E0F5F0;
+  --plum:var(--berry-deep); --plum-soft:var(--shell);
+  --rose:var(--berry-deep); --rose-soft:#FDEAF4;
+  --night:var(--rosewood); --night-card:var(--rosewood-2); --night-line:var(--rosewood-line);
+  --night-ink:var(--cream); --night-muted:#C9D3F0; --cyan:var(--petal);
+  --label:'Tenor Sans', 'Figtree', system-ui, sans-serif;
+  --attention:#E8795A; /* app template result colour, used only on result marks */
+}
+body::before{background:var(--cream)}
+header{background:rgba(255,255,255,.95)}
+.eyebrow{font-family:var(--label);font-weight:400;letter-spacing:.16em;color:var(--berry-deep)}
+.banner{background:var(--navy)}
+.btn-dark{background:var(--berry);color:#fff}
+.btn-dark:hover{background:var(--berry-deep)}
+.btn-ghost{border-color:#C9D0E0}
+.btn-ghost:hover{border-color:var(--navy)}
+.btn-petal{background:var(--petal);color:var(--rosewood)}
+.btn-petal:hover{background:#FFD54A}
+.btn-cream{background:transparent;color:var(--cream);border:1.5px solid rgba(255,255,255,.45)}
+.btn-cream:hover{border-color:var(--cream)}
+.ico{background:var(--teal-soft);color:#00A889}
+.ico svg{stroke:#00A889}
+.chip{background:var(--shell);color:var(--berry-deep)}
+.pills span{background:var(--shell);color:var(--berry-deep)}
+.lab .ok{color:#00A889}
+.lab .q{color:var(--navy)}
+
+/* hero on rosewood */
+.hero{background:var(--rosewood);color:var(--cream);padding-block:64px 80px}
+.hero .eyebrow{color:var(--petal)}
+.hero h1{color:var(--cream)}
+.hero .audience{color:var(--gold)}
+.hero .lead{color:#DCE3F7}
+.hero-media{background:var(--rosewood-2)}
+.flowers{height:56px;background-color:var(--rosewood);background-image:var(--flower-tile);background-size:56px 56px;background-position:center;border-top:1px solid var(--rosewood-line)}
+
+/* overview */
+.overview{background:var(--shell)}
+.pillars{border-color:#E2E6F0}
+.pillar{border-color:#E6E9F2!important}
+.pillar:hover{background:var(--cream)}
+.pillar .top{font-family:var(--label);font-weight:400;letter-spacing:.14em}
+.p-hub .art{background:var(--teal-soft);color:#00A889}
+.p-int .art{background:#E8E9F1;color:var(--navy)}
+.p-circ .art{background:#FDEAF4;color:var(--berry)}
+.p-care .art{background:#FFF0DB;color:#C26A00}
+.soon{background:var(--shell);color:var(--berry-deep)}
+
+/* intelligence band on rosewood */
+.intel{background:radial-gradient(1100px 500px at 12% 0%,#003595 0%,transparent 60%),radial-gradient(900px 500px at 100% 100%,#021447 0%,transparent 60%),var(--rosewood)}
+.intel .eyebrow{color:var(--petal)}
+.motto{border-left-color:var(--gold);color:var(--cream)}
+.stage div{background:#1C3A8F}
+.stage b{color:var(--cream)}
+.syschips span{background:#1C3A8F;color:var(--cream)}
+.syschips i{background:var(--teal-b)}
+.syschips i.w{background:var(--attention)}
+.why em{color:var(--gold)}
+.bubble.me{background:var(--petal);color:var(--rosewood)}
+.bubble.ai{background:#1C3A8F}
+.link-chip{color:var(--petal);border-color:#3D58A8}
+.panel .sample{color:#BFCBEA}
+
+/* circle */
+.circle{background:linear-gradient(180deg,#FDEAF4,var(--cream))}
+.circle .eyebrow{color:var(--berry-deep)}
+.circle .ico{background:#FDEAF4;color:var(--berry)}
+.circle .ico svg{stroke:var(--berry)}
+.orbit .ring{border-color:#F7C6DF}
+.orbit .ring2{border-color:#F7C6DF}
+.orbit .you{background:var(--rosewood)}
+.seg button[aria-pressed="true"]{background:var(--berry);color:#fff}
+.person .tag{background:#FDEAF4;color:var(--berry-deep)}
+.private{background:var(--shell)}
+
+/* care */
+.care{background:var(--shell)}
+.care .ico{background:var(--cream)}
+.care .tile{background:var(--cream);border-color:#E2E6F0}
+.care .coming{color:var(--berry-deep);font-family:var(--label);font-weight:400;letter-spacing:.14em}
+.pdf .badge{background:#FDEAF4;color:var(--berry-deep)}
+.pdf .bar{background:#E9ECF4}
+.pdf{box-shadow:0 24px 60px rgba(5,32,109,.16)}
+.miss{background:#EEF0F6;color:var(--navy)}
+
+/* evidence */
+.steps::before{background:linear-gradient(90deg,var(--teal-b),var(--berry))}
+.step .n{border-color:var(--teal-b);background:var(--cream)}
+.step:last-child .n{border-color:var(--berry)}
+.honest{background:var(--rosewood)}
+.honest svg{stroke:var(--petal)}
+.honest .eyebrow{color:var(--gold)}
+
+/* waitlist on rosewood */
+.waitlist .box{background:var(--rosewood);color:var(--cream)}
+.waitlist .box>*{position:relative}
+.waitlist h2{color:var(--cream)}
+.waitlist .lead{color:#DCE3F7}
+.waitlist input{border-color:transparent}
+.waitlist .msg{color:var(--petal)}
+.draft-tag{background:var(--shell);color:var(--berry-deep)}
+footer{background:var(--cream)}
+</style>
+
+<style>
+/* Large-image layout */
+.nav{height:112px}
+.nav .logo img{height:66px;width:auto}
+.nav .logo .wm{display:inline-grid;justify-items:stretch;gap:3px;text-decoration:none}
+.nav .logo .wm-t{font-family:'Tenor Sans','Figtree',sans-serif;font-weight:400;font-size:40px;line-height:1;letter-spacing:.01em;color:#001F4E;white-space:nowrap}
+.nav .logo .wm-t .her{color:#00979B}
+.nav .logo .wm-t sup{font-size:.32em;color:#00979B;vertical-align:top;position:relative;top:.1em;margin-left:1px}
+.nav .logo .wm img{width:0;min-width:100%;height:auto}
+@media (max-width:1060px){.nav .logo .wm-t{font-size:34px}}
+@media (max-width:600px){.nav .logo .wm-t{font-size:28px}}
+.menu div{top:112px}
+@media (max-width:1060px){.nav{height:96px}.nav .logo img{height:55px}.menu div{top:96px}}
+@media (max-width:600px){.nav{height:84px}.nav .logo img{height:45px}.nav>.btn{display:none}.menu div{top:84px}}
+
+/* Hero: one continuous photograph under the header and copy (version five's hero), with the woman moved into the right half.
+   The photo is right-anchored at 78vw wide so her hair starts near the centre line and the ring labels stay on screen;
+   the left of the hero continues the photo's own sky and sea (its left edge, enlarged and blurred). */
+.bighero{position:relative;overflow:hidden;background:#DCE9EE;height:max(44vw,540px);max-height:800px;padding-block:0;margin-top:-112px}
+.bighero .bg{position:absolute;inset:-40px;background:url("images/hero-family-ring.webp") 0% 35%/320% auto no-repeat;filter:blur(18px) saturate(1.05)}
+.bighero .img{position:absolute;bottom:-4vw;right:-1.5vw;width:78vw;aspect-ratio:2048/1365;max-width:none}
+.bighero .img img{width:100%;height:100%;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%),linear-gradient(180deg,transparent 0%,#000 14%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,#000 22%),linear-gradient(180deg,transparent 0%,#000 14%);mask-composite:intersect}
+.bighero .fade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.74) 0%,rgba(255,255,255,.58) 34%,rgba(255,255,255,0) 54%)}
+.bighero .wrap{position:relative;display:flex;align-items:flex-start;height:100%;padding-top:calc(112px + clamp(16px,2.4vw,40px));padding-bottom:24px}
+.bighero .copy{max-width:min(540px,46vw);display:grid;gap:clamp(10px,1.4vw,20px)}
+.bighero h1{font-size:clamp(30px,4vw,62px);line-height:1.03;letter-spacing:-.03em;color:var(--navy)}
+.bighero .audience{font-size:clamp(15px,1.35vw,19px);font-weight:600;color:var(--berry-deep)}
+.bighero .lead{font-size:clamp(14px,1.25vw,18px);color:#1F2A44}
+.bighero .actions .btn{min-height:clamp(42px,3.6vw,50px);padding:0 clamp(14px,1.8vw,24px);font-size:clamp(13px,1.1vw,15px)}
+.bighero .eyebrow{justify-self:start;font-family:'Figtree',system-ui,sans-serif;font-weight:700;font-size:clamp(11.5px,1.05vw,13.5px);letter-spacing:.12em;color:var(--berry-deep);background:rgba(255,255,255,.9);padding:6px 12px;border-radius:999px;box-shadow:0 1px 3px rgba(26,38,73,.12)}
+.bighero .photo-note{left:auto;right:calc(1.5vw + 16px);bottom:16px;z-index:2}
+header.over{position:relative;z-index:5;background:transparent;border-bottom:0;backdrop-filter:none}
+@media (max-width:1060px){.bighero{margin-top:-96px}.bighero .wrap{padding-top:calc(96px + 16px)}.bighero .copy{max-width:44vw}}
+@media (max-width:700px){
+  .bighero{height:auto;max-height:none;margin-top:0;background:var(--cream)}
+  .bighero .bg,.bighero .fade{display:none}
+  .bighero .img{position:relative;right:auto;bottom:auto;width:100%;aspect-ratio:3/2}
+  .bighero .img img{-webkit-mask-image:none;mask-image:none;object-position:62% center}
+  .bighero .photo-note{right:12px;bottom:12px}
+  .bighero .wrap{padding-block:36px 56px;height:auto}
+  .bighero .copy{max-width:640px}
+  .bighero h1{font-size:40px}.bighero .lead{font-size:16px}.bighero .audience{font-size:17px}
+  header.over{background:rgba(255,255,255,.95);border-bottom:1px solid var(--line)}
+}
+.featrow{padding-block:96px 40px;background:var(--cream)}
+.featrow .head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.featrow .head h2{font-size:clamp(30px,3.4vw,46px);max-width:16ch}
+.featrow .head p{max-width:42ch;color:var(--muted);font-size:17px}
+.featrow .row{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.pcard{display:grid;grid-template-rows:auto 1fr;text-decoration:none;color:var(--navy);background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 1px 0 rgba(5,32,109,.06),0 18px 40px rgba(5,32,109,.08);transition:transform .25s ease,box-shadow .25s ease}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 1px 0 rgba(5,32,109,.06),0 26px 54px rgba(5,32,109,.14)}
+.pcard .ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--shell)}
+.pcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.pcard:hover .ph img{transform:scale(1.04)}
+.pcard .ph .num{position:absolute;left:16px;top:14px;font-family:var(--label);font-size:12px;letter-spacing:.16em;color:#fff;background:rgba(5,32,109,.55);backdrop-filter:blur(6px);padding:5px 10px;border-radius:999px}
+.pcard .ph .soon{position:absolute;right:14px;top:14px;background:var(--cream)}
+.pcard .ph .photo-note{font-size:10px;left:12px;bottom:12px}
+.pcard .body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px}
+.pcard .lbl{font-family:var(--label);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--berry-deep)}
+.pcard h3{font-family:var(--serif);font-weight:500;font-size:25px;line-height:1.12}
+.pcard p{font-size:15px;color:var(--muted)}
+.pcard .go{margin-top:auto;padding-top:8px;font-size:14px;font-weight:600;color:var(--berry-deep)}
+@media (max-width:1000px){.featrow .row{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.featrow .row{grid-template-columns:1fr}.pcard .ph{aspect-ratio:4/3}}
+
+#hub .photo-stack .ph{max-width:none;aspect-ratio:4/5}
+#hub .split{grid-template-columns:5fr 6fr}
+@media (max-width:900px){#hub .split{grid-template-columns:1fr}}
+section{padding-block:120px}
+@media (max-width:800px){section{padding-block:72px}}
+
+.closing{position:relative;overflow:hidden;background:var(--rosewood);color:var(--cream);padding-block:0}
+.closing .img{position:absolute;inset:0 0 0 35%}
+.closing .img img{width:100%;height:100%;object-fit:cover;object-position:60% 30%}
+.closing .fade{position:absolute;inset:0;background:linear-gradient(90deg,var(--rosewood) 0%,var(--rosewood) 38%,rgba(5,32,109,.75) 52%,rgba(5,32,109,0) 75%)}
+.closing .wrap{position:relative;padding-block:120px;display:grid;gap:18px;justify-items:start;max-width:1240px}
+.closing .inner{max-width:520px;display:grid;gap:18px}
+.closing h2{font-size:clamp(34px,4vw,54px);color:var(--cream)}
+.closing .lead{color:#DCE3F7}
+.closing form{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.closing input{width:300px;max-width:100%;min-height:50px;border-radius:12px;border:0;padding:0 16px;font:16px var(--sans);background:#fff;color:var(--navy)}
+.closing .msg{font-size:14px;color:var(--petal);font-weight:600;min-height:20px}
+.closing .photo-note{left:auto;right:16px;bottom:16px}
+@media (max-width:900px){.closing .img{position:relative;inset:auto;aspect-ratio:16/10}.closing .fade{display:none}.closing .wrap{padding-block:48px 64px}}
+</style>
+<style>
+.pbadge{width:68px;height:68px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--navy);box-shadow:0 0 0 1.5px var(--petal),0 0 0 6px var(--cream),0 0 0 7px rgba(242,167,176,.55),0 10px 24px rgba(5,32,109,.14);margin:-56px 0 10px;position:relative;z-index:2}
+.pbadge svg{width:48px;height:48px}
+.pcard .ph .photo-note{left:auto;right:12px}
+.pbadge.sm{width:46px;height:46px;margin:0;box-shadow:0 0 0 1.5px var(--petal),0 6px 14px rgba(5,32,109,.12)}
+.pbadge.sm svg{width:31px;height:31px}
+.secbadge{display:inline-flex;align-items:center;gap:14px}
+.intel .pbadge.sm{box-shadow:0 0 0 1.5px var(--petal)}
+</style><style>
+/* Vibrant palette (owner's colour sheet, 2026-11-22): saturated accents grounded by PMS 2756 navy;
+   darker-hue vignettes on the colour blocks. One accent per part: Hub green, Intelligence blue, Care orange, HerCircle pink. */
+:root{--c-green:#00A889;--c-green-d:#00795A;--c-blue:#0082C6;--c-blue-d:#003595;--c-orange:#FF9E1B;--c-pink:#F279B2;--c-pink-d:#B02673;--c-purple:#8365AC;--c-yellow:#FFC709;--c-aqua:#72CBCD;--c-navy:#05206D}
+.banner{background:var(--c-navy)}
+.intel{background:radial-gradient(1100px 520px at 15% 0%,#0B4FA8 0%,transparent 60%),radial-gradient(900px 500px at 100% 100%,#021447 0%,transparent 60%),var(--c-navy)}
+.honest{background:radial-gradient(700px 260px at 20% 0%,#8365AC 0%,transparent 70%),#4B2F7A}
+.honest .eyebrow{color:var(--c-yellow)}
+.closing{background:#9B2068}
+.closing .fade{background:linear-gradient(90deg,#9B2068 0%,#9B2068 38%,rgba(155,32,104,.75) 52%,rgba(155,32,104,0) 75%)}
+.closing h2,.closing .lead{color:#fff}
+.btn-petal{color:var(--c-navy)}
+.overview,.care{background:#F3F5FB}
+.care{background:#FFF6EA}
+.circle{background:linear-gradient(180deg,#FDEAF4,#FFFFFF)}
+.pbadge{box-shadow:0 0 0 2px var(--ring,var(--c-pink)),0 0 0 6px #fff,0 0 0 7px var(--ring2,rgba(242,121,178,.45)),0 10px 24px rgba(5,32,109,.14)}
+.pbadge.sm{box-shadow:0 0 0 2px var(--ring,var(--c-pink)),0 6px 14px rgba(5,32,109,.14)}
+.pcard[href="#hub"],#hub{--ring:var(--c-green);--ring2:rgba(0,168,137,.4);--lbl:var(--c-green-d)}
+.pcard[href="#intelligence"],#intelligence{--ring:var(--c-blue);--ring2:rgba(0,130,198,.4);--lbl:var(--c-blue-d)}
+.pcard[href="#care"],#care{--ring:var(--c-orange);--ring2:rgba(255,158,27,.45);--lbl:#05206D}
+.pcard[href="#circle"],#circle{--ring:var(--c-pink);--ring2:rgba(242,121,178,.45);--lbl:var(--c-pink-d)}
+.pcard .lbl,#hub .eyebrow,#care .eyebrow,#circle .eyebrow{color:var(--lbl)}
+.pcard .go{color:var(--lbl)}
+.pcard{border-top:4px solid var(--ring)}
+#intelligence .eyebrow{color:var(--c-yellow)}
+.pcard .ph .num{background:rgba(5,32,109,.6)}
+.care .coming{color:#05206D}
+.care .tile{border-top:3px solid var(--c-orange)}
+.pcard .ph .soon{background:var(--c-yellow);color:var(--c-navy)}
+.panel svg[aria-label^="Illustration: Heart, Metabolic"]{max-width:340px;display:block;margin-inline:auto}
+.soon{background:var(--c-yellow);color:var(--c-navy)}
+.panel svg[aria-label^="Illustration: Heart, Metabolic"]{max-width:340px;display:block;margin-inline:auto}
+</style></head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<!-- VIBRANT MOCK (2026-11-22): preview-large.html recoloured to the colour sheet the owner supplied on 2026-11-22
+     (vibrant, saturated colours grounded by a deep navy, with darker-hue vignette blocks). Logo keeps its own colours;
+     warm brand colours never colour a result on a product screen.
+     LARGE-IMAGE MOCK (2026-11-20): Rosewood mock re-laid with a full-bleed hero photograph, the official lockup in the header,
+     an icon feature row, large alternating image sections and a photo closing band. Layout pacing only is modelled on a
+     reference site the owner named; no text, image or brand asset is taken from it.
+     ROSEWOOD MOCK (2026-11-20): preview-merged.html recoloured to Brand Guide cheat sheet v0.1, palette option B "Rosewood" (DRAFT).
+     Logo keeps its own colours; warm brand colours never colour a result on a product screen.
+     MERGED PREVIEW (2026-11-20): structure and type from index.html; product screens from preview-v5.html.
+     Member wording is DRAFT until RG1. Names per the Positioning & Consumer Messaging Master (The Hub, Menopause Aware
+     Intelligence, HerCircle, The Care) and tagline per register row 271. All numbers on screens are sample data. -->
+<div class="banner"><strong>PREVIEW</strong> BiomarkHER is in development. Wording is draft. Screens show sample data, not live health tools.</div>
 
-<div class="preview-bar">Product preview · BiomarkHER is in development. Screens show illustrative concepts, not live health tools.</div>
-
-<header>
-  <div class="wrap">
-    <img src="images/logo.png" alt="BiomarkHER">
-    <nav aria-label="Main navigation"><a href="#how">THE HUB</a><a href="#clock">THE INTELLIGENCE</a><a href="#care">THE CARE</a><a href="#circle">THE CIRCLE</a></nav>
-<details class="mobile-nav"><summary>Menu</summary><div class="mobile-links"><a href="#how">THE HUB</a><a href="#clock">THE INTELLIGENCE</a><a href="#care">THE CARE</a><a href="#circle">THE CIRCLE</a></div></details>
+<header class="over">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="BiomarkHER home"><span class="wm"><span class="wm-t">BioMark<span class="her">HER</span><sup>®</sup></span><img src="images/logo-divider.png" alt="" width="760" height="62"></span></a>
+    <nav aria-label="Main">
+      <a href="#hub">The Hub</a>
+      <a href="#intelligence">The Intelligence</a>
+      <a href="#care">The Care</a>
+      <a href="#circle">HerCircle</a>
+    </nav>
+    <details class="menu"><summary>Menu</summary><div>
+      <a href="#hub">The Hub</a><a href="#intelligence">The Intelligence</a><a href="#care">The Care</a><a href="#circle">HerCircle</a>
+    </div></details>
     <a class="btn btn-dark" href="#waitlist">Join the waitlist</a>
   </div>
 </header>
 
-<main id="main">
-  <div class="hero">
-    <div class="hero-media"><img src="images/hero-original-health-ring.webp" alt="Woman in blue on a beach with an illustrative health clock labeled Bone Health, Brain Health, Heart Health, and Metabolic Health" width="2048" height="1365" fetchpriority="high"></div>
-    <div class="wrap">
-      <div class="hero-copy">
-        <span class="eyebrow">Women’s health management and intelligence</span>
-        <h1>Health clarity, calibrated for midlife and beyond.</h1>
-        <p>Connect your hormonal past, present and future to your whole-body health—with your medical records, body system insights, and the people you care for...All in one place.</p>
-        <div class="actions">
-          <a class="btn btn-dark" href="#waitlist">Join the waitlist</a>
-          <a class="btn btn-light" href="#how">See how it works</a>
-        </div>
-      </div>
-    </div>
-    <span class="credit">Illustrative health graphic. Posed by model.</span>
+<main id="top">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-hub" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="118" y="86" width="276" height="370" rx="34" stroke-width="17"/>
+  <path d="M190 86V66a20 20 0 0 1 20-20h92a20 20 0 0 1 20 20v20" stroke-width="17"/>
+  <path d="M176 118h160" stroke-width="16"/>
+  <path d="M154 248h62l24-56 36 110 26-74 18 20h42" stroke-width="16"/>
+  <path d="M170 350h172M170 398h112" stroke-width="15"/>
+  <circle cx="452" cy="170" r="14" fill="currentColor" stroke="none"/>
+  <path d="M394 170h40" stroke-width="14"/>
+  <circle cx="60" cy="330" r="14" fill="currentColor" stroke="none"/>
+  <path d="M78 330h40" stroke-width="14"/>
+</symbol><symbol id="i-int" viewBox="0 0 512 512"><path transform="translate(239,67)" d="m0 0c11 11 12 22 13 37 0.038 1.2 0.076 2.5 0.11 3.7 0.39 13 0.43 27 0.43 40 0.0019 3.6 0.0095 7.2 0.016 11 0.013 7.8 0.02 16 0.024 24 0.0028 4.9 7e-3 9.8 0.012 15 0.012 14 0.022 27 0.026 41 1.1e-4 0.43 1.1e-4 0.43 6.6e-4 2.6 2.2e-4 0.87 4.4e-4 1.7 6.6e-4 2.6 4.4e-4 1.8 8.9e-4 3.5 0.0013 5.3 1.1e-4 0.44 1.1e-4 0.44 6.7e-4 2.6 4e-3 14 0.021 28 0.045 43s0.036 29 0.037 44c9.1e-4 8.2 0.0066 16 0.025 25 0.015 7 0.021 14 0.012 21-0.0039 3.5-3e-3 7.1 0.011 11 0.013 3.2 0.011 6.5-5.9e-4 9.7-0.0029 1.7 0.0089 3.4 0.021 5.2-0.083 13-4 24-12 35-2.9 2.8-4.6 3.5-8.5 4.4v2c-15 5.8-29 7.2-44 0.65-8-4.5-15-12-20-20v-2h-2c-0.99-3.3-2-6.6-3-10-0.7-0.11-0.7-0.11-4.2-0.69-7.7-1.5-15-4.8-22-8.3v-2c-0.28-0.034-0.28-0.034-1.7-0.2-3.2-1.1-5.2-3.2-7.6-5.5-0.48-0.48-0.96-0.97-1.5-1.5-10-11-15-21-15-36-0.047-1.1-0.094-2.2-0.14-3.3-0.3-8.1-0.3-8.1 0.83-12-0.61-0.34-1.2-0.68-1.9-1-0.81-0.45-1.6-0.89-2.4-1.4-0.4-0.22-0.4-0.22-2.4-1.3-4-2.3-4-2.3-5.3-3.3v-2c-0.36-0.11-0.36-0.11-2.2-0.66-3.5-1.7-5.3-3.8-7.6-6.8-0.41-0.5-0.81-1-1.2-1.5-3-3.7-3-3.7-3-6h-2c-9-16-12-34-7.3-51 0.84-2.9 1.7-5.8 2.7-8.7 0.95-3 1.8-6 2.6-9h-2c-3.9-8.3-4.4-17-4.3-26 0.0056-1 0.011-2 0.017-3.1 0.23-14 4.1-26 13-37l1.5-3.1c1.5-2.9 2.7-4.2 5.5-5.9h2v-2c4.4-3 4.4-3 7-3v-2c1.5-0.72 3-1.4 4.5-2.1 1.5-0.85 1.5-0.85 3.5-2.9 2.6-0.12 2.6-0.12 5 0l-1-5h-2c-2.5-15-3.6-34 5-47 1.2-1.2 2.3-2.4 3.5-3.5 2.5-2.5 4.7-5.2 6.9-7.9l1.6-1.6h2v-2c5.3-4.5 11-7.1 18-9.2 2.2-0.76 2.2-0.76 3.2-1.8 1.1-0.048 2.2-0.095 3.3-0.14 2.2-0.29 3.3-0.45 4.8-2.1 0.95-1.8 1.7-3.5 2.5-5.4 3-7.1 6.7-12 13-17 3.6-3 3.6-3 4.8-5.2 5.3-3.5 11-5 17-5.9 0.83-0.13 1.7-0.26 2.5-0.39 14-1.8 26 3.3 36 12zm-59 11c-0.94 2.9-0.94 2.9-1 5l-3 1c-1.1 1.6-1.1 1.6-2 3.6-0.34 0.71-0.67 1.4-1 2.2-1.5 3.4-2.8 6.8-4 10-0.45 0.061-0.45 0.061-2.7 0.37-1.2 0.17-2.4 0.34-3.6 0.51-0.59 0.079-1.2 0.16-1.8 0.24-3.1 0.45-5.4 0.9-7.9 2.9-1.7 0.68-3.3 1.3-5 2-1.3 0.65-2.7 1.3-4 2v2l-4 1 2 4h-2l-1-3c-2 1.4-2 1.4-4 3v2h-2c-0.96 1.7-1.9 3.5-2.9 5.2-0.53 0.96-1.1 1.9-1.6 2.9-5.2 10-6.4 22-3.1 33 2.2 6.3 5.2 9.9 11 14 2.9 1.4 2.9 1.4 5 2l1 7c-1.1-0.31-2.1-0.62-3.3-0.95-1.4-0.39-2.9-0.79-4.3-1.2l-2.1-0.63c-5.1-1.4-8.5-1.3-13 0.75-0.27 0.11-0.27 0.11-1.6 0.67-1.6 0.69-3.1 1.4-4.7 2.2-1 0.49-2.1 0.98-3.1 1.5-2.7 1.7-3.4 2.7-4.6 5.6l-1.9 0.38c-3 0.88-3.8 2.6-5.4 5.2-0.73 1.5-0.73 1.5-0.73 3.5h-2c-8.8 16-11 31-6.9 49 0.98 2.9 2.3 5.2 3.9 7.8 1 6.2-1.5 11-3.8 17-4.4 11-3.6 26-0.043 37 0.85 1.9 0.85 1.9 2.9 3.9l1.2 3.1c4.4 10 13 18 23 23 2.5 0.5 2.5 0.5 5 0 1.4-1.2 2.6-2.5 3.8-3.8 1.6-1.6 3-2 5.2-2.2l2 1c-0.63 4.6-0.63 4.6-2.4 6.4-6.1 6.2-6.6 16-6.6 24 0.59 13 6 22 15 30 8.5 7.5 17 9.4 28 11 1.5-2.6 2-3.9 2-7 0.99-0.33 2-0.66 3-1 1.4-1.1 1.4-1.1 2.6-2.4l1.3-1.3c1.1-1.4 1.1-1.4 2.1-4.4 2.1-0.69 2.1-0.69 4-1v-2c0.73-0.13 1.5-0.25 2.2-0.38 5.5-1.2 10-3.4 14-8 3.2-5.9 3.4-8.8 1.5-15-0.25-2.4-0.25-2.4 0.88-4.2 2.4-1.5 4.1-1.4 6.9-1.2 2.3 6.6 2.6 13 3 20-0.99 0.33-2 0.66-3 1l-0.88 1.8c-1.5 3-3.7 5-6.1 7.2-0.59 0.65-1.2 1.3-1.8 2-2.6 2.4-5.1 3.6-8.3 5.1-6.8 3.1-6.8 3.1-8.9 5.9v2h-2c-3.6 5.1-3.3 9.7-2.7 16 1.7 7.9 7.2 14 14 18 9 5.6 20 7.8 31 5.4 3.4-1.1 6.6-2.1 9.4-4.4v-2l4-1-2-4h2l1 2c4.3-2.9 6.7-5.8 8-11 1.7-14 1.1-28 1.1-41-0.0023-3.6 0.0012-7.1 4e-3 -11 0.0044-7 0.0035-14 5.9e-4 -21-0.0023-5.7-0.0026-11-0.0015-17 7.6e-5 -0.4 7.6e-5 -0.4 4.6e-4 -2.5 3.2e-4 -1.6 6.4e-4 -3.3 9.7e-4 -4.9 0.0028-15-4.2e-4 -31-0.0058-46-0.0045-13-0.0037-26 9.2e-4 -39 0.0054-15 0.0074-31 0.0044-46-3.2e-4 -1.6-6.3e-4 -3.3-9.4e-4 -4.9-1.6e-4 -0.81-3.1e-4 -1.6-4.7e-4 -2.4-8.6e-4 -5.6 5.8e-4 -11 0.0029-17 0.0028-6.9 2e-3 -14-0.0033-21-0.0026-3.5-0.0037-7-3.5e-4 -11 0.0072-8.5-0.027-17-0.13-25-0.013-1.1-0.026-2.3-0.04-3.5-0.049-3.3-0.13-6.6-0.22-9.9-0.014-0.96-0.027-1.9-0.041-2.9-0.33-9.3-3.9-16-11-23-8.3-6.2-17-8.1-27-7.3-8.3 1.2-19 5.4-24 12z" fill="currentColor"/><path transform="translate(336,65)" d="m0 0c0.57 0.34 1.1 0.68 1.7 1 3.6 2.2 5.2 4.3 7.3 8 0.26 0.44 0.26 0.44 1.6 2.7 0.51 0.91 1 1.8 1.6 2.8 0.26 0.45 0.26 0.45 1.6 2.7 1.4 3 1.9 5.6 2.3 8.8 0.85 0.098 1.7 0.2 2.6 0.3 6.8 0.9 12 2.1 18 5.7 0.6 0.32 1.2 0.64 1.8 0.97 4.4 2.4 9.5 5.2 12 9.7 0.34 0.44 0.67 0.89 1 1.3h3c0.18 0.47 0.36 0.94 0.55 1.4 2.1 5.2 2.1 5.2 4.1 7.2 1.9 1.9 1.8 3.7 2.4 6.4 0.66 1.1 1.3 2.3 2 3.4 2.8 5.5 2.5 11 2.4 17 0.0071 1.1 0.014 2.1 0.021 3.2-0.055 6.9-1.1 13-3.5 19 0.42 0.28 0.84 0.55 1.3 0.84 1.9 1.3 3.9 2.6 5.8 3.8 0.66 0.44 1.3 0.87 2 1.3 2 1.3 4 2.7 5.9 4 0.64 0.43 1.3 0.85 1.9 1.3 3.5 2.4 6.2 4.7 8.7 8.2 1.9 2.6 3.6 4.8 6.1 6.8 3.3 3.1 4.2 7.6 5.4 12 0.89 2.8 0.89 2.8 1.9 4.7 5.2 12 2.7 29-1.1 41-0.36 0.87-0.71 1.7-1.1 2.6-1.4 3.7-1.7 7.3-0.35 11 0.52 1.1 1 2.3 1.6 3.4 5 11 6.5 27 3 39-1.2 2.9-2.6 5.6-4.1 8.4-0.56 1.2-1.1 2.4-1.6 3.5-3.2 6.8-6.5 13-12 18h-2l-1 3h-3v2c-1.6 0.84-3.2 1.7-4.8 2.5-0.45 0.23-0.45 0.23-2.7 1.4-2.5 1.1-2.5 1.1-5.5 1.1 0.16 0.84 0.32 1.7 0.49 2.5 1.9 11 2.5 28-4.3 38-1.7 2.2-3.4 4.3-5.2 6.4-0.81 1.2-1.6 2.4-2.4 3.7l-1.6 2.3h-2c-0.23 0.6-0.45 1.2-0.69 1.8-1.7 2.8-3.4 3.6-6.3 5.2-0.57 0.38-1.1 0.76-1.7 1.2-5.4 3.7-11 5.8-17 7.8-0.99 0.33-2 0.66-3 1-2.3 0.13-4.7 0.044-7 0-0.043 0.24-0.043 0.24-0.26 1.4-1.9 8.8-6.6 17-13 24-0.99 0.33-2 0.66-3 1l-1 3c-1.4 0.97-1.4 0.97-3.1 1.8-0.64 0.3-1.3 0.6-1.9 0.91-0.68 0.3-1.4 0.61-2 0.92-0.65 0.31-1.3 0.62-2 0.95-11 4.9-23 4.8-35 1.6-0.58-0.17-1.2-0.33-1.8-0.5-5.3-1.6-8.6-4.5-12-8.4-1.3-1.3-1.3-1.3-3.3-2.6-2.6-2.2-3.7-4.3-5.2-7.3-0.5-0.98-1-2-1.5-3-3.6-8.3-3.7-17-3.6-26-0.0037-1.3-0.0083-2.7-0.014-4-0.012-3.6-0.012-7.3-0.0096-11 4.1e-4 -3.9-0.011-7.9-0.02-12-0.017-7.7-0.022-15-0.023-23-9.5e-4 -6.3-0.0051-13-0.011-19-0.018-18-0.027-36-0.025-53 8e-5 -0.96 1.6e-4 -1.9 2.4e-4 -2.9 8.1e-5 -0.96 1.6e-4 -1.9 2.5e-4 -2.9 8.1e-4 -16-0.018-31-0.047-47s-0.043-32-0.041-48c6.6e-4 -9-0.0048-18-0.026-27-0.018-7.6-0.023-15-9e-3 -23 0.0065-3.9 0.0068-7.8-0.011-12-0.16-39-0.16-39 9.6-50 0.63-0.62 1.3-1.2 1.9-1.9 0.32-0.32 0.32-0.32 1.9-2 3.8-3.5 7.5-6.1 12-8.2 1.8-0.84 1.8-0.84 4.5-2.5 14-6.7 30 0.85 42 8.7zm-44 4c-0.73 0.39-1.5 0.77-2.2 1.2-4.1 2.3-4.1 2.3-5.8 3.8-0.34 1.3-0.67 2.7-1 4-0.99 0.33-2 0.66-3 1-0.69 2.1-0.69 2.1-1 4h-2c-3.7 8.1-3.1 16-3.1 25-0.0033 1.3-7e-3 2.7-0.011 4-0.01 3.7-0.014 7.4-0.016 11-0.0039 4-0.013 8-0.022 12-0.02 9.6-0.03 19-0.039 29-0.0044 4.5-0.0098 9-0.015 14-0.017 15-0.032 30-0.039 45-0.0019 3.9-0.0038 7.8-0.0058 12-4.8e-4 0.97-9.7e-4 1.9-0.0015 2.9-0.0083 16-0.034 31-0.066 47-0.033 16-0.051 32-0.054 48-0.0022 9.1-0.011 18-0.036 27-0.022 7.7-0.03 15-0.02 23 0.0045 3.9 0.0026 7.9-0.017 12-0.018 3.6-0.017 7.2-0.0011 11 0.0024 1.3-2e-3 2.6-0.014 3.9-0.063 7.4 0.32 13 4.5 19h2c0.031 0.28 0.031 0.28 0.19 1.7 1.5 4.3 4.2 6.5 8.2 8.5 10 4.3 21 5.3 32 1.8 2.7-1.2 5.4-2.5 8-4v-2c0.6-0.26 1.2-0.52 1.8-0.79 2.4-1.3 3.6-2.6 5.3-4.7l1.5-1.8c3.4-4.3 3.8-7.2 4.2-13 0.064-0.71 0.13-1.4 0.19-2.1 0.35-5.3-0.66-8.3-4.2-12-4-3.4-8.4-5.4-13-7.4-2.4-1.2-3.7-2.3-5.5-4.2h-2c-0.67-1.3-1.3-2.7-2-4-0.18-0.34-0.18-0.34-1.1-2.1-3.3-7.2-4.1-14-2.9-22 1.4-2.7 2.3-3.4 5-5 3 0 3 0 4.8 1.2 1.2 1.8 1.2 1.8 1 4.4-0.75 2.4-0.75 2.4-1.8 4.4-0.47 4.5-0.67 9.5 1.7 14 3.1 3.3 7.3 5.5 11 7.4h2v2c0.5 0.18 0.99 0.37 1.5 0.56 5.7 2.4 8.5 5.5 12 11 0.51 0.6 1 1.2 1.5 1.8h3l-1 4c4.7 0.18 7.7-0.053 12-2 0.55-0.13 0.55-0.13 3.3-0.81 8.2-2.3 14-7.6 19-14 0.46-0.57 0.93-1.1 1.4-1.7 6-8.2 8.7-21 7.2-31-3.3-15-3.3-15-7.6-19-0.19-2.2-0.19-2.2 0-4 2.1-0.38 2.1-0.38 5 0 2.2 1.8 4.1 3.8 6 6 12-3 20-12 27-22 2.1-4 3.2-8.1 4.3-12 0.35-1.1 0.7-2.1 1.1-3.2 1.2-4.2 1.2-8.4 1.2-13l0.023-2.3c-0.017-5-0.71-9-2.3-14-0.25-0.83-0.49-1.7-0.75-2.5-1.9-6.1-1.9-6.1-4.1-8.7-0.39-0.58-0.78-1.2-1.2-1.8 0.75-2.8 2-5.1 3.5-7.6 1.9-3.7 2.6-7.5 3.3-12 0.13-0.76 0.26-1.5 0.39-2.3 0.9-5.7 0.86-11-0.14-16-0.052-0.55-0.052-0.55-0.31-3.3-0.81-8.4-3-15-7.7-22-0.25-0.39-0.25-0.39-1.5-2.4-5.7-8.1-15-17-25-19-4.5-0.39-8.6-0.23-13 1-0.73-1.7-0.73-1.7-1-4 1.8-2.4 3.8-4.3 5.9-6.4 5.3-6.7 5.6-14 5.5-22 0.02-0.98 0.04-2 0.061-3-0.0059-8.8-2.1-17-8.5-24h-2l-0.5-2.1c-3.8-7.4-11-11-18-14-3-0.95-5.9-1.6-9-2.1-7.7-1.3-7.7-1.3-9.8-3.4-0.8-1.9-1.2-3.6-1.6-5.5-2.2-8.2-7.3-16-14-21-3.8-2-6.5-2.5-11-2.4-0.11-0.24-0.11-0.24-0.69-1.5-1.3-1.5-1.3-1.5-4.5-1.9-1.3-0.013-2.6-0.0039-3.9 0.023-0.68 0.0094-1.4 0.019-2.1 0.029-5.1 0.15-9.3 0.85-14 3.3z" fill="currentColor"/><path transform="translate(375,114)" d="m0 0h2l1 5c-0.99-0.33-2-0.66-3-1v-4z" fill="currentColor"/><path transform="translate(346,114)" d="m0 0c3.8 1.5 3.8 1.5 4.8 3.7 0.64 6.2-3.9 13-7.5 18-0.41 0.5-0.81 0.99-1.2 1.5-1.2 1.8-1.6 3.4-2 5.5l-2-1-0.44 1.9c-0.56 2.1-0.56 2.1-1.6 4.1-0.18 1.3-0.32 2.7-0.43 4-0.073 0.79-0.15 1.6-0.22 2.4-0.15 1.7-0.29 3.3-0.42 5-0.076 0.79-0.15 1.6-0.23 2.4-0.062 0.73-0.12 1.5-0.19 2.2-0.63 2.4-1.5 3.4-3.5 5-2.6 0.31-2.6 0.31-5 0-3.5-3.5-3-9-3.1-14 0.12-3.2 0.12-3.2 1.1-6.2-0.7 0.16-1.4 0.31-2.1 0.47-7.2 1.5-15 2.7-22-1.5-0.81-3.1-0.81-3.1-1-6 3.6-0.61 6.9-1 11-0.75 9.1 0.089 18-4.3 25-11 2.6-2.9 4.6-5.6 6-9.2 1.3-3.2 2.9-5.2 5.6-7.5z" fill="currentColor"/><path transform="translate(173 119)" d="m0 0c3.1 1.5 3.9 3 5.1 6.2 2.6 6.5 7.3 11 14 14 7.6 2.5 15 3.2 23 1.9l2 2c-0.099 3-0.98 4-3.1 6.1-3.8 2.4-6.4 2.4-11 2.1-0.69-0.018-1.4-0.036-2.1-0.055-1.7-0.047-3.4-0.12-5.1-0.2v2c2 0.33 4 0.66 6 1l-1 3c-2.1 0.69-2.1 0.69-4 1-0.037 0.68-0.075 1.4-0.11 2-0.066 0.89-0.13 1.8-0.2 2.7-0.058 0.88-0.12 1.8-0.18 2.7-0.58 2.9-1.6 4.4-3.5 6.6-2.9-1.1-4.8-1.8-7-4-0.82-2.5-0.82-2.5-1.6-5.5l-0.81-3.3c-0.55-2.9-0.69-5.3-0.69-8.2-0.39-5.6-3.5-8.6-7.1-13-4.4-4.9-7.3-9.7-8.2-16 0.44-2.1 0.44-2.1 1.9-3.4 1.5-0.69 1.5-0.69 4.2 0.25z" fill="currentColor"/><path transform="translate(131,162)" d="m0 0 4 2v4c-2-1.3-2-1.3-4-3v-3z" fill="currentColor"/><path transform="translate(358 180)" d="m0 0c2.3 0.5 2.3 0.5 4.3 2.5-0.19 3.4-1.2 5.4-3.2 8-1.1 1.5-1.1 1.5-1.8 3 0.61 1.7 1.3 3.4 2 5-0.12 2.6-0.44 5.2-0.81 7.8-0.19 2.2-0.19 2.2 0.81 4.2 0.26 2.5 0.47 5 0.62 7.5 0.045 0.72 0.09 1.4 0.14 2.2 0.3 5.5 0.094 11-0.76 16 0.47-0.093 0.47-0.093 2.9-0.56 9.9-1.3 22 0.88 30 6.8 3.7 3 7 6.3 10 9.7 0.57 0.55 1.1 1.1 1.7 1.7 2.1 2.2 3.2 4.5 4.3 7.3-0.31 2.9-0.31 2.9-1 5-1.7 0.81-1.7 0.81-4 1-1.9-1.6-3.4-3.2-5-5-9.2-9.7-19-15-33-15-10-0.072-17 1.6-26 7.4-1.7 0.99-1.7 0.99-4.7 0.99v2c-0.72 0.12-1.4 0.24-2.2 0.36-8.7 2-16 7.2-22 14-1.1 1.8-1.1 1.8-1.1 4.8l2 1v5h-3l-1-4c-2.2 4.5-1.6 10-0.11 15 0.71 1.7 1.5 3.5 2.2 5.2 0.88 2 0.88 2 0.88 4h2l1 2c0.39 0.15 0.39 0.15 2.4 0.94 2.6 1.1 2.6 1.1 3.9 2.5 2.5 2.3 5.4 3.1 8.6 4.1 4.6 1.5 8.9 3.2 13 5.5v2c0.99 0.33 2 0.66 3 1 1.7 1.9 1.7 1.9 3.5 4.3 0.29 0.39 0.29 0.39 1.8 2.4 0.57 0.77 1.1 1.5 1.7 2.3 0.54 0.62 1.1 1.2 1.6 1.9 3.5 5.3 4 13 2.7 19-1.5 4.4-3.2 8.3-6.3 12-2.6 0.38-2.6 0.38-5 0-2-2-2-2-2.3-4.3 0.31-2.7 0.31-2.7 1.9-5.1 1.9-3.5 1.3-5.9 0.44-9.6-0.069-0.38-0.069-0.38-0.42-2.3-1.6-8.4-1.6-8.4-4.6-12-2.3-0.99-4.5-1.5-7-2v-3c-0.69-0.16-1.4-0.32-2.1-0.48-13-3.1-23-9.5-31-20-3.9-7-6.7-16-5.1-24 1.6-4.5 3.8-8.8 6-13h2l0.75-1.9c1.5-2.5 2.6-3.1 5.2-4.1v-4l6-1 1-3c2.1-1.2 4.2-2.2 6.4-3.2 0.6-0.27 1.2-0.55 1.8-0.83 4.4-2 4.4-2 6.7-2v-2h2l1-5h4v2l4-1v-2c0.99-0.33 2-0.66 3-1 4.2-4.8 5.3-11 5-17-0.84-4.2-2-8.2-4.1-12-1.9-4.1-1.5-8.6-0.92-13 1.3-3.3 3-6.1 5-9 0.42-0.62 0.84-1.2 1.3-1.9 2-2.7 3.1-4 6.4-4.6zm-2.7 16v5h1v-5h-1z" fill="currentColor"/><path transform="translate(162 185)" d="m0 0c3.5 0.56 5 2 7.2 4.8 3.4 5.1 4 8.9 2.9 15-0.86 3.5-2 5.6-4.2 8.4-3 6.7-3.1 14-0.5 21 2 4.1 4.3 5.7 8.5 7.3 2 0.85 2 0.85 3.7 2.2 3.3 2.4 6.9 3.9 11 5.5 15 7 15 7 20 12l1 3 1.8 1.8c5.1 5.3 8.1 12 8.2 20-0.16 2.3-0.41 4.6-0.71 6.9-0.079 0.78-0.16 1.6-0.24 2.4-0.52 4.4-1.2 7.8-4.1 11h-2c-0.23 0.56-0.45 1.1-0.69 1.7-5 8.9-14 12-24 15-5.3 1.7-8.8 3.8-13 7.9-0.99 0.33-2 0.66-3 1-2.8 4.3-3.5 7.9-3.4 13-0.012 0.6-0.023 1.2-0.035 1.8 0.028 4.2 1.1 6.6 3.4 10-0.4 4.4-0.4 4.4-2 6-2.2 0.5-2.2 0.5-5 0-5-4.2-7.4-8.9-8.4-15-0.69-8.9 2.8-16 8.5-23 6.5-7 14-11 23-14 4.3-1.3 7.3-3.5 11-6.4 1.6-1.2 1.6-1.2 3.6-1.2 0.2-0.69 0.41-1.4 0.62-2.1 0.27-0.9 0.54-1.8 0.82-2.7 0.27-0.89 0.53-1.8 0.81-2.7 0.56-1.8 1.1-3.7 1.8-5.5 0.8-5.8-0.54-10-3.1-15-0.88-1.9-0.88-1.9-0.88-3.9l-1.9-0.81c-2.1-1.2-2.1-1.2-3.1-2.6-1.3-1.8-2.3-2.4-4.3-3.4-0.65-0.32-1.3-0.64-2-0.97s-1.4-0.67-2.1-1c-1.5-0.71-2.9-1.4-4.4-2.1-0.72-0.35-1.4-0.7-2.2-1.1-1.8-0.88-3.6-1.8-5.4-2.7-14-7.4-26-11-42-6.2-2.9 1.1-5.6 2.4-8.3 3.9h-2l-1 3c-0.74 0.41-1.5 0.82-2.2 1.2-3.2 2-4.6 4.1-6.5 7.2-1.2 1.5-1.2 1.5-4.2 2.5-2.2-1.4-2.2-1.4-4-3 0.87-7.2 5-12 9.7-17 1.3-1.6 1.3-1.6 2.3-4.6 2.1-0.69 2.1-0.69 4-1v-2l1.9 0.69c3.8 0.39 6.3-0.57 9.8-1.9 4.6-1.6 9.2-2 14-2.4 0.6-0.043 1.2-0.086 1.8-0.13 1.5-0.11 2.9-0.21 4.4-0.31l-0.69-2.4c-0.29-1.1-0.57-2.1-0.87-3.2-0.29-1-0.58-2.1-0.88-3.2-0.97-5.6 0.69-11 2.3-16 0.15-0.58 0.31-1.2 0.46-1.7 0.84-2.8 1.3-4.3 3.9-5.9 0.61-0.2 1.2-0.4 1.9-0.61-1.3-3.8-2.6-7.3-4.8-11-1.2-2.2-1.2-2.2-1-4.5 1.3-3 1.4-2.7 4.9-2.8z" fill="currentColor"/><path transform="translate(201,192)" d="m0 0c3.5 0.12 5.8 2.1 8.1 4.5 0.92 1.5 0.92 1.5 0.92 4.6-1 2.9-1.5 4.2-4 5.9-2.7 0.91-4.4 1.1-7.2 0.5-2.3-1.9-2.6-3.8-2.9-6.7 0.23-3.8 2.5-6.2 5.1-8.8z" fill="currentColor"/><path transform="translate(315 193)" d="m0 0c3.2 1.6 4.9 2.9 6.4 6.1 0.19 3.2-0.85 4.6-2.9 7.1-2.8 1.6-2.8 1.6-6 2-2.6-1.2-4.3-2.7-6-5-0.88-3.3-0.88-3.3-1-6 6.4-5.2 6.4-5.2 9.4-4.2z" fill="currentColor"/><path transform="translate(167,223)" d="m0 0 4 1-1 3c-0.99-0.33-2-0.66-3-1v-3z" fill="currentColor"/><path transform="translate(205,283)" d="m0 0h3l-1 4h-2v-4z" fill="currentColor"/><path transform="translate(204,291)" d="m0 0h1v9h-2c-0.027-1.3-0.046-2.6-0.062-3.9-0.012-0.73-0.023-1.5-0.035-2.2 0.098-1.8 0.098-1.8 1.1-2.8z" fill="currentColor"/><path transform="translate(221,307)" d="m0 0c3 2 3 2 3.8 3.9 0.19 2.1 0.19 2.1-0.75 3.8-0.18 0.21-0.18 0.21-1.1 1.2-0.99-0.33-2-0.66-3-1l1-8z" fill="currentColor"/><path transform="translate(134,386)" d="m0 0 2 1v3c-0.99-0.33-2-0.66-3-1l1-3z" fill="currentColor"/><path transform="translate(380,386)" d="m0 0h3v3h-3v-3z" fill="currentColor"/><path transform="translate(328,412)" d="m0 0c0.99 0.33 2 0.66 3 1v4c-0.99-0.33-2-0.66-3-1v-4z" fill="currentColor"/></symbol><symbol id="i-care" viewBox="0 0 512 512"><path transform="translate(263 71)" d="m0 0c1.4 0.022 2.8 0.029 4.2 0.022 16-0.069 32 3.6 46 11 2.8 1.4 5.7 2.1 8.7 2.9v2h2v2l2.6 0.25c3.4 0.55 5.9 2 8.8 3.8 1.6 0.91 1.6 0.91 4 1.5 0.27 0.072 0.27 0.072 1.6 0.44l1 3h2v3l1.8 0.44c1 0.26 1 0.26 6.2 1.6l1 4h2c1.2 1.2 2.5 2.5 3.7 3.8 1.3 1.2 1.3 1.2 4.3 2.2 2.3 2.5 3 5.8 4 9h3v2h3c3.1 2.8 5.4 5.1 7 9h2l-1 5h2c0.31 2.8 0.31 2.8 0 6-2.2 1.9-2.2 1.9-5 3-2.1-0.25-2.1-0.25-4-1l-4-1-2-8h-5l0.75-1.7c0.25-2.3 0.25-2.3-1.4-4.8-1.7-1.8-3.4-3.5-5.1-5.2-2.2-2.3-2.2-2.3-2.2-4.3-0.99-0.33-2-0.66-3-1-1.3-1.2-2.5-2.5-3.7-3.8-1.3-1.2-1.3-1.2-4.3-2.2l-1.4-1.9c-1.6-2.1-1.6-2.1-4.1-3-2.6-1.1-2.6-1.1-4.4-3.6-2.8-3.1-4.6-3.1-8.6-3.4-0.53-0.014-1.1-0.028-1.6-0.043v-4c-0.55-0.18-1.1-0.36-1.7-0.55-1.6-0.53-3.2-1.1-4.8-1.6-1.6-0.52-3.2-1-4.7-1.5-4.2-1.3-8.1-2.9-12-4.7-15-6.2-30-7-46-7.1-0.83-0.015-1.7-0.029-2.5-0.045-11-0.17-21 1.3-32 5-2.4 0.81-4.8 1.5-7.2 2.1-4 1.2-7.7 2.7-11 4.5-2 0.92-4 1.7-6.1 2.5-3 1.5-3 1.5-3.9 3.7l-0.062 1.8-1.8-0.56c-2.7-0.54-4.3 0.05-6.7 1.5-0.5 0.34-0.99 0.68-1.5 1-0.25 0.17-0.25 0.17-1.5 1-0.5 0.34-0.99 0.68-1.5 1-0.54 0.31-1.1 0.62-1.6 0.94-1.4 1.1-1.4 1.1-2.4 4.1h-2c-0.062 0.78-0.12 1.6-0.19 2.4-0.27 0.87-0.54 1.7-0.81 2.6-2.4 1.2-2.4 1.2-5 2l-2 2c-0.99-0.33-2-0.66-3-1-0.62 0.82-1.2 1.6-1.9 2.5-0.7 0.82-1.4 1.6-2.1 2.5h-2c-0.26 0.59-0.52 1.2-0.78 1.8-1.3 2.4-2.7 3.8-4.7 5.7-2.8 2.7-4.5 4.8-5.5 8.6h2l2 4c-4.9-0.88-4.9-0.88-6-2-4.1 4.2-5 8.3-6 14-0.31 0.056-0.31 0.056-1.9 0.34-2.1 0.66-2.1 0.66-3.8 3.2-1.6 3.7-2 7.5-2.3 11l-3 1c-1 2-1.9 3.8-2.6 5.9-0.11 0.29-0.11 0.29-0.66 1.8-1.8 5-2.6 9.9-2.7 15h-2l-0.44 3.4c-0.29 2.2-0.56 3.6-1.6 5.6-2 17-3.6 38 2 55 0.092 1.5 0.13 3 0.12 4.6 0.0026 0.79 0.0052 1.6 0.0078 2.4-0.13 2.1-0.13 2.1-1.1 4.1h-4l-1-4h-2c-0.024-0.3-0.024-0.3-0.15-1.8-0.075-0.79-0.15-1.6-0.23-2.4-0.07-0.78-0.14-1.6-0.21-2.4-0.41-2.5-0.41-2.5-1.4-4.9-1.1-3-1.1-5.2-1-8.3 0.13-4.3-0.15-8.5-0.67-13-0.49-4.5-0.72-9.1-0.96-14-0.06-0.96-0.12-1.9-0.18-2.9-0.26-5.2 0.074-8.9 1.9-14 0.24-2.8 0.19-5.6 0.12-8.4-0.0045-0.37-0.0045-0.37-0.027-2.2-0.023-1.8-0.059-3.6-0.098-5.4h3c3.2-13 3.2-13 2.9-18 0.062-3.4 0.062-3.4 2.1-5.9l2-1.5 1 1 1.1-2.8c5.5-13 5.5-13 9.9-17 0.12-3.1 0.12-3.1 0-6h2v-2h3l1-3c1.1-1.2 2.3-2.4 3.5-3.5 1.8-1.7 3.4-3.5 5.1-5.3 11-12 21-22 35-30 2.6-1.4 4.9-3 7.3-4.7 6.9-4.7 15-7.8 23-10 1.9-0.77 1.9-0.77 3.4-2.4 1.5-1.4 1.5-1.4 3.3-1.5 1.7 0.36 3.5 0.72 5.2 1.1v-2c0.57-0.061 1.1-0.12 1.7-0.18 0.73-0.084 1.5-0.17 2.2-0.25 0.73-0.081 1.5-0.16 2.2-0.25 1.8-0.32 1.8-0.32 2.8-1.3 1.3-0.16 2.6-0.25 3.9-0.32 0.81-0.042 1.6-0.084 2.5-0.13 0.88-0.039 1.8-0.078 2.7-0.12 0.45-0.021 0.45-0.021 2.7-0.13 7.7-0.33 15-0.5 23-0.34zm-133 66 1 2z" fill="currentColor"/><path transform="translate(226,145)" d="m0 0h2v2c1.5 0.028 2.9 0.047 4.4 0.062 0.41 0.0058 0.41 0.0058 2.5 0.035 2.5-0.078 4.9-0.29 7.4-0.58 7.2-0.75 14-0.78 22-0.81 1.7-0.012 3.3-0.032 5-0.062 2.4-0.043 4.8-0.059 7.2-0.069 0.37-0.0088 0.37-0.0088 2.2-0.053 3.5 0.015 5.2 0.11 8.1 2.2 5.5 7.8 4 20 4 29 0.022 1.9 0.061 3.9 0.1 5.8 0.0067 0.57 0.0067 0.57 0.041 3.5 0.4 2.7 0.4 2.7 1.9 4.1 0.49 0.2 0.97 0.4 1.5 0.61l-1 4 3 1 2 2c2.2 0.12 4.3 0.14 6.4 0.062 4.5-0.088 8.8-0.015 13 0.5 4.8 0.53 9.2 0.17 14-0.5 2.3-0.059 2.3-0.059 4.1 0.79 0.2 0.19 0.2 0.19 1.2 1.2v2h2c2.3 5.5 2.3 11 2.2 16-0.0028 0.99-0.0057 2-0.0086 3-0.011 3.1-0.036 6.3-0.062 9.4-0.01 2.1-0.019 4.3-0.027 6.4-0.022 5.2-0.055 10-0.098 16h2c-1.1 5.2-2.9 8.6-7.1 12-3.8 2.1-7.9 1.7-12 1.6-0.48-0.0035-0.48-0.0035-2.9-0.021-3.1-0.028-6.2-0.091-9.2-0.15-2.1-0.025-4.2-0.048-6.3-0.068-5.1-0.055-10-0.14-15-0.24l0.51 3c0.54 3.8 0.52 7.4 0.33 11-0.026 0.66-0.052 1.3-0.079 2-0.082 2.1-0.17 4.2-0.27 6.3-0.12 2.8-0.24 5.5-0.34 8.3-0.03 0.63-0.06 1.3-0.091 1.9-0.15 3.9 0.18 7.4 0.94 11h2v3c-4 1.7-8 3.4-12 5v2h-2l-1-2c-0.62-0.0014-1.2-0.0028-1.9-0.0043-5.8-0.018-12-0.06-17-0.13-3-0.034-6-0.059-9-0.063-3.4-0.0051-6.9-0.05-10-0.097-0.54 2e-3 -0.54 2e-3 -3.3 0.012-7.2-0.14-7.2-0.14-9.6-1.8-2.3-2.7-2.9-5.5-3.4-8.9l-2-1c-0.027-2.2-0.047-4.5-0.062-6.7-0.0084-0.63-0.017-1.3-0.025-1.9-0.019-3.6 0.23-6.9 1.1-10h2v-6h-2v-8h2l-3-6c-3.5-0.17-7-0.34-10-0.5-1-0.048-2.1-0.097-3.1-0.15-7.1-0.31-14-0.44-21-0.23-3.6 0.066-6.1-0.17-9.2-2.1l-2.1-1c-1.9-1-1.9-1-3.9-3-0.12-2.1-0.12-2.1 0-4h2v-54h2v-4c0.25 0.0011 0.25 0.0011 1.5 0.0067 5.1 0.022 10 0.037 15 0.048 1.9 5e-3 3.8 0.012 5.7 0.021 2.8 0.012 5.5 0.018 8.3 0.022 0.43 0.0026 0.43 0.0026 2.6 0.016 0.8 7.5e-5 1.6 1.5e-4 2.4 2.3e-4 0.7 0.0022 1.4 0.0044 2.1 0.0067 2.1-0.13 4-0.55 6-1.1v-2h4v-7h-2l1-6h1c-0.0052-0.59-0.01-1.2-0.016-1.8-0.021-2.7-0.034-5.4-0.047-8.2-0.0084-0.93-0.017-1.9-0.025-2.8-0.03-8.4 0.52-16 3.1-24zm32 11c-0.69 0.024-1.4 0.047-2.1 0.072-2.1 0.075-4.3 0.16-6.4 0.24-1.5 0.053-3 0.11-4.4 0.16-3.6 0.13-7.1 0.26-11 0.4-0.0059 0.58-0.012 1.2-0.018 1.8-0.064 6-0.15 12-0.24 18-0.033 2.2-0.061 4.5-0.084 6.7-0.034 3.2-0.086 6.5-0.14 9.7-0.0064 1-0.013 2-0.019 3-0.11 5.1-0.23 8.7-3.5 13-0.83-0.071-1.7-0.14-2.5-0.21-8.4-0.68-17-0.94-25-0.92-2 0.0055-4-4.6e-5 -6-0.0063-1.3 6.6e-4 -2.6 0.0019-3.9 0.0039-1.2 0.0011-2.3 0.0023-3.5 0.0034-2.9 0.13-2.9 0.13-5.9 1.1v2h3v3l-3 1v39c12 1.2 12 1.2 18 1.2 0.66 0.0057 1.3 0.011 2 0.017 1.4 0.0093 2.7 0.016 4.1 0.02 2.1 0.0098 4.2 0.041 6.2 0.072 1.3 0.0065 2.7 0.012 4 0.016 0.31 0.0062 0.31 0.0062 1.9 0.037 4.8-0.024 8-1.3 12-3.4l0.44 2.3c0.56 2.7 0.56 2.7 1.6 5.7 0.11 1.5 0.18 3.1 0.21 4.7 0.01 0.47 0.01 0.47 0.06 2.9 0.017 1 0.033 2 0.051 3.1 0.021 1 0.042 2.1 0.063 3.1 0.065 3.3 0.12 6.6 0.18 10 0.043 2.3 0.087 4.5 0.13 6.8 0.11 5.5 0.21 11 0.31 17h46l-1-3h-4v-2h5c0.72-8.8 1.2-18 0.75-26-0.026-0.72-0.053-1.4-0.08-2.2-0.3-5-0.3-5-2.2-7.3-0.48-0.39-0.97-0.79-1.5-1.2-0.19-2.7-0.19-2.7 0-5h2c2.1-1.9 2.1-1.9 4-4v-2l2 1c2.7 0.11 5.3 0.16 7.9 0.17 0.39 0.0017 0.39 0.0017 2.4 0.01 1.7 0.0051 3.3 0.0074 5 0.0072 2.5 0.0022 5.1 0.02 7.6 0.039 1.6 0.0029 3.2 0.0049 4.9 0.0059 0.38 0.0036 0.38 0.0036 2.3 0.022 3.8-0.017 6.5-0.16 9.9-2.3l4-1c1.6-3.1 1.1-6.4 1.1-9.9-0.0014-0.77-0.0028-1.5-0.0043-2.3-0.0056-2.5-0.018-5-0.031-7.4-5e-3 -1.7-0.0096-3.4-0.014-5-0.011-4.1-0.028-8.2-0.049-12l-4-1 1-3h2v-2c-2.8-0.93-4.4-1.1-7.3-1.1-0.85 0.0033-1.7 0.0066-2.6 0.01-0.92 0.0083-1.8 0.017-2.8 0.025-0.47 0.0019-0.47 0.0019-2.9 0.011-3 0.012-6 0.031-9.1 0.051-4 0.027-8 0.047-12 0.062-0.92 0.0083-1.8 0.017-2.8 0.025-0.85 0.0033-1.7 0.0066-2.6 0.01-0.75 0.0052-1.5 0.01-2.3 0.016-1.9-0.11-1.9-0.11-3.9-1.1l-1-50c-16-1.1-16-1.1-22-0.88z" fill="currentColor"/><path transform="translate(391,151)" d="m0 0c5.8 0.88 5.8 0.88 8 2 3.1 5.5 4.1 12 3 18-2 3.8-4 5.7-8 7-5.5 0.61-9.3-0.0078-14-3-2.2-2-2-3.3-2.4-6.2 0.14-4.3 1.7-7.5 4.4-11 2.7-2.4 5.5-3.8 9-5v-2z" fill="currentColor"/><path transform="translate(277,161)" d="m0 0h2v5c-0.99-0.33-2-0.66-3-1l1-4z" fill="currentColor"/><path transform="translate(212,185)" d="m0 0c0.99 0.33 2 0.66 3 1l-1 2h-3l1-3z" fill="currentColor"/><path transform="translate(400 186)" d="m0 0c3.3 1.8 4.6 4.7 6.1 8.1 0.72 2.9 1 5.7 1.2 8.6 0.075 0.82 0.15 1.6 0.23 2.5 0.73 8.7 0.84 17 0.8 26-0.011 2.7 1e-4 5.4 0.013 8.1-0.0013 1.7-0.0039 3.5-0.0078 5.2 4e-3 0.8 0.0081 1.6 0.012 2.4-0.0063 0.74-0.013 1.5-0.019 2.2-8e-4 0.32-8e-4 0.32-0.0048 2-0.3 2-1 3.1-2.3 4.8h2c0.86 4.2 1.4 7-0.31 11-0.28 0.33-0.28 0.33-1.7 2h-2c-1.4 1.3-2.7 2.6-4 4-2.4-1.6-3.6-2.5-5-5-0.56-4.4-0.57-8.6 0-13l2-2c0.32-1.8 0.32-1.8 0.41-4 0.039-0.79 0.078-1.6 0.12-2.4 0.031-0.85 0.062-1.7 0.093-2.6 0.037-0.87 0.074-1.7 0.11-2.6 0.55-13 0.97-27-2.3-40-0.79-4-1.1-8.1-0.42-12 2.3-3 2.3-3 4.9-3.1z" fill="currentColor"/><path transform="translate(61,240)" d="m0 0c3.9-0.22 6.7-0.02 10 2 0.9 1.7 1.5 3.4 2.2 5.2 1 2.3 2.6 3.7 4.4 5.3 3 3.1 5.1 6.8 7.4 10 0.31 0.45 0.31 0.45 1.9 2.8 1.3 2.6 1.4 4.4 1.1 7.2 0.99 0.33 2 0.66 3 1 0.62 1.8 0.62 1.8 1 4 0.17 0.74 0.35 1.5 0.53 2.2 0.71 4.2 0.44 8.3 0.31 13 0.17 3.4 0.98 6 2.2 9.3 0.12 2.4 0.12 2.4 0 4h2c0.049 0.68 0.098 1.4 0.15 2 0.075 0.89 0.15 1.8 0.23 2.7 0.07 0.88 0.14 1.8 0.21 2.7 0.41 2.6 1.1 4.3 2.4 6.6h2l-1 5h2v2l1.9 0.75c2.5 1.5 3.2 2.5 4.1 5.2l-1 2c0.99 0.33 2 0.66 3 1 0.47 0.68 0.95 1.4 1.4 2.1 1.6 1.9 1.6 1.9 3.8 2.2 0.6-0.082 1.2-0.16 1.8-0.25l0.5 2.2c2.4 4.6 6.8 6.6 11 8.6 3 0.25 4.6-1.1 7.1-2.8-1.8-1.6-3.5-3.3-5.3-4.9-0.5-0.46-1-0.92-1.5-1.4-0.49-0.44-0.97-0.89-1.5-1.3-0.45-0.41-0.89-0.82-1.3-1.2-1.4-1.1-1.4-1.1-2.9-2.2-1.8-1.3-2.5-2.6-3.6-4.6-0.34-0.63-0.69-1.3-1-1.9-0.25-0.48-0.51-0.96-0.77-1.5h-4c-0.25-0.97-0.5-1.9-0.75-2.9-0.83-3-2-5.6-3.4-8.4-2.2-4.9-2.9-9.4-1.9-15 2.2-4.3 6.2-7.2 10-10 18 8.7 18 8.7 24 14 2.3 1.7 4.6 2.3 7.3 3v2l1.8 0.31c2.5 0.79 3.6 1.7 5.2 3.7v2l1.7 0.85c1.5 0.77 3.1 1.6 4.6 2.3 7.5 3.8 7.5 3.8 11 5.2 12 4.9 22 12 31 21 1.2 0.96 2.3 1.9 3.5 2.9 3.1 2.6 5.2 5.4 7.4 8.8 0.19 0.22 0.19 0.22 1.1 1.3h3c0.075 1 0.15 2 0.23 3 0.64 4.5 2.7 7.6 5.1 11 3.4 5.4 6.2 10 7.6 17h1c0.11 0.55 0.22 1.1 0.33 1.7 0.16 0.75 0.32 1.5 0.48 2.3 0.15 0.73 0.3 1.5 0.46 2.2 0.73 2.8 0.73 2.8 1.5 4.5 3.4 8.3 2.6 17 2.5 26-0.015 1.7-0.029 3.4-0.041 5.1-0.03 4.1-0.089 8.2-0.15 12h-18l-1-3-2.1-0.12c-3-0.91-3.7-1.5-5.7-3.7-4.4-4.8-10-6.9-16-9.2l-1 2c-0.18-0.3-0.18-0.3-1.1-1.8-2.5-2.8-5.2-3.6-8.7-4.7-0.66-0.21-1.3-0.42-2-0.63-9.3-2.9-19-5.4-28-7.4-2.3-0.57-4.4-1.4-6.6-2.2-4.4-1.6-7.9-1.3-12-0.31v-2c0.99-0.33 2-0.66 3-1-15-7.9-15-7.9-22-9l-2 1c-1.3-1.1-2.6-2.2-3.9-3.2-0.73-0.6-1.5-1.2-2.2-1.8-2-2.1-2.3-3.2-2.8-5.9-2.4-2.8-4.4-4.7-7.6-6.6-3.4-2.1-4.9-4.2-6.2-7.9-1.2-2.7-2.4-3.5-4.8-5.2-2.4-2.3-3.7-5.4-5.2-8.4-1.2-1.9-1.2-1.9-4.2-2.9l-3-15-3-1c-1.2-1.9-1.2-1.9-2-4l1-3c-0.68-2.4-1.4-4.8-2.2-7.1-3.9-12-5.6-24-7-36-0.64-5.3-1.6-11-2.7-16-0.69-3.3-1.3-6.5-1.6-9.8-0.44-3.3-0.44-3.3-1.4-5.2-1.1-2.3-1.3-3.9-1.5-6.4-0.35-3.8-1.1-7-2.5-11 5.1-4.4 5.1-4.4 9-5v-2zm4 15v3h2l-1-3h-1zm4 4c-2.5 3.5-1.9 6.3-1.3 10 0.095 0.53 0.19 1.1 0.29 1.6h1c0.037 0.86 0.075 1.7 0.11 2.6 0.39 7.4 1.4 14 3.2 21 0.87 3.9 1.2 7.8 1.4 12 0.33 2.5 1.2 4.1 2.3 6.3 0.38 2.3 0.38 2.3 0.56 4.7 0.34 4.2 0.34 4.2 1.4 5.3 0.45 2.3 0.7 4.7 1 7h2c-0.22 0.53-0.43 1.1-0.65 1.6-0.48 3.3 0.74 5.7 2.1 8.6 0.24 0.55 0.49 1.1 0.74 1.7 0.6 1.4 1.2 2.7 1.8 4.1l3-1c-0.058 0.53-0.12 1.1-0.18 1.6-0.14 2.2-0.18 4.2 0.18 6.4 2.5 2.3 2.5 2.3 5 4v3c0.88 1.8 0.88 1.8 2 3.7 0.37 0.62 0.74 1.2 1.1 1.9 0.14 0.24 0.14 0.24 0.88 1.4h2l0.31 1.9c0.69 2.1 0.69 2.1 2.1 3 1.6 1.1 1.6 1.1 2.8 3.8 2.1 4.7 6.7 7.4 11 10 0.3-0.15 0.3-0.15 1.8-0.94 2.2-1.1 2.2-1.1 5.2-2.1l-2 6c2.4 2.7 4.6 3.9 8 5h3v2c3 1.3 6 2.5 8.9 3.8 0.83 0.36 1.7 0.71 2.5 1.1 8.4 3.6 17 6.3 26 8.5 9.4 2.4 9.4 2.4 14 3.8 0.63 0.19 1.3 0.37 1.9 0.56 1.7 0.5 3.3 1 5 1.5 3.1 0.73 5.8 0.83 9 0.7v2c0.67 0.35 1.3 0.7 2 1.1 20 11 20 11 25 18 0.2 0.21 0.2 0.21 1.2 1.3h3v-3l2-1v-3l1-1c0.42-6.6-0.81-12-2.4-19-0.12-0.47-0.12-0.47-0.7-2.9-1.7-6.9-1.7-6.9-2.9-9.2h-2v-2h-2v-8h-2l-0.25-2c-1-4-2.8-7.4-4.8-11-0.67-1.3-1.3-2.7-2-4h-2c-0.094-0.56-0.19-1.1-0.29-1.7-0.89-2.9-2.3-4.7-4.2-7-0.62-0.8-1.2-1.6-1.9-2.4-0.56-0.6-1.1-1.2-1.7-1.8h-2v-2c-1.6-1.8-3.3-3.4-5-5-0.54-0.56-1.1-1.1-1.6-1.7-4.4-4.2-4.4-4.2-7.4-4.5-1.9 0.28-1.9 0.28-5 1.2l-1-2 4-1h-2v-2c-2.3-1.3-4.7-2.6-7.1-3.9-0.66-0.36-1.3-0.73-2-1.1-4.3-2.3-8.2-3.9-13-5v2l-2-1v-3c-3.8-2-3.8-2-6-2l-1 2c-2.6 0.62-2.6 0.62-5 1v-4h5c-3-4.6-6.6-6.8-11-9.5-2.5-1.5-4.9-3.1-7.3-4.7-4.6-3.1-9.1-5.1-14-6.8v7h2l0.44 2.3c1 5 3 7.3 6.6 11l8.5 8.5c2.2 2.3 3.5 3.5 6.5 4.5 2.3 2.2 4.5 4.4 6.6 6.8 1.4 1.2 1.4 1.2 4.4 1.2l1 3 5-1v2l-3 1 2 4h2v2c1.5 1.3 1.5 1.3 3.4 2.6 0.63 0.45 1.3 0.89 1.9 1.4 1.7 1 1.7 1 3.7 1 1.1 6.6 1.1 6.6 0 10-1.9-0.11-3.9-0.24-5.8-0.38l-3.3-0.21c-2.8-0.4-3.8-0.79-5.9-2.4-6.7-1.2-13-1.1-20-1v-2c0.99-0.33 2-0.66 3-1-1.7-0.79-3.5-1.6-5.2-2.4-0.96-0.44-1.9-0.88-2.9-1.3-2.9-1.3-2.9-1.3-5.3-2.1-3.6-1.6-6.5-4-9.6-6.4-0.6-0.47-1.2-0.93-1.8-1.4-3.9-3.1-7.1-6.4-10-10-2.2-2.6-3.7-3.4-7-4 0.041-0.53 0.041-0.53 0.25-3.2 0.019-3.1-0.1-3.6-2.2-6.2-2.6-3.3-2.6-5.6-2.9-9.7-0.18-1.9-0.18-1.9-1.2-2.9-0.27-1.4-0.49-2.7-0.68-4.1-0.12-0.84-0.25-1.7-0.37-2.5-0.25-1.8-0.5-3.5-0.75-5.3-0.12-0.84-0.25-1.7-0.38-2.5-0.11-0.77-0.22-1.5-0.33-2.3-0.52-2.3-1.4-4.1-2.5-6.2-0.32-2-0.59-4-0.81-5.9-1-7-2.8-14-6.2-20-2.1-1.2-2.1-1.2-4-2-0.33-1.3-0.67-2.7-1-4-2.1-1.2-2.1-1.2-4-2zm67 94c0.74 1.5 0.74 1.5 2 3 1.9 0.51 1.9 0.51 4.1 0.69 0.72 0.066 1.4 0.13 2.2 0.2 0.55 0.037 1.1 0.075 1.7 0.11v-3c-2.6-0.87-4-1.1-6.7-1.1l-3.3 0.062zm-57 3 1 2zm153 78 1 4zm0 5 1 2z" fill="currentColor"/><path transform="translate(455,240)" d="m0 0v2h5c0.94 5.2 1 10 0.69 15-0.035 0.62-0.069 1.2-0.11 1.9-0.34 4.5-0.34 4.5-2.6 6.7-0.67 2.6-0.67 2.6-1.3 5.9-0.11 0.59-0.21 1.2-0.32 1.8-0.22 1.3-0.44 2.5-0.66 3.8-0.32 1.9-0.66 3.7-1 5.6-1.3 7.1-2.1 14-2.5 21-0.35 3.3-1.7 5.7-3.3 8.6-0.55 3.7-0.81 7.3-1 11h2v2c-0.63 0.21-1.3 0.42-1.9 0.64-2.1 1.4-2.1 1.4-3 4-0.1 0.52-0.1 0.52-0.62 3.1-1 4.5-2.2 8.2-4.4 12-0.66 1.6-1.3 3.2-1.9 4.9-4.9 12-4.9 12-10 17-0.43 0.74-0.87 1.5-1.3 2.2-2 3.3-4.5 6-7.1 8.8-1.6 2-1.6 2-2.7 4.1-1.2 2.4-3 3.3-5.3 4.7-2.4 1.7-4.4 3.8-6.4 6-1.3 1.2-1.3 1.2-3.3 1.2v2l-3.1 1.5c-4.8 2.4-9.5 5.1-14 7.9-4.5 2.6-4.5 2.6-6.7 2.6v2c-0.79 0.18-1.6 0.36-2.4 0.55-9.6 2.3-9.6 2.3-13 4-3.8 1.8-7.7 2.2-12 2.9-2.9 0.58-5.2 1.5-7.8 2.8-3.1 1.2-6.3 1.7-9.6 2.2-2.3 0.53-3.4 1.2-5.2 2.5-1.6 0.55-3.2 1-4.8 1.5-0.88 0.26-1.8 0.52-2.7 0.79-1.5 0.41-2.9 0.8-4.4 1.1-1.6 0.39-1.6 0.39-4.1 1.6-0.72 2-1.4 4-2 6-2.9 2.5-4.9 3.1-8.6 2.9-1.1 0.041-2.3 0.082-3.4 0.12-0.26 0.41-0.26 0.41-1.6 2.5-2.8 2.9-3.3 2.9-7.2 3-1.8-0.033-3.7-0.093-5.5-0.18-0.47-0.011-0.47-0.011-2.8-0.068-2.3-0.059-4.6-0.14-6.9-0.24-0.049-0.63-0.098-1.3-0.15-1.9-0.075-0.82-0.15-1.6-0.23-2.5-0.07-0.81-0.14-1.6-0.21-2.5-0.41-2.2-0.41-2.2-2.4-4.2-0.67-2-0.67-2-1.2-4.4-0.18-0.77-0.36-1.5-0.54-2.3-0.28-2.4-0.0046-4 0.73-6.3 0.99 0.33 2 0.66 3 1 0.18-1.1 0.36-2.2 0.55-3.4 2.3-14 2.3-14 4.8-21 1.1-3.3 1.3-6.5 1.6-9.9h2c0.18-0.69 0.36-1.4 0.55-2.1 0.13-0.45 0.13-0.45 0.76-2.7 0.24-0.89 0.49-1.8 0.74-2.7 0.98-2.6 2-3.7 3.9-5.5 0.69-2.2 0.69-2.2 1-4h2c0.27-0.7 0.54-1.4 0.81-2.1 1.3-3 2.7-5.9 4.2-8.9l1-2.3c1-1.7 1-1.7 4-2.7 1.4-1.6 1.4-1.6 3-3.6 3.7-4.3 7.8-7.4 12-11 2-1.4 3.8-2.8 5.6-4.4 5.3-4.5 12-8.6 18-11 3-1.2 3-1.2 4.5-2.8 2.4-2.3 5.4-2.7 8.5-3.4 0.99-0.33 2-0.66 3-1l-1-4c0.93-0.82 1.9-1.6 2.8-2.4 0.52-0.45 1-0.9 1.6-1.4 1.6-1.2 1.6-1.2 4.6-2.2l2 2c1.3-0.79 2.6-1.6 3.9-2.4 0.73-0.44 1.5-0.88 2.2-1.3 1.8-1.3 1.8-1.3 2.8-3.3 1.7-1 3.3-2 5-3l2-2c4.5-1.9 9-3.5 14-3v-2l4 1-1 3 1.8 0.69c3.5 2.1 5.7 4.7 7 8.6l0.25 1.7h-2c-0.052 0.35-0.052 0.35-0.31 2.1-0.78 3.3-2.2 5.9-3.7 8.9-0.69 2.4-0.69 2.4-1 4h-2l0.5 2.6c0.47 3.2 0.58 6.2 0.5 9.4l-5-1v2l-4-1c-1.1 1.2-1.1 1.2-2 3 0.38 2.2 0.38 2.2 1 4l-2.2 0.38c-4.8 1.1-8 3.4-12 6.6l-1 2 7-2 1 3c7.7-3.6 7.7-3.6 11-6.2 2.1-1.8 2.1-1.8 4.1-1.8v-2c1.7-1.4 3.3-2.7 5-4l1-2h2c0.27-0.72 0.54-1.4 0.81-2.2 1.6-3.7 3.6-6.9 5.8-10 1.4-2.4 2.4-4.9 3.4-7.5l1-2h-2c0.49-5.3 0.49-5.3 1-7 0.49-0.3 0.97-0.59 1.5-0.9 2.7-2 2.8-5.5 3.3-8.7 0.13-0.75 0.26-1.5 0.39-2.3 1.3-8.1 0.7-16-0.14-24h2l1 5c0.068-0.26 0.068-0.26 0.41-1.5 3-10 8.1-19 16-26 1.5-1.6 1.5-1.6 1.5-4.6h3v-2c3.4-1.2 6.3-2.3 10-2zm-7 15 1 3zm0 5 1 2zm-8 1c-3.4 6.3-3.4 6.3-3 10h-2c-3.5 8.1-4.8 16-5.8 24-0.73 5.9-2 11-4.2 17-0.26 1.5-0.51 3-0.75 4.5-1.7 8.9-5.6 18-12 24-1.1 1.4-1.1 1.4-1.1 4.4l-1.9 0.75c-2.1 1.2-2.1 1.2-3.1 3.2-1.5 2.8-3.1 2.9-6.1 4-1.1 0.77-2.2 1.6-3.2 2.4-4 2.9-8.2 4.7-13 6.6-5.6 2.5-5.6 2.5-7.2 4.6-2.6 2.1-5.3 1.8-8.6 1.8-6.4 0.19-12 1.5-18 4-2.5 1-4.2 1.7-6.9 1.4-2.1-0.91-3.3-2-4.7-3.7v-2l2.9-1.3c3.1-1.7 3.1-1.7 4.1-4.7h2v-2l1.9-0.81c2.2-1.2 3-2 4.1-4.2v-1l1.7-0.69c2.4-1.3 3.9-2.9 5.8-4.9 2.8-2.7 5.7-5.2 8.7-7.7 0.63-0.54 1.3-1.1 1.9-1.6 0.6-0.52 1.2-1 1.8-1.6 0.54-0.47 1.1-0.93 1.6-1.4 1.4-1.1 1.4-1.1 3.4-2.1v-2h2c2.1-1.8 2.1-1.8 4-4v-3h3c3.7-4.2 5.4-8.5 6-14 1.1-2.4 1.1-2.4 2-4-4.8-0.33-7.1 0.38-11 3l-2.8 0.88-2.2 1.1c-0.81 2.6-0.81 2.6-1 5h-2c-0.5 0.76-0.99 1.5-1.5 2.3-2 2.6-3.6 3.2-6.7 3.9-5.2 1.4-9.7 3.6-14 6.1-0.71 0.37-1.4 0.73-2.2 1.1-4.9 2.6-9.1 5.7-13 9.6-0.56 0.51-1.1 1-1.7 1.6-1.3 1.4-1.3 1.4-1.3 3.4l-5 1v-2c-5.1 1.3-8.2 3.4-12 7-0.48 0.44-0.96 0.88-1.5 1.3-2.3 2.2-3.5 3.6-4.5 6.7h-2v3l-4 2v4l-3 1v2l-3 1v3h-2c-11 20-11 20-12 29-0.41 2.9-1.5 5.4-2.6 8.1-1.5 3.9-1.9 7.3-1.1 11 0.49 2.8 0.41 3.6-0.56 6.4-1.3 4-0.76 7 0 11l10-10 1.5-1.7c1.5-1.3 1.5-1.3 3.7-2.2 3-1.2 5.8-2.7 8.6-4.2 0.98-0.54 2-1.1 3-1.6 0.74-0.41 1.5-0.82 2.2-1.2v-2h5v-2c0.61-0.049 1.2-0.098 1.9-0.15 0.4-0.037 0.4-0.037 2.4-0.23l2.4-0.21c2.3-0.41 2.3-0.41 3.7-1.4 1.7-1.1 3.1-1.5 5.1-2 0.67-0.16 1.3-0.32 2-0.48 0.71-0.16 1.4-0.32 2.1-0.49 4.9-1.2 9.6-2.4 14-4.3 2.6-0.94 5.3-1.6 8-2.2 8.3-2 16-5.2 23-9.1 2.6-1.3 5.2-2.4 7.8-3.4v-2l2.2-0.81c2.6-1.1 4.6-2.3 6.8-4.2v-2l5-2v-2h2c1.7-1.6 1.7-1.6 3.5-3.8 0.61-0.7 1.2-1.4 1.8-2.1 1.7-2.1 1.7-2.1 2.7-4.3 0.97-1.8 0.97-1.8 4-2.8v-4c0.59-0.2 1.2-0.4 1.8-0.61 3-1.9 4.2-4.4 5.7-7.6 0.3-0.61 0.6-1.2 0.91-1.9 2.7-5.7 4.7-12 6.6-18 1-3.3 1-3.3 2.2-5.9 0.99-2.8 0.86-4.7 0.46-7.7-0.11-0.88-0.22-1.8-0.34-2.7-0.095-0.66-0.19-1.3-0.29-2h2l1 2c1.6-8 3.1-16 4.1-24 1.1-8.4 2.9-16 5.4-24 0.59-2.6 0.69-4.9 0.59-7.6l-1.8 0.62c-2.8 0.46-3.9-0.2-6.2-1.6zm-68 91-5 5c3.6 1.2 4.6 0.54 8-1v-3c-0.99-0.33-2-0.66-3-1z" fill="currentColor"/><path transform="translate(136,298)" d="m0 0h6l-2 3-4-1v-2z" fill="currentColor"/><path transform="translate(418,300)" d="m0 0h1v5h-2l1-5z" fill="currentColor"/><path transform="translate(380,320)" d="m0 0h3v3l-4-1 1-2z" fill="currentColor"/><path transform="translate(416,353)" d="m0 0 3 2-1 3c-0.99-0.33-2-0.66-3-1l1-4z" fill="currentColor"/><path transform="translate(361,416)" d="m0 0h8l1 4-8-1-1-3z" fill="currentColor"/><path transform="translate(289,420)" d="m0 0 1 3c1.6 1.7 1.6 1.7 3 3l-1 2-4-1c-0.043-2-0.041-4 0-6l1-1z" fill="currentColor"/></symbol><symbol id="i-circ" viewBox="0 0 512 512"><path transform="translate(314,51)" d="m0 0c1.3 0.33 2.7 0.67 4 1l2.2 0.44 1.8 0.56 1 2c2.4 0.6 2.4 0.6 5.3 1.1 7.5 1.2 7.5 1.2 9.7 1.9 0.31 0.66 0.62 1.3 0.94 2 0.35 0.66 0.7 1.3 1.1 2 2.5 0.69 2.5 0.69 5 1 2.4 1.2 2.6 1.9 3.6 4.4 0.25 0.61 0.5 1.2 0.75 1.8 0.6 1.6 1.1 3.2 1.7 4.8h2l3 9h2v2l4 2c-0.072 0.47-0.072 0.47-0.44 2.9-1.7 12-1.7 12-1.2 18 0.12 4.6-2.1 8.5-4.2 13-1.7 3.4-2.5 5.8-2.1 9.7l-5 2v5c-1.3 0.67-2.6 1.3-3.9 2-0.72 0.37-1.4 0.74-2.2 1.1-1.9 0.88-1.9 0.88-3.9 0.88v3h-4v2c0.37 0.062 0.37 0.062 2.2 0.38 2.6 0.58 4.5 1.4 6.8 2.6v2c-2.9 0.029-5.8 0.047-8.8 0.062-0.82 0.0084-1.6 0.017-2.5 0.025-0.4 0.0016-0.4 0.0016-2.4 0.0098-0.73 0.0052-1.5 0.01-2.2 0.016-2.1-0.11-2.1-0.11-4.2-0.65-1.9-0.46-1.9-0.46-4.7 0.1-3.5 0.48-5.6 0.0068-9-0.97-2.6-0.67-5.1-1-7.7-1.4-11-2-20-9-26-18-8.8-13-8.8-13-8.3-19h-2l-1-3h3c-0.14-1.4-0.29-2.8-0.44-4.2-0.081-0.79-0.16-1.6-0.25-2.4-0.32-2.4-0.32-2.4-0.92-4.4-0.74-3.6 1.2-6.7 2.6-9.9 0.18-0.4 0.18-0.4 1.1-2.4 2.2-4.6 4.5-8.4 7.7-12 3.6-4.4 3.6-4.4 3.6-7.8-0.14-0.8-0.29-1.6-0.44-2.4h3v2c1.3-0.23 2.6-0.48 3.9-0.75 0.72-0.14 1.4-0.28 2.2-0.42 1.9-0.83 1.9-0.83 2.9-2.8 1.1-2 1.1-2 3.3-3 0.92-0.2 1.8-0.41 2.8-0.62 5.1-1.2 10-2.7 15-4.4v-1zm-18 20c-1 2.8-1 2.8-1 5-0.45-0.052-0.45-0.052-2.8-0.31-3.2 0.31-3.2 0.31-5.6 2.6-1.6 2.7-1.6 2.7-1.6 5.7h-2c-4.9 8.9-4.8 20-2.7 30 1.1 3.5 2.7 6.3 4.7 9.4h3l-0.19 1.8c0.19 2.2 0.19 2.2 1.7 3.9l1.5 1.2 2-1-1-2 4 1v3h-2c1 3 1 3 2.5 3.9 8.3 2.9 17 5.4 26 3.1 1-0.64 2-1.3 3-2 0.5-0.15 0.5-0.15 3-0.94 2.9-1 4.2-1.7 6-4.1v-2l2.3-0.19c2.7-0.81 2.7-0.81 4.4-3.2 0.21-0.42 0.21-0.42 1.2-2.6 1-2 1-2 3-3l-1-4h3c2.8-6.4 3.2-14 1-21-0.025-1.2-0.045-2.3-0.062-3.5-0.46-4.2-2.4-7.2-4.9-10-0.18-0.25-0.18-0.25-1.1-1.5-0.93-1.2-1.9-2.4-3-3.5h-2l-0.62-1.8c-1.9-3-4.1-3.8-7.4-5.2h-2l-2-2c-3.4-0.48-6.7-0.37-10-0.38-0.93-0.024-1.9-0.049-2.8-0.074-6-0.026-11 0.67-16 4.4zm33 76-3 2h4l-1-2z" fill="currentColor"/><path transform="translate(174 53)" d="m0 0c0.39 0.0045 0.39 0.0045 2.4 0.027 1.9 0.023 3.8 0.056 5.8 0.098v2c0.62 0.2 1.2 0.4 1.9 0.61 6.9 2.5 11 5.8 17 11 0.71 0.66 1.4 1.3 2.2 2 5.6 5.4 5.6 5.4 6.3 9.5h2c6.1 6.6 5.4 18 5.2 27-0.44 8-1.7 14-6 21-1.6 2.8-2.5 5.6-3.4 8.6-0.87 1.5-0.87 1.5-3 2.2-0.63 0.093-1.3 0.19-1.9 0.28v2c-0.59 0.33-1.2 0.65-1.8 0.99-0.79 0.44-1.6 0.87-2.4 1.3-0.83 0.46-1.7 0.91-2.5 1.4-2.3 1.3-2.3 1.3-4.8 3-3.7 1.9-7.4 2.6-12 3.3-0.88 0.16-1.8 0.32-2.7 0.48-6.4 0.87-12 0.28-18-1.1-0.35-0.076-0.35-0.076-2.1-0.46-5-1.2-9.3-3.3-13-6.9v-2c-0.64-0.1-1.3-0.21-1.9-0.31l-2.1-0.69-1-3c-0.99-0.33-2-0.66-3-1-1.1-1.6-2-3.3-3-5-1.5-2.1-3-4.3-4.6-6.4-3.3-6-3.8-13-4.1-19-0.038-0.79-0.075-1.6-0.11-2.4-0.54-13-0.54-13 0.8-17 1.3-0.7 2.7-1.4 4-2 1-1.7 1-1.7 1.8-3.6 0.12-0.32 0.12-0.32 0.73-1.9 0.17-0.48 0.34-0.96 0.52-1.5h2v-6c0.36-0.11 0.36-0.11 2.2-0.69 3.5-1.6 5.2-3.4 7.8-6.3l1-3c0.27 0.11 0.27 0.11 1.7 0.64 3.2 0.49 4.8-0.53 7.7-2 7.1-3.5 13-5 20-4.8zm-19 18c-2.5 1.4-2.5 1.4-5.2 1.9-2.3 0.53-2.3 0.53-3.7 2.2l-0.95 1.9c-0.33 0.64-0.65 1.3-0.99 1.9-0.23 0.49-0.46 0.99-0.7 1.5h2v2c-0.99-0.33-2-0.66-3-1-3 2.6-4.6 5.3-6 9 0.28 2 0.61 4 1 6-0.32 0.59-0.64 1.2-0.98 1.8-2.3 5.1-0.89 12 0.72 18 0.82 1.9 0.82 1.9 2.3 4.6l3-1v6l1-3h2l1 3h2v2c0.97 0.45 1.9 0.91 2.9 1.4 3.1 1.6 3.1 1.6 4.1 3.6l-5-1c1 3 1 3 3.2 4.2 6.2 2.2 11 3.4 18 2.8 0.79-0.055 1.6-0.11 2.4-0.17 4.2-0.36 7.9-0.85 12-2.8l1-2h4l1-6h2v-3l5 1-1-5h4v-3l2-1c0.89-2.5 1.3-5.2 1.8-7.9 0.075-0.37 0.075-0.37 0.46-2.2 0.13-0.71 0.27-1.4 0.4-2.1 0.12-0.65 0.25-1.3 0.37-2 0.02-2.2-0.62-3.1-2-4.8v2h-2l1-3c0.45-4.1 0.36-7.2-1.4-11-0.54-0.66-1.1-1.3-1.6-2h-2c-0.22-1.1-0.43-2.1-0.66-3.2-1.2-4.2-3.3-6.2-6.8-8.7-0.54-0.39-1.1-0.78-1.6-1.2-4.9-3.3-9-4.1-15-3.9-0.88-0.08-1.8-0.16-2.7-0.24-6.8-0.48-11 1.2-17 4.8zm-7.5 57 1 2z" fill="currentColor"/><path transform="translate(362,108)" d="m0 0 2 1v6c-0.99-0.33-2-0.66-3-1l1-6z" fill="currentColor"/><path transform="translate(363,157)" d="m0 0v2c4.4 1.2 8.4 2.3 13 2l1 3c1.3 0.37 2.7 0.69 4 1 2.2 1.3 2.2 1.3 4 3-0.026 0.63-0.052 1.3-0.078 1.9 0.078 2.1 0.078 2.1 1.4 3.7 0.56 0.49 1.1 0.98 1.7 1.5 1.7 1.5 1.7 1.5 3 2.9v2h3c0.19 0.36 0.19 0.36 1.1 2.2 4.7 8.8 4.7 8.8 7.4 12 2.6 3.5 4.1 7.3 5.8 11 0.26 0.63 0.52 1.3 0.78 1.9 1.4 3.6 2.2 6.9 2.6 11 0.37 2.1 1.1 3.9 1.8 5.9 1.7 5.1 2 9.8 2 15 0.01 0.96 0.02 1.9 0.03 2.9 0.015 2 0.022 4 0.022 6.1 0.0065 3 0.061 6 0.12 9.1 0.15 17-3 34-12 49-1.1 2.1-2.1 4.2-3.2 6.4-2.8 5.6-2.8 5.6-4 7.8-1.1 2.5-0.52 4.2 0.2 6.8h-2l-0.25 1.8c-0.97 2.8-2.2 3.7-4.8 5.2-0.99-0.33-2-0.66-3-1-0.38 0.46-0.75 0.92-1.1 1.4-4.7 5.6-4.7 5.6-7.6 7.9-2 1.5-2.9 2.7-4.2 4.8h-2c-0.11 0.38-0.11 0.38-0.69 2.3-1.6 3.4-3.1 3.9-6.3 5.7-3.3 2.6-6.4 5.3-9.3 8.3-3 3-6.4 5.6-9.8 8.2-6.4 4.9-6.4 4.9-9.2 7.8-1.7 1.7-1.7 1.7-3.7 1.7l-0.94 1.9c-1.8 3.6-2.7 4.5-6.4 6.2-1.7 0.97-2.8 2-4.2 3.4-2.4 2.4-4.5 3.8-7.4 5.5-3.1 2.4-6 5-8.8 7.8-2.2 2.2-2.2 2.2-4.2 2.2-0.11 0.49-0.22 0.99-0.33 1.5-0.16 0.64-0.32 1.3-0.48 1.9-0.15 0.64-0.3 1.3-0.46 1.9-0.24 0.54-0.48 1.1-0.73 1.6-3 1-3 1-6 0-0.24 0.29-0.24 0.29-1.5 1.8-0.63 0.74-1.3 1.5-1.9 2.2-0.63 0.74-1.3 1.5-1.9 2.2-0.28 0.29-0.28 0.29-1.7 1.8h-2c0.062 0.36 0.062 0.36 0.38 2.2-0.43 3.2-0.82 3.5-3.2 5.4-0.53 0.38-1.1 0.77-1.6 1.2-2.7 2.2-3.7 4.6-4.6 7.9l-0.88 3.3h-2l0.25 2c-0.35 4.2-2.2 7.3-4.2 11h-4l-2 5h-16l1-7c-1.5-3.3-3.4-5.6-6-8l-3 6h2l3 9h-10v-2c-2.3-1.2-4.5-2.2-7-3l-0.25-2.4c-0.75-2.6-0.75-2.6-2.8-3.8l-2-0.88-1-3c-0.99-0.33-2-0.66-3-1v-2c-0.4-0.12-0.4-0.12-2.4-0.75l-2.6-1.2c-0.37-1.3-0.71-2.7-1-4-1.8-1-1.8-1-4-2l-2.4-2c-2.6-2-2.6-2-5.1-2.9-2.7-1.1-4.1-2.6-6.1-4.8-2.5-2.3-5.4-3.8-8.4-5.3v-2c-3.1-1.5-5.1-2.1-8.5-1.6-1.8 0.074-1.8 0.074-3.5-0.38-1.6-1.9-2.7-3.9-3.9-6-2.3-4-6.3-5.7-10-7.9-2.5-1.5-4.9-3.2-7.2-4.9-2.1-1.5-4.4-2.8-6.6-4.2-7.5-4.7-14-11-21-16-2.1-1.8-3.3-2.6-6-3.7l-2.1-0.88c-0.35-1.3-0.69-2.7-1-4-1.6-1.4-3.3-2.7-5-4v-2c-0.58-0.082-1.2-0.16-1.8-0.25-4.9-1.6-6.8-5.6-9.1-9.9-1.6-2.7-3.7-4.8-5.8-7.2-1.3-1.6-2.2-3.1-3-4.9-1.5-3-2.8-3.8-5.4-5.8-0.72-1.6-1.4-3.3-2-5l-2-2c-0.68-1.6-0.68-1.6-1.3-3.7-0.25-0.79-0.51-1.6-0.77-2.4-0.3-0.96-0.61-1.9-0.92-2.9-0.85-2.6-1.7-5.2-2.6-7.8-0.21-0.64-0.42-1.3-0.64-1.9-1.2-3.5-2.4-6.9-3.8-10-4.8-15-5.4-31-5-46 0.013-0.64 0.025-1.3 0.038-1.9 0.24-11 1.7-21 4.5-31 0.62-2.5 1.1-5 1.5-7.5 0.75-3.9 2.1-6.8 3.9-10 0.77-2.3 1.4-4.6 2-7l2 1 0.88-2.9c1.1-3.1 1.1-3.1 3.1-4.1l1-3 2-2c0.12-2.1 0.12-2.1 0-4h2l0.25-2.4 0.75-2.6c1.9-1.1 1.9-1.1 4-2 1.1-1.9 1.1-1.9 2-4 1.3-1.8 1.3-1.8 3-3 0.76 0.2 1.5 0.39 2.3 0.59 3.5 0.53 4.5-0.33 7.4-2.3 4.2-2.7 8.4-4.7 13-6.4 2.6-1 4.8-2.4 7.2-3.9 3.7-1.3 7.6-1.2 11-1.2 0.37-4e-3 0.37-4e-3 2.2-0.024 1.6-0.014 3.1-0.025 4.7-0.032 1.6-0.011 3.1-0.032 4.7-0.062 9.3-0.18 18 0.29 27 2.9 4.3 1.3 7.9 1.6 12 1.4v2l6 1v2h7v3h5l-1 4 4 1 1 4h3c0.59 1.5 1.2 3 1.8 4.5 3 3.7 9.3 4 14 4.8 7.1 1.4 12 2.6 18 7.6 1.5 1.1 1.5 1.1 4.2 1.1l2.2-0.94c0.76-0.19 1.5-0.37 2.3-0.56 0.28-0.072 0.28-0.072 1.7-0.44l-1 4h-5c1.5 3.4 2.9 6 5.4 8.7 3.6 4.1 4.9 9.2 6.6 14h3v6c-0.99-0.33-2-0.66-3-1 0.048 0.31 0.048 0.31 0.29 1.9 0.11 0.81 0.22 1.6 0.34 2.4s0.23 1.6 0.35 2.4c0.027 2.6-0.49 3.2-2 5.3-0.3 1.3-0.54 2.7-0.75 4.1-1.4 7-5.6 13-9.6 18-1.6 2.6-2.1 3.7-1.6 6.6h-3v-2c-0.48 0.29-0.96 0.58-1.5 0.88-0.63 0.37-1.3 0.74-1.9 1.1-0.63 0.37-1.3 0.74-1.9 1.1-1.7 0.88-1.7 0.88-3.7 0.88l-1 3h-26l-1 4c-2.1 1.2-2.1 1.2-4 2 0.7 0.25 1.4 0.51 2.1 0.77 0.91 0.34 1.8 0.69 2.8 1 0.45 0.17 0.45 0.17 2.7 1 2.4 1.2 3.3 1.7 4.4 4.2 0.12 3.2 0.12 3.2 0 6-4.4 0.16-8.1-0.38-12-1.5-5-1.2-9.5-2-15-1.5-0.63 0.031-1.3 0.062-1.9 0.094-3.2 0.27-5 0.81-7.5 2.8-1.6 2.1-1.6 2.1-1.6 5.1-0.97-0.021-1.9-0.041-2.9-0.062-5.9 0.82-9.5 5.7-13 10-1.4 2.4-2.1 4.3-3 7-0.35 0.97-0.7 1.9-1.1 2.9-0.15 0.51-0.15 0.51-0.94 3.1-0.18 0.52-0.35 1-0.53 1.6-3 10-3.1 22-1.5 32l5 1v2h-2l0.56 1.8c0.44 2.2 0.44 2.2-0.56 5.2 2.1 2.1 3.1 2.4 6 3l1-3 4 1-1 4h-3c3 3.1 6.2 5.9 9.5 8.7 0.47 0.4 0.95 0.81 1.4 1.2 2.7 2.2 4.7 3.4 8.1 4.1 1.2 1.1 2.4 2.3 3.5 3.5 1.7 1.7 3.4 3.3 5.2 5 0.59 0.53 1.2 1.1 1.8 1.6 2.2 1.7 4.3 3.1 6.7 4.6 5.2 3.4 9.4 7.6 14 12 0.75 0.76 1.5 1.5 2.3 2.3 1.4 1.4 2.7 2.8 4.1 4.2 1.1 1.2 2.3 2.3 3.5 3.4 1.3 1.4 1.3 1.4 1.3 3.4 0.64 0.1 1.3 0.21 1.9 0.31l2.1 0.69 1 3c2.3 2.4 4.6 4.7 7.2 6.8 2.4 2.9 2.7 5.6 3.2 9.3 0.19 0.64 0.39 1.3 0.59 1.9 0.99 0.33 2 0.66 3 1 0.19-0.52 0.39-1 0.59-1.6 1.1-3 2.3-6.1 3.5-9.1 0.66-1.7 1.3-3.4 1.8-5.1 2.2-6.4 4.5-13 8.1-18 0.69-2.3 0.69-2.3 1-4h2c0.026-0.55 0.052-1.1 0.078-1.7 0.17-2.2 0.4-4.2 0.92-6.3 1.8-1.1 1.8-1.1 4-2 2.4-2.7 4.6-5.5 5.5-9.1 0.68-2.6 2.3-3.9 4.2-5.7 3.3-3.1 4.6-5.7 5.3-10h2c0.19-3.8 0.37-7.6 0.54-11 0.058-1.3 0.12-2.6 0.19-3.9 0.83-16 0.83-16-1.7-22-0.99-0.33-2-0.66-3-1v-4h3c-0.33-5.8-0.65-10-4-15-1.1-2.6-2.1-5.3-3-8h-5l-2-4 2-2-2-5c-3-0.33-5.9-0.66-9-1l1-4c-0.27-0.024-0.27-0.024-1.6-0.15-0.35-0.037-0.35-0.037-2.1-0.23l-2.1-0.21c-2.1-0.41-2.1-0.41-4.2-1.4-5.7-2.9-12-0.83-18 1.1-0.56 0.2-1.1 0.4-1.7 0.6-3.1 1.1-4.2 1.4-7.4 0.34v-7c11-6.1 21-9.8 34-6.7 6.6 2 11 5 16 10 1.6 1.6 1.6 1.6 3.6 2.4 3 1.7 4.4 4.3 6.2 7.1 0.35 0.54 0.69 1.1 1.1 1.6 1.3 2.1 2.7 4.2 3.9 6.3 0.29 0.37 0.58 0.74 0.88 1.1h2v5l2 1c0.47 2.1 0.8 4 1.1 6.1 0.043 0.31 0.043 0.31 0.26 1.9 0.18 1.3 0.36 2.6 0.53 4 0.26 2 0.54 4 0.82 5.9 0.88 6.4 1.5 13 1.2 19 0.15 2.4 0.92 4 2.1 6l1-2 2 1c0.13-0.29 0.13-0.29 0.79-1.8 1.3-2.4 2.7-3.9 4.7-5.7 6.5-6.3 6.5-6.3 6.8-9.8l-0.19-1.8c0.99-0.33 2-0.66 3-1 0.69-2.1 0.69-2.1 1-4l2 1 0.31-1.8c0.8-2.5 1.5-3.7 3.7-5.2 2.2 0.31 2.2 0.31 4 1l1-3c2.1-4.3 4.8-6.7 8.5-9.6 1.5-1.4 1.5-1.4 2.5-4.4h2l0.81-2.4c0.39-0.85 0.78-1.7 1.2-2.6 0.99-0.33 2-0.66 3-1 1.1-1.9 1.1-1.9 2-4 0.37-0.5 0.74-0.99 1.1-1.5 1.1-1.9 1-3.3 0.88-5.5h3l0.81-1.6c0.91-1.8 1.8-3.6 2.8-5.4 1.4-2.9 1.4-2.9 2.4-5.9 0.24-0.23 0.24-0.23 1.5-1.4 1.9-2.1 2.3-3.8 3-6.5 1.1-3.9 2.2-6.9 4.5-10l5 1c0.19 4.7-0.42 8.7-1.6 13-0.18 0.66-0.35 1.3-0.53 2-1.4 5-3.5 9.1-6.4 13-2 3.2-3.1 6.5-4.3 10-1.2 2.5-2.8 4-4.7 5.9-2.7 2.7-4.9 5.9-7.2 9-0.25 0.33-0.25 0.33-1.5 2-0.47 0.64-0.94 1.3-1.4 1.9-0.21 0.29-0.21 0.29-1.3 1.7-1.1 1.9-1.6 3.6-2 5.8h-2v2h-3l1 3c-0.23 0.15-0.23 0.15-1.4 0.93-6 4.2-11 9.3-15 15-1.3 1.4-2.6 2.7-4 4-2.2 2.3-2.2 2.3-2.5 4.6l0.31 1.7c5.4 1.3 5.4 1.3 7.9-0.12 1.4-2.4 1.3-4.1 1.1-6.9l2.6-0.69c2.6-0.84 4.2-1.9 6.2-3.7 3.4-3 7.1-4.7 11-6.6 1.2-0.58 2.3-1.2 3.5-1.8l2.5-1.2c1.6 3.1 2.1 4.6 1.4 8.1-1.7 3.4-3 4.3-6.4 5.9-0.99 0.33-2 0.66-3 1v2h-2v2c-1.9 1.6-1.9 1.6-4.4 3.4-2.8 2-4.7 3.7-6.6 6.6h-2v6c0.99 0.33 2 0.66 3 1 0.54-0.6 1.1-1.2 1.6-1.8 2.6-2.4 5.2-3.6 8.4-5.2 2.7-2.4 3.8-3.5 5-7 2.2-1.8 2.2-1.8 4.9-3.6 0.88-0.61 1.8-1.2 2.7-1.9 2.4-1.5 2.4-1.5 5.4-2.5l1-2c0.61-0.3 1.2-0.61 1.9-0.92 3.6-1.8 6-4.8 8.1-8.1 0.38-2.9 0.38-2.9 0-5 0.46-0.11 0.46-0.11 2.8-0.69 3.7-1.5 4.5-2.8 6.2-6.3-0.99-0.33-2-0.66-3-1l1-3h2l2 2c1.9-2.7 2.1-4.6 1.6-7.8l-0.62-3.2h5l0.31-2.8c0.69-3.2 0.69-3.2 2.2-4.6 2.4-2.5 2.2-5.2 2.5-8.6h3c0.34-3.6 0.67-7.2 1-11 0.095-1 0.19-2 0.29-3.1 0.09-0.98 0.18-2 0.27-3 0.084-0.9 0.17-1.8 0.25-2.7 0.16-2.2 0.22-4.3 0.18-6.5h2c0.088-3.9 0.14-7.9 0.19-12 0.025-1.1 0.05-2.2 0.076-3.3 0.058-6.6-0.64-12-2.6-18-0.91-3.2-1.1-5.9-1.2-9.2-0.27-4.9-0.82-8.1-3.5-12h-2c-0.19-0.81-0.39-1.6-0.59-2.4-0.26-1.1-0.52-2.1-0.79-3.2-0.13-0.53-0.13-0.53-0.77-3.2-0.77-2.8-1.7-5.4-2.9-8.1h-2v-3h-3c-3-5.8-3-5.8-3-8l-5 2c-1-3.1-0.93-4 0-7h-2c-0.13-0.24-0.13-0.24-0.81-1.4-1.7-2.2-3.5-2.1-6.2-2.6l-1-2-1.9-0.44-2.1-0.56c-0.26-0.47-0.53-0.95-0.8-1.4-1.8-2.3-3.7-2.5-6.4-3.1-3.1-0.76-5.9-1.5-8.9-2.6-4-1.1-7.8-0.98-12-0.81v2l-5-1v-1c-14-0.97-27 1.3-38 9.7-2.5 1.8-4.8 2.5-7.8 3.3v3h-2l-0.5 2.9c-1.5 3.1-1.5 3.1-3.3 3.9-1.4 0.3-2.9 0.58-4.3 0.83-1.9 0.43-1.9 0.43-3.5 2.1-1.4 1.4-1.4 1.4-4.4 1.9-3-0.5-3-0.5-4.9-3l-1.1-2.5 1.9-0.19c2.1-0.81 2.1-0.81 3.4-3.1 0.76-3 0.39-4.8-0.31-7.8 0.7-0.23 1.4-0.46 2.1-0.7 0.91-0.33 1.8-0.65 2.8-0.99 0.9-0.31 1.8-0.63 2.7-0.95 3-1.7 3.5-3.1 4.4-6.4h4v-2c2.3-0.99 4.6-2 7-3v-3c0.32 0.11 0.32 0.11 1.9 0.68 4.5 0.47 8.1-1.1 12-2.6 6.3-2.2 12-3.6 19-4.1 0.52-0.064 0.52-0.064 3.2-0.39 14-1.4 26 0.89 39 5.4zm-237 12c-1.6 0.69-3.2 1.3-4.8 1.9-3.7 1.4-6.9 3-10 5.1-2.3 0.69-2.3 0.69-4 1-0.14 0.93-0.29 1.9-0.44 2.8-0.56 3.2-0.56 3.2-1.6 6.2-2.1 0.69-2.1 0.69-4 1l-1-3c-0.82 1.3-1.6 2.5-2.4 3.8-0.45 0.71-0.9 1.4-1.4 2.1-1.2 2-1.2 2-2.2 5h-2c-2.7 5.2-5.1 10-7 16-0.27 0.73-0.54 1.5-0.82 2.2-1.6 4.4-2.6 8.4-2.9 13-0.31 1.7-0.31 1.7-1.3 3.1-5.3 8.5-2.2 27-2 37 0.013 0.75 0.025 1.5 0.038 2.3 0.25 11 0.65 27 7 36 0.99 0.33 2 0.66 3 1l-0.19 3.1c-0.025 4 1.2 6.4 3.2 9.9l3-3 1 5h-2c0.28 1.1 0.58 2.3 0.88 3.4 0.16 0.64 0.32 1.3 0.49 1.9 0.63 1.6 0.63 1.6 2.6 2.6v-5h3c-0.11 0.6-0.21 1.2-0.32 1.8-0.99 6.6-0.99 6.6 0.57 9.4 0.58 0.6 1.2 1.2 1.8 1.8 0.45 0.97 0.91 1.9 1.4 2.9 1.8 3.5 3.8 5.4 6.6 8.1 0.99-0.33 2-0.66 3-1 2 2.3 4 4.6 6 7-0.99-0.33-2-0.66-3-1l1 3h2v3h2l1 3c4.3 4.4 9.6 9 15 12h3c0.23 0.58 0.45 1.2 0.69 1.8 2.4 4.2 5.9 6.1 10 8.1 2.9 1.4 5.1 2.8 7.4 5 4.1 3.8 11 9.1 17 9.1l2 4h2v2c0.52 0.16 1 0.32 1.6 0.48 4.2 1.4 6.9 2.7 9.9 6 3.2 3.2 8.8 8.5 13 8.5v2c1.2 1.2 1.2 1.2 2.9 2.4 0.6 0.47 1.2 0.93 1.8 1.4 0.64 0.49 1.3 0.97 1.9 1.5 1.2 0.95 2.5 1.9 3.7 2.9 0.61 0.46 1.2 0.93 1.9 1.4 1.8 1.4 3.4 2.8 5.1 4.3 0.9 0.69 1.8 1.4 2.7 2.1 0.99-0.33 2-0.66 3-1-0.082 0.74-0.16 1.5-0.25 2.2 0.33 3.6 1.6 4.6 4.2 7.1 0.74 0.7 1.5 1.4 2.2 2.1 0.58 0.52 1.2 1 1.8 1.6l2-1c-0.087-1.6-0.2-3.3-0.31-4.9-0.029-0.45-0.029-0.45-0.18-2.7-0.51-2.4-0.51-2.4-2-3.6-0.51-0.27-1-0.54-1.5-0.81-1.2-2.1-1.2-2.1-2-4h-5l1-4h-4l-1-4h-3l1-5c-0.99-0.33-2-0.66-3-1v2c-4.7-1.5-4.7-1.5-6.3-4.1-0.23-0.62-0.45-1.2-0.69-1.9 0.99-0.33 2-0.66 3-1-3-3.1-6-6-9.2-8.8-0.67-0.6-1.3-1.2-2-1.8-1.8-1.4-1.8-1.4-3.8-1.4-0.24-0.6-0.48-1.2-0.73-1.8-1.5-2.6-3-3.6-5.6-5.2-3.4-2.2-6.5-4.5-9.7-7-1.5-0.99-3-2-4.5-2.9-2.6-1.7-4.9-3.3-7-5.7-2.5-2.3-4-3.1-7.1-4.3-4.6-1.9-6-3.8-8.4-8.1h-2v-2c-2-1.1-4-2.1-6-3l-2 1c-0.094-0.74-0.19-1.5-0.29-2.2-0.82-3.2-2-4.7-4.2-7.1-0.62-0.7-1.2-1.4-1.9-2.1-1.7-1.6-1.7-1.6-3.7-1.6-0.27-0.64-0.54-1.3-0.81-1.9-1.2-2.1-1.2-2.1-4.2-3.1-1.2-2.6-1.2-2.6-2-5h-2c-0.27-0.64-0.54-1.3-0.81-1.9-1.2-2.1-1.2-2.1-4.2-3.1l-0.25-2.2c-0.91-3.4-2.4-5.3-4.8-7.8h-2l-2-8h-3c0.062-0.72 0.12-1.4 0.19-2.2-0.19-2.8-0.19-2.8-1.6-5.1-1.7-2.8-2.6-5.4-3.5-8.6-0.16-0.55-0.33-1.1-0.5-1.7-0.53-1.8-1.1-3.6-1.6-5.4-0.18-0.64-0.36-1.3-0.55-2-0.55-2-1.1-3.9-1.6-5.9-0.17-0.61-0.33-1.2-0.51-1.8-1.9-7.1-2.5-14-2.4-21 0.0045-0.78 9e-3 -1.6 0.014-2.4 0.012-1.9 0.03-3.8 0.049-5.7l4 1c0.88 3.8 1.8 7.6 2.6 11 0.32 1.4 0.64 2.8 0.95 4.1 0.71 3.1 1.4 6.2 1.9 9.4 1.3 8.9 1.3 8.9 5.6 12 1 3 1 3 1.3 4.9 0.94 6 3.3 9.9 7 15 2.7 3.6 4.8 7.3 6.8 11h3c0.093 0.5 0.093 0.5 0.56 3 1.4 5 4.9 8.3 8.4 12l4-1 0.25 2.8c0.87 3.7 1.7 4.2 4.8 6.2-0.023-0.74-0.046-1.5-0.07-2.2-0.13-7.4 0.38-15 1.4-22 0.48-3.6 0.83-7.1 0.71-11 0.99-0.33 2-0.66 3-1 0.91-2 0.91-2 1.6-4.5 1.3-4.4 1.3-4.4 2.4-5.5 0.041-1.7 0.043-3.3 0-5 0.64-0.25 1.3-0.5 1.9-0.75 2.1-1.2 2.1-1.2 2.6-3.3 0.14-0.64 0.29-1.3 0.44-1.9 0.99-0.33 2-0.66 3-1l1-2 2-2-1-2 3 1c0.58-0.64 1.2-1.3 1.8-1.9 2.3-2.1 3.3-2.4 6.2-3.1l1-3c0.59-0.061 1.2-0.12 1.8-0.18 0.79-0.084 1.6-0.17 2.4-0.25 0.39-0.041 0.39-0.041 2.4-0.25 2.5-0.32 2.5-0.32 4.8-0.85 3.4-0.59 6.6-0.58 10-0.53 0.65 0.0045 1.3 9e-3 2 0.014 1.6 0.012 3.2 0.03 4.7 0.049l-4-1c1.6-3.2 3.7-3.9 7-5-1.5-2.6-2.6-3.5-5.4-4.5-2.3-0.91-3.4-1.4-5.2-3.2l-1.4-1.2c-2.7 0.31-2.7 0.31-5 1l-1-3h-2c0.39-0.7 0.78-1.4 1.2-2.1 0.88-3.1 0.82-3.5-0.56-6.2-0.54-0.89-1.1-1.8-1.6-2.7h-2c-3-12-3.3-26 0-38 0.15-0.73 0.29-1.5 0.45-2.2 0.18-0.59 0.37-1.2 0.55-1.8 1.3-0.68 2.7-1.3 4-2 0.26-0.6 0.51-1.2 0.78-1.8 1.7-3 4.1-4.5 6.8-6.3 1.8-1.2 3.6-2.5 5.4-3.9v-2h3c0.31-2.8 0.31-2.8 0-6-3.4-3.9-6.5-4.5-11-4.9-0.52-0.026-1-0.052-1.6-0.078v-3c-6.7-3.4-13-5.8-21-7.4-2.4-0.58-2.4-0.58-4.4-1.6-3.9-0.26-7.9-0.27-12-0.3-1.3-0.011-2.6-0.032-3.9-0.062-9-0.21-21-0.46-28 6.4zm73 37c-0.25 2.2-0.25 2.2 0 4l-2 1c-2.7 3.7-2.3 7.9-2.3 12-0.016 0.73-0.032 1.5-0.049 2.2-0.0046 5.2 1.1 8.8 3.4 13 0.37 1.3 0.73 2.7 1 4l4-1-1 5h2l0.88 1.9c1.6 3 2.7 4 5.9 5.1l3.2 1c0.95 0.37 1.9 0.74 2.9 1.1 3.8 1.1 7.2 1.1 11 0.88 0.57-0.021 0.57-0.021 3.4-0.12 5.2-0.81 11-4.4 14-8.4 1.1-2.2 0.87-4.1 0.75-6.5h4c5.4-8.7 4.6-20 3-30-0.92-1.9-0.92-1.9-2-3h-2l-1-3h-2c-0.29-0.78-0.58-1.6-0.88-2.4-1.1-2.6-1.1-2.6-3.1-4.6h-3v-2c-15-7.2-30-3.3-40 9zm128 117 1 2zm-168 30 1 2zm157 0c-0.56 0.72-1.1 1.4-1.7 2.2-2.3 2.8-4.7 5.3-7.3 7.8l-2 2 1 3c0.43-0.47 0.87-0.95 1.3-1.4 1.7-1.6 1.7-1.6 4.7-2.6v3h2v-2h2c1.4-3.8 2.2-6.9 2-11l-2-1zm-14 15c-1.5 1.7-1.5 1.7-3.1 3.9-0.54 0.72-1.1 1.4-1.6 2.2-1.2 1.9-1.2 1.9-1.2 3.9-0.99 0.33-2 0.66-3 1-1.7 2.1-1.7 2.1-3.5 4.8-0.59 0.86-1.2 1.7-1.8 2.6-0.28 0.44-0.28 0.44-1.7 2.6-0.57 0.86-1.1 1.7-1.7 2.6-1.7 3.1-1.1 5-0.26 8.4 6.9-6.5 12-12 13-22h2v2c3.3-1.1 4-1.9 6.2-4.6 0.53-0.64 1.1-1.3 1.6-1.9 0.4-0.49 0.8-0.99 1.2-1.5l-4-1v-3h-2zm21 2c-2.1 2.2-2 2.8-2 6 0.99 0.33 2 0.66 3 1 2-1.4 2-1.4 4.2-3.4 0.72-0.66 1.4-1.3 2.2-2 0.54-0.52 1.1-1 1.6-1.6l-1-3c-3.1 0-5.3 1.5-8 3zm-6 7v3h2l-1-3h-1zm-3 3-1 3h-2c-1.6 1.4-1.6 1.4-3 3v2c3.1-1.5 6.1-3.2 9-5l-1-3h-2zm-8 8v3l2-3h-2zm-26 11v4h-2l-2 5c1.2-0.76 2.3-1.5 3.4-2.3 0.64-0.43 1.3-0.86 1.9-1.3 1.6-1.4 1.6-1.4 2.6-4.4l-4-1zm-3 12-1 2h2l-1-2zm-5.3 6.1c-0.43 0.46-0.86 0.91-1.3 1.4-0.43 0.45-0.87 0.9-1.3 1.4-0.37 0.39-0.74 0.79-1.1 1.2l-1 1c-0.098 1.6-0.098 1.6-0.062 3.6l0.062 3.4c1.5-1.4 1.5-1.4 3-3v-2h2c3-5.8 3-5.8 3-8-2 0-2 0-3.3 1.1zm-2.7 28-1 3h2l-1-3z" fill="currentColor"/><path transform="translate(369,153)" d="m0 0h6l-1 2-5-1v-1z" fill="currentColor"/><path transform="translate(232,176)" d="m0 0c0.99 0.33 2 0.66 3 1l-1 2h-3l1-3z" fill="currentColor"/><path transform="translate(273,188)" d="m0 0 2 1-2 4-2-1 2-4z" fill="currentColor"/><path transform="translate(210,205)" d="m0 0h3l-1 3h-3l1-3z" fill="currentColor"/><path transform="translate(392,215)" d="m0 0h2l-1 4h-2l1-4z" fill="currentColor"/><path transform="translate(358,279)" d="m0 0h2v4c-0.99-0.33-2-0.66-3-1l1-3z" fill="currentColor"/><path transform="translate(170,298)" d="m0 0h3l-2 5-2-1 1-4z" fill="currentColor"/><path transform="translate(430,315)" d="m0 0h7c3.5 6.6 4.7 13 5 20h2c1.2 1.2 1.2 1.2 2 3-0.32 2.6-0.81 4.6-2 7 0.01 1.8 0.01 1.8 0.19 4.1 3.5 51 3.5 51-9.6 68-1.2 1.3-2.4 2.6-3.6 3.9-1.2 1.6-2.5 3.3-3.7 4.9-2.9 3.9-2.9 3.9-5.5 4.9-0.31 0.18-0.31 0.18-1.9 1.1-0.75 3.1-0.75 3.1-1 6-0.96 0.33-1.9 0.65-2.9 0.99-1.3 0.44-2.6 0.88-3.8 1.3-0.63 0.21-1.3 0.43-1.9 0.65-3.6 1.3-6.4 2.6-9.3 5-5.2 3-5.2 3-8 3l1 2c-10 0.22-21 0.066-31-1.1-11-1.2-22-1.7-31 5.1-0.99 0.33-2 0.66-3 1l-1 5h-12c0.88-8.8 0.88-8.8 2-11h3c0.27-0.68 0.54-1.4 0.81-2.1 1.1-2.8 2.3-5.5 3.5-8.3 0.64-1.6 0.64-1.6 1-4l0.62-1.7 2.4-0.88c2.6-1.1 2.6-1.1 3.7-3.8 0.9-3.5 1.2-6.6 1.4-10 0.34-6.1 0.34-6.1 1.4-7.2 0.23-1.2 0.41-2.4 0.56-3.6l0.44-3.4h3l0.31-2.2c0.75-3 1.8-4.3 3.7-6.8 0.48-1.1 0.94-2.2 1.4-3.3 1.6-3.9 3.7-7.6 6.6-11h2c0.27-0.64 0.54-1.3 0.81-1.9 1.2-2.1 1.2-2.1 4.2-3.1l0.31-1.9c0.69-2.1 0.69-2.1 3.2-3.5 0.53-0.23 1.1-0.46 1.6-0.7 3.9-1.9 7.4-4.5 11-6.9l-1-4 2.5 0.69c5.9 1 12-2.5 16-5.7l1.9-1.5c2.1-1.5 2.1-1.5 5.3-2.8 9.1-3.8 17-9.7 21-19h2v-5c0.99-0.33 2-0.66 3-1 1.2-2.5 1.2-2.5 2.2-5.6 0.17-0.51 0.17-0.51 1-3.1 0.25-0.78 0.51-1.6 0.77-2.4zm1 24-0.25 1.9c-0.75 2.1-0.75 2.1-2.5 3-2.8 1.4-4.5 3.3-6.6 5.5-2.6 2.7-5 5.1-8.2 7.1l-2.4 1.6v2c-0.36 0.058-0.36 0.058-2.2 0.35-2.9 0.67-5.1 1.6-7.7 3-2.8 1.5-5.6 2.8-8.5 4-3.7 1.6-7 3.5-10 5.7-0.57 0.35-1.1 0.7-1.7 1.1-2.4 1.5-4.5 2.9-6.5 4.9-0.2 1.7-0.2 1.7-0.12 3.6l0.12 3.4c-0.58-0.68-1.2-1.4-1.8-2.1-0.37-0.32-0.37-0.32-2.2-1.9-2.5 0.22-3.7 0.72-5.6 2.5-0.47 0.6-0.95 1.2-1.4 1.8-1.6 2-3.2 3.8-5.1 5.6-4 4.3-7 9.5-8.9 15-0.13 0.33-0.13 0.33-0.82 2-0.29 0.71-0.57 1.4-0.87 2.1-0.27 0.66-0.54 1.3-0.82 2-0.49 1.9-0.49 1.9 0.51 4.9 2.5 0.88 4.2 1.4 6.7 0.25 1.6-1.1 1.6-1.1 4.3-3.2v-2l2.9 0.19c3.1-0.19 3.1-0.19 4.5-1.7l0.62-1.5-1-2c0.58-0.026 1.2-0.052 1.8-0.078 5.6-0.4 8.9-1.3 13-4.9v-2c0.72-0.082 1.4-0.16 2.2-0.25 3.5-0.93 5.3-2.2 7.8-4.8l0.5-2.6 0.5-2.4c2.4-1.2 2.4-1.2 5-2l2-1v2c4-1.2 7.5-2.5 11-5v-2l2 1c-0.5 4.1-2 7-4.2 10-0.84 1.6-0.84 1.6-0.84 3.6-0.99 0.33-2 0.66-3 1l-2 2-2.3 1.4c-7 4.2-7 4.2-8.7 7.6-1.6 0.72-3.3 1.4-5 2v4l-2 1-1-3c-1.4 0.6-2.9 1.2-4.3 1.8-0.8 0.34-1.6 0.67-2.4 1-2.3 1.2-3.5 2.4-5.3 4.2-1.7 0.92-1.7 0.92-3.5 1.8-7.3 3.5-14 7.9-20 13v2c1.3 0.2 2.5 0.38 3.8 0.56 0.71 0.1 1.4 0.21 2.1 0.32 2 0.12 2 0.12 5-0.88 5.3-0.41 10 0.21 16 0.88 2.4 0.13 4-0.28 6.3-0.88 3.2-0.23 6.4-0.38 9.6-0.52 6.5-0.91 12-4.2 18-7.4 0.6-0.33 1.2-0.65 1.8-0.99 3.9-2.2 6.5-4.3 9-8.1-0.25-2.8-0.25-2.8-1-5h2l1-2 2 1 1-5h3l1-7c0.99-0.33 2-0.66 3-1 0.62-1.5 0.62-1.5 1-3.5 0.15-0.81 0.3-1.6 0.46-2.5 0.089-0.5 0.089-0.5 0.54-3 0.26-1.3 0.52-2.6 0.79-3.9 1.5-7.9 2.5-15 2.2-23-0.0078-2.8-0.0078-2.8 0.55-6.1 0.45-2.8 0.45-2.8-0.55-4.8-0.21-1.2-0.39-2.5-0.54-3.7-0.087-0.72-0.17-1.4-0.26-2.2-0.087-0.75-0.17-1.5-0.26-2.3-0.045-0.38-0.045-0.38-0.28-2.3-0.22-1.9-0.44-3.7-0.66-5.6h-1zm-86 82v3l2-3h-2z" fill="currentColor"/><path transform="translate(125,358)" d="m0 0h4l-1 4h-3v-4z" fill="currentColor"/><path transform="translate(190,373)" d="m0 0h3l-2 4h-2l1-4z" fill="currentColor"/><path transform="translate(398,377)" d="m0 0 5 1-1 3-4-1v-3z" fill="currentColor"/><path transform="translate(342,382)" d="m0 0h4l-1 4h-3v-4z" fill="currentColor"/><path transform="translate(243,407)" d="m0 0h3l-1 4h-2v-4z" fill="currentColor"/><path transform="translate(252,422)" d="m0 0c0.99 0.33 2 0.66 3 1l-1 4-2-1v-4z" fill="currentColor"/><path transform="translate(373,425)" d="m0 0h3l-1 4h-2v-4z" fill="currentColor"/></symbol></defs></svg>
+
+
+<!-- HERO -->
+<section class="bighero" aria-labelledby="hero-h">
+  <div class="bg" aria-hidden="true"></div>
+  <div class="img">
+    <img src="images/hero-family-ring.webp" width="2048" height="1365" fetchpriority="high" alt="Woman laughing on a beach, with an illustrative ring labelled Bone, Brain, Heart, Metabolic, Gut and Family Health">
+    <span class="photo-note">Illustrative graphic. Posed by model.</span>
   </div>
-
-
-<section class="platform-overview" id="platform" aria-labelledby="platform-heading"><div class="wrap"><div class="overview-heading"><span class="eyebrow">THE BIOMARKHER EXPERIENCE</span><h2 id="platform-heading">Your health. Intelligently connected®</h2></div><div class="pillar-strip"><a class="pillar-card pillar-hub" href="#how"><div class="pillar-top"><span class="pillar-label">THE HUB</span><span class="pillar-number">01</span></div><svg class="pillar-art" viewBox="0 0 144 108" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="24" y="16" width="96" height="72" rx="12" fill="white"/><rect x="35" y="29" width="28" height="23" rx="5" fill="#DAEFEF"/><path d="M73 33h33M73 43h24M35 64h71M35 75h49"/></svg><h3>Your health, together.</h3><p>Labs, records, wearables and your life story—all in one place.</p><span class="pillar-link">Explore the hub <span aria-hidden="true">↗</span></span></a><a class="pillar-card pillar-intelligence" href="#clock"><div class="pillar-top"><span class="pillar-label">THE INTELLIGENCE</span><span class="pillar-number">02</span></div><svg class="pillar-art" viewBox="0 0 144 108" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="72" cy="52" r="37" fill="white"/><path d="M72 25v27l19 12M28 88h90"/><circle cx="72" cy="52" r="4" fill="currentColor"/><path d="M27 76l21-15 19 9 20-29 28-13" stroke="#A488C6"/></svg><h3>Your results, explained.</h3><p>Your Estrogen Clock and body systems bring the bigger picture into focus.</p><span class="pillar-link">Explore the intelligence <span aria-hidden="true">↗</span></span></a><a class="pillar-card pillar-care" href="#care"><div class="pillar-top"><span class="pillar-label">THE CARE</span><span class="soon-pill">COMING SOON</span></div><svg class="pillar-art" viewBox="0 0 144 108" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="35" y="15" width="74" height="76" rx="14" fill="white"/><path d="M62 27h20M72 45v26M59 58h26"/><circle cx="109" cy="79" r="15" fill="#F2ECFA"/><path d="M102 79h14M109 72v14"/></svg><h3>Your next step in care.</h3><p>Planned clinician connections, testing and support informed by your timeline.</p><span class="pillar-link">Explore the care <span aria-hidden="true">↗</span></span></a><a class="pillar-card pillar-circle" href="#circle"><div class="pillar-top"><span class="pillar-label">THE CIRCLE</span><span class="pillar-number">04</span></div><svg class="pillar-art" viewBox="0 0 144 108" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="72" cy="53" r="33" stroke="#E7CBD9"/><path d="M72 53L35 28M72 53l38-25M72 53v38" stroke="#E7CBD9"/><circle cx="72" cy="53" r="18" fill="white"/><circle cx="35" cy="28" r="13" fill="white"/><circle cx="110" cy="28" r="13" fill="white"/><circle cx="72" cy="90" r="13" fill="white"/></svg><h3>Your people, connected.</h3><p>Care for the people you love, with control over what you share.</p><span class="pillar-link">Explore the circle <span aria-hidden="true">↗</span></span></a></div></div></section><section id="how" class="feature-section soft"><div class="wrap">
- <div class="feature-head"><span class="eyebrow">01 / The hub</span><h2>Your medical data, in one place. Tracked over time</h2></div>
- <div class="feature-layout"><div class="feature-copy"><h3>Less hunting for records.<br>More understanding you.</h3><p>Start with what you already have. Build a health record that grows with you.</p><ul class="feature-list">
- <li><span class="fi" aria-hidden="true">↥</span><div><b>Lab Results</b><p>Upload results via pdf OR Connect to your Provider</p></div></li>
- <li><span class="fi" aria-hidden="true">▤</span><div><b>Records and imaging</b><p>Keep reports, scans and screening history organized on one timeline.</p></div></li>
- <li><span class="fi" aria-hidden="true">◷</span><div><b>Your wearable data, in context.</b><p>See sleep, heart rate and activity alongside your lab results.</p></div></li>
- <li><span class="fi" aria-hidden="true">⌁</span><div><b>Your life story</b><p>Connect your reproductive history, family history and life events to your health record.</p></div></li>
- </ul></div>
- <div class="mock"><div class="mock-top"><b>Your health hub</b><span class="demo-label">Illustrative preview</span></div><p>YOUR RECORD, CONNECTED</p><h3>Welcome to your whole picture.</h3>
- <div class="mini-grid"><div class="mini teal"><span class="fi" aria-hidden="true">▤</span><strong>Labs &amp; records</strong><small>Reports · Imaging · Screening</small></div><div class="mini rose"><span class="fi" aria-hidden="true">◷</span><strong>Daily signals</strong><small>Sleep · Heart rate · Activity</small></div></div>
- <div class="record"><span class="fi" aria-hidden="true">↥</span><div><b>Lab report added</b><small>Review extracted values</small></div><span class="chip">Confirm first</span></div>
- <div class="record"><span class="fi" aria-hidden="true">⌁</span><div><b>Your story, over time</b><small>Reproductive history + life events</small></div></div>
- <div class="record"><span class="fi" aria-hidden="true">♡</span><div><b>Family history</b><small>Context for the questions you ask</small></div></div>
- <div class="note"><b>Ready for your next visit.</b><br>A clear summary, with sources and the findings worth discussing.</div></div></div>
- <div class="ribbon">
- <article><span class="fi" aria-hidden="true">⌘</span><h3>Medicines & supplements</h3><p>Keep what you take and when you started alongside your results and life events.</p></article>
- <article><span class="fi" aria-hidden="true">▤</span><h3>A summary for your doctor</h3><p>Bring a cited PDF summary to your next appointment.</p></article>
- <article><span class="fi" aria-hidden="true">◴</span><h3>Retests at the right time</h3><p>Reminders help you track when a change may be ready to review in your results.</p></article>
- </div></div></section><section id="clock" class="feature-section"><div class="wrap">
-<div class="feature-head"><span class="eyebrow">02 / The intelligence</span><h2>Your biomarkers, mapped to estrogen deprivation.</h2><p class="lead">Where estrogen drives the change.</p></div>
-<div class="feature-layout"><div class="mock"><div class="mock-top"><b>The Estrogen Clock</b><span class="demo-label">Concept illustration</span></div><h3>One you. Thirteen system scores.</h3><p>A separate view for each system, with the context behind it. Selected systems shown below.</p>
-<div class="system-bars">
-<div class="system-row"><b>Heart</b><div class="system-track"><i style="width:68%"></i></div></div>
-<div class="system-row"><b>Bone</b><div class="system-track"><i style="width:45%;background:#A488C6"></i></div></div>
-<div class="system-row"><b>Metabolic</b><div class="system-track"><i style="width:79%"></i></div></div>
-<div class="system-row"><b>Brain</b><div class="system-track"><i style="width:57%;background:#E0699A"></i></div></div>
-<div class="system-row"><b>Muscle</b><div class="system-track"><i style="width:61%;background:#A488C6"></i></div></div>
-</div><p class="demo-label">Illustrative bars only · No clinical values</p>
-<div class="connection" style="margin-top:24px"><span class="fi" aria-hidden="true">↔</span><div><b>See the connections</b><p>Explore which systems are changing together and the evidence that may connect them.</p></div></div></div>
-<div class="feature-copy"><h3>Make sense of your results<br>in the context of your life.</h3><p>The Estrogen Clock brings reproductive stage and time since your final period into the picture. Still having periods? Your stage matters, too.</p>
-<ul class="feature-list">
-<li><span class="fi" aria-hidden="true">◷</span><div><b>The Estrogen Clock</b><p>Understand your results against your own hormonal timeline.</p></div></li><li><span class="fi" aria-hidden="true">▥</span><div><b>Thirteen system scores</b><p>Heart, bone, metabolic, brain and more. Each on its own scale, with no single score or “biological age” for all of you.</p></div></li><li><span class="fi" aria-hidden="true">↔</span><div><b>Connections</b><p>Look beyond individual numbers to understand patterns across systems.</p></div></li>
-</ul></div></div></div></section><section class="feature-section soft" id="insights"><div class="wrap">
-<div class="feature-head"><span class="eyebrow">From information to understanding</span><h2>What changed?<br>What could be behind it?</h2><p class="lead">Bring medicines, supplements, nutrition and movement into the same conversation as your results.</p></div>
-<div class="feature-layout"><div class="feature-copy"><h3>Follow the changes.<br>Understand the possibilities.</h3><p>Explore trends over time, with research to help explain what may be contributing—and honest limits on what the data can tell you.</p><ul class="feature-list">
-<li><span class="fi" aria-hidden="true">⌘</span><div><b>Medication intelligence</b><p>Explore changes alongside a statin, HRT or GLP-1 across your body systems.</p></div></li>
-<li><span class="fi" aria-hidden="true">✧</span><div><b>Supplement intelligence</b><p>Understand what research in midlife women does—and does not—support.</p></div></li>
-<li><span class="fi" aria-hidden="true">◒</span><div><b>Food intelligence</b><p>Follow measured nutrients and markers, such as vitamin D and the omega-3 index, over time.</p></div></li>
-<li><span class="fi" aria-hidden="true">↗</span><div><b>Movement intelligence</b><p>Put activity and strength in the context of your muscles, bones and stage of life.</p></div></li>
-</ul></div>
-<div class="mock"><div class="mock-top"><b>Your results, over time</b><span class="demo-label">Interactive concept</span></div><h3>Every change has context.</h3>
-<svg class="trend-svg" viewBox="0 0 440 180" role="img" aria-label="Illustrative trend line with a marker showing when a change was recorded. No clinical data."><path d="M20 35H420M20 85H420M20 135H420" stroke="#E8EDF1" fill="none"/><path d="M20 70C65 60 85 90 125 78S190 100 220 94S285 130 330 115S385 125 420 132" stroke="#008189" stroke-width="4" fill="none"/><path d="M220 20V145" stroke="#A488C6" stroke-dasharray="5 5"/><circle cx="220" cy="94" r="6" fill="#A488C6"/><text x="20" y="170" font-size="12" fill="#4A5170">Earlier</text><text x="177" y="15" font-size="12" fill="#76569B">Change recorded</text><text x="380" y="170" font-size="12" fill="#4A5170">Now</text></svg>
-<p class="demo-label">Illustrative trend · Not a treatment outcome</p>
-<div class="insight-tabs" role="group" aria-label="Explore intelligence features"><button type="button" data-insight="medication" aria-pressed="true">Medicines</button><button type="button" data-insight="supplements" aria-pressed="false">Supplements</button><button type="button" data-insight="food" aria-pressed="false">Food</button><button type="button" data-insight="movement" aria-pressed="false">Movement</button></div>
-<div class="answer" aria-live="polite"><h4 id="insight-title">A medicine is part of the story.</h4><p id="insight-copy">Place a medication’s start date alongside your results. Explore what changed and what research may explain, without assuming the medicine caused every change.</p></div></div></div>
-<div class="ribbon">
-<article><span class="fi" aria-hidden="true">↗</span><h3>Ask anything</h3><p>Plain-language answers grounded in reviewed content and research in women, with “See the research.” The intelligence never prescribes.</p></article>
-<article><span class="fi" aria-hidden="true">▤</span><h3>Education on every result</h3><p>Open a result to understand what it is, why it matters on your timeline and what the research says.</p></article>
-<article><span class="fi" aria-hidden="true">◇</span><h3>Honest notes</h3><p>When evidence is missing or a popular claim is not supported, see that limitation clearly.</p></article>
-</div></div></section><section id="evidence" class="evidence">
-    <div class="wrap">
-      <div class="intro">
-        <span class="eyebrow">Our evidence</span>
-        <h2>Our standard: research in women like you.</h2>
-        <p class="lead">Not the open internet, and not studies done only in men.</p>
-      </div>
-      <div class="pillars">
-        <div><b>Found</b><span>Research in women in midlife and beyond.</span></div>
-        <div><b>Checked</b><span>Our review standard: check each summary against the study itself.</span></div>
-        <div><b>Signed</b><span>Planned medical review before health content reaches you.</span></div>
-        <div class="honest"><b>Honest</b><span>When the research isn’t there, we say so. And nothing to sell you: what you buy never changes what you’re told.</span></div>
+  <div class="fade" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="copy">
+      <h1 id="hero-h">Your Health. Intelligently Connected.</h1>
+      <p class="audience">An all-in-one health platform for women in midlife and beyond.</p>
+      <p class="lead">BiomarkHER reads your health through the lens of your menopause timeline, connecting changes in bone, heart, gut and metabolic health with where you are in the menopause transition and beyond.</p>
+      <div class="actions">
+        <a class="btn btn-dark" href="#waitlist">Join the waitlist</a>
+        <a class="btn btn-ghost" href="#hub">See how it works</a>
       </div>
     </div>
-  </section><section id="care" class="feature-section roadmap"><div class="wrap"><div class="feature-head"><span class="eyebrow" style="color:#76569B">03 / THE CARE · COMING SOON</span><h2>The next chapter of your care.</h2><p class="lead">Connected care to help you take the next step. Coming soon; timing to be confirmed.</p></div><div class="roadmap-grid"><article class="roadmap-card"><span class="fi" aria-hidden="true">◉</span><h3>Record a doctor’s visit</h3><div class="audio-art" aria-hidden="true"><i style="height:10px"></i><i style="height:18px"></i><i style="height:32px"></i><i style="height:24px"></i><i style="height:42px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:36px"></i><i style="height:46px"></i><i style="height:30px"></i><i style="height:16px"></i><i style="height:24px"></i><i style="height:38px"></i><i style="height:18px"></i><i style="height:10px"></i><i style="height:28px"></i><i style="height:42px"></i><i style="height:30px"></i><i style="height:16px"></i><i style="height:8px"></i></div><p>With everyone’s agreement, record a visit and review a plain-language summary. Planned after legal review.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">♡</span><h3>Care that understands your timeline</h3><p>A vetted clinical partner to help you act on what you see.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">⌑</span><h3>Order missing tests</h3><p>Explore tests that could fill a gap, and order through a partner if you choose. The intelligence never prescribes.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">✧</span><h3>Pelvic floor health</h3><p>A dedicated area built with the same evidence standards.</p></article><article class="roadmap-card"><span class="fi" aria-hidden="true">◇</span><h3>Clinical trials, only if you say yes</h3><p>A study sees only a yes or no to its criteria. Contact details are shared only after your agreement.</p></article></div></div></section><section id="circle" class="feature-section"><div class="wrap">
-<div class="feature-head"><span class="eyebrow">04 / THE CIRCLE</span><h2>Care for your people.<br>Keep control of your privacy.</h2><p class="lead">Your health and your family’s, connected on your terms.</p></div>
-<div class="feature-layout"><div class="mock" style="background:#FFFBFD"><div class="mock-top"><b>HerCircle</b><span class="demo-label">Try the sharing preview</span></div>
-<div class="person"><span class="avatar" style="background:var(--navy);color:white">Y</span><div><b>You</b><small>Your circle, your choices</small></div><span class="chip">Owner</span></div>
-<div class="person"><span class="avatar">M</span><div><b>Mom</b><small>Help with the health details she shares</small></div></div>
-<div class="sharing"><label for="sharing-level">What Mom can see from your record</label><select id="sharing-level"><option value="overview">An overview</option><option value="selected" selected>Only what you choose</option><option value="all">Everything shareable</option></select><p id="sharing-description" aria-live="polite">You select the results and updates Mom can see.</p></div>
-<div class="person"><span class="avatar">S</span><div><b>Sister</b><small>Alerts: serious updates only</small></div></div>
-<div class="person"><span class="avatar">D</span><div><b>Daughter</b><small>Alerts: off</small></div></div>
-<div class="note"><b>Some things always stay private.</b><br>Reproductive and vaginal microbiome results are excluded from sharing settings.</div>
-<p class="demo-label" style="margin-top:16px">Demo only · No records or settings are saved</p></div>
-<div class="feature-copy"><h3>Support, without<br>giving everything away.</h3><ul class="feature-list">
-<li><span class="fi" aria-hidden="true">♡</span><div><b>Up to six people, free</b><p>Bring your mother, sister, daughter or partner. You pay; the people you invite join free.</p></div></li>
-<li><span class="fi" aria-hidden="true">◉</span><div><b>Three sharing levels</b><p>Share an overview, selected information or everything shareable. Change it at any time.</p></div></li>
-<li><span class="fi" aria-hidden="true">◴</span><div><b>Alerts you choose</b><p>For each person, choose no alerts, serious updates only or all alerts.</p></div></li>
-<li><span class="fi" aria-hidden="true">♡</span><div><b>Act for your mother</b><p>Help manage her labs, medicines and visits, using only what she agrees to share.</p></div></li>
-<li><span class="fi" aria-hidden="true">◇</span><div><b>Private by design</b><p>Sensitive reproductive and vaginal microbiome results are never shared through these settings.</p></div></li>
-</ul></div></div></div></section>  <section id="waitlist" style="padding-top:0">
-    <div class="wrap">
-      <div class="waitlist">
-        <div class="text">
-          <h2>Be among the first to try BiomarkHER.</h2>
-          <p class="lead" style="font-size:17px">We’ll let you know when early access opens.</p>
+  </div>
+</section>
+
+<!-- FEATURE ROW -->
+<section class="featrow" aria-labelledby="pillars-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">The BiomarkHER experience</span><h2 id="pillars-h" style="margin-top:12px">Four parts, one connected picture.</h2></div>
+      <p>Your records, what they mean on your menopause timeline, the care that comes next, and the people you care for.</p>
+    </div>
+    <div class="row">
+      <a class="pcard" href="#hub"><div class="ph"><img src="images/iStock-1303009731_clock-crop.jpg" width="900" height="969" alt="Smiling woman in a cycling jacket on a road bike" style="object-position:40% 30%"><span class="num">01</span><span class="photo-note">Stock photo. Posed by model.</span></div><div class="body"><span class="pbadge" aria-hidden="true"><svg><use href="#i-hub"/></svg></span><span class="lbl">The Hub</span><h3>Your health, together.</h3><p>Labs, records, wearables and your family health history, all in one place.</p><span class="go">Explore the Hub →</span></div></a>
+      <a class="pcard" href="#intelligence"><div class="ph"><img src="images/iStock-528497164_why-crop.jpg" width="900" height="1154" alt="Woman with grey hair preparing to lift a barbell" style="object-position:55% 35%"><span class="num">02</span><span class="photo-note">Stock photo. Posed by model.</span></div><div class="body"><span class="pbadge" aria-hidden="true"><svg><use href="#i-int"/></svg></span><span class="lbl">The Intelligence</span><h3>Your results, explained.</h3><p>Menopause Aware Intelligence and your body systems bring the bigger picture into focus.</p><span class="go">Explore the intelligence →</span></div></a>
+      <a class="pcard" href="#care"><div class="ph"><img src="images/iStock-2193589580_welcome-crop.jpg" width="900" height="1269" alt="Woman laughing on a beach" style="object-position:50% 30%"><span class="num">03</span><span class="soon">COMING SOON</span><span class="photo-note">Stock photo. Posed by model.</span></div><div class="body"><span class="pbadge" aria-hidden="true"><svg><use href="#i-care"/></svg></span><span class="lbl">The Care</span><h3>Your next step in care.</h3><p>Planned clinician connections, testing and support informed by your timeline.</p><span class="go">Explore the Care →</span></div></a>
+      <a class="pcard" href="#circle"><div class="ph"><img src="images/iStock-905837342_hercircle-crop.jpg" width="900" height="738" alt="Three women laughing together outdoors after a muddy run" style="object-position:50% 40%"><span class="num">04</span><span class="photo-note">Stock photo. Posed by model.</span></div><div class="body"><span class="pbadge" aria-hidden="true"><svg><use href="#i-circ"/></svg></span><span class="lbl">HERCIRCLE</span><h3>Your people, connected.</h3><p>Care for the people you love, with control over what you share.</p><span class="go">Explore HerCircle →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- 01 HUB -->
+<section id="hub" aria-labelledby="hub-h">
+  <div class="wrap">
+    <div class="split">
+      <div class="section-head" style="margin:0">
+        <span class="secbadge"><span class="pbadge sm" aria-hidden="true"><svg><use href="#i-hub"/></svg></span><span class="eyebrow">01 · The Hub</span></span>
+        <h2 id="hub-h">All your health.<br>One place to begin.</h2>
+        <p class="lead">Start with what you already have. Build a health record that grows with you: every lab, every doctor, every device and your own story, tracked over time.</p>
+        <div class="pills"><span>Upload a PDF</span><span>Connect your provider</span><span>You confirm every value</span></div>
+      </div>
+      <div class="photo-stack">
+        <div class="ph"><img src="images/clock.jpg" width="1400" height="1120" alt="Smiling woman in a red cycling jacket on a road bike" loading="lazy"><span class="photo-note">Stock photo. Posed by model.</span></div>
+        <div class="float lab" aria-label="Sample lab report">
+          <div class="hd">Lab report added <span class="chip">Review</span></div>
+          <div class="row"><span>LDL cholesterol</span><span>148 mg/dL <span class="ok">✓</span></span></div>
+          <div class="row"><span>HDL cholesterol</span><span>58 mg/dL <span class="ok">✓</span></span></div>
+          <div class="row"><span>HbA1c</span><span>5.5 % <span class="q">?</span></span></div>
+          <span class="sample">SAMPLE DATA · CONFIRM VALUES</span>
         </div>
-        <form id="wl">
-          <label for="email" style="position:absolute;left:-9999px">Email</label>
-          <input id="email" type="email" placeholder="Your email" required>
-          <button class="btn btn-dark" type="submit">Join the waitlist</button>
-          <span class="msg" id="wlmsg" role="status"></span>
-        </form>
+        <div class="float fam" aria-label="Sample family history">
+          <div class="hd">Family history</div>
+          <div class="who"><span class="av">M</span>Mom · osteoporosis</div>
+          <div class="who"><span class="av">D</span>Dad · heart disease</div>
+        </div>
       </div>
     </div>
-  </section>
+    <div class="tiles">
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></div><h3>Labs, records and imaging</h3><p>Upload results as a PDF or connect your provider. Reports, scans and screening history on one timeline.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><rect x="7" y="6" width="10" height="12" rx="3"/><path d="M9 6V3h6v3M9 18v3h6v-3M10 12h1l1-2 1 4 1-2h1"/></svg></div><h3>Your wearable, in context</h3><p>Sleep, heart rate and activity alongside your lab results.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 12h16M7 8v8M12 6v12M17 9v6"/></svg></div><h3>Your life story</h3><p>Reproductive history, family history, life events, medicines and supplements, connected to your record.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 14l2 2 4-4"/></svg></div><h3>A summary for your doctor</h3><p>A cited PDF to bring to your next appointment, with a nudge when a retest is due.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 INTELLIGENCE -->
+<section class="intel" id="intelligence" aria-labelledby="int-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="secbadge"><span class="pbadge sm" aria-hidden="true"><svg><use href="#i-int"/></svg></span><span class="eyebrow">02 · The Intelligence · Menopause Aware Intelligence</span></span>
+      <h2 id="int-h">Understand what’s changing.<br>And why.</h2>
+      <p class="lead">See how your biomarkers change over time, and where estrogen loss may help explain why. Still having periods? Your stage matters, too.</p>
+      <p class="motto">One menopause timeline, multiple connected systems.</p>
+    </div>
+
+    <div class="board">
+      <div class="panel">
+        <h3>Your menopause timeline</h3>
+        <p>Each system changes on its own schedule. See where you are on each one.</p>
+        <div class="stage"><div>Stage<b>Postmenopause</b></div><div>Since your final period<b>5 years</b></div></div>
+        <svg class="tl" viewBox="0 0 560 230" role="img" aria-label="Illustration: bars for seven body systems across a menopause timeline, with a marker five years after the final period">
+          <g font-size="12" fill="#C9D3F0"><text x="0" y="14">Before</text><text x="200" y="14" text-anchor="middle">Final period</text><text x="560" y="14" text-anchor="end">After</text></g>
+          <line x1="200" y1="22" x2="200" y2="226" stroke="#6B7DB8" stroke-dasharray="3 4"/>
+          <g font-size="13" font-weight="600" fill="#FFFFFF">
+            <text x="0" y="44">Heart</text><text x="0" y="72">Bone</text><text x="0" y="100">Metabolic</text><text x="0" y="128">Brain</text><text x="0" y="156">Muscle</text><text x="0" y="184">Gut</text><text x="0" y="212">Lungs</text>
+          </g>
+          <g fill="#1C3A8F"><rect x="90" y="34" width="470" height="12" rx="6"/><rect x="90" y="62" width="470" height="12" rx="6"/><rect x="90" y="90" width="470" height="12" rx="6"/><rect x="90" y="118" width="470" height="12" rx="6"/><rect x="90" y="146" width="470" height="12" rx="6"/><rect x="90" y="174" width="470" height="12" rx="6"/><rect x="90" y="202" width="470" height="12" rx="6"/></g>
+          <g fill="#72CBCD"><rect x="170" y="34" width="150" height="12" rx="6"/><rect x="150" y="62" width="200" height="12" rx="6"/><rect x="180" y="90" width="210" height="12" rx="6"/><rect x="140" y="146" width="230" height="12" rx="6"/><rect x="190" y="174" width="180" height="12" rx="6"/><rect x="120" y="202" width="300" height="12" rx="6"/></g>
+          <rect x="160" y="118" width="160" height="12" rx="6" fill="none" stroke="#F1F4FB" stroke-dasharray="4 3"/>
+          <line x1="300" y1="26" x2="300" y2="226" stroke="#FFFFFF" stroke-width="2.5"/>
+          <text x="306" y="226" font-size="11" fill="#FFFFFF">You</text>
+        </svg>
+        <span class="sample">Illustration with sample data. Bars show where change is concentrated for each system; a dashed bar marks a system still waiting on evidence.</span>
+      </div>
+      <div class="panel">
+        <h3>Thirteen system scores</h3>
+        <p>Each on its own scale. No single score, and no “biological age”, for all of you.</p>
+        <div class="syschips">
+          <span><i class="w"></i>Heart</span><span><i></i>Bone</span><span><i></i>Metabolic</span>
+          <span><i></i>Brain</span><span><i></i>Hormonal</span><span><i></i>Immune</span>
+          <span><i></i>Kidney</span><span><i></i>Lungs</span><span><i></i>Gut</span>
+          <span><i></i>Muscle</span><span><i></i>Eye</span><span><i></i>Inflammation</span>
+          <span><i></i>Vaginal microbiome</span>
+        </div>
+        <span class="sample">Sample data</span>
+      </div>
+    </div>
+
+    <div class="board3">
+      <div class="panel">
+        <h3>Every score has a reason</h3>
+        <div class="score">
+          <svg viewBox="0 0 120 72" aria-hidden="true"><path d="M12 64a48 48 0 0 1 96 0" fill="none" stroke="#1C3A8F" stroke-width="12" stroke-linecap="round"/><path d="M12 64a48 48 0 0 1 38-47" fill="none" stroke="#E8795A" stroke-width="12" stroke-linecap="round"/><line x1="60" y1="64" x2="45" y2="26" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="64" r="5" fill="#FFFFFF"/></svg>
+          <div><small>Heart</small><span class="n">42</span><small>of 100</small></div>
+        </div>
+        <p class="why"><b>Why:</b> your LDL cholesterol is 148 mg/dL. <em>On your menopause timeline:</em> see what research in women at your stage says about it.</p>
+        <span class="sample">Sample data</span>
+      </div>
+      <div class="panel">
+        <h3>Connections</h3>
+        <p>Look beyond single numbers to the patterns across systems.</p>
+        <svg viewBox="0 0 260 150" style="width:100%;height:auto;margin-top:12px" role="img" aria-label="Illustration: Heart, Metabolic, Muscle and Bone linked">
+          <g stroke="rgba(62,186,192,.7)" stroke-width="2"><line x1="60" y1="40" x2="150" y2="75"/><line x1="150" y1="75" x2="215" y2="35"/><line x1="150" y1="75" x2="110" y2="125"/><line x1="60" y1="40" x2="110" y2="125" stroke-dasharray="4 5"/></g>
+          <g font-family="Figtree,sans-serif" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle"><circle cx="60" cy="40" r="26" fill="#102E80" stroke="#72CBCD" stroke-width="2"/><text x="60" y="44">Heart</text><circle cx="150" cy="75" r="30" fill="#102E80" stroke="#72CBCD" stroke-width="2"/><text x="150" y="79">Metabolic</text><circle cx="215" cy="35" r="24" fill="#102E80" stroke="#F1F4FB" stroke-width="2"/><text x="215" y="39">Muscle</text><circle cx="110" cy="125" r="22" fill="#102E80" stroke="#F1F4FB" stroke-width="2"/><text x="110" y="129">Bone</text></g>
+        </svg>
+      </div>
+      <div class="panel">
+        <h3>Ask anything</h3>
+        <p>Plain-language answers from reviewed content and research in women. It never prescribes.</p>
+        <div class="bubble me">Why is my LDL going up?</div>
+        <div class="bubble ai">Here’s what research in women at your stage says about LDL, and the studies it comes from. This is a good one to raise with your clinician.</div>
+        <span class="link-chip">See the research →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEXT -->
+<section id="context" aria-labelledby="ctx-h">
+  <div class="wrap">
+    <div class="split">
+      <div class="ctx-media">
+        <img src="images/scores.jpg" width="1400" height="1120" alt="Woman with grey hair lifting a barbell in a gym" loading="lazy">
+        <span class="photo-note" style="top:14px;bottom:auto">Stock photo. Posed by model.</span>
+        <div class="chart-card">
+          <div class="hd"><span>LDL cholesterol</span><span class="sample">SAMPLE DATA</span></div>
+          <svg viewBox="0 0 400 120" role="img" aria-label="Sample chart: LDL 162, then 131, then 118 mg/dL after a medicine start date">
+            <line x1="20" y1="104" x2="390" y2="104" stroke="#E2E6F0"/>
+            <line x1="160" y1="14" x2="160" y2="104" stroke="#1A2649" stroke-dasharray="3 4"/>
+            <text x="166" y="22" font-size="12" font-weight="600" fill="#1A2649" font-family="Figtree,sans-serif" id="ctxmark">Started a statin</text>
+            <path d="M24 40 C 90 38, 140 38, 165 44 S 230 82, 270 86 S 350 92, 384 94" fill="none" stroke="#00A889" stroke-width="3"/>
+            <g font-size="12" fill="#4E5672" font-family="Figtree,sans-serif"><text x="24" y="30">162</text><text x="262" y="76">131</text><text x="372" y="84">118</text></g>
+          </svg>
+        </div>
+      </div>
+      <div>
+        <div class="section-head" style="margin-bottom:0">
+          <span class="eyebrow">From information to understanding</span>
+          <h2 id="ctx-h">Every change has context.</h2>
+          <p class="lead">Bring medicines, supplements, food and movement into the same conversation as your results, with research to help explain what may be contributing, and honest limits on what the data can tell you.</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Context type">
+          <button role="tab" id="t-med" aria-selected="true" data-k="med">Medicines</button>
+          <button role="tab" id="t-sup" aria-selected="false" data-k="sup">Supplements</button>
+          <button role="tab" id="t-food" aria-selected="false" data-k="food">Food</button>
+          <button role="tab" id="t-move" aria-selected="false" data-k="move">Movement</button>
+        </div>
+        <div class="tabpanel" role="tabpanel" aria-live="polite">
+          <h3 id="tp-h">A medicine is part of the story.</h3>
+          <p id="tp-p">Place a medicine’s start date alongside your results. See how your results have moved since you started, without assuming the medicine caused every change.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tiles three">
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></div><h3>Education on every result</h3><p>Open a result to see what it is, why it matters on your timeline and what the research says.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Honest notes</h3><p>When evidence is missing or a popular claim isn’t supported, you see that clearly.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M5 5h14v10H9l-4 4z"/><path d="M9 9h6M9 12h4"/></svg></div><h3>See the research</h3><p>Every answer about your health shows where it came from: studies in women in midlife and beyond.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 CARE -->
+<section class="care" id="care" aria-labelledby="care-h">
+  <div class="wrap">
+    <div class="split">
+      <div class="section-head" style="margin:0">
+        <span class="secbadge"><span class="pbadge sm" aria-hidden="true"><svg><use href="#i-care"/></svg></span><span class="eyebrow">03 · The Care · Coming soon</span></span>
+        <h2 id="care-h">The next chapter of your care.</h2>
+        <p class="lead">Take your doctor a clear summary of what’s changed, with the research behind it. Connected care to help you take the next step is coming; timing to be confirmed. BiomarkHER works with your doctor, never in place of one.</p>
+      </div>
+      <div class="pdf" aria-label="Sample doctor summary">
+        <div class="hd"><span class="badge">PDF</span><div><b>Your summary for your doctor</b><br><span class="sample">What’s changed, questions to ask, sources cited</span></div></div>
+        <div class="bar" style="width:92%"></div><div class="bar" style="width:76%"></div><div class="bar" style="width:84%;margin-bottom:12px"></div>
+        <div class="row">3 changes since your last visit <span>›</span></div>
+        <div class="row">2 questions to ask <span>›</span></div>
+        <div class="row">Bone density scan (DXA) <span class="miss">Missing</span></div>
+        <span class="sample">SAMPLE DATA</span>
+      </div>
+    </div>
+    <div class="tiles five">
+      <div class="tile"><span class="coming">COMING</span><h3>Record a doctor’s visit</h3><p>With everyone’s agreement, then a plain-language summary. Planned after legal review.</p></div>
+      <div class="tile"><span class="coming">COMING</span><h3>Care that understands your timeline</h3><p>A vetted clinical partner to help you act on what you see.</p></div>
+      <div class="tile"><span class="coming">COMING</span><h3>Order missing tests</h3><p>Tests that could fill a gap, through a partner if you choose.</p></div>
+      <div class="tile"><span class="coming">COMING</span><h3>Pelvic floor health</h3><p>A dedicated area built to the same evidence standards.</p></div>
+      <div class="tile"><span class="coming">COMING</span><h3>Clinical trials, only if you say yes</h3><p>Nothing is shared without your agreement.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 HERCIRCLE -->
+<section class="circle" id="circle" aria-labelledby="circ-h">
+  <div class="wrap">
+    <div class="split">
+      <div class="orbit" aria-hidden="true">
+        <div class="ring2"></div><div class="ring"></div>
+        <div class="you">YOU</div>
+        <div class="p" style="left:50%;top:12%;border-color:#FFC709">M<em>Mom</em></div>
+        <div class="p" style="left:84%;top:70%;border-color:#B02673">S<em>Sister</em></div>
+        <div class="p" style="left:16%;top:70%;border-color:#FFC709">D<em>Daughter</em></div>
+      </div>
+      <div>
+        <div class="section-head" style="margin-bottom:0">
+          <span class="secbadge"><span class="pbadge sm" aria-hidden="true"><svg><use href="#i-circ"/></svg></span><span class="eyebrow">04 · HERCIRCLE</span></span>
+          <h2 id="circ-h">Care for your people.<br>Keep control of your privacy.</h2>
+          <p class="lead">Your health and your family’s, connected on your terms. Choose what Mom can see:</p>
+        </div>
+        <div class="seg" role="group" aria-label="What Mom can see">
+          <button aria-pressed="false" data-s="0">An overview</button>
+          <button aria-pressed="true" data-s="1">What you choose</button>
+          <button aria-pressed="false" data-s="2">Everything shareable</button>
+        </div>
+        <div class="people">
+          <div class="person"><span class="av" style="background:#FDEAF4;color:#B02673">M</span><div>Mom<small id="seg-t">You select the results and updates Mom can see.</small></div></div>
+          <div class="person"><span class="av" style="background:#FDEAF4;color:#B02673">S</span><div>Sister<small>Alerts: serious updates only</small></div><span class="tag">Alerts on</span></div>
+          <div class="person"><span class="av" style="background:#F1F4FB;color:#1A2649">D</span><div>Daughter<small>Alerts: off</small></div></div>
+        </div>
+        <p class="private"><b>Some things always stay private.</b> Reproductive and vaginal microbiome results are never shared through these settings.</p>
+        <p class="sample" style="margin-top:10px">DEMO ONLY · NOTHING IS SAVED</p>
+      </div>
+    </div>
+    <div class="tiles">
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19a6 6 0 0 1 12 0M15 19a4 4 0 0 1 6-3.5"/></svg></div><h3>Up to six people, free</h3><p>Bring your mother, sister, daughter or partner. You pay; the people you invite join free.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Three sharing levels</h3><p>An overview, what you choose, or everything shareable. Change it at any time.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg></div><h3>Alerts you choose</h3><p>For each person: no alerts, serious updates only, or all alerts.</p></div>
+      <div class="tile"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></div><h3>Help your mother</h3><p>Help manage her labs, medicines and visits, using only what she agrees to share.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE -->
+<section id="evidence" aria-labelledby="ev-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our evidence</span>
+      <h2 id="ev-h">Our standard: research in women like you.</h2>
+      <p class="lead">Not the open internet, and not studies done only in men.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><h3>Found</h3><p>Research in women in midlife and beyond.</p></div>
+      <div class="step"><span class="n">2</span><h3>Checked</h3><p>Every summary checked against the study itself.</p></div>
+      <div class="step"><span class="n">3</span><h3>Signed</h3><p>Medical review before health content reaches you.</p></div>
+      <div class="step"><span class="n">4</span><h3>Honest</h3><p>When the research isn’t there, we say so. And what you buy never changes what you’re told.</p></div>
+    </div>
+    <div class="honest">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      <div><span class="eyebrow">An honest answer</span><p>“There isn’t enough research on this in women in midlife and beyond to give you a reliable answer yet. This is a good one to raise with your clinician.”</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing" id="waitlist" aria-labelledby="wl-h">
+  <div class="img"><img src="images/hero.jpg" width="1800" height="1125" alt="Woman smiling on a beach"><span class="photo-note">Stock photo. Posed by model.</span></div>
+  <div class="fade" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="inner">
+      <span class="eyebrow" style="color:var(--petal)">Early access</span>
+      <h2 id="wl-h">Be among the first to try BiomarkHER.</h2>
+      <p class="lead">BiomarkHER is in development. We’ll let you know when early access opens.</p>
+      <form id="wl-form" novalidate>
+        <label for="wl-email" style="position:absolute;left:-9999px">Email</label>
+        <input id="wl-email" type="email" placeholder="Your email (preview only)" autocomplete="email">
+        <button class="btn btn-petal" type="submit">Join the waitlist</button>
+      </form>
+      <p class="msg" id="wl-msg" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="top">
-      <img src="images/logo.png" alt="BiomarkHER">
-      <span></span>
-      <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a>
-    </div>
-    <p>BiomarkHER explains your results; it does not diagnose or replace your clinician. People shown are models in stock photos. Results shown are sample data. © BiomarkHER.</p>
+    <img src="images/logo-lockup.png" alt="BiomarkHER. Health Clarity Calibrated for Midlife and Beyond" width="1006" height="323">
+    <nav aria-label="Footer"><a href="#top">Privacy</a><a href="#top">Terms</a><a href="#top">Contact</a></nav>
+    <p>BiomarkHER explains your results; it does not diagnose or replace your clinician. People shown are models in stock photos. Results shown are sample data. <span class="draft-tag">DRAFT WORDING</span> © BiomarkHER.</p>
   </div>
 </footer>
 
 <script>
-// Preview only: sign-up is not connected yet. Replace with a form service (e.g. Formspree or Tally) before launch.
-document.getElementById('wl').addEventListener('submit', function (e) {
-  e.preventDefault();
-  document.getElementById('wlmsg').textContent = 'Thank you. Sign-up opens soon; this preview does not save emails yet.';
-});
-
-const insightContent = {
- medication: ['A medicine is part of the story.', 'Place a medication’s start date alongside your results. Explore what changed and what research may explain, without assuming the medicine caused every change.'],
- supplements: ['Know what the evidence supports.', 'Explore research in midlife women for a supplement, including uncertainty and situations where the evidence does not show a benefit.'],
- food: ['Nutrition you can follow over time.', 'Bring measured nutrients and markers, such as vitamin D and the omega-3 index, into your results history.'],
- movement: ['Movement, in your life stage.', 'Connect activity and strength to the needs of your muscles and bones, with context for where you are on your timeline.']
+const tabs={
+  med:['A medicine is part of the story.','Place a medicine’s start date alongside your results. See how your results have moved since you started, without assuming the medicine caused every change.','Started a statin'],
+  sup:['What the research in women supports.','Add the supplements you take and see what research in midlife women does, and does not, support.','Started vitamin D'],
+  food:['Food you can measure.','Follow measured nutrients and markers, such as vitamin D and the omega-3 index, over time.','Changed diet'],
+  move:['Movement in context.','Put activity and strength in the context of your muscles, bones and stage of life.','Started strength training']
 };
-document.querySelectorAll('[data-insight]').forEach(button => button.addEventListener('click', () => {
- document.querySelectorAll('[data-insight]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
- const [title, copy] = insightContent[button.dataset.insight];
- document.getElementById('insight-title').textContent = title;
- document.getElementById('insight-copy').textContent = copy;
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',String(x===b)));
+  const t=tabs[b.dataset.k];
+  document.getElementById('tp-h').textContent=t[0];
+  document.getElementById('tp-p').textContent=t[1];
+  document.getElementById('ctxmark').textContent=t[2];
 }));
-const sharingCopy = {overview:'Mom sees a high-level overview, without your individual result details.',selected:'You select the results and updates Mom can see.',all:'Mom sees everything eligible for sharing. Reproductive and vaginal microbiome results remain private.'};
-document.getElementById('sharing-level').addEventListener('change', event => {document.getElementById('sharing-description').textContent = sharingCopy[event.target.value];});
-document.querySelectorAll('.mobile-links a').forEach(link => link.addEventListener('click', () => document.querySelector('.mobile-nav').removeAttribute('open')));
-
+const seg=['Mom sees an overview of your health.','You select the results and updates Mom can see.','Mom sees everything you can share. Private results stay private.'];
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  document.getElementById('seg-t').textContent=seg[+b.dataset.s];
+}));
+document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>a.closest('details').removeAttribute('open')));
+document.getElementById('wl-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  document.getElementById('wl-msg').textContent='Thanks. This is a preview, so nothing was saved.';
+});
 </script>
 </body>
 </html>
-
-
